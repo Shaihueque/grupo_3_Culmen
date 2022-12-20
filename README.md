@@ -4,6 +4,9 @@ Nombre: Culmen (originario del latin - singificado cumbre) </h1>
 <h3>Descripcion:</h3> 
 <p>Una tienda dedicada a la venta de ropa deportiva, mas especificamente, orientada a montaña. Apuntamos a un  publico desde niños a adultos. Buscamos facilitar la comodidad en las actividades de supervivencia y deportiva en lugares agrestes; Ademas de generar confianza y demostrar el impacto que puede tener una prenda, esta puede marcar la diferencia.</p>
 
+<h3>Plataforma usada para organizarnos: TRELLO </h3>
+<h4> https://trello.com/b/FLwn5t1p/proyecto-integrador </h4>
+
 <h3>Paguinas de referencia o inspiradoras:</h3>
 <ol>
 <li>Zara: https://www.zara.com/ar - Nos basamos en la forma de presentar los talles de los productos. Uno diciendo sus cualidades físicas puede saber cual es la talla. Esta marca apunta al público de todas las edades como nuestro e-commerce. </li>
