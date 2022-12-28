@@ -1,0 +1,23 @@
+{
+  "name": "grupo_3_culmen",
+  "version": "1.0.0",
+  "description": "<h1> E-Commerce \r Nombre: Culmen (originario del latin - singificado cumbre) </h1>",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Shaihueque/grupo_3_Culmen.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Shaihueque/grupo_3_Culmen/issues"
+  },
+  "homepage": "https://github.com/Shaihueque/grupo_3_Culmen#readme",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
