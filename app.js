@@ -18,3 +18,4 @@ app.listen(PORT , ()=>{
 app.get('/' , ( req, res )=>{
     res.sendFile(indexPath)
 } )
+
