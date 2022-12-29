@@ -97,17 +97,78 @@ header {
 .main-footer {
     background-color: #0B0033;
     color: white;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: space-around;
+    text-transform: uppercase;
 
 }
+
+.main-footer p {
+    display: inline-flex;
+}
+
+
 
 .footer-contacto { 
+    
+    border-bottom: 1px solid #ebebeb;
+    padding: 15px;
+}
+
+.footer-categorias {
+    border-bottom: 1px solid #ebebeb;
+    padding: 15px;
+}
+
+.footer-ayuda {
+    border-bottom: 1px solid #ebebeb;
+    padding: 15px;
+}
+
+.main-footer-inferior {
+    background-color: #0B0033;
+    color: white;
+    display: flex;
+    flex-direction: column;
+}
+
+.modos-pago {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    width: 100%;
+    align-items: center;
+    padding: 20px 15px;
 
 }
 
-.categorias {
-
+.footer-icono-tarjetas {
+    margin: 5px;
+    width: 50px;
+    height: 35px;
 }
 
-.ayuda {
+.Redes-sociales {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 15px 5px;
+}
+
+.enlace-redsocial {
+    color: white;
+}
+
+.iconos-red-social {
+    margin: 5px;
+}
+
+
+.fin {
+    text-align: center;
+    padding-top: 15px;
 
 }
