@@ -61,7 +61,12 @@ header {
     flex-direction: column;
     justify-content: center;
     background-color: #EDEDED;
+    
 
+}
+
+.main-productos h3 {
+    margin-top: 10px;
 }
 
 .producto {
@@ -77,9 +82,14 @@ header {
 }
 
 .main-art-prducto {
-    margin: 15px;
+    margin: 10px;
     border-top: 1px solid #ebebeb;
     text-align: left;
+    
+}
+
+.main-art-prducto p {
+    margin-top: 5px;
 }
 
 .contenedor-main-somos {
@@ -87,11 +97,37 @@ header {
     color: black;
     padding: 15px;
     margin: 10px;
+    text-align: center;
 }
 
 .main-somos {
     text-align: justify;
     
+}
+
+.main-somos p {
+    margin-top: 5px;
+}
+
+.desc-product {
+    margin: 10px 0;
+}
+
+.main-somos h3 {
+    text-align: center;
+    margin-top: 10px;
+}
+
+.enlace-boton-register {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 10px auto;
+    background-color: #4DAA57;
+    color: white;
+    height: 50px;
+    width: 150px;
+    text-align: center;
 }
 
 .main-footer {
@@ -109,8 +145,6 @@ header {
 .main-footer p {
     display: inline-flex;
 }
-
-
 
 .footer-contacto { 
     
@@ -133,22 +167,24 @@ header {
     color: white;
     display: flex;
     flex-direction: column;
+    
 }
 
 .modos-pago {
+    margin: 0 auto;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
-    width: 100%;
+    width: 70%;
     align-items: center;
     padding: 20px 15px;
-
+    
 }
 
 .footer-icono-tarjetas {
     margin: 5px;
-    width: 50px;
-    height: 35px;
+    width: 40px;
+    height: 25px;
 }
 
 .Redes-sociales {
@@ -170,5 +206,6 @@ header {
 .fin {
     text-align: center;
     padding-top: 15px;
+    margin-bottom: 20px;
 
 }
