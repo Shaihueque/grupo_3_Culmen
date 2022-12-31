@@ -14,13 +14,18 @@
 
 <body>
     <header>
-        <section class="header-header">
+        <section class="header-header" >
             <div class="contenedor-hamburgesa">
                 <a href="#" class="menu-hamburgesa-boton">
                     <i class="fas fa-bars"></i></a>
             </div>
             <div class="contenedor-logo">
                 <img src="/image/logo-culmen.png" alt="Logo Culmen" class="logo">
+            </div>
+            <div class="contenedor-buscador">
+                <a href="#" class="buscador">
+                    <i class="fas fa-search"></i>
+                </a>
             </div>
             <div class="contenedor-user">
                 <i class="fas fa-user" alt="Iniciar Sesion"></i>
@@ -37,17 +42,30 @@
             <div class="main-img-prin">
                 <img src="/image/catego1.webp" alt="Cumbre" class="img-principal">
             </div>    
-            <div class="main-categorias">
-                <img src="/image/catego-2.jpg" alt="Hombres" class="main-categoria-img">
+            <div class="main-categorias1">
+                <a href="#">
+                    <img src="/image/catego-2.jpg" alt="Hombres" class="main-categoria-img">
+                    <div class="categoria1-text"><p>HOMBRES</p></div>
+                </a>
             </div>
-            <div class="main-categorias">
-                <img src="/image/cate-mujer4.jpg" alt="Mujeres" class="main-categoria-img">
+            </a>
+            <div class="main-categorias2">
+                <a href="#">
+                    <img src="/image/cate-mujer4.jpg" alt="Mujeres" class="main-categoria-img">
+                    <div class="categoria2-text"><p>MUJERES</p></div>
+                </a>
             </div>
-            <div class="main-categorias">
-                <img src="/image/niño2.jpg" alt="Niños" class="main-categoria-img">
+            <div class="main-categorias3">
+                <a href="#">
+                    <img src="/image/niño2.jpg" alt="Niños" class="main-categoria-img">
+                    <div class="categoria3-text"><p>NIÑOS</p></div>
+                </a>
             </div>
-            <div class="main-categorias">
-                <img src="/image/accesorio1.jpg" alt="Accesorios" class="main-categoria-img">
+            <div class="main-categorias4">
+                <a href="#">
+                    <img src="/image/accesorio1.jpg" alt="Accesorios" class="main-categoria-img">
+                    <div class="categoria4-text"><p>ACCESORIOS</p></div>
+                </a>
             </div>
         </section>
         <section class="main-productos">
@@ -65,7 +83,7 @@
 
             <div class="producto">
                 <img src="/image/pantalon_mawenzi.jpg" alt="" width="200" height="200" class="img-product">
-                <article class="">
+                <article class="main-art-prducto">
                     
                     <p><strong class="producto-precio">Precio</strong></p>
                     <p class="producto-off">Oferta</p>
@@ -75,7 +93,7 @@
 
             <div class="producto">
                 <img src="/image/calza_ciclon_hombre.jpg" alt="" width="200" height="200" class="img-product">
-                <article class="">
+                <article class="main-art-prducto">
                     
                     <p><strong class="producto-precio">Precio</strong></p>
                     <p class="producto-off">Oferta</p>
@@ -85,7 +103,7 @@
 
             <div class="producto">
                 <img src="/image/campera_ergo.jpg" alt="" width="200" height="200" class="img-product">
-                <article class="">
+                <article class="main-art-prducto">
                     
                     <p><strong class="producto-precio">Precio</strong></p>
                     <p class="producto-off">Oferta</p>
@@ -98,11 +116,13 @@
             <div class="main-somos">
                 <h4>¿QUIENES SOMOS?</h4>
                 <p>Somos Culme, Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate, provident earum. Ab id quas eaque? Facilis error officiis illo, molestias neque quo. Expedita sunt inventore iusto in magnam quidem natus.</p>
-                <h4>Descripsion de nuestro porductos</h4>
+                <h4 class="desc-product">Descripcion de nuestro porductos</h4>
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam nesciunt, atque accusantium inventore optio dignissimos possimus eveniet nam mollitia voluptate sequi reprehenderit, similique ipsa repudiandae cum doloribus dolores! Quam, dolore?</p>
 
                 <h3>SI TODAVIA NO TENES CUENTA</h3>
-                <button type="submit">REGISTRARSE</button>
+                <a href="#" alt="Registrarse"><div class="enlace-boton-register">
+                    <p>REGISTRARSE</p>
+                </div></a>
             </div>    
         </section>
 
@@ -112,31 +132,51 @@
         <section class="main-footer">
             <div class="footer-contacto">
                 <p>Contactos</p>
+                <i class="fas fa-chevron-down" class="footer-icono-menu-flecha"></i>
 
             </div>
 
-            <div class="categorias">
+            <div class="footer-categorias">
                 <p>Categorias</p>
+                <i class="fas fa-chevron-down" class="footer-icono-menu-flecha"></i>
                 
             </div>
 
-            <div class="ayuda">
+            <div class="footer-ayuda">
                 <p>Ayuda</p>
+                <i class="fas fa-chevron-down" class="footer-icono-flecha"></i>
                 
             </div>
 
         </section>
-        <section class="main-footer-fin">
+        <section class="main-footer-inferior">
             <div class="modos-pago">    
+                <img src="/image/tarjeta-visa.png" alt="Visa"  class="footer-icono-tarjetas">
+                <img src="/image/tarjeta-mastercard.png" alt="Mastercard"  class="footer-icono-tarjetas">
+                <img src="/image/tarjeta-americanexpress.png" alt="American Express" class="footer-icono-tarjetas">
+                <img src="/image/paypal.png" alt="Paypal"  class="footer-icono-tarjetas">
+                <img src="/image/banelco.png" alt="Banelco"  class="footer-icono-tarjetas">
+                <img src="/image/naranja.png" alt="Naranja"  class="footer-icono-tarjetas">
+                <img src="/image/mercadopago.png" alt="Mercado Pago"  class="footer-icono-tarjetas">
+                <img src="/image/rapipago.png" alt="Rapipago"  class="footer-icono-tarjetas">
 
             </div>
             
             <div class="Redes-sociales">
+                <div class="iconos-red-social">
+                    <a href="#" alt="Facebook" class="enlace-redsocial"><i class="fab fa-facebook-f"></i></a>
+                </div>
+                <div class="iconos-red-social">
+                    <a href="#" alt="Instagram" class="enlace-redsocial"><i class="fab fa-instagram"></i></a>
+                </div>
+                <div class="iconos-red-social">
+                    <a href="#" alt="Twitter" class="enlace-redsocial"><i class="fab fa-twitter"></i></a>
+                </div>
 
             </div>
 
             <div class="fin">
-
+                <p>Todos los derechos reservados al grupo Culmen</p>
             </div>
 
         </section>
