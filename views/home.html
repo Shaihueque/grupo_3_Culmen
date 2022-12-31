@@ -9,109 +9,143 @@
     rel="stylesheet" />
 
     <title>Culmen</title>
-    <link rel="stylesheet" href="/css/home_style.css">
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="/css/home.css">
 </head>
 
 <body>
-    <header>
-        <section class="header-header" >
+
+    <header class="header-header flex-row">
+
             <div class="contenedor-hamburgesa">
                 <a href="#" class="menu-hamburgesa-boton">
                     <i class="fas fa-bars"></i></a>
             </div>
+
             <div class="contenedor-logo">
                 <img src="/image/logo-culmen.png" alt="Logo Culmen" class="logo">
             </div>
-            <div class="contenedor-buscador">
-                <a href="#" class="buscador">
-                    <i class="fas fa-search"></i>
-                </a>
-            </div>
-            <div class="contenedor-user">
-                <i class="fas fa-user" alt="Iniciar Sesion"></i>
-            </div>
-            <div class="contenedor-carrito">
-                <i class="fas fa-shopping-cart" alt="Carrito de Compra"></i>
-            </div>
-        </section>
+
+            <nav class="nav-bar flex-row">
+                <div class="contenedor-buscador">
+                    <a href="#" class="buscador">
+                        <i class="fas fa-search"></i>
+                    </a>
+                </div>
+
+                <div class="contenedor-user">
+                    <i class="fas fa-user" alt="Iniciar Sesion"></i>
+                </div>
+
+                <div class="contenedor-carrito">
+                    <i class="fas fa-shopping-cart" alt="Carrito de Compra"></i>
+                </div>   
+            </nav>
+       
 
     </header>
 
-    <main>
-        <section class="main-img"> 
-            <div class="main-img-prin">
+<!-- SECCION MAIN  -->
+    <main class="flex-col">
+
+        <section class="flex-col"> 
+
+            <!-- AARTICLE IMAGEN PPAL -->
+            <article class="article_ppal">
                 <img src="/image/catego1.webp" alt="Cumbre" class="img-principal">
-            </div>    
-            <div class="main-categorias1">
-                <a href="#">
-                    <img src="/image/catego-2.jpg" alt="Hombres" class="main-categoria-img">
-                    <div class="categoria1-text"><p>HOMBRES</p></div>
-                </a>
-            </div>
-            </a>
-            <div class="main-categorias2">
-                <a href="#">
-                    <img src="/image/cate-mujer4.jpg" alt="Mujeres" class="main-categoria-img">
-                    <div class="categoria2-text"><p>MUJERES</p></div>
-                </a>
-            </div>
-            <div class="main-categorias3">
-                <a href="#">
-                    <img src="/image/niño2.jpg" alt="Niños" class="main-categoria-img">
-                    <div class="categoria3-text"><p>NIÑOS</p></div>
-                </a>
-            </div>
-            <div class="main-categorias4">
-                <a href="#">
-                    <img src="/image/accesorio1.jpg" alt="Accesorios" class="main-categoria-img">
-                    <div class="categoria4-text"><p>ACCESORIOS</p></div>
-                </a>
-            </div>
+            </article> 
+
+            <!-- ARTICLE MAIN HOMBRES  -->
+            <article class="article_ppal">
+                <img src="/image/catego-2.jpg" alt="Hombres" class="img-hombres">
+                <div class="categoria1-text">
+                    <p>HOMBRES</p>
+                </div>
+            </article>
+        
+
+            <!-- ARTICLE MAIN MUJERES  -->
+            <article class="article_ppal">
+                    <img src="/image/cate-mujer4.jpg" alt="Mujeres" class="img-mujeres">
+                    <div class="categoria2-text">
+                        <p>MUJERES</p>
+                    </div>
+            </article>
+
+            <!-- ARTICLE MAIN NIÑOS  -->
+            <article class="article_ppal">
+                    <img src="/image/niño2.jpg" alt="Niños" class="img-niños">
+                    <div class="categoria3-text">
+                        <p>NIÑOS</p>
+                    </div>
+            </article>
+
+            <!-- ARTICLE MAIN ACCESORIOS  -->
+            <article class="article_ppal">
+                    <img src="/image/accesorio1.jpg" alt="Accesorios" class="img-acc">
+                    <div class="categoria4-text">
+                        <p>ACCESORIOS</p>
+                    </div>
+            </article>
         </section>
-        <section class="main-productos">
+
+        <section class="section-productos flex-col">
             <h3>Basado en tu ultima visita</h3>
                 
-            <div class="producto">
-                <img src="/image/pantalon_arena.jpg" alt="" width="200" height="200" class="img-product">
-                <article class="main-art-prducto">
-                    
-                    <p><strong class="producto-precio">Precio</strong></p>
-                    <p class="producto-off">Oferta</p>
-                    <p class="producto-nombre"><strong>Nombre</strong></p>
-                </article>
-            </div>
+            <article class="producto card">
+                <div class="card2">
+                    <img src="/image/pantalon_arena.jpg" alt="" class="img-product">
+                    <div class="main-art-prducto">
+                        <p><strong class="producto-precio">Precio</strong></p>
+                        <p class="producto-off">Oferta</p>
+                        <p class="producto-nombre"><strong>Nombre</strong></p>
+                    </div>
+                </div>
 
-            <div class="producto">
-                <img src="/image/pantalon_mawenzi.jpg" alt="" width="200" height="200" class="img-product">
-                <article class="main-art-prducto">
-                    
-                    <p><strong class="producto-precio">Precio</strong></p>
-                    <p class="producto-off">Oferta</p>
-                    <p class="producto-nombre"><strong>Nombre</strong></p>
-                </article>
-            </div>
+            </article>
 
-            <div class="producto">
-                <img src="/image/calza_ciclon_hombre.jpg" alt="" width="200" height="200" class="img-product">
-                <article class="main-art-prducto">
+            <article class="producto card">
+                <div class="card2">
+                    
+                <img src="/image/pantalon_mawenzi.jpg" alt="" class="img-product">
+                <div class="main-art-prducto">
                     
                     <p><strong class="producto-precio">Precio</strong></p>
                     <p class="producto-off">Oferta</p>
                     <p class="producto-nombre"><strong>Nombre</strong></p>
-                </article>
-            </div>
+                        
+                </div>
+                </div>
+            </article>
 
-            <div class="producto">
-                <img src="/image/campera_ergo.jpg" alt="" width="200" height="200" class="img-product">
-                <article class="main-art-prducto">
+            <article class="producto card">
+                <div class="card2">
+                    <img src="/image/calza_ciclon_hombre.jpg" alt="" class="img-product">
+                    <div class="main-art-prducto">
+                        <p><strong class="producto-precio">Precio</strong></p>
+                        <p class="producto-off">Oferta</p>
+                        <p class="producto-nombre"><strong>Nombre</strong></p>
+                </div>
+                
+                </div>
+            </article>
+
+            <article class="producto card">
+                <div class="card2">
                     
+                <img src="/image/campera_ergo.jpg" alt="" class="img-product">
+
+                <div class="main-art-prducto">
                     <p><strong class="producto-precio">Precio</strong></p>
                     <p class="producto-off">Oferta</p>
                     <p class="producto-nombre"><strong>Nombre</strong></p>
-                </article>
-            </div>
+                        
+                </div>
+                </div>
+            </article>
 
         </section>
+
         <section class="contenedor-main-somos">
             <div class="main-somos">
                 <h4>¿QUIENES SOMOS?</h4>

@@ -22,6 +22,21 @@
     /* @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;1,300&display=swap')*/   
 }
 
+
+/* clases a reutilizar */
+
+.flex-row{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.flex-col{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+
 .cajaG{
     background-color: var(--op1-color-primary-rojo);
     color: var(--op1-color-gris-claro);
@@ -30,4 +45,18 @@
 .caja{
     background-color: var(--op1-color-secondary-rojo);
     color: var(--op1-color-bg-negro);
+}
+
+.header-header{
+    background-color: var(--op2-color-primary-green);
+    color: var(--op2-color-gris-claro);
+    height: 9vh;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 23;
+}
+
+main{
+    margin-top: 9vh;
 }

@@ -1,25 +1,40 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;1,300&display=swap');
+@import url('https://fonts.googleapis.com/css2? family= Roboto:wght@300;400;700 & display=swap');
+
+:root{
+
+/*  PALETA DE COLORES: OPCION RED  */
+    --op1-color-primary-rojo: #f93943; 
+    --op1-color-secondary-rojo: #d1495b ;
+    --op1-color-bg-negro: #1a1423;
+    --op1-color-gris-oscuro: #65655e;
+    --op1-color-gris-claro: #e1e6e1; 
+
+/* PALETA DE COLORES: OPCION GREEN */
+    --op2-color-primary-green: #4daa57; 
+    --op2-color-secondary-ligthblue: #1e96fc; 
+    --op2-color-bg-blue-oscuro: #0b0033; 
+    --op2-color-gris-oscuro: #616163; 
+    --op2-color-gris-claro: #e1e6e1; 
+    
+
+/* TIPOGRAFIA PROPUESTA */
+    --op1-font-type: 'Roboto', sans-serif;
+    /* @import url('https://fonts.googleapis.com/css2? family= Roboto:wght@300;400;700 & display=swap'); */ 
+    --op2-font-type: 'Lato', sans-serif;
+    /* @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;1,300&display=swap')*/   
+}
+
 * {
     box-sizing: border-box  ;
     margin: 0;
     padding: 0;
 }
 
-header {
-    background-color: #4DAA57;
-    color: white;
-    width: auto;
-    
-}
-
-.header-header {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    align-items: center;
-    text-align: center;
-    margin-left: 15px;
-    margin-right: 15px;
-    
+.nav-bar{
+    width: 30%;
+    justify-content: space-around;
+    gap: 30px;
 }
 
 .logo {
@@ -27,104 +42,97 @@ header {
 }
 
 .menu-hamburgesa-boton {
-    color: white;
+    color: var(--op2-color-gris-claro);
 }
 
 .buscador {
-    color: white;
+    color: var(--op2-color-gris-claro);
 }
 
-.main-img {
-    display: block;
+
+/*  SECCION MAIN */
+
+.article_ppal{
     position: relative;
-}
-.main-img-prin {
-    width: 100%;
-    
-
+    margin-bottom: -4px;
 }
 .img-principal {
-  width: 100%;
+  height: 99vh;
   max-height: 900px;
 }
 
-.main-categorias {
-    display: block;
+.img-principal, .img-hombres, .img-mujeres, .img-niños, .img-acc{
     width: 100%;
-    position: absolute;
 }
 
-.main-categorias1, .main.categorias2, .main-categorias3, .main-categorias4 {
-    display: inline-block;
-    position: relative;
-    width: 100%;
-    
-}
 .categoria1-text, .categoria2-text, .categoria3-text, .categoria4-text {
-    color: white;
-    position: absolute;
+    color: var(--op2-color-gris-claro);
     font-size: 25px;
     font-weight: bold;
-}
-
-.categoria1-text {
-    top: 90%;
-    left:30%;
-}
-.categoria2-text {
-    top: 64.5%;
-    left:35%;
-}
-.categoria3-text {
-    top: 90%;
-    left:40%;
-}
-.categoria4-text {
-    top: 85%;
-    left:25%;
-}
-
-.main-categoria-img {
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
-    max-height: 450px;
-}
-
-.main-productos {
     text-align: center;
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: column;
-    justify-content: center;
-    background-color: #EDEDED;
-    
-
+    background-color: black;
+    opacity: 0.3;
 }
 
-.main-productos h3 {
+ /*  SECCION DE PRODUCTOS */
+.section-productos {
+    text-align: center;
+    background-color: var(--op2-color-bg-blue-oscuro);
+}
+
+.section-productos h3 {
     margin-top: 10px;
+    color: var(--op2-color-primary-green);
 }
 
 .producto {
-    background-color: white;
+    background-color: var(--op2-color-gris-claro);
     margin: 10px;
-    padding: 10px 0;
+   background-image: linear-gradient(163deg, #00ff75 0%, #3700ff 100%);
+    border-radius: 20px;
+    transition: all .3s;
+
 
 }
+
+.card2{
+    background-color: #1a1a1a;
+    border-radius: 20px;
+    transition: all .2s;
+}
+.card:hover {
+    box-shadow: 0px 0px 30px 1px rgba(0, 255, 117, 0.30);
+   }
+
+.card2:hover {
+    transform: scale(0.98);
+    border-radius: 20px;
+   }
 
 .img-product {
     text-align: center;
     padding: 10px;
+    border-radius: 50%;
+    width: 200px;
+    height: 200px;
 }
 
 .main-art-prducto {
-    margin: 10px;
     border-top: 1px solid #ebebeb;
-    text-align: left;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 10px;
+
     
 }
 
 .main-art-prducto p {
-    margin-top: 5px;
+    color: var(--op2-color-gris-claro);
 }
 
 .contenedor-main-somos {
