@@ -4,7 +4,7 @@ const app = express();
 // PUERTO A UTILIZAR 
 const PORT = 3030; 
 // RUTAS PATH 
-const indexPath = path.join(__dirname , './views/home.html'); 
+const homePath = path.join(__dirname , './views/home.html'); 
 const publicPath = path.join(__dirname ,'/public');
 
 
@@ -16,6 +16,6 @@ app.listen(PORT , ()=>{
 
 
 app.get('/' , ( req, res )=>{
-    res.sendFile(indexPath)
+    res.sendFile(homePath)
 } )
 
