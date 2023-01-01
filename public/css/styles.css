@@ -47,6 +47,10 @@
     color: var(--op1-color-bg-negro);
 }
 
+body{
+    font-family: var(--op2-font-type);
+}
+
 .header-header{
     background-color: var(--op2-color-primary-green);
     color: var(--op2-color-gris-claro);

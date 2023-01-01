@@ -82,11 +82,14 @@
 .section-productos {
     text-align: center;
     background-color: var(--op2-color-bg-blue-oscuro);
+    background-color: var(--op2-color-primary-green);
+    
 }
 
 .section-productos h3 {
     margin-top: 10px;
     color: var(--op2-color-primary-green);
+    color: var(--op2-color-bg-blue-oscuro)
 }
 
 .producto {
@@ -135,25 +138,37 @@
     color: var(--op2-color-gris-claro);
 }
 
+/* SECCION DE SOMOS Y REGISTRARSE */
+
 .contenedor-main-somos {
     background-color: #ebebeb;
     color: black;
-    padding: 15px;
-    margin: 10px;
     text-align: center;
+    align-items: center;
+    
 }
 
 .main-somos {
     text-align: justify;
-    
+    align-items: center;
+    padding: 15px;
+    width: 100%;
+    background-image: url(/image/amigos-10.jpeg);
+    background-size: cover;
+    background-attachment: fixed;
+    gap: 20px;
 }
 
-.main-somos p {
-    margin-top: 5px;
+.main-somos p, .main-somos h4{
+    border-radius: 20px;
+    background-color: rgb(0 0 0 / 90%);
+    color: var(--op2-color-gris-claro);
+    padding: 15px;
+    font-family: var(--op2-font-type);
 }
 
-.desc-product {
-    margin: 10px 0;
+.main-somos p{
+    font-style: oblique;
 }
 
 .main-somos h3 {
@@ -161,67 +176,70 @@
     margin-top: 10px;
 }
 
-.enlace-boton-register {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.main-registrarse{
+    background-color: var(--op2-color-primary-green);
+    width: 100%;
+    padding: 15px;
+}
+
+.boton-register {
     margin: 10px auto;
-    background-color: #4DAA57;
-    color: white;
+    background-color: var(--op2-color-bg-blue-oscuro);
+    background-color: var(--op2-color-secondary-ligthblue);
+    color: var(--op2-color-gris-claro);
     height: 50px;
     width: 150px;
     text-align: center;
+    border: none;
+    outline: none;
+    text-transform: uppercase;
+    letter-spacing: 2.5px;
+    border-radius: 15px;
+    font-family: var(--op1-font-type);
+    font-weight: bold;
+    transition: all 0.3s ease 0s;
+}
+
+.boton-register:hover{
+    cursor: pointer;
+    box-shadow: 0px 15px 20px rgba(46, 229, 157, 0.4);
+    color: var(--op2-color-gris-oscuro);
+    transform: translateY(-7px);
+
+}
+
+
+
+/*   FOOTER   */
+
+.footer{
+    background-color: var(--op2-color-bg-blue-oscuro);
+    color: var(--op2-color-gris-claro);
+    height: 90vh;
+    justify-content: space-between;
+
 }
 
 .main-footer {
-    background-color: #0B0033;
-    color: white;
+    color: var(--op2-color-gris-claro);
     width: 100%;
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: column;
     justify-content: space-around;
     text-transform: uppercase;
-
 }
 
-.main-footer p {
-    display: inline-flex;
-}
-
-.footer-contacto { 
-    
+.footer_item { 
     border-bottom: 1px solid #ebebeb;
     padding: 15px;
+    justify-content: space-between;
 }
 
-.footer-categorias {
-    border-bottom: 1px solid #ebebeb;
-    padding: 15px;
-}
-
-.footer-ayuda {
-    border-bottom: 1px solid #ebebeb;
-    padding: 15px;
-}
-
-.main-footer-inferior {
-    background-color: #0B0033;
-    color: white;
-    display: flex;
-    flex-direction: column;
-    
-}
+/* FOOTER IMAGENES TARJETAS */
 
 .modos-pago {
-    margin: 0 auto;
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-around;
     width: 70%;
-    align-items: center;
-    padding: 20px 15px;
-    
+    align-self: center;
 }
 
 .footer-icono-tarjetas {
@@ -230,27 +248,30 @@
     height: 25px;
 }
 
-.Redes-sociales {
+/*  FOOTER REDES SOCIALES  */
+.redes-sociales {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    padding: 15px 5px;
-}
-
-.enlace-redsocial {
-    color: white;
+    justify-content: center;
+    gap: 20px;
 }
 
 .iconos-red-social {
     margin: 5px;
+    font-size: 25px;
+    transition: all 0.3s ease 0s;;
 }
 
+.iconos-red-social:hover{
+    cursor: pointer;
+    color: var(--op2-color-primary-green);
+    transform: translateY(-7px);
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+}
 
-.fin {
+/* FOOTER COPYRIGHT  */
+.copyright p{
     text-align: center;
-    padding-top: 15px;
-    margin-bottom: 20px;
-
+    font-size: 12px;
 }
 
 @media (min-width: 481px) {
