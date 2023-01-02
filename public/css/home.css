@@ -65,6 +65,10 @@
     width: 100%;
 }
 
+.img-principal-laptop{
+    display: none;
+}
+
 .categoria1-text, .categoria2-text, .categoria3-text, .categoria4-text {
     color: var(--op2-color-gris-claro);
     font-size: 25px;
@@ -274,10 +278,60 @@
     font-size: 12px;
 }
 
-@media (min-width: 481px) {
+@media (min-width: 481px ) {
+
+    .logo{
+        width: 80px;
+    }
+
+    .icon_header, .hamburg{
+        font-size: 20px;
+    }
+
+
+  .img-principal-laptop{
+    display: block;
+    height: 99vh;
+    max-height: 900px;
+    width: 100%;
+  }
+
+  .img-principal{
+    display: none;
+  }
+
+  .section-productos{
+    align-items: center;
+  }
+  .producto{
+    width: 75%;
+  }
+
+  .main-somos p{
+    width: 70%;
+    line-height: 1.5;
+}
+
+    .modos-pago{
+        width: 45%;
+    }
+    .footer-icono-tarjetas{
+        width: 50px;
+        height: 32px;
+
+    }
 
 }
 
 @media (min-width:769px) {
+    .contenedor-hamburgesa{
+        display: none;
+    }
 
+    .contenedor-buscador{
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        gap: 10px;
+    }
 }
