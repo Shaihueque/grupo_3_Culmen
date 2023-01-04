@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Culmen - Checkout</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/carrito.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    rel="stylesheet" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+    <header>
+            <section class="header-header" >
+                <div class="contenedor-hamburgesa">
+                    <a href="#" class="menu-hamburgesa-boton">
+                        <i class="fas fa-bars"></i></a>
+                </div>
+                <div class="contenedor-logo">
+                    <img src="/image/logo-culmen.png" alt="Logo Culmen" class="logo">
+                </div>
+                <div class="contenedor-buscador">
+                    <a href="#" class="buscador">
+                    <i class="fas fa-search"></i>
+                    </a>
+                </div>
+                <div class="contenedor-user">
+                    <i class="fas fa-user" alt="Iniciar Sesion"></i>
+                </div>
+                <div class="contenedor-carrito">
+                    <i class="fas fa-shopping-cart" alt="Carrito de Compra"></i>
+                </div>
+            </section>
+    
+    </header>
+
+    <main>
+        <div class="datos">
+            <p class="inline">Datos de contacto</p>
+            <p class="inline" style="margin-left:25%">¿Tienes una cuenta? <a style="font-weight: bold;" href=>Entrar</a></p>
+            <form action="" method="POST" style="margin-top:15px">
+                <input type="email" placeholder="Email">
+            <p>Dirección de envío</p>
+                <input type="text" placeholder="Pais/Región"><br>
+                <input type="text" placeholder="Nombre" class="name" style="display:inline-block">
+                <input type="text" placeholder="Apellido" class="surname" style="display:inline">
+                <input type="text" placeholder="Dirección"><br>
+                <input type="text" placeholder="Ciudad" class="city" style="display:inline-block">
+                <input type="text" placeholder="Código Postal" class="cp" style="display:inline">
+                <input type="text" placeholder="Provincia" class="prov" style="display:inline">
+                <input type="tel" placeholder="Teléfono"><br>              
+            </form>
+        </div>
+
+        <div class="carrito">
+            <div class="line">
+                <p class="inline">Producto</p> 
+                <p class="inline" style="margin-left: 30%; margin-right: 30%;">Precio</p> 
+                <p class="inline">Cantidad</p>
+            </div>
+            <div>
+                <img src="/image/producto-carrito.jpg" alt="" width="75" style="margin-top: 15px;">
+                <p style="font-weight: bold; display: inline-block;">Mochila 22L</p>
+                <form action="" method="POST" class="line">
+                    <input class="descuento" type="text" placeholder="Código de descuento" style="display:inline-block">
+                    <button class="apply" style="display:inline" type="submit">Aplicar</button>
+                </form>
+            </div>
+            <p class="line">Envío</p>
+            <p class="line">Total</p>
+            <button type="submit" class="buy">Comprar</button>
+        </div>
+    </main>
+    
+    <footer>
+        <section class="main-footer">
+            <div class="footer-contacto">
+                <p>Contactos</p>
+                <i class="fas fa-chevron-down" class="footer-icono-menu-flecha"></i>
+
+            </div>
+
+            <div class="footer-categorias">
+                <p>Categorias</p>
+                <i class="fas fa-chevron-down" class="footer-icono-menu-flecha"></i>
+                
+            </div>
+
+            <div class="footer-ayuda">
+                <p>Ayuda</p>
+                <i class="fas fa-chevron-down" class="footer-icono-flecha"></i>
+                
+            </div>
+
+        </section>
+        <section class="main-footer-inferior">
+            <div class="modos-pago">    
+                <img src="/image/tarjeta-visa.png" alt="Visa"  class="footer-icono-tarjetas">
+                <img src="/image/tarjeta-mastercard.png" alt="Mastercard"  class="footer-icono-tarjetas">
+                <img src="/image/tarjeta-americanexpress.png" alt="American Express" class="footer-icono-tarjetas">
+                <img src="/image/paypal.png" alt="Paypal"  class="footer-icono-tarjetas">
+                <img src="/image/banelco.png" alt="Banelco"  class="footer-icono-tarjetas">
+                <img src="/image/naranja.png" alt="Naranja"  class="footer-icono-tarjetas">
+                <img src="/image/mercadopago.png" alt="Mercado Pago"  class="footer-icono-tarjetas">
+                <img src="/image/rapipago.png" alt="Rapipago"  class="footer-icono-tarjetas">
+
+            </div>
+            
+            <div class="Redes-sociales">
+                <div class="iconos-red-social">
+                    <a href="#" alt="Facebook" class="enlace-redsocial"><i class="fab fa-facebook-f"></i></a>
+                </div>
+                <div class="iconos-red-social">
+                    <a href="#" alt="Instagram" class="enlace-redsocial"><i class="fab fa-instagram"></i></a>
+                </div>
+                <div class="iconos-red-social">
+                    <a href="#" alt="Twitter" class="enlace-redsocial"><i class="fab fa-twitter"></i></a>
+                </div>
+
+            </div>
+
+            <div class="fin">
+                <p>Todos los derechos reservados al grupo Culmen</p>
+            </div>
+
+        </section>
+    </footer>
+</body>
+</html>
