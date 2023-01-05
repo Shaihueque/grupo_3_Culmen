@@ -37,6 +37,14 @@
     gap: 30px;
 }
 
+.buscador_home{
+    display: none;
+}
+
+.header_container_items{
+    display: none;
+}
+
 .logo {
     width: 50px;
 }
@@ -278,6 +286,8 @@
     font-size: 12px;
 }
 
+
+/* TABLET */
 @media (min-width: 481px ) {
 
     .logo{
@@ -323,15 +333,78 @@
 
 }
 
+/* DESKTOP MQ  */
 @media (min-width:769px) {
+    .header-header{
+        height: 14vh;
+    }
     .contenedor-hamburgesa{
         display: none;
     }
+
+    .logo{
+        width: 160px;
+    }
+    .buscador_home{
+        display: block;
+        border: none;
+        border: var(--op2-color-gris-oscuro);
+        outline: none;
+        padding: 10px;
+        border-radius: 15px;
+        color: var(--op2-color-gris-oscuro);
+        font-family: var(--op1-font-type);
+        margin-right: 20px;
+    }
+
 
     .contenedor-buscador{
         display: flex;
         justify-content: space-evenly;
         align-items: center;
         gap: 10px;
+    } 
+    
+    
+    .header_container_items{
+        display: block;
+        margin-top: 14vh;
+        background-color: var(--op2-color-primary-green);
+        color: var(--op2-color-gris-claro)
     }
+
+    .header_container_items ul{
+        display: flex;
+        padding: 10px;
+        justify-content: space-evenly;
+        align-items: center;
+        border-top: solid .5px var(--op2-color-gris-claro);
+        margin-top: 5px;
+
+    }
+
+    .header_container_items ul li{
+        font-weight: bold;
+        list-style-type: none;
+    }
+    main{
+        margin-top: 2px;
+    }
+
+    /*   BORRAR ICONOS 
+    
+        DEJAMOS EL INPUT COMO BUSCADOR. 
+        AGREGAMOS INICIAR SESION Y REGISTRARSE ESCRITO
+        CARRITO DE COMPRAS SI MANTENER
+        
+    */
+
+
+
+}
+
+@media (min-width: 915px){
+
+   
+
 }
