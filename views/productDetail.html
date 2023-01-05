@@ -10,55 +10,115 @@
 rel="stylesheet" />
 </head>
 <body>
-<header class="header"> 
+  <header class="header-header flex-row">
 
-   <div class="contenedor1">
-    <div class="logo"> logo </div>
-   <div class="texto"> Compra en 3 cuotas sin interes / Envios gratis a partir de 2.000</div>
-   <div class="iniciar"> <i class="fas fa-user"></i> Inicia Sesion  </div>
-   </div>
-   
-   <div class="contenedor2">
-    <div class="burger">
-    <i class="fas fa-bars"></i></div>
-     <div class="buscar"> Buscar </div>
+    <div class="contenedor-hamburgesa">
+        <a href="#" class="menu-hamburgesa-boton">
+            <i class="fas fa-bars"></i></a>
     </div>
 
-    
+    <div class="contenedor-logo">
+        <img src="/image/logo-culmen.png" alt="Logo Culmen" class="logo">
+    </div>
+
+    <nav class="nav-bar flex-row">
+        <div class="contenedor-buscador">
+            <a href="#" class="buscador">
+                <i class="fas fa-search"></i>
+            </a>
+        </div>
+
+        <div class="contenedor-user">
+            <i class="fas fa-user" alt="Iniciar Sesion"></i>
+        </div>
+
+        <div class="contenedor-carrito">
+            <i class="fas fa-shopping-cart" alt="Carrito de Compra"></i>
+        </div>   
+    </nav>
 
 </header>
-<div>
-<div class="producto"> Nombre del producto y precio </div>    
-<img class="imagen" src=" https://http2.mlstatic.com/D_NQ_NP_2X_959371-MLA51172121200_082022-F.webp">
+
+<main class="flex-col">
+  <div class="flex-col">
+    <div class="producto"> Nombre del producto y precio </div>    
+    <img class="imagen" src=" https://http2.mlstatic.com/D_NQ_NP_2X_959371-MLA51172121200_082022-F.webp">
   
-<div> producto es XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX  </div> 
-  <div class="propiedades">
-  <div class="talle"> Talle </div>
-  <div class="cantidad"> Cantidad</div>
+    <div> producto es XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX  </div> 
+    <div class="propiedades">
+      <div class="talle"> Talle </div>
+      <div class="cantidad"> Cantidad</div>
+    </div>
+
+  <div class="envios">
+    <div class="cesta"> Añadir a la Cesta</div>
+    <div> Encontra tu talla</div>
+    <div> Disponibilidad en la tienda </div>
+    <div> Envios, Cambios y Devoluciones </div>
+  </div>
 </div>
 
-<div class="envios">
-<div class="cesta"> AÃ±adir a la Cesta</div>
-<div> Encontra tu talla</div>
-<div> Disponibilidad en la tienda </div>
-<div> Envios, Cambios y Devoluciones </div>
-</div>
-</div>
-    
+<div class="contenedor-int">
 <h5> Tambien podria interesarte <h5>
-<div class="interesarte"> 
-<img class="producto1" src="https://http2.mlstatic.com/D_NQ_NP_2X_959371-MLA51172121200_082022-F.webp" >
-<img class="producto2" src= "https://http2.mlstatic.com/D_NQ_NP_2X_959371-MLA51172121200_082022-F.webp" > <br>
-<div> Nombre de Producto y Precio </div> 
-<div> Nombre de Producto y Precio </div>
+  <div class="interesarte" class="flex-col"> 
+    <img class="producto1" src="https://http2.mlstatic.com/D_NQ_NP_2X_959371-MLA51172121200_082022-F.webp" >
+    <img class="producto2" src= "https://http2.mlstatic.com/D_NQ_NP_2X_959371-MLA51172121200_082022-F.webp" > <br>
+  <div> Nombre de Producto y Precio </div> 
+  <div> Nombre de Producto y Precio </div>
 </div>
+</div>
+</main>
 
 
-<footer class="footer"> 
-<div> Contactanos </div>
-<div> Categorias </div>
-<div> Ayuda </div>
-<div> Redes </div>
+<footer class="flex-col footer">
+
+  <section class="main-footer flex-col">
+
+      <div class="footer-contacto footer_item flex-row">
+          <p>Contactos</p>
+          <i class="fas fa-chevron-down" class="footer-icono-menu-flecha"></i>
+      </div>
+
+      <div class="footer-categorias footer_item flex-row">
+          <p>Categorias</p>
+          <i class="fas fa-chevron-down" class="footer-icono-menu-flecha"></i>
+      </div>
+
+      <div class="footer-ayuda footer_item flex-row">
+          <p>Ayuda</p>
+          <i class="fas fa-chevron-down" class="footer-icono-flecha"></i>
+      </div>
+
+  </section>
+
+  <section class="modos-pago">
+          <img src="/image/tarjeta-visa.png" alt="Visa"  class="footer-icono-tarjetas">
+          <img src="/image/tarjeta-mastercard.png" alt="Mastercard"  class="footer-icono-tarjetas">
+          <img src="/image/tarjeta-americanexpress.png" alt="American Express" class="footer-icono-tarjetas">
+          <img src="/image/paypal.png" alt="Paypal"  class="footer-icono-tarjetas">
+          <img src="/image/banelco.png" alt="Banelco"  class="footer-icono-tarjetas">
+          <img src="/image/naranja.png" alt="Naranja"  class="footer-icono-tarjetas">
+          <img src="/image/mercadopago.png" alt="Mercado Pago"  class="footer-icono-tarjetas">
+          <img src="/image/rapipago.png" alt="Rapipago"  class="footer-icono-tarjetas">
+  </section>
+  
+  <section class="redes-sociales">
+
+          <div class="iconos-red-social">
+              <i class="fab fa-facebook-f"></i>
+          </div>
+          <div class="iconos-red-social">
+              <i class="fab fa-instagram"></i>
+          </div>
+          <div class="iconos-red-social">
+              <i class="fab fa-twitter"></i>
+          </div>
+
+  </section>
+
+  <div class="copyright">
+      <p>Todos los derechos reservados al grupo Culmen</p>
+  </div>
 </footer>
 
 </body>

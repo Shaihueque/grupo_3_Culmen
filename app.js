@@ -7,6 +7,8 @@ const PORT = 3030;
 const publicPath = path.join(__dirname ,'/public');
 const homePath = path.join(__dirname , './views/home.html'); 
 const producDetailPath = path.join(__dirname, './views/productDetail.html');
+const carritoPath = path.join(__dirname, './views/carrito.html');
+
 
 
 app.use(express.static(publicPath)); 
@@ -22,4 +24,6 @@ app.get('/' , ( req, res )=>{
 app.get('/productDetail' , ( req, res )=>{
     res.sendFile(producDetailPath)
 } );
-
+app.get('/carrito' , ( req, res )=>{
+    res.sendFile(carritoPath)
+} );
