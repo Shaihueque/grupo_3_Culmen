@@ -27,3 +27,4 @@ app.get('/productDetail' , ( req, res )=>{
 app.get('/carrito' , ( req, res )=>{
     res.sendFile(carritoPath)
 } );
+
