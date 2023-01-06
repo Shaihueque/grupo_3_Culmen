@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <title>Culmen - Checkout</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/styles.css">
     <link rel="stylesheet" href="/css/carrito.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -15,31 +16,51 @@
 
 <body>
 
-    <header>
-            <section class="header-header" >
-                <div class="contenedor-hamburgesa">
-                    <a href="#" class="menu-hamburgesa-boton">
-                        <i class="fas fa-bars"></i></a>
-                </div>
-                <div class="contenedor-logo">
-                    <img src="/image/logo-culmen.png" alt="Logo Culmen" class="logo">
-                </div>
+    <header class="flex-col">
+        <section class="header-header flex-row">
+            <div class="contenedor-hamburgesa">
+                <a href="#" class="menu-hamburgesa-boton">
+                    <i class="fas fa-bars hamburg"></i></a>
+            </div>
+
+            <div class="contenedor-logo">
+                <img src="/image/logo-culmen.png" alt="Logo Culmen" class="logo">
+            </div>
+
+            <nav class="nav-bar flex-row">
                 <div class="contenedor-buscador">
+                    <form action="" method="">
+                        <input type="text" name="buscador_home" id="buscador_home" class="buscador_home" placeholder="Busque su producto...">
+                    </form>
                     <a href="#" class="buscador">
-                    <i class="fas fa-search"></i>
+                        <i class="fas fa-search icon_header"></i>
                     </a>
+                    
                 </div>
+
                 <div class="contenedor-user">
-                    <i class="fas fa-user" alt="Iniciar Sesion"></i>
+                    <i class="fas fa-user icon_header" alt="Iniciar Sesion"></i>
                 </div>
+
                 <div class="contenedor-carrito">
-                    <i class="fas fa-shopping-cart" alt="Carrito de Compra"></i>
-                </div>
-            </section>
+                    <i class="fas fa-shopping-cart icon_header" alt="Carrito de Compra"></i>
+                </div>   
+            </nav>
+        </section>
     
+        <nav class="header_container_items">
+            <ul>
+                    <li>Hombre</li>
+                    <li>Mujer</li>
+                    <li>Niño</li>
+                    <li>Accesorios</li>
+            </ul>
+            </nav>
+
+
     </header>
 
-    <main>
+    <main class="contenedor-main">
         <div class="datos">
             <p class="inline">Datos de contacto</p>
             <p class="inline" style="margin-left:25%">¿Tienes una cuenta? <a style="font-weight: bold;" href=>Entrar</a></p>
@@ -77,29 +98,28 @@
         </div>
     </main>
     
-    <footer>
-        <section class="main-footer">
-            <div class="footer-contacto">
+    <footer class="flex-col footer">
+
+        <section class="main-footer flex-col">
+
+            <div class="footer-contacto footer_item flex-row">
                 <p>Contactos</p>
                 <i class="fas fa-chevron-down" class="footer-icono-menu-flecha"></i>
-
             </div>
 
-            <div class="footer-categorias">
+            <div class="footer-categorias footer_item flex-row">
                 <p>Categorias</p>
                 <i class="fas fa-chevron-down" class="footer-icono-menu-flecha"></i>
-                
             </div>
 
-            <div class="footer-ayuda">
+            <div class="footer-ayuda footer_item flex-row">
                 <p>Ayuda</p>
                 <i class="fas fa-chevron-down" class="footer-icono-flecha"></i>
-                
             </div>
 
         </section>
-        <section class="main-footer-inferior">
-            <div class="modos-pago">    
+
+        <section class="modos-pago">
                 <img src="/image/tarjeta-visa.png" alt="Visa"  class="footer-icono-tarjetas">
                 <img src="/image/tarjeta-mastercard.png" alt="Mastercard"  class="footer-icono-tarjetas">
                 <img src="/image/tarjeta-americanexpress.png" alt="American Express" class="footer-icono-tarjetas">
@@ -108,27 +128,25 @@
                 <img src="/image/naranja.png" alt="Naranja"  class="footer-icono-tarjetas">
                 <img src="/image/mercadopago.png" alt="Mercado Pago"  class="footer-icono-tarjetas">
                 <img src="/image/rapipago.png" alt="Rapipago"  class="footer-icono-tarjetas">
+        </section>
+        
+        <section class="redes-sociales">
 
-            </div>
-            
-            <div class="Redes-sociales">
                 <div class="iconos-red-social">
-                    <a href="#" alt="Facebook" class="enlace-redsocial"><i class="fab fa-facebook-f"></i></a>
+                    <i class="fab fa-facebook-f"></i>
                 </div>
                 <div class="iconos-red-social">
-                    <a href="#" alt="Instagram" class="enlace-redsocial"><i class="fab fa-instagram"></i></a>
+                    <i class="fab fa-instagram"></i>
                 </div>
                 <div class="iconos-red-social">
-                    <a href="#" alt="Twitter" class="enlace-redsocial"><i class="fab fa-twitter"></i></a>
+                    <i class="fab fa-twitter"></i>
                 </div>
-
-            </div>
-
-            <div class="fin">
-                <p>Todos los derechos reservados al grupo Culmen</p>
-            </div>
 
         </section>
+
+        <div class="copyright">
+            <p>Todos los derechos reservados al grupo Culmen</p>
+        </div>
     </footer>
 </body>
 </html>
