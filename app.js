@@ -28,3 +28,7 @@ app.get('/carrito' , ( req, res )=>{
     res.sendFile(carritoPath)
 } );
 
+app.get('/login' , ( req, res )=>{
+    res.sendFile(carritoPath)
+} );
+
