@@ -4,40 +4,67 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>login</title>
-    <link href="/css/login.css" rel ="stylesheet">
-    <link rel="stylesheet" href="/css/styles.css">
+    <title>login & register</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
-rel="stylesheet" />
-        
+    rel="stylesheet" />
+    <link rel="stylesheet" href="/css/styles.css">
+    <link href="/css/login.css" rel ="stylesheet">
 </head>
 
 <body>
+    <main>
+        <section class="contenedor_login">
 
-        <div id="contenedor">
-            <div id="central">
-                <div id="login">
-                    <div class="titulo">
-                        Bienvenido
+                    <div class="login_form_container">
+                        <p class="titulo">
+                            Bienvenido
+                        </p>
+
+                        <form class="loginform">
+                            <input type="text" name="usuario" placeholder="Usuario" required>
+                            
+                            <input type="password" placeholder="Contraseña" name="password" required>
+                            
+                            <button type="submit" title="Ingresar" name="Ingresar">Login</button>
+                        </form>
+
+                        <div class="pie-form">
+                            <a href="#">¿Perdiste tu contraseña?</a>
+                            <a href="#">¿No tienes Cuenta? Registrate</a>
+                        </div>
                     </div>
-                    <form id="loginform">
-                        <input type="text" name="usuario" placeholder="Usuario" required>
+
+                    <div class="inferior">
+                        <a href="#">Volver</a>
+                    </div>
+            </section>
+        
+            <section class="contenedor_register">
+                <div class="register_form_container">
+
+                    <p class="titulo">
+                        REGISTRO
+                    </p>
+
+                    <form action="" class="registerform">
+                        <input type="text" id="name" name="name"  placeholder="Ingresa tu Nombre">
+                        <input type="text" id="lastname" name="lastname" placeholder="Ingresa tu Apellido">
+                        <input type="email" id="email" name="email" placeholder="Ingresa tu Email">
+                        <input type="password" id="pass" name="pass" placeholder="Ingresa tu Contraseña">
+                        <input type="password" id="passConfirm" name="passConfirm" placeholder="Confirma tu Contraseña">
+                        <p>Fecha de Nacimiento: </p>
+                        <input type="date" id="fechaNac" name="fechaNac">
                         
-                        <input type="password" placeholder="Contraseña" name="password" required>
-                        
-                        <button type="submit" title="Ingresar" name="Ingresar">Login</button>
+                        <label for="promo" class="promo_radio">
+                            <input type="radio" name="promo" id="promo" class="input_radio">
+                            Acepta recibir noticias y promociones
+                        </label> 
+                        <button type="button"> CREAR CUENTA </button>
                     </form>
-                    <div class="pie-form">
-                        <a href="#">¿Perdiste tu contraseña?</a>
-                        <a href="#">¿No tienes Cuenta? Registrate</a>
-                    </div>
-                </div>
-                <div class="inferior">
-                    <a href="#">Volver</a>
-                </div>
-            </div>
-        </div>
-    
+                    
 
+                </div>
+            </section>
+    </main>
 </body>
 </html>

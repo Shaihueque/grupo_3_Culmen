@@ -227,3 +227,9 @@
     text-align: center;
     font-size: 12px;
 }
+
+@media (min-width: 481px){
+    .img_detailProduct img{
+        
+    }
+}
