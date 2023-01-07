@@ -73,12 +73,14 @@
 .img_detailProduct img {
     width: 85%;
     height: 60vh;
+    margin-top: 15px;
 }
 
 .detailProduct_other_images{
     display: flex;
     justify-content: space-evenly;
     align-items: center;
+    padding: 10px;
 }
 
 .small_img img{
@@ -91,10 +93,17 @@
     flex-direction: column;
     align-items: center;
     justify-content: space-evenly;
+    margin: 10px;
+    background-color: #4daa57;
+    padding: 10px;
+}
+.content_price p {
+    padding: 6px 0;
 }
 
 .container_talles{
     text-align: center;
+    margin: 10px;
 }
 .talles{
     display: flex;
@@ -113,18 +122,19 @@
     transition: all 450ms;
     border: solid 1px black;
     width: 13%;
-    background-color: gray;
+    background-color: white;
 
 }
 
 .talles button:hover{
     cursor: pointer;
-    background-color: var(--op2-color-secondary-ligthblue);
+    background-color: var(white);
 }
 
 
 .container_comprar{
     text-align: center;
+    margin: 10px;
 }
 .contador{
     display: flex;
@@ -153,6 +163,7 @@
     font-size: 20px;
     font-weight: bold;
     text-align: center;
+    margin-top: 10px;
 }
 
 .description_productDetail{
@@ -194,6 +205,7 @@
     flex-wrap: wrap;
     width: 70%;
     align-self: center;
+    justify-content: center;
 }
 
 .footer-icono-tarjetas {
@@ -226,4 +238,67 @@
 .copyright p{
     text-align: center;
     font-size: 12px;
+}
+
+
+
+@media (min-width: 481px) {
+    .img_detailProduct {
+        display: flex;
+        justify-content: center;
+    }
+    .img_detailProduct img {
+        width: 70%;
+    }
+
+
+}
+
+@media (min-width: 768px) {
+   
+    .img_detailProduct img {
+        width: 50%;
+    }
+    .small_img {
+        display: flex;
+        width: 70px;
+        height: 80px;
+        justify-content: space-evenly;
+    }
+
+    .talles button {
+        width: 40px;
+    }
+}
+
+
+
+
+@media (min-width: 481px) {
+    .img_detailProduct {
+        display: flex;
+        justify-content: center;
+    }
+    .img_detailProduct img {
+        width: 70%;
+    }
+
+
+}
+
+@media (min-width: 768px) {
+   
+    .img_detailProduct img {
+        width: 50%;
+    }
+    .small_img {
+        display: flex;
+        width: 70px;
+        height: 80px;
+        justify-content: space-evenly;
+    }
+
+    .talles button {
+        width: 40px;
+    }
 }
