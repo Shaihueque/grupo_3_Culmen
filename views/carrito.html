@@ -61,28 +61,31 @@
     </header>
 
     <main class="contenedor-main">
-        <div class="datos">
-            <p class="inline">Datos de contacto</p>
-            <p class="inline" style="margin-left:25%">¿Tienes una cuenta? <a style="font-weight: bold;" href=>Entrar</a></p>
-            <form action="" method="POST" style="margin-top:15px">
-                <input type="email" placeholder="Email">
-            <p>Dirección de envío</p>
-                <input type="text" placeholder="Pais/Región"><br>
-                <input type="text" placeholder="Nombre" class="name" style="display:inline-block">
-                <input type="text" placeholder="Apellido" class="surname" style="display:inline">
-                <input type="text" placeholder="Dirección"><br>
-                <input type="text" placeholder="Ciudad" class="city" style="display:inline-block">
-                <input type="text" placeholder="Código Postal" class="cp" style="display:inline">
-                <input type="text" placeholder="Provincia" class="prov" style="display:inline">
-                <input type="tel" placeholder="Teléfono"><br>              
-            </form>
-        </div>
-
-        <div class="carrito">
-            <div class="line">
-                <p class="inline">Producto</p> 
-                <p class="inline" style="margin-left: 30%; margin-right: 30%;">Precio</p> 
-                <p class="inline">Cantidad</p>
+        <section class="form-data">
+            <div class="customer-data">
+                <p>Datos de contacto</p>
+                <p style="font-size: 12px;">¿Tienes una cuenta? <a style="font-weight: bold;" href=>Entrar</a></p>
+            </div>
+            <div>
+                <form action="" method="POST" style="margin-top:15px">
+                    <input type="email" placeholder="Email">
+                    <p>Dirección de envío</p>
+                    <input type="text" placeholder="Pais/Región"><br>
+                    <input type="text" placeholder="Nombre" class="name">
+                    <input type="text" placeholder="Apellido" class="surname" style="display:inline">
+                    <input type="text" placeholder="Dirección"><br>
+                    <input type="text" placeholder="Ciudad" class="city" style="display:inline-block">
+                    <input type="text" placeholder="Código Postal" class="cp" style="display:inline">
+                    <input type="text" placeholder="Provincia" class="prov" style="display:inline">
+                    <input type="tel" placeholder="Teléfono"><br>              
+                </form>
+            </div>
+        </section>
+        <section class="checkout">
+            <div class="product-details">
+                <p>Producto</p> 
+                <p>Precio</p> 
+                <p>Cantidad</p>
             </div>
             <div>
                 <img src="/image/producto-carrito.jpg" alt="" width="75" style="margin-top: 15px;">
@@ -92,10 +95,12 @@
                     <button class="apply" style="display:inline" type="submit">Aplicar</button>
                 </form>
             </div>
-            <p class="line">Envío</p>
-            <p class="line">Total</p>
-            <button type="submit" class="buy">Comprar</button>
-        </div>
+            <div>
+                <p class="line">Envío</p>
+                <p class="line">Total</p>
+                <button type="submit" class="buy">Comprar</button>
+            </div>
+        </section>
     </main>
     
     <footer class="flex-col footer">

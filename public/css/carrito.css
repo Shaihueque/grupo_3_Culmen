@@ -49,7 +49,7 @@ body{
     justify-content: center;
 }
 
-.datos{
+.form-data{
     /*display: block;*/
     background-color: whitesmoke;
     color: black;
@@ -58,12 +58,17 @@ body{
     box-sizing: border-box;
 }
 
-.carrito{
+.checkout{
     display: block;
     background-color: white;
     color: black;
     padding: 40px;
     box-sizing: border-box;
+}
+
+.customer-data{
+    display: flex;
+    gap: 30px;
 }
 
 .inline{
@@ -76,7 +81,7 @@ input{
     background-color: whitesmoke;
     padding: 12px 20px;
     border: solid rgb(175, 175, 175) 1px;
-    border-radius: 10px;
+    border-radius: 1em;
     
 }
 
@@ -105,7 +110,9 @@ img{
     border-radius: 1em;
 }
 
-.line {
+.product-details {
+    display: flex;
+    gap: 70px;
     padding: 10px 0px 10px;
     border-bottom: solid rgb(175, 175, 175) 1px;
     width: 100%;
@@ -121,8 +128,6 @@ img{
 }
 
 .name{
-    display: block;
-    width: 34%;
     background-color: whitesmoke;
     padding: 12px 20px;
     border: solid rgb(175, 175, 175) 1px;
@@ -132,8 +137,6 @@ img{
 }
 
 .surname{
-    display: block;
-    width: 33%;
     background-color: whitesmoke;
     padding: 12px 20px;
     border: solid rgb(175, 175, 175) 1px;
@@ -251,10 +254,16 @@ img{
 /* MQ TABLETS */
 @media (min-width: 481px){
     /* tablets & desktops*/
-    .datos{
+    .contenedor-main{
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        flex: 30px;
+}    
+    .form-data{
         /*display: inline-block;
         width: 40%;*/
-        width: 100%;
+        width: 40%;
         height: 80vh;
         background-color: whitesmoke;
         color: black;
@@ -262,11 +271,16 @@ img{
         border-right: solid rgb(175, 175, 175) 1px;
         box-sizing: border-box;
     }
-    
-    .carrito{
+
+    .customer-data{
+        display: flex;
+        gap: 30px;
+    }
+
+    .checkout{
         /*display: inline-block;
         width: 50%;*/
-        width: 100%;
+        width: 50%;
         height: 70vh;
         background-color: white;
         color: black;
@@ -305,7 +319,7 @@ img{
         font-size: 20px;
         padding: 15px 25px;
         border: solid rgb(175, 175, 175) 1px;
-        border-radius: 10px;
+        border-radius: 1em;
         cursor: pointer;
     }
     
@@ -391,38 +405,5 @@ img{
         width: 50px;
         height: 32px;
 
-    }
-}
-
-@media (min-width: 481px){
-    .contenedor-main{
-        display: flex;
-        flex-wrap: wrap;
-        flex-direction:row;
-        justify-content: center;
-        width: 90%;
-        max-width: 1200px;
-    }
-     .datos{
-        /*display: inline-block;
-        width: 40%;*/
-        width: 50%;
-        height: 110vh;
-        background-color: whitesmoke;
-        color: black;
-        padding: 40px;
-        border-right: solid rgb(175, 175, 175) 1px;
-        box-sizing: border-box;
-    }
-    
-    .carrito{
-        /*display: inline-block;
-        width: 50%;*/
-        width: 50%;
-        height: 100vh;
-        background-color: white;
-        color: black;
-        padding: 40px;
-        box-sizing: border-box;
     }
 }
