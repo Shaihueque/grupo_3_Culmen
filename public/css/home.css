@@ -58,7 +58,7 @@
 }
 
 
-/*  SECCION MAIN */
+/*  SECCION MAIN HOME */
 
 .article_ppal{
     position: relative;
@@ -222,7 +222,7 @@
 
 
 
-/*   FOOTER   */
+/*   FOOTER MOBILE FIRST HOME  */
 
 .footer{
     background-color: var(--op2-color-bg-blue-oscuro);

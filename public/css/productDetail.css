@@ -31,68 +31,19 @@
     padding: 0;
 }
 
-.contenedor1 { 
-    flex-direction: row;
-    justify-content: flex-start;
-    flex-wrap: wrap;
-    display: flex;
-    height: 13vw;
-    justify-content: space-around;
-
-}
-
-.contenedor2 {
-    flex-direction: row;
-    justify-content: flex-start;
-    flex-wrap: wrap;
-    display: flex;
-    height: 6vw;
-    justify-content: space-between;
-    
-}
-.logo{
-    width: 30%;
-    ;
-    
-}
-
-.texto {
-    width: 30%;
-    height: 15vw;
-    font-size: 11px;
-    text-align: center;
-}
-
-.iniciar {
-    width: 30%;
-    text-align: center;
-    font-size: 15px;
-}
-
-.burger {
-    width: 30%;
-}
-.buscar {
-    width: 50%;
-    border: solid 1px black;
-    font-size: 15px;
-    
-}
-
-.header-header{
-    background-color: var(--op2-color-primary-green);
-    color: var(--op2-color-gris-claro);
-    height: 9vh;
-    /*position: fixed;*/
-    top: 0;
-    width: 100%;
-    z-index: 23;
-}
 
 .nav-bar{
     width: 30%;
     justify-content: space-around;
     gap: 30px;
+}
+
+.buscador_home{
+    display: none;
+}
+
+.header_container_items{
+    display: none;
 }
 
 .logo {
@@ -107,96 +58,113 @@
     color: var(--op2-color-gris-claro);
 }
 
-.flex-col{
+
+
+
+
+
+
+/*  MAIN MOBILE FIRST  PRODUCT DETAIL */
+
+.img_detailProduct{
     display: flex;
-    flex-direction: column;
     justify-content: center;
 }
+.img_detailProduct img {
+    width: 85%;
+    height: 60vh;
+}
 
-.flex-row{
+.detailProduct_other_images{
     display: flex;
     justify-content: space-evenly;
     align-items: center;
 }
 
-main{
-    width: 100%;
-    text-align: center;
-    
+.small_img img{
+    width: 50px;
+    height: 50px;
 }
 
-.imagen {
-    width: 100%;
-    height: 80vw;
-}
-
-.producto {
-    text-align: center;
-    font-size: 15px;
-}
-
-.propiedades {
-    flex-direction: row;
-    justify-content: flex-start;
-    flex-wrap: wrap;
-    display: flex;
-    height: 7vw;
-    justify-content: space-around;
-    font-size: 13px;
-
-}
-
-.envios {
-    font-size: 10px;
-}
-
-.cesta {
-    border: solid 1px black;
-    text-align: center;
-    font-size: 13px;
-    margin: 10px;
-}
-
-.talle {
-    border: solid 1px black;
-    width: 30%;
-    background-color: gray;
-    margin: 10px;
-    text-align: center;
-}
-
-.cantidad {
-    border: solid 1px black;
-    width: 30%;
-    background-color: gray;
-    margin: 10px;
-    text-align: center;
-}
-
-.contenedor-int {
+.content_price{
     display: flex;
     flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.container_talles{
+    text-align: center;
+}
+.talles{
+    display: flex;
     justify-content: center;
-    flex-wrap: wrap;
+    gap: 5px;
+}
+
+.talles button{
+    padding: 10px;
+    border: none;
+    border-radius: 40%;
+    outline: none;
+ /*    width: 30px;
+    height: 30px; */
+    background-color: var(--op2-color-primary-green);
+    transition: all 450ms;
+    border: solid 1px black;
+    width: 13%;
+    background-color: gray;
 
 }
 
-.interesarte {
-    
-    height: 7vw;
-    justify-content: space-around;
-    font-size: 10px;
+.talles button:hover{
+    cursor: pointer;
+    background-color: var(--op2-color-secondary-ligthblue);
+}
+
+
+.container_comprar{
+    text-align: center;
+}
+.contador{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.cesta{
+    padding: 10px;
+    border: none;
+    border-radius: 20px;
+    background-color: var(--op2-color-secondary-ligthblue);
+    color: var(--op2-color-gris-claro);
+    width: 13%;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.btn_comprar{
+    padding: 10px;
+    border: none;
+    border-radius: 20px;
+    background-color: var(--op2-color-secondary-ligthblue);
+    color: var(--op2-color-gris-claro);
+    font-size: 20px;
+    font-weight: bold;
     text-align: center;
 }
 
-.producto1 {
- width: 40%;
-height: 500%;   
+.description_productDetail{
+    background-color: var(--op2-color-gris-oscuro);
+    color: var(--op2-color-gris-claro);
+    padding: 15px;
+    text-align: center;
+
 }
-.producto2 {
-    width: 40%;
-   height: 500%;   
-   }
+
+
+/* FOOTER MOBILE FIRST PRODUCT DETAIL */   
 
 .footer{
     background-color: var(--op2-color-bg-blue-oscuro);
