@@ -95,6 +95,10 @@
     justify-content: space-evenly;
     margin: 10px;
     background-color: #4daa57;
+    padding: 10px;
+}
+.content_price p {
+    padding: 6px 0;
 }
 
 .container_talles{
