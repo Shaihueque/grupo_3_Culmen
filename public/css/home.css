@@ -245,6 +245,10 @@
     justify-content: space-between;
 }
 
+.lista-footer{
+    display: none;
+}
+
 /* FOOTER IMAGENES TARJETAS */
 
 .modos-pago {
@@ -323,6 +327,11 @@
     line-height: 1.5;
 }
 
+.lista-footer{
+    display: none;
+}
+
+
     .modos-pago{
         width: 45%;
     }
@@ -332,10 +341,32 @@
 
     }
 
+    .copyright{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+     
+     }
+
 }
 
 /* DESKTOP MQ  */
 @media (min-width:769px) {
+    footer .flex-col{
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+        /*justify-content: center;*/
+    }
+    
+    /*footer section{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }*/
+       
     .header-header{
         height: 14vh;
     }
@@ -391,6 +422,72 @@
     main{
         margin-top: 2px;
     }
+
+    .footer{
+        /*justify-content: space-around;*/
+        width: 100%;
+    }
+
+    .main-footer{
+        margin-top: 15px;
+        border-bottom: solid 1px #e1e6e1;
+    }
+
+    .lista-footer{
+        display: block;
+    }
+
+    footer ul li{
+        list-style: none;
+    }
+
+    .footer_item{
+        border: none;
+        display: flex;
+        flex-direction: column;
+        width: 33%;
+    }
+
+    .lista-footer ul li{
+        margin: 10px 0;
+        text-transform: none;
+    }
+
+    .footer_item i{ 
+        display: none;
+    }
+
+    .modos-pago {
+        /*display: flex;
+        flex-wrap: wrap;*/
+        width: 100%;
+        align-self: center;
+        justify-content: center;
+    }
+
+    .redes-sociales {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+        width: 100%;
+    }
+
+    /*.copyright{
+       display: flex;
+       flex-wrap: wrap;
+       justify-content: center;
+       align-items: center;
+       width: 100%;
+    
+    }*/
+
+    .copyright p{
+        text-align: center;
+        font-size: 18px;
+    
+    }
+
+
 
     /*   BORRAR ICONOS 
     
