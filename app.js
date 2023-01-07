@@ -8,6 +8,7 @@ const publicPath = path.join(__dirname ,'/public');
 const homePath = path.join(__dirname , './views/home.html'); 
 const producDetailPath = path.join(__dirname, './views/productDetail.html');
 const carritoPath = path.join(__dirname, './views/carrito.html');
+const loginPath = path.join(__dirname, './views/login.html');
 
 
 
@@ -26,5 +27,9 @@ app.get('/productDetail' , ( req, res )=>{
 } );
 app.get('/carrito' , ( req, res )=>{
     res.sendFile(carritoPath)
+} );
+
+app.get('/login' , ( req, res )=>{
+    res.sendFile(loginPath)
 } );
 
