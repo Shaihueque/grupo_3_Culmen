@@ -271,8 +271,34 @@
     }
 }
 
-@media (min-width: 481px){
-    .img_detailProduct img{
-        
+
+
+
+@media (min-width: 481px) {
+    .img_detailProduct {
+        display: flex;
+        justify-content: center;
+    }
+    .img_detailProduct img {
+        width: 70%;
+    }
+
+
+}
+
+@media (min-width: 768px) {
+   
+    .img_detailProduct img {
+        width: 50%;
+    }
+    .small_img {
+        display: flex;
+        width: 70px;
+        height: 80px;
+        justify-content: space-evenly;
+    }
+
+    .talles button {
+        width: 40px;
     }
 }
