@@ -70,14 +70,18 @@
                 <form action="" method="POST" style="margin-top:15px">
                     <input type="email" placeholder="Email">
                     <p>Dirección de envío</p>
-                    <input type="text" placeholder="Pais/Región"><br>
-                    <input type="text" placeholder="Nombre" class="name">
-                    <input type="text" placeholder="Apellido" class="surname" style="display:inline">
-                    <input type="text" placeholder="Dirección"><br>
-                    <input type="text" placeholder="Ciudad" class="city" style="display:inline-block">
-                    <input type="text" placeholder="Código Postal" class="cp" style="display:inline">
-                    <input type="text" placeholder="Provincia" class="prov" style="display:inline">
-                    <input type="tel" placeholder="Teléfono"><br>              
+                    <input type="text" placeholder="Pais/Región">
+                    <div class="divided-form">
+                        <input type="text" placeholder="Nombre">
+                        <input type="text" placeholder="Apellido">
+                    </div>
+                    <input type="text" placeholder="Dirección">
+                    <div class="divided-form">
+                        <input type="text" placeholder="Ciudad">
+                        <input type="text" placeholder="Código Postal">
+                    </div>
+                    <input type="text" placeholder="Provincia">
+                    <input type="tel" placeholder="Teléfono">          
                 </form>
             </div>
         </section>
@@ -90,12 +94,14 @@
             <div>
                 <img src="/image/producto-carrito.jpg" alt="" width="75" style="margin-top: 15px;">
                 <p style="font-weight: bold; display: inline-block;">Mochila 22L</p>
-                <form action="" method="POST" class="line">
+                <br>
+                <form class="" action="" method="POST" class="discount">
                     <input class="descuento" type="text" placeholder="Código de descuento" style="display:inline-block">
                     <button class="apply" style="display:inline" type="submit">Aplicar</button>
                 </form>
             </div>
             <div>
+                <br>
                 <p class="line">Envío</p>
                 <p class="line">Total</p>
                 <button type="submit" class="buy">Comprar</button>
