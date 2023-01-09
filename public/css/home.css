@@ -448,6 +448,10 @@
         width: 33%;
     }
 
+    .lista-footer{
+        font-size: 10px;
+    }
+
     .lista-footer ul li{
         margin: 10px 0;
         text-transform: none;
@@ -455,6 +459,9 @@
 
     .footer_item i{ 
         display: none;
+    }
+    .fa-copyright{
+        
     }
 
     .modos-pago {
@@ -483,7 +490,7 @@
 
     .copyright p{
         text-align: center;
-        font-size: 18px;
+        font-size: 8px;
     
     }
 
