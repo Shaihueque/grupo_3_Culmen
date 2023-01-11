@@ -137,6 +137,8 @@ input{
 
 .apply{
     display: flex;
+    align-self: flex-start;
+    margin: auto;
     background-color: white;
     transition-property: background-color, color;
     transition-duration: 0.5s;
@@ -151,9 +153,24 @@ input{
     background-color: whitesmoke
 }
 
-.line {
-    padding: 10px 0px 10px;
+.total-price {
+    display: flex;
+    padding: 20px 0px 20px;
     border-bottom: solid rgb(175, 175, 175) 1px;
+    gap: 70%;
+}
+
+.total{
+    font-weight: bold;
+}
+
+.delivery-price {
+    display: flex;
+    padding: 20px 0px 20px;
+    border-top: solid rgb(175, 175, 175) 1px;
+    border-bottom: solid rgb(175, 175, 175) 1px;
+    width: 100%;
+    gap: 74%;
 }
 
 .buy{
@@ -320,8 +337,6 @@ img{
         flex-direction: row;
 }    
     .form-data{
-        /*display: inline-block;
-        width: 40%;*/
         width: 40%;
         background-color: whitesmoke;
         color: black;
@@ -345,8 +360,6 @@ img{
     }    
 
     .checkout{
-        /*display: inline-block;
-        width: 50%;*/
         width: 60%;
         background-color: white;
         color: black;
@@ -363,8 +376,31 @@ img{
         border-radius: 10px;
         
     }
+
+    .total-price {
+        display: flex;
+        padding: 20px 0px 20px;
+        border-bottom: solid rgb(175, 175, 175) 1px;
+        gap: 75%;
+    }
+    
+    .total{
+        font-weight: bold;
+    }
+    
+    .delivery-price {
+        display: flex;
+        padding: 20px 0px 20px;
+        border-top: solid rgb(175, 175, 175) 1px;
+        border-bottom: solid rgb(175, 175, 175) 1px;
+        width: 100%;
+        gap: 78%;
+    }
     
     .apply{
+        display: flex;
+        align-self: flex-start;
+        margin: auto;
         color: black;
         background-color: white;
         transition-property: background-color, color;
@@ -406,7 +442,14 @@ img{
     }
     
     .line {
-        padding: 10px 0px 10px;
+        padding: 20px 0px 20px;
+        border-bottom: solid rgb(175, 175, 175) 1px;
+        width: 100%;
+    }
+
+    .double-line {
+        padding: 20px 0px 20px;
+        border-top: solid rgb(175, 175, 175) 1px;
         border-bottom: solid rgb(175, 175, 175) 1px;
         width: 100%;
     }
@@ -599,8 +642,31 @@ img{
         border-radius: 10px;
         
     }
+
+    .total-price {
+        display: flex;
+        padding: 20px 0px 20px;
+        border-bottom: solid rgb(175, 175, 175) 1px;
+        gap: 85%;
+    }
+    
+    .total{
+        font-weight: bold;
+    }
+    
+    .delivery-price {
+        display: flex;
+        padding: 20px 0px 20px;
+        border-top: solid rgb(175, 175, 175) 1px;
+        border-bottom: solid rgb(175, 175, 175) 1px;
+        width: 100%;
+        gap: 87%;
+    }
     
     .apply{
+        display: flex;
+        align-self: flex-start;
+        margin: auto;
         color: black;
         background-color: white;
         transition-property: background-color, color;
@@ -641,7 +707,14 @@ img{
     }
     
     .line {
-        padding: 10px 0px 10px;
+        padding: 20px 0px 20px;
+        border-bottom: solid rgb(175, 175, 175) 1px;
+        width: 100%;
+    }
+
+    .double-line {
+        padding: 20px 0px 20px;
+        border-top: solid rgb(175, 175, 175) 1px;
         border-bottom: solid rgb(175, 175, 175) 1px;
         width: 100%;
     }
