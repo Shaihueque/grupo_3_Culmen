@@ -137,11 +137,18 @@ input{
 
 .apply{
     display: flex;
-    background-color: whitesmoke;
+    background-color: white;
+    transition-property: background-color, color;
+    transition-duration: 0.5s;
     padding: 12px 20px;
     border: solid rgb(175, 175, 175) 1px;
     border-radius: 10px;
     cursor: pointer;
+}
+
+.apply:hover{
+    color: black;
+    background-color: whitesmoke
 }
 
 .line {
@@ -150,7 +157,10 @@ input{
 }
 
 .buy{
-    background-color: whitesmoke;
+    color:black;
+    background-color: white;
+    transition-property: background-color, color;
+    transition-duration: 0.5s;
     margin-top: 30px;
     font-weight: bold;
     font-size: 20px;
@@ -158,6 +168,11 @@ input{
     border: solid rgb(175, 175, 175) 1px;
     border-radius: 10px;
     cursor: pointer;
+}
+
+.buy:hover{
+    color: white;
+    background-color: #4daa57;
 }
 
 img{
@@ -193,11 +208,18 @@ img{
 }
 
 .quantity-button{
-    background-color: whitesmoke;
-    padding: 8px;
+    color:black;
+    background-color: white;
+    transition-property: background-color, color;
+    transition-duration: 0.5s;    padding: 8px;
     border: solid rgb(175, 175, 175) 1px;
     border-radius: 4px;
     cursor: pointer;
+}
+
+.quantity-button:hover{
+    color: black;
+    background-color: whitesmoke;
 }
 
 .quantity-number{
@@ -331,15 +353,7 @@ img{
         padding: 40px;
         box-sizing: border-box;
     }
-
-    .product-details {
-        display: flex;
-        gap: 200px;
-        padding: 10px 0px 10px;
-        border-bottom: solid rgb(175, 175, 175) 1px;
-        width: 100%;
-    }
-      
+   
     input{
         display: block;
         width: 100%;
@@ -351,24 +365,40 @@ img{
     }
     
     .apply{
-        background-color: whitesmoke;
+        color: black;
+        background-color: white;
+        transition-property: background-color, color;
+        transition-duration: 0.5s;
         padding: 12px 20px;
         border: solid rgb(175, 175, 175) 1px;
         border-radius: 10px;
         cursor: pointer;
     }
+
+    .apply:hover{
+        color: black;
+        background-color: whitesmoke
+    }
     
     .buy{
         display: flex;
-        background-color: whitesmoke;
+        color:black;
+        background-color: white;
+        transition-property: background-color, color;
+        transition-duration: 0.5s;
         margin-top: 30px;
         margin-left: auto;
         font-weight: bold;
         font-size: 20px;
         padding: 15px 25px;
         border: solid rgb(175, 175, 175) 1px;
-        border-radius: 1em;
+        border-radius: 10px;
         cursor: pointer;
+    }
+
+    .buy:hover{
+        color: white;
+        background-color: #4daa57;
     }
     
     img{
@@ -414,11 +444,18 @@ img{
     }
     
     .quantity-button{
-        background-color: whitesmoke;
+        color:black;
+        background-color: white;
+        transition-property: background-color, color;
+        transition-duration: 0.5s;
         padding: 8px;
         border: solid rgb(175, 175, 175) 1px;
         border-radius: 4px;
         cursor: pointer;
+    }
+    .quantity-button:hover{
+        color: black;
+        background-color: whitesmoke;
     }
     
     .quantity-number{
@@ -564,23 +601,39 @@ img{
     }
     
     .apply{
-        background-color: whitesmoke;
+        color: black;
+        background-color: white;
+        transition-property: background-color, color;
+        transition-duration: 0.5s;
         padding: 12px 20px;
         border: solid rgb(175, 175, 175) 1px;
         border-radius: 10px;
         cursor: pointer;
     }
+
+    .apply:hover{
+        color: black;
+        background-color: whitesmoke
+    }
     
     .buy{
         display: flex;
-        background-color: whitesmoke;
+        color:black;
+        background-color: white;
+        transition-property: background-color, color;
+        transition-duration: 0.5s;
         margin-top: 30px;
         font-weight: bold;
-        font-size: 20px;
-        padding: 15px 25px;
+        font-size: 15px;
+        padding: 20px 30px;
         border: solid rgb(175, 175, 175) 1px;
-        border-radius: 1em;
+        border-radius: 12px;
         cursor: pointer;
+    }
+
+    .buy:hover{
+        color: white;
+        background-color: #4daa57;
     }
     
     img{
@@ -631,11 +684,19 @@ img{
     }
     
     .quantity-button{
-        background-color: whitesmoke;
+        color:black;
+        background-color: white;
+        transition-property: background-color, color;
+        transition-duration: 0.5s;
         padding: 10px 20px 10px 20px;
         border: solid rgb(175, 175, 175) 1px;
         border-radius: 1em;
         cursor: pointer;
+    }
+
+    .quantity-button:hover{
+        color: black;
+        background-color: whitesmoke;
     }
     
     .quantity-number{
