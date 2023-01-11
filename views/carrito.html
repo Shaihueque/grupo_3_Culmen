@@ -72,13 +72,13 @@
                     <p>Dirección de envío</p>
                     <input type="text" placeholder="Pais/Región">
                     <div class="divided-form">
-                        <input type="text" placeholder="Nombre">
-                        <input type="text" placeholder="Apellido">
+                        <input class="split-form" type="text" placeholder="Nombre">
+                        <input class="split-form" type="text" placeholder="Apellido">
                     </div>
                     <input type="text" placeholder="Dirección">
                     <div class="divided-form">
-                        <input type="text" placeholder="Ciudad">
-                        <input type="text" placeholder="Código Postal">
+                        <input class="split-form" type="text" placeholder="Ciudad">
+                        <input class="split-form" type="text" placeholder="Código Postal">
                     </div>
                     <input type="text" placeholder="Provincia">
                     <input type="tel" placeholder="Teléfono">          
@@ -91,15 +91,26 @@
                 <p>Precio</p> 
                 <p>Cantidad</p>
             </div>
-            <div>
-                <img src="/image/producto-carrito.jpg" alt="" width="75" style="margin-top: 15px;">
-                <p style="font-weight: bold; display: inline-block;">Mochila 22L</p>
-                <br>
-                <form class="" action="" method="POST" class="discount">
+            <div class="details">
+                <div>
+                    <img src="/image/producto-carrito.jpg" alt="" width="75" style="margin-top: 15px;">
+                    <p class="product-name">Mochila 22L</p>
+                </div>
+                <div class="price-details">
+                    <p>$35.000</p>
+                </div>
+                <div class="quantity-details">
+                    <button class="quantity-button">+</button>
+                    <p class="quantity-number"> 1 </p>
+                    <button class="quantity-button">-</button>
+                </div>
+            </div>
+
+                <form action="" method="POST" class="discount">
                     <input class="descuento" type="text" placeholder="Código de descuento" style="display:inline-block">
                     <button class="apply" style="display:inline" type="submit">Aplicar</button>
                 </form>
-            </div>
+            </div> 
             <div>
                 <br>
                 <p class="line">Envío</p>
@@ -116,16 +127,37 @@
             <div class="footer-contacto footer_item flex-row">
                 <p>Contactos</p>
                 <i class="fas fa-chevron-down" class="footer-icono-menu-flecha"></i>
+                <div class="lista-footer">
+                    <ul>
+                        <li>culmen@gmail.com</li>
+                    </ul>
+                </div>
             </div>
 
             <div class="footer-categorias footer_item flex-row">
                 <p>Categorias</p>
                 <i class="fas fa-chevron-down" class="footer-icono-menu-flecha"></i>
+                <div class="lista-footer">
+                    <ul>
+                        <li>Hombres</li>
+                        <li>Mujeres</li>
+                        <li>Niños</li>
+                        <li>Accesorios</li>
+                    </ul>
+                </div>
             </div>
 
             <div class="footer-ayuda footer_item flex-row">
                 <p>Ayuda</p>
                 <i class="fas fa-chevron-down" class="footer-icono-flecha"></i>
+                <div class="lista-footer">
+                    <ul>
+                        <li>FAQ</li>
+                        <li>Medios de Pago</li>
+                        <li>Politica de Cambio</li>
+                        <li>Envio</li>
+                    </ul>
+                </div>
             </div>
 
         </section>
@@ -156,6 +188,7 @@
         </section>
 
         <div class="copyright">
+            <i class="far fa-copyright"></i>
             <p>Todos los derechos reservados al grupo Culmen</p>
         </div>
     </footer>
