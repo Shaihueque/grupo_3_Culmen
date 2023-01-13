@@ -9,68 +9,160 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+    rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
     rel="stylesheet" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 
 <body>
 
-    <header class="flex-col">
-        <section class="header-header flex-row">
-            <div class="contenedor-hamburgesa">
-                <a href="#" class="menu-hamburgesa-boton">
-                    <i class="fas fa-bars hamburg"></i></a>
-            </div>
-
-            <div class="contenedor-logo">
-                <img src="/image/logo-culmen.png" alt="Logo Culmen" class="logo">
-            </div>
-
-            <nav class="nav-bar flex-row">
-                <div class="contenedor-buscador">
-                    <form action="" method="">
-                        <input type="text" name="buscador_home" id="buscador_home" class="buscador_home" placeholder="Busque su producto...">
-                    </form>
-                    <a href="#" class="buscador">
-                        <i class="fas fa-search icon_header"></i>
-                    </a>
-                    
-                </div>
-
-                <div class="contenedor-user">
-                    <i class="fas fa-user icon_header" alt="Iniciar Sesion"></i>
-                </div>
-
-                <div class="contenedor-carrito">
-                    <i class="fas fa-shopping-cart icon_header" alt="Carrito de Compra"></i>
-                </div>   
-            </nav>
-        </section>
-    
-        <nav class="header_container_items">
-            <ul>
-                    <li>Hombre</li>
-                    <li>Mujer</li>
-                    <li>Niño</li>
-                    <li>Accesorios</li>
-            </ul>
-            </nav>
-
-
-    </header>
-
     <main class="contenedor-main">
+
+        <section class="checkout">
+            <div>
+                <header class="header-mobile">
+                    <div class="contenedor-logo">
+                        <img src="/image/logo-culmen-negro.png" alt="Logo Culmen" class="logo">
+                    </div>
+                </header>
+                <br>
+                <div class="directory">
+                    <a href=>Carrito<i class="fa-solid fa-greater-than"></i></a>
+                    <p>Información<i class="fa-solid fa-greater-than"></i></p>
+                    <p>Pago</p>
+                </div>
+            </div>
+
+            <!--
+            <div class="product-details">
+                <p>Producto</p> 
+                <p>Precio</p> 
+                <p>Cantidad</p>
+            </div>
+            <div class="details">
+                <div>
+                    <img src="/image/producto-carrito.jpg" alt="" width="75" style="margin-top: 15px;">
+                    <p class="product-name">Mochila 22L</p>
+                </div>
+                <div class="price-details">
+                    <p>$34.499</p>
+                </div>
+                <div class="quantity-details">
+                    <button class="quantity-button">+</button>
+                    <p class="quantity-number"> 1 </p>
+                    <button class="quantity-button">-</button>
+                </div>
+            </div>
+            -->
+
+            <div class="product">
+                    <div>
+                    <img src="/image/producto-carrito.jpg" alt="" width="75">
+                    </div>
+                    <div class="product-details">
+                        <i class="fas fa-circle"></i>
+                        <p class="product-title">Mochila 22L</p>
+                        <p class="product-price">$34.499</p>
+                    </div>
+                </div>
+
+            <div class="add-title">
+                <p>También te puede interesar...</p>
+            </div>
+            <div class="add-product-1">
+                <div class="add-product-box">
+                    <img src="/image/producto-carrito.jpg" alt="" width="75" style="margin-top: 15px;">
+                    <div class="title-price">
+                    <p class="add-product-title">Producto</p>
+                    <div class="add-product-price">$10.899</div>
+                    </div>
+                </div>
+                <div class="add-button-box">
+                    <button class="add-button">Agregar</button>
+                </div>
+            </div>
+            <div class="add-product-2">
+                <div class="add-product-box">
+                    <img src="/image/producto-carrito.jpg" alt="" width="75" style="margin-top: 15px;">
+                    <div class="title-price">
+                    <p class="add-product-title">Producto</p>
+                    <div class="add-product-price">$5.949</div>
+                    </div>
+                </div>
+                <div class="add-button-box">
+                    <button class="add-button" type="submit">Agregar</button>
+                </div>
+            </div>
+
+                <form action="" method="POST" class="discount">
+                    <input class="descuento" type="text" placeholder="Gift card o código de descuento">
+                    <button class="apply" type="submit">Aplicar</button>
+                </form>
+            </div> 
+            <div>
+                <br>
+                <div class="subtotal-price">
+                    <p>Subtotal</p>
+                    <p style="margin-left: auto;">$34.499</p>
+                </div>
+                <div class="delivery-price">
+                    <p>Envío</p>
+                    <p class="free">Gratis</p>
+                </div>
+                <div class="total-price">
+                    <p>Total</p>
+                    <p class="total">$34.499</p>
+                </div>
+            </div>
+        </section>
+
         <section class="form-data">
+            <div>
+                <header class="header-web">
+                    <div class="contenedor-logo">
+                        <img src="/image/logo-culmen-negro.png" alt="Logo Culmen" class="logo">
+                    </div>
+                </header>
+                <div class="directory-web">
+                    <a href=>Carrito<i class="fa-solid fa-greater-than"></i></a>
+                    <p>Información<i class="fa-solid fa-greater-than"></i></p>
+                    <p>Pago</p>
+                </div>
+            </div>
+
             <div class="customer-data">
-                <p>Datos de contacto</p>
-                <p style="font-size: 12px;">¿Tienes una cuenta? <a style="font-weight: bold;" href=>Entrar</a></p>
+                <p class="customer-data-title">Datos de contacto</p>
+                <p class="log-in">¿Tienes una cuenta? <a style="font-weight: bold;" href=>Entrar</a></p>
             </div>
             <div>
                 <form action="" method="POST" style="margin-top:15px">
                     <input type="email" placeholder="Email">
+                    <div class="checkbox">
+                        <input class="choice" type="checkbox" name="subscribe" value="sub" id="sub">
+                        <label for="sub">Suscribirme a noticias y ofertas</label>
+                    </div>
+                    <br>
+                    <div class="shipping-address">
                     <p>Dirección de envío</p>
-                    <input type="text" placeholder="Pais/Región">
+                    </div>
+                    <br>
+                    <select form="Pais/Region" id="Pais/Region" autofocus>
+                        <option value="Argentina">Argentina</option>
+                        <option value="Brasil">Brasil</option>
+                        <option value="Canada">Canada</option>
+                        <option value="Chile">Chile</option>
+                        <option value="Deutschland">Deutschland</option>
+                        <option value="España">España</option>
+                        <option value="France">France</option>
+                        <option value="Italia">Italia</option>
+                        <option value="México">México</option>
+                        <option value="Portugal">Portugal</option>
+                        <option value="Uruguay">Uruguay</option>
+                        <option value="United Kingdom">United Kingdom</option>
+                        <option value="USA">USA</option>
+                    </select>
                     <div class="divided-form">
                         <input class="split-form" type="text" placeholder="Nombre">
                         <input class="split-form" type="text" placeholder="Apellido">
@@ -83,45 +175,14 @@
                     <input type="text" placeholder="Provincia">
                     <input type="tel" placeholder="Teléfono">          
                 </form>
-            </div>
-        </section>
-        <section class="checkout">
-            <div class="product-details">
-                <p>Producto</p> 
-                <p>Precio</p> 
-                <p>Cantidad</p>
-            </div>
-            <div class="details">
-                <div>
-                    <img src="/image/producto-carrito.jpg" alt="" width="75" style="margin-top: 15px;">
-                    <p class="product-name">Mochila 22L</p>
-                </div>
-                <div class="price-details">
-                    <p>$35.000</p>
-                </div>
-                <div class="quantity-details">
-                    <button class="quantity-button">+</button>
-                    <p class="quantity-number"> 1 </p>
-                    <button class="quantity-button">-</button>
+                <div class="checkbox">
+                    <input class="choice" type="checkbox" name="information" value="a" id="a">
+                    <label for="a">Guardar esta información para la próxima</label>
                 </div>
             </div>
-
-                <form action="" method="POST" class="discount">
-                    <input class="descuento" type="text" placeholder="Código de descuento">
-                    <button class="apply" type="submit">Aplicar</button>
-                </form>
-            </div> 
-            <div>
-                <br>
-                <div class="delivery-price">
-                <p>Envío</p>
-                <p class="total">Gratis</p>
-                </div>
-                <div class="total-price">
-                <p>Total</p>
-                <p class="total">$35.000</p>
-                </div>
-                <button type="submit" class="buy">Comprar</button>
+            <div class="buy-back">
+                <a class="back" href=><i class="fa-solid fa-less-than"></i>Volver atrás</a>
+                <button type="submit" class="buy">Ir a pagar</button>
             </div>
         </section>
     </main>
