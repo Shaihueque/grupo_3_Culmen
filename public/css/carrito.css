@@ -97,7 +97,6 @@ form{
     background-color: whitesmoke;
     color: black;
     padding: 20px;
-    border-bottom: solid#8cbc84 1px;
     box-sizing: border-box;
 }
 
@@ -106,7 +105,7 @@ form{
     color: black;
     padding: 20px;
     box-sizing: border-box;
-    
+    border-bottom: solid#8cbc84 1px;   
 }
 
 .customer-data{
@@ -547,7 +546,6 @@ form{
     padding-bottom: 40px;
     padding-left: 80px;
     padding-right: 80px;
-    border-bottom: solid#8cbc84 1px;
     box-sizing: border-box;
 }
 
@@ -558,7 +556,7 @@ form{
     padding-left: 80px;
     padding-right: 80px;
     box-sizing: border-box;
-    
+    border-bottom: solid#8cbc84 1px;
 }
 
 .customer-data{
@@ -969,6 +967,7 @@ section.checkout div.product div.product-details p.product-price{
         background-color: #b2eba5;
         color: black;
         border-left: solid #8cbc84 1px;
+        border-bottom: solid#8cbc84 0px;
         padding: 40px;
         padding-top: 70px;
         box-sizing: border-box;
