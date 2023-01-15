@@ -319,7 +319,7 @@
     align-items: center;
   }
   .producto{
-    width: 75%;
+    width: 100%;
   }
 
   .main-somos p{
@@ -492,6 +492,18 @@
         text-align: center;
         font-size: 8px;
     
+    }
+
+    .container-productos{
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+    .producto{
+        width: 22%;
+    }
+
+    .container-productos{
+        flex-direction: row;
     }
 
 
