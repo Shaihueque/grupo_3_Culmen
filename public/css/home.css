@@ -292,7 +292,7 @@
 }
 
 
-/* TABLET */
+/* TABLET */ /* podria ir de 600 a 900px  */
 @media (min-width: 481px ) {
 
     .logo{
@@ -352,7 +352,7 @@
 
 }
 
-/* DESKTOP MQ  */
+/* DESKTOP MQ  */ /* de 900 en adelante podria ir */
 @media (min-width:769px) {
     footer .flex-col{
         display: flex;
@@ -504,6 +504,11 @@
 
     .container-productos{
         flex-direction: row;
+    }
+
+    .img-product{
+        width: 100%;
+        height: 90%;
     }
 
 
