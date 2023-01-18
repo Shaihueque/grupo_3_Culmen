@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%-  include('../partials/head.ejs', { css_files: ["editarProducto"] })%>
+
+
+<body>
+   
+<!--     ACÁ IRIA EL HEADER DE PARTIALS/HEADER.EJS QUE VA A HACER @SHAI -->
+    <main>
+        <form action="">
+
+
+            <input type="text" name="" id="" placeholder="Nombre del producto" class="">
+            <textarea name="" id="" cols="30" rows="10" placeholder="Descripcion del producto"></textarea>
+            <input type="file" name="" id="" placeholder="Sube la imagen" class="">
+
+            <select name="" id="" disabled="disabled"> Categorias
+                <option value="">HOMBRE</option>
+                <option value="">MUJER</option>
+                <option value="">NIÑOS</option>
+                <option value="">ACCESORIOS</option>
+            </select>
+
+
+            <input type="radio" name="ropa" id="" placeholder="" class=""> Camisa
+            <input type="radio" name="ropa" id="" placeholder="" class=""> Camperas
+            <input type="radio" name="ropa" id="" placeholder="" class=""> Pantalones
+            <input type="radio" name="ropa" id="" placeholder="" class=""> Remeras
+
+
+            <input type="radio" name="talle" id="" placeholder="" class=""> S
+            <input type="radio" name="talle" id="" placeholder="" class=""> M
+            <input type="radio" name="talle" id="" placeholder="" class=""> L
+            <input type="radio" name="talle" id="" placeholder="" class=""> XL
+
+
+
+            <input type="number" name="" id="" placeholder="" class=""> Precio
+           
+        </form>
+    </main>
+
+
+    <%-  include('../partials/footer.ejs')   %>
+
+</body>
+</html>

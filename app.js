@@ -15,7 +15,8 @@ const loginPath = path.join(__dirname, './views/login.html'); */
 const mainRoute =  require('./routes/mainRoute.js');  
 const productDetailRoute =  require('./routes/productDetailRoute.js'); 
 const carritoRoute =  require('./routes/carritoRoute.js'); 
-const loginRoute =  require('./routes/loginRoute.js'); 
+const loginRoute =  require('./routes/loginRoute'); 
+const adminRoute = require('./routes/admin');
 
 app.listen(PORT , ()=>{
     console.log('Servidor corriendo ...')
@@ -24,7 +25,8 @@ app.listen(PORT , ()=>{
 
 app.set('view engine', 'ejs'); 
 app.set("views", path.join(__dirname, "views"));
-
+/* app.set("users", path.join(__dirname, "views/users"));
+ */
 app.use(express.static(publicPath)); 
 
 
@@ -33,4 +35,6 @@ app.use('/' , mainRoute );
 app.use('/carrito' , carritoRoute);
 app.use('/login' , loginRoute);
 app.use('/productDetail' , productDetailRoute);
+app.use('/admin'  , adminRoute );
+
 

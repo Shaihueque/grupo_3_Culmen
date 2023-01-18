@@ -14,11 +14,11 @@ const mainController = {
     },
     
     login: (req, res) => {
-        res.render('login')
+        res.render('users/login')
     },
 
     productDetail: (req, res) => {
-        res.render('productDetail')
+        res.render('products/productDetail')
     }
 }
 
