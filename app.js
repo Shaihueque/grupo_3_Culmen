@@ -31,8 +31,6 @@ app.use(express.static(publicPath));
 
 app.use('/' , mainRoute );
 app.use('/carrito' , carritoRoute);
-
-/* app.use('/productDetail' , productDetailRoute);
-app.use('/carrito' , carritoRoute );
-app.use('/login' , loginRoute ); */
+app.use('/login' , loginRoute);
+app.use('/productDetail' , productDetailRoute);
 

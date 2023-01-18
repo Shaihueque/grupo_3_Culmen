@@ -12,6 +12,15 @@ const mainController = {
     carrito: (req, res)=>{ 
         res.render('carrito')
     },
+    
+    login: (req, res) => {
+        res.render('login')
+    },
+
+    productDetail: (req, res) => {
+        res.render('productDetail')
+    }
 }
+
 
 module.exports = mainController; 
