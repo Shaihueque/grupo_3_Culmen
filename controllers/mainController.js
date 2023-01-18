@@ -9,10 +9,9 @@ const mainController = {
     index: (req, res)=>{
         res.render('home')
     },
-    carrito: (req, res)=>{
+    carrito: (req, res)=>{ 
         res.render('carrito')
-    }
-    
+    },
 }
 
 module.exports = mainController; 

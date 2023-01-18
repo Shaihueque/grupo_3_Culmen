@@ -12,7 +12,7 @@ const carritoPath = path.join(__dirname, './views/carrito.html');
 const loginPath = path.join(__dirname, './views/login.html'); */
 
 // archivos de rutas 
-const mainRoute =  require('./routes/mainRoute.js'); 
+const mainRoute =  require('./routes/mainRoute.js');  
 const productDetailRoute =  require('./routes/productDetailRoute.js'); 
 const carritoRoute =  require('./routes/carritoRoute.js'); 
 const loginRoute =  require('./routes/loginRoute.js'); 
@@ -30,6 +30,8 @@ app.use(express.static(publicPath));
 
 
 app.use('/' , mainRoute );
+app.use('/carrito' , carritoRoute);
+
 /* app.use('/productDetail' , productDetailRoute);
 app.use('/carrito' , carritoRoute );
 app.use('/login' , loginRoute ); */
