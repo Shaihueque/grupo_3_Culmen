@@ -175,7 +175,7 @@
 }
 
 
-/* FOOTER MOBILE FIRST PRODUCT DETAIL */   
+/*   FOOTER MOBILE FIRST HOME  */
 
 .footer{
     background-color: var(--op2-color-bg-blue-oscuro);
@@ -198,6 +198,10 @@
     justify-content: space-between;
 }
 
+.lista-footer{
+    display: none;
+}
+
 /* FOOTER IMAGENES TARJETAS */
 
 .modos-pago {
@@ -205,7 +209,6 @@
     flex-wrap: wrap;
     width: 70%;
     align-self: center;
-    justify-content: center;
 }
 
 .footer-icono-tarjetas {
@@ -238,8 +241,8 @@
 .copyright p{
     text-align: center;
     font-size: 12px;
-}
 
+}
 
 
 @media (min-width: 481px) {
@@ -251,6 +254,25 @@
         width: 70%;
     }
 
+    .lista-footer{
+        display: none;
+    }
+    
+    .modos-pago{
+        width: 45%;
+    }
+    .footer-icono-tarjetas{
+        width: 50px;
+        height: 32px;
+    }
+    
+    .copyright{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+    }
 
 }
 
@@ -300,5 +322,83 @@
 
     .talles button {
         width: 40px;
+    }
+
+    footer .flex-col{
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+        /*justify-content: center;*/
+    }
+
+    .footer{
+        /*justify-content: space-around;*/
+        width: 100%;
+    }
+
+    .main-footer{
+        margin-top: 15px;
+        border-bottom: solid 1px #e1e6e1;
+    }
+
+    .lista-footer{
+        display: block;
+    }
+
+    footer ul li{
+        list-style: none;
+    }
+
+    .footer_item{
+        border: none;
+        display: flex;
+        flex-direction: column;
+        width: 33%;
+    }
+
+    .lista-footer{
+        font-size: 10px;
+    }
+
+    .lista-footer ul li{
+        margin: 10px 0;
+        text-transform: none;
+    }
+
+    .footer_item i{ 
+        display: none;
+    }
+    .fa-copyright{
+        
+    }
+
+    .modos-pago {
+        /*display: flex;
+        flex-wrap: wrap;*/
+        width: 100%;
+        align-self: center;
+        justify-content: center;
+    }
+
+    .redes-sociales {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+        width: 100%;
+    }
+
+    /*.copyright{
+       display: flex;
+       flex-wrap: wrap;
+       justify-content: center;
+       align-items: center;
+       width: 100%;
+    
+    }*/
+
+    .copyright p{
+        text-align: center;
+        font-size: 8px;
+    
     }
 }

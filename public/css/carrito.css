@@ -22,7 +22,6 @@
         /* @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;1,300&display=swap')*/   
     }
 
-/*HEADER*/
 
 * {
     box-sizing: border-box  ;
@@ -30,7 +29,8 @@
     padding: 0;
 }
 
-.header-web{
+/*HEADER*/
+/*.header-web{
     display: none;
 }
 
@@ -41,6 +41,33 @@ header{
 .logo {
     display: flex;
     width: 100px;
+}*/
+
+/*  SECCION HEADER HOME */
+.nav-bar{
+    width: 30%;
+    justify-content: space-around;
+    gap: 30px;
+}
+
+.buscador_home{
+    display: none;
+}
+
+.header_container_items{
+    display: none;
+}
+
+.logo {
+    width: 50px;
+}
+
+.menu-hamburgesa-boton {
+    color: var(--op2-color-gris-claro);
+}
+
+.buscador {
+    color: var(--op2-color-gris-claro);
 }
 
 /*HEADER*/
@@ -476,7 +503,7 @@ section.checkout div.product div.product-details p.product-price{
     padding: 0;
 }
 
-.header-web{
+/*.header-web{
     display: none;
 }
 
@@ -487,6 +514,14 @@ header{
 .logo {
     display: flex;
     width: 100px;
+}*/
+
+.logo{
+    width: 80px;
+}
+
+.icon_header, .hamburg{
+    font-size: 20px;
 }
 
 /*HEADER*/
@@ -872,7 +907,7 @@ section.checkout div.product div.product-details p.product-price{
 
     /*HEADER*/
 
-    .header-web{
+    /*.header-web{
         display: flex;
     }
 
@@ -891,6 +926,59 @@ section.checkout div.product div.product-details p.product-price{
         width: 130px;
         margin-left: 30px;
         margin-right: 30px;
+    }*/
+
+    .header-header{
+        height: 14vh;
+    }
+    .contenedor-hamburgesa{
+        display: none;
+    }
+
+    .logo{
+        width: 160px;
+    }
+    .buscador_home{
+        display: block;
+        border: none;
+        border: var(--op2-color-gris-oscuro);
+        outline: none;
+        padding: 10px;
+        border-radius: 15px;
+        color: var(--op2-color-gris-oscuro);
+        font-family: var(--op1-font-type);
+        margin-right: 20px;
+    }
+
+
+    .contenedor-buscador{
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        gap: 10px;
+    } 
+    
+    
+    .header_container_items{
+        display: block;
+        margin-top: 14vh;
+        background-color: var(--op2-color-primary-green);
+        color: var(--op2-color-gris-claro)
+    }
+
+    .header_container_items ul{
+        display: flex;
+        padding: 10px;
+        justify-content: space-evenly;
+        align-items: center;
+        border-top: solid .5px var(--op2-color-gris-claro);
+        margin-top: 5px;
+
+    }
+
+    .header_container_items ul li{
+        font-weight: bold;
+        list-style-type: none;
     }
 
     /*MAIN*/
