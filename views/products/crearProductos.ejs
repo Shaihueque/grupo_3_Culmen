@@ -1,47 +1,71 @@
 <!DOCTYPE html>
 <html lang="en">
-    <%-  include('../partials/head.ejs', { css_files: ["crearProducto"] })%>
+    <%-  include('../partials/head.ejs', { css_files: ["adminCrearProdu"] })%>
 
 
 <body>
    
-<!--     ACÁ IRIA EL HEADER DE PARTIALS/HEADER.EJS QUE VA A HACER @SHAI -->
+     <%- include('../partials/header.ejs') %> 
+
     <main>
         <form action="">
 
+            <div class="contenedor">
+                
+                <div class="contenedor-nombreProdu">
+                    <label>Nombre del Producto:</label>
+                    <input type="text" name="" id="" placeholder="" class="nombreProducto inputstyle">
+                </div>
+               
+                <div class="contenedor-descripcion">
+                    <textarea name="" id="" cols="30" rows="10" placeholder="Descripcion del producto" class="descripcion inputstyle"></textarea>
+                </div>
+                
+                <div class="contenedor-img">
+                    <input type="file" name="" id="" placeholder="Sube la imagen" class="img"  multiple accept= ".jpg">
+                </div>
 
-            <input type="text" name="" id="" placeholder="Nombre del producto" class="">
-            <textarea name="" id="" cols="30" rows="10" placeholder="Descripcion del producto"></textarea>
-            <input type="file" name="" id="" placeholder="Sube la imagen" class="">
+                <div class="contenedor-categorias">
+                    <label class=" sub-contenedor">Categorias:</label>
+                    <select name="" id="" class="categorias"> Categorias
+                        <option value="">HOMBRE</option>
+                        <option value="">MUJER</option>
+                        <option value="">NIÑOS</option>
+                        <option value="">ACCESORIOS</option>
+                    </select>
+                </div>
 
-            <select name="" id="" disabled="disabled"> Categorias
-                <option value="">HOMBRE</option>
-                <option value="">MUJER</option>
-                <option value="">NIÑOS</option>
-                <option value="">ACCESORIOS</option>
-            </select>
+                <div class="contenedor-prendas">
+                    <label class="categoria-prenda">Tipos de prendas:</label>
+                    <input type="radio" name="ropa" id="" placeholder="" class="prendas"> Camisa
+                    <input type="radio" name="ropa" id="" placeholder="" class="prendas"> Camperas
+                    <input type="radio" name="ropa" id="" placeholder="" class="prendas"> Pantalones
+                    <input type="radio" name="ropa" id="" placeholder="" class="prendas"> Remeras
+                </div>
 
+                <div class="contenedor-talles">
+                    <label class="categoria-talles">Talles:</label>
+                    <input type="radio" name="talle" id="" placeholder="" class="talles"> S
+                    <input type="radio" name="talle" id="" placeholder="" class="talles"> M
+                    <input type="radio" name="talle" id="" placeholder="" class="talles"> L
+                    <input type="radio" name="talle" id="" placeholder="" class="talles"> XL
+                </div>
 
-            <input type="radio" name="ropa" id="" placeholder="" class=""> Camisa
-            <input type="radio" name="ropa" id="" placeholder="" class=""> Camperas
-            <input type="radio" name="ropa" id="" placeholder="" class=""> Pantalones
-            <input type="radio" name="ropa" id="" placeholder="" class=""> Remeras
+                <div class="contenedor-precio">
+                    <label>Precio:</label>
+                    <input type="number" name="" id="" placeholder="$" class="inputstyle"> 
+                </div>
 
-
-            <input type="radio" name="talle" id="" placeholder="" class=""> S
-            <input type="radio" name="talle" id="" placeholder="" class=""> M
-            <input type="radio" name="talle" id="" placeholder="" class=""> L
-            <input type="radio" name="talle" id="" placeholder="" class=""> XL
-
-
-
-            <input type="number" name="" id="" placeholder="" class=""> Precio
+                <div class="contenedor-btn">
+                    <button class="btn-crear" type="submit">CREAR PRODUCTO</button>
+                </div>
            
+        </div>
         </form>
     </main>
 
 
-    <%-  include('../partials/footer.ejs')   %>
+      <%-  include('../partials/footer.ejs')   %>  
 
 </body>
 </html>
