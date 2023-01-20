@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-    <%-  include('../partials/head.ejs', { css_files: ["adminCrearProdu"] })%>
+    <%-  include('../partials/head.ejs', { css_files: ["adminEdicionProdu"] })%>
 
 
 <body>
@@ -8,6 +8,9 @@
      <%- include('../partials/header.ejs') %> 
 
     <main>
+
+        <h2>Editar Producto</h2>
+
         <form action="">
 
             <div class="contenedor">
@@ -64,7 +67,7 @@
 
                 <div class="contenedor-btn">
                     <button class="btn-crear" type="submit">GUARDAR CAMBIOS</button>
-                    <button class="btn-crear" type="submit">CANCELAR</button>
+                    <button class="btn-cancelar" type="submit">CANCELAR</button>
                 </div>
            
         </div>
