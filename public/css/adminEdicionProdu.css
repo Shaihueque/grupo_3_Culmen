@@ -47,6 +47,13 @@ main{
     align-items: center;
 }
 
+.contenedor-id {
+    width: 100%;
+    text-align: center;
+    margin: 10px;
+}
+
+
 .contenedor-nombreProdu {
     width: 100%;
     text-align: center;
