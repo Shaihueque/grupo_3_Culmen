@@ -15,3 +15,9 @@ resumen:
  Hicimos parte de los puntos del sprint 3, puntos 4, 5 y 6 (quedaron algunos incompletos, lo que cada uno va a hacer una parte para terminarlo antes del jueves). 
 
 Por ahora creemos que se entrega este sprint el 23, osea el lunes de la semana que viene.
+
+Tercera reunion (19/1)
+- EN clase pudimos crear los crearproductos.ejs y editarProductos.ejs
+- En esta reunion avanzamos con sus respectivos css
+Resumen:
+    Hicimos ccs de los dos archivos (crear y editar productos), dejandolos casi terminados, solo falta detalles del css lo cual de aca al dia de entrega se ira retocando para dejarlo terminado para el lunes.
