@@ -249,6 +249,14 @@ main h2 {
 /* TABLET */ /* podria ir de 600 a 900px  */
 @media (min-width: 481px ) {
 
+    main{
+        margin-top: 0;
+    }
+    main h2{
+        margin: 0;
+        padding: 15px;
+    }
+
     .logo{
         width: 80px;
     }
