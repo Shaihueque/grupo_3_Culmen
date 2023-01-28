@@ -1,0 +1,123 @@
+[
+    {
+        "id": 1,
+        "Nombre del producto": "name",
+        "descripción": "description",
+        "imagen": "image.png",
+        "categoría": "Hombre, mujer, etc",
+        "tipo de ropa": "buzo, campera,etc",
+        "talles": "talles",
+        "precio": "precio en numero sin comillas"
+    },
+    {
+        "id": 2,
+        "Nombre del producto": "name",
+        "descripción": "description",
+        "imagen": "image.png",
+        "categoría": "Hombre, mujer, etc",
+        "tipo de ropa": "buzo, campera,etc",
+        "talles": "talles",
+        "precio": "precio en numero sin comillas"
+    },
+    {
+        "id": 3,
+        "Nombre del producto": "name",
+        "descripción": "description",
+        "imagen": "image.png",
+        "categoría": "Hombre, mujer, etc",
+        "tipo de ropa": "buzo, campera,etc",
+        "talles": "talles",
+        "precio": "precio en numero sin comillas"
+    },
+    {
+        "id": 4,
+        "Nombre del producto": "name",
+        "descripción": "description",
+        "imagen": "image.png",
+        "categoría": "Hombre, mujer, etc",
+        "tipo de ropa": "buzo, campera,etc",
+        "talles": "talles",
+        "precio": "precio en numero sin comillas"
+    },
+    {
+        "id": 5,
+        "Nombre del producto": "name",
+        "descripción": "description",
+        "imagen": "image.png",
+        "categoría": "Hombre, mujer, etc",
+        "tipo de ropa": "buzo, campera,etc",
+        "talles": "talles",
+        "precio": "precio en numero sin comillas"
+    },
+    {
+        "id": 6,
+        "Nombre del producto": "name",
+        "descripción": "description",
+        "imagen": "image.png",
+        "categoría": "Hombre, mujer, etc",
+        "tipo de ropa": "buzo, campera,etc",
+        "talles": "talles",
+        "precio": "precio en numero sin comillas"
+    },
+    {
+        "id": 7,
+        "Nombre del producto": "name",
+        "descripción": "description",
+        "imagen": "image.png",
+        "categoría": "Hombre, mujer, etc",
+        "tipo de ropa": "buzo, campera,etc",
+        "talles": "talles",
+        "precio": "precio en numero sin comillas"
+    },
+    {
+        "id": 8,
+        "Nombre del producto": "name",
+        "descripción": "description",
+        "imagen": "image.png",
+        "categoría": "Hombre, mujer, etc",
+        "tipo de ropa": "buzo, campera,etc",
+        "talles": "talles",
+        "precio": "precio en numero sin comillas"
+    },
+    {
+        "id": 9,
+        "Nombre del producto": "name",
+        "descripción": "description",
+        "imagen": "image.png",
+        "categoría": "Hombre, mujer, etc",
+        "tipo de ropa": "buzo, campera,etc",
+        "talles": "talles",
+        "precio": "precio en numero sin comillas"
+    },
+    {
+        "id": 10,
+        "Nombre del producto": "name",
+        "descripción": "description",
+        "imagen": "image.png",
+        "categoría": "Hombre, mujer, etc",
+        "tipo de ropa": "buzo, campera,etc",
+        "talles": "talles",
+        "precio": "precio en numero sin comillas"
+    },
+    {
+        "id": 11,
+        "Nombre del producto": "name",
+        "descripción": "description",
+        "imagen": "image.png",
+        "categoría": "Hombre, mujer, etc",
+        "tipo de ropa": "buzo, campera,etc",
+        "talles": "talles",
+        "precio": "precio en numero sin comillas"
+    },
+    {
+        "id": 12,
+        "Nombre del producto": "name",
+        "descripción": "description",
+        "imagen": "image.png",
+        "categoría": "Hombre, mujer, etc",
+        "tipo de ropa": "buzo, campera,etc",
+        "talles": "talles",
+        "precio": "precio en numero sin comillas"
+    }
+
+]
