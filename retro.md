@@ -16,3 +16,7 @@ Ideas de cosas por hacer:
 Mejorar la comunicación
 Encuentros tres veces por semana
 Usar trello
+
+
+Retro para el sprint 4. 
+
