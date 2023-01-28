@@ -15,10 +15,6 @@ const mainController = {
     
     login: (req, res) => {
         res.render('users/login')
-    },
-
-    productDetail: (req, res) => {
-        res.render('products/productDetail')
     }
 }
 

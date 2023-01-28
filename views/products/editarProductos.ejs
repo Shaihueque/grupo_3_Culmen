@@ -9,38 +9,33 @@
 
     <main>
 
-        <h2>Editar Producto</h2>
+        <h2>Editar Producto: <%= elegido.nombre %></h2>
 
-        <form action="">
+        <form action="/products/<%= elegido.id %>?_method=PUT" method="post" enctype="multipart/form-data" >
 
             <div class="contenedor">
-
-                <div class="contenedor-id">
-                    <label> Id del Producto</label>
-                    <input type="text" name="" id="" placeholder="" class="Id del producto inputstyle">
-                </div>
                 
                 
                 <div class="contenedor-nombreProdu">
-                    <label>Nombre del Producto:</label>
-                    <input type="text" name="nombreProducto" id="" placeholder="" class="nombreProducto inputstyle">
+                    <label>Nombre del Producto: <%= elegido.nombre %>  </label>
+                    <input type="text" name="nombre" id="" placeholder="" class="nombreProducto inputstyle" value="<%= elegido.nombre %>"> 
                 </div>
                
                 <div class="contenedor-descripcion">
-                    <textarea name="descripcion" id="" cols="30" rows="10" placeholder="Descripcion del producto" class="descripcion inputstyle"></textarea>
+                    <textarea name="descripcion" id="" cols="30" rows="10" placeholder="Descripcion del producto" class="descripcion inputstyle"><%= elegido.descripcion %></textarea>
                 </div>
                 
                 <div class="contenedor-img">
-                    <input type="file" name="file_img" id="" placeholder="Sube la imagen" class="img"  multiple accept= ".jpg">
+                    <input type="file" name="file_img" id="" placeholder="Sube la imagen" class="img">
                 </div>
 
                 <div class="contenedor-categorias">
                     <label class=" sub-contenedor">Categorias:</label>
-                    <select name="categorias" id="" class="categorias"> Categorias
-                        <option value="">HOMBRE</option>
-                        <option value="">MUJER</option>
-                        <option value="">NIÑOS</option>
-                        <option value="">ACCESORIOS</option>
+                    <select name="category" id="" class="categorias"> Categorias
+                        <option value= "hombre">HOMBRE</option>
+                        <option value="mujer">MUJER</option>
+                        <option value="ninos">NIÑOS</option>
+                        <option value="accesorios">ACCESORIOS</option>
                     </select>
                 </div>
 
@@ -62,14 +57,13 @@
 
                 <div class="contenedor-precio">
                     <label>Precio:</label>
-                    <input type="number" name="" id="" placeholder="$" class="inputstyle"> 
+                    <input type="text" name="" id="" placeholder="$" class="inputstyle" value="<%= elegido.precio %>"> 
                 </div>
 
-                <div class="contenedor-btn">
+                <div  class="contenedor-btn" >
                     <button class="btn-crear" type="submit">GUARDAR CAMBIOS</button>
-                    <button class="btn-cancelar" type="submit">CANCELAR</button>
-                </div>
-           
+<!--                     <button class="btn-cancelar" type="submit">CANCELAR</button>
+ -->            </div>
         </div>
         </form>
     </main>

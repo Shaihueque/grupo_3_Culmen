@@ -10,13 +10,13 @@
     <main>
 
         <h2>Crear Producto</h2>
-        <form action="" method="POST">
+        <form action="/products" method="POST" enctype="multipart/form-data">
 
             <div class="contenedor">
                 
                 <div class="contenedor-nombreProdu">
                     <label>Nombre del Producto:</label>
-                    <input type="text" name="nombreProducto" id="" placeholder="" class="nombreProducto inputstyle">
+                    <input type="text" name="nombre" id="" placeholder="" class="nombreProducto inputstyle">
                 </div>
                
                 <div class="contenedor-descripcion">
@@ -24,12 +24,12 @@
                 </div>
                 
                 <div class="contenedor-img">
-                    <input type="file" name="file_img" id="" placeholder="Sube la imagen" class="img"  multiple accept= ".jpg">
+                    <input type="file" name="file_img" id="" placeholder="Sube la imagen" class="img" >
                 </div>
 
                 <div class="contenedor-categorias">
                     <label class=" sub-contenedor">Categorias:</label>
-                    <select name="categorias" id="" class="categorias"> Categorias
+                    <select name="category" id="" class="categorias"> Categorias
                         <option value="">HOMBRE</option>
                         <option value="">MUJER</option>
                         <option value="">NIÑOS</option>
@@ -39,10 +39,10 @@
 
                 <div class="contenedor-prendas">
                     <label class="categoria-prenda">Tipos de prendas:</label>
-                    <input type="radio" name="ropa" id="" placeholder="" class="prendas"> Camisa
-                    <input type="radio" name="ropa" id="" placeholder="" class="prendas"> Camperas
-                    <input type="radio" name="ropa" id="" placeholder="" class="prendas"> Pantalones
-                    <input type="radio" name="ropa" id="" placeholder="" class="prendas"> Remeras
+                    <input type="radio" name="tipo" id="" placeholder="" class="prendas"> Camisa
+                    <input type="radio" name="tipo" id="" placeholder="" class="prendas"> Camperas
+                    <input type="radio" name="tipo" id="" placeholder="" class="prendas"> Pantalones
+                    <input type="radio" name="tipo" id="" placeholder="" class="prendas"> Remeras
                 </div>
 
                 <div class="contenedor-talles">
@@ -55,7 +55,7 @@
 
                 <div class="contenedor-precio">
                     <label>Precio:</label>
-                    <input type="number" name="price" id="" placeholder="$" class="inputstyle"> 
+                    <input type="text" name="precio" id="" placeholder="$" class="inputstyle" > 
                 </div>
 
                 <div class="contenedor-btn">

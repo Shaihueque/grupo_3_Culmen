@@ -13,44 +13,14 @@
 
     <%- include('../partials/header.ejs') %>
 
-<!-- <main class="flex-col">
-  <div class="flex-col">
-    <div class="producto"> Nombre del producto y precio </div>    
-    <img class="imagen" src=" https://http2.mlstatic.com/D_NQ_NP_2X_959371-MLA51172121200_082022-F.webp">
-  
-    <div> producto es X </div> 
-    <div class="propiedades">
-      <div class="talle"> Talle </div>
-      <div class="cantidad"> Cantidad</div>
-    </div>
-
-  <div class="envios">
-    <div class="cesta"> Añadir a la Cesta</div>
-    <div> Encontra tu talla</div>
-    <div> Disponibilidad en la tienda </div>
-    <div> Envios, Cambios y Devoluciones </div>
-  </div>
-</div>
-
-<div class="contenedor-int">
-<h5> Tambien podria interesarte <h5>
-  <div class="interesarte" class="flex-col"> 
-    <img class="producto1" src="https://http2.mlstatic.com/D_NQ_NP_2X_959371-MLA51172121200_082022-F.webp" >
-    <img class="producto2" src= "https://http2.mlstatic.com/D_NQ_NP_2X_959371-MLA51172121200_082022-F.webp" > <br>
-  <div> Nombre de Producto y Precio </div> 
-  <div> Nombre de Producto y Precio </div>
-</div>
-</div>
-</main>
- -->
-
  <main class="main_detailProduct flex-col">
 
     <div class="provisorio">
         
+        
    
     <section class="img_detailProduct">
-        <img src="https://http2.mlstatic.com/D_NQ_NP_2X_959371-MLA51172121200_082022-F.webp" alt="">
+        <img src="/products/<%= elegido.imagen %>"  alt="">
     </section>
 
 
@@ -75,8 +45,8 @@
     <div class="provisorio2">
     <section class="container_price">
         <div class="content_price">
-            <p>Nombre</p>
-            <p>Precio</p>
+            <p><%= elegido.nombre %></p>
+            <p><%= elegido.precio %></p>
             <p>⭐⭐⭐⭐⭐</p>
             <p>Opiniones</p>
         </div>
@@ -104,10 +74,17 @@
 
 </div>
 
-    <section class="description_productDetail flex-col">
-            <h4>Nombre del producto</h4>
-            <p> Lorem ipsum dolor, sit amet consectetur adipisicing elit. Provident sequi quam vero voluptatem dignissimos vitae natus voluptate sed ullam harum, ipsum ea molestiae illo reprehenderit quibusdam cum distinctio dolor! Impedit. </p>
-    </section>
+    <div class="desc_btns flex-col">
+        <section class="description_productDetail flex-col">
+            <h4><%= elegido.nombre %></h4>
+            <p> <%= elegido.descripcion %> </p>
+        </section>
+
+        <form action="/products/<%= elegido.id %>?_method=DELETE" method="post" class="form_btns">
+            <a href="/products/<%= elegido.id %>/editar" class="btn_editar">EDITAR PRODUCTO</a>
+            <button type="submit" class="btn_eliminar"> ELIMINAR PRODUCTO </button>
+        </form>
+     </div>
  </main>
 
  <%-  include('../partials/footer.ejs')   %>

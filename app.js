@@ -5,36 +5,39 @@ const app = express();
 const PORT = 3030; 
 // RUTAS PATH 
 const publicPath = path.join(__dirname ,'/public');
-/*
-const homePath = path.join(__dirname , './views/home.html'); 
-const producDetailPath = path.join(__dirname, './views/productDetail.html');
-const carritoPath = path.join(__dirname, './views/carrito.html');
-const loginPath = path.join(__dirname, './views/login.html'); */
 
-// archivos de rutas 
+/************ REQUIRE DE RUTAS  **************/ 
 const mainRoute =  require('./routes/mainRoute.js');  
-const productDetailRoute =  require('./routes/productDetailRoute.js'); 
+const productsRoute = require('./routes/productsRoute');
 const carritoRoute =  require('./routes/carritoRoute.js'); 
 const loginRoute =  require('./routes/loginRoute'); 
-const adminRoute = require('./routes/admin');
 
+/********** CAPTURAR INFO DE POST *************/
+app.use(express.urlencoded( { extended:false } ));
+app.use(express.json());
+
+/********* CONFIGURANDO EL METODO OVERRIDE  ************/
+const methodOverride = require('method-override'); 
+app.use(methodOverride('_method')); 
+
+/**********  ESCUCHANDO EL PUERTO   *********/
 app.listen(PORT , ()=>{
     console.log('Servidor corriendo ...')
 });
 
-
+/*********  SETEANDO LAS VISTAS PARA TRABAJAR CON EJS ***********/
 app.set('view engine', 'ejs'); 
 app.set("views", path.join(__dirname, "views"));
-/* app.set("users", path.join(__dirname, "views/users"));
- */
+
+/********** CONFIGURANDO LA CARPETA PUBLIC  ***********/
 app.use(express.static(publicPath)); 
 
-
+/********** USE DE RUTAS PRINCIPALES *************/
 
 app.use('/' , mainRoute );
+app.use('/products' , productsRoute)
 app.use('/carrito' , carritoRoute);
 app.use('/login' , loginRoute);
-app.use('/productDetail' , productDetailRoute);
-app.use('/admin'  , adminRoute );
+
 
 

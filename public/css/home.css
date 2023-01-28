@@ -115,6 +115,10 @@
 
 }
 
+.enlace {
+    text-decoration: none;
+}
+
 .card2{
     background-color: #1a1a1a;
     border-radius: 20px;
@@ -510,6 +514,7 @@
     .img-product{
         width: 100%;
         height: 90%;
+        border-radius: inherit;
     }
 
 
