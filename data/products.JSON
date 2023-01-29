@@ -1,16 +1,251 @@
 [
-    {"id":1,"nombre":"Camisa Azul","descripcion":"lorem ipsum aksdjask das dhas djasd asd agsd gas das dhas djasd gas dgaksd asg dgasd kagsd agks daskd askgd askgd agsdas dasld asd asdgas dglas dasd alsd ahñ","category":"Hombre","tipo":"Camisa","talles":"talles","precio":5500,"imagen":"Camisa-1-H.jpg"},
-    {"id":2,"nombre":"Camisa Cuadrille","descripcion":"lorem ipsum aksdjask das dhas djasd asd agsd gas das dhas djasd gas dgaksd asg dgasd kagsd agks daskd askgd askgd agsdas dasld asd asdgas dglas dasd alsd ahñ","category":"Mujer","tipo":"Camisa","talles":"talles","precio":4500,"imagen":"Camisa-2-F.jpg"},
-    {"id":3,"nombre":"Campera Plums","descripcion":"lorem ipsum aksdjask das dhas djasd asd agsd gas das dhas djasd gas dgaksd asg dgasd kagsd agks daskd askgd askgd agsdas dasld asd asdgas dglas dasd alsd ahñ","category":"Hombre","tipo":"Campera","talles":"talles","precio":18200,"imagen":"Campera-Abrigo-H.jpg"},
-    {"id":4,"nombre":"Campera Water","descripcion":"lorem ipsum aksdjask das dhas djasd asd agsd gas das dhas djasd gas dgaksd asg dgasd kagsd agks daskd askgd askgd agsdas dasld asd asdgas dglas dasd alsd ahñ","category":"Mujer","tipo":"Campera","talles":"talles","precio":16800,"imagen":"Camepera-Abrigo-F.jpg"},
-    {"id":5,"nombre":"Campera kid","descripcion":"lorem ipsum aksdjask das dhas djasd asd agsd gas das dhas djasd gas dgaksd asg dgasd kagsd agks daskd askgd askgd agsdas dasld asd asdgas dglas dasd alsd ahñ","category":"Niños","tipo":"Campera","talles":"talles","precio":12000,"imagen":"Campera-Abrigo-N.jpg"},
-    {"id":6,"nombre":"Chaleco kid","descripcion":"lorem ipsum aksdjask das dhas djasd asd agsd gas das dhas djasd gas dgaksd asg dgasd kagsd agks daskd askgd askgd agsdas dasld asd asdgas dglas dasd alsd ahñ","category":"Niños","tipo":"Chaleco","talles":"talles","precio":8000,"imagen":"Chaleco-N.jpg"},
-    {"id":7,"nombre":"Pantalon men","descripcion":"lorem ipsum aksdjask das dhas djasd asd agsd gas das dhas djasd gas dgaksd asg dgasd kagsd agks daskd askgd askgd agsdas dasld asd asdgas dglas dasd alsd ahñ","category":"Hombre","tipo":"Pantalon","talles":"talles","precio":11500,"imagen":"Pantalon-1-H.jpg"},
-    {"id":8,"nombre":"Pantalon Wom","descripcion":"lorem ipsum aksdjask das dhas djasd asd agsd gas das dhas djasd gas dgaksd asg dgasd kagsd agks daskd askgd askgd agsdas dasld asd asdgas dglas dasd alsd ahñ","category":"Mujer","tipo":"Pantalon","talles":"talles","precio":11500,"imagen":"Pantalon-2-F.jpg"},
-    {"id":9,"nombre":"Pantalon Kid","descripcion":"lorem ipsum aksdjask das dhas djasd asd agsd gas das dhas djasd gas dgaksd asg dgasd kagsd agks daskd askgd askgd agsdas dasld asd asdgas dglas dasd alsd ahñ","category":"Niños","tipo":"Pantalon","talles":"talles","precio":9000,"imagen":"Pantalon-3-N.jpg"},
-    {"id":10,"nombre":"Remera Men","descripcion":"lorem ipsum aksdjask das dhas djasd asd agsd gas das dhas djasd gas dgaksd asg dgasd kagsd agks daskd askgd askgd agsdas dasld asd asdgas dglas dasd alsd ahñ","category":"Hombre","tipo":"Remera","talle":"talles","precio":4000,"imagen":"Remera-1-H.jpg"},
-    {"id":11,"nombre":"Remera wom","descripcion":"lorem ipsum aksdjask das dhas djasd asd agsd gas das dhas djasd gas dgaksd asg dgasd kagsd agks daskd askgd askgd agsdas dasld asd asdgas dglas dasd alsd ahñ","category":"Mujer","tipo":"Remera","talles":"talles","precio":4000,"imagen":"Remera-1-F.jpg"},
-    {"id":12,"nombre":"Remera Kid","descripcion":"lorem ipsum aksdjask das dhas djasd asd agsd gas das dhas djasd gas dgaksd asg dgasd kagsd agks daskd askgd askgd agsdas dasld asd asdgas dglas dasd alsd ahñ","category":"Niños","tipo":"Remera","talles":"talles","precio":3500,"imagen":"Remera-3-N.jpg"},
-    {"id":13,"nombre":"Lentes","descripcion":"lorem ipsum aksdjask das dhas djasd asd agsd gas das dhas djasd gas dgaksd asg dgasd kagsd agks daskd askgd askgd agsdas dasld asd asdgas dglas dasd alsd ahñ","category":"Accesorios","tipo":"Lentes","talles":"talles","precio":6500,"imagen":"Lentes-1-Acc.jpg"},
-    {"id":14,"nombre":"NUEVO PRODUCTO","descripcion":"ASDASDAS DASDA D ASD ","category":"","tipo":"on","talle":"on","precio":"9595","imagen":"img-1674938998464.png"}
+  {
+    "id": 1,
+    "nombre": "Camisa Azul",
+    "descripcion": "lorem ipsum aksdjask das dhas djasd asd agsd gas das dhas djasd gas dgaksd asg dgasd kagsd agks daskd askgd askgd agsdas dasld asd asdgas dglas dasd alsd ahñ",
+    "category": "Hombre",
+    "tipo": "Camisa",
+    "talles": "talles",
+    "precio": 5500,
+    "imagen": "Camisa-1-H.jpg",
+    "imagenes": [
+      {
+        "fieldname": "files_img",
+        "originalname": "camperas mountain.png",
+        "encoding": "7bit",
+        "mimetype": "image/png",
+        "destination": "C:\\Users\\Usuario\\Desktop\\CURSO FULLSTACK Practicas\\Proyecto_Integrador_DH\\grupo_3_Culmen\\public\\image\\products",
+        "filename": "img-1675027853549.png",
+        "path": "C:\\Users\\Usuario\\Desktop\\CURSO FULLSTACK Practicas\\Proyecto_Integrador_DH\\grupo_3_Culmen\\public\\image\\products\\img-1675027853549.png",
+        "size": 1328098
+      },
+      {
+        "fieldname": "files_img",
+        "originalname": "ecommerce ropa motain.png",
+        "encoding": "7bit",
+        "mimetype": "image/png",
+        "destination": "C:\\Users\\Usuario\\Desktop\\CURSO FULLSTACK Practicas\\Proyecto_Integrador_DH\\grupo_3_Culmen\\public\\image\\products",
+        "filename": "img-1675027853600.png",
+        "path": "C:\\Users\\Usuario\\Desktop\\CURSO FULLSTACK Practicas\\Proyecto_Integrador_DH\\grupo_3_Culmen\\public\\image\\products\\img-1675027853600.png",
+        "size": 1483044
+      },
+      {
+        "fieldname": "files_img",
+        "originalname": "pagina web ropa.png",
+        "encoding": "7bit",
+        "mimetype": "image/png",
+        "destination": "C:\\Users\\Usuario\\Desktop\\CURSO FULLSTACK Practicas\\Proyecto_Integrador_DH\\grupo_3_Culmen\\public\\image\\products",
+        "filename": "img-1675027853671.png",
+        "path": "C:\\Users\\Usuario\\Desktop\\CURSO FULLSTACK Practicas\\Proyecto_Integrador_DH\\grupo_3_Culmen\\public\\image\\products\\img-1675027853671.png",
+        "size": 1533680
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "nombre": "Camisa Cuadrille",
+    "descripcion": "lorem ipsum aksdjask das dhas djasd asd agsd gas das dhas djasd gas dgaksd asg dgasd kagsd agks daskd askgd askgd agsdas dasld asd asdgas dglas dasd alsd ahñ",
+    "category": "Mujer",
+    "tipo": "Camisa",
+    "talles": "talles",
+    "precio": 4500,
+    "imagen": "Camisa-2-F.jpg",
+    "imagenes": [
+      {
+        "fielname": "Camisa-2-F.jpg"
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "nombre": "Campera Plums",
+    "descripcion": "lorem ipsum aksdjask das dhas djasd asd agsd gas das dhas djasd gas dgaksd asg dgasd kagsd agks daskd askgd askgd agsdas dasld asd asdgas dglas dasd alsd ahñ",
+    "category": "Hombre",
+    "tipo": "Campera",
+    "talles": "talles",
+    "precio": 18200,
+    "imagen": "Campera-Abrigo-H.jpg",
+    "imagenes": [
+      {
+        "fielname": "Camisa-2-F.jpg"
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "nombre": "Campera Water",
+    "descripcion": "lorem ipsum aksdjask das dhas djasd asd agsd gas das dhas djasd gas dgaksd asg dgasd kagsd agks daskd askgd askgd agsdas dasld asd asdgas dglas dasd alsd ahñ",
+    "category": "Mujer",
+    "tipo": "Campera",
+    "talles": "talles",
+    "precio": 16800,
+    "imagen": "Camepera-Abrigo-F.jpg",
+    "imagenes": [
+      {
+        "fielname": "Camisa-2-F.jpg"
+      }
+    ]
+  },
+  {
+    "id": 5,
+    "nombre": "Campera kid",
+    "descripcion": "lorem ipsum aksdjask das dhas djasd asd agsd gas das dhas djasd gas dgaksd asg dgasd kagsd agks daskd askgd askgd agsdas dasld asd asdgas dglas dasd alsd ahñ",
+    "category": "Niños",
+    "tipo": "Campera",
+    "talles": "talles",
+    "precio": 12000,
+    "imagen": "Campera-Abrigo-N.jpg",
+    "imagenes": [
+      {
+        "fielname": "Camisa-2-F.jpg"
+      }
+    ]
+  },
+  {
+    "id": 6,
+    "nombre": "Chaleco kid",
+    "descripcion": "lorem ipsum aksdjask das dhas djasd asd agsd gas das dhas djasd gas dgaksd asg dgasd kagsd agks daskd askgd askgd agsdas dasld asd asdgas dglas dasd alsd ahñ",
+    "category": "Niños",
+    "tipo": "Chaleco",
+    "talles": "talles",
+    "precio": 8000,
+    "imagen": "Chaleco-N.jpg",
+    "imagenes": [
+      {
+        "fielname": "Camisa-2-F.jpg"
+      }
+    ]
+  },
+  {
+    "id": 7,
+    "nombre": "Pantalon men",
+    "descripcion": "lorem ipsum aksdjask das dhas djasd asd agsd gas das dhas djasd gas dgaksd asg dgasd kagsd agks daskd askgd askgd agsdas dasld asd asdgas dglas dasd alsd ahñ",
+    "category": "Hombre",
+    "tipo": "Pantalon",
+    "talles": "talles",
+    "precio": 11500,
+    "imagen": "Pantalon-1-H.jpg",
+    "imagenes": [
+      {
+        "fielname": "Camisa-2-F.jpg"
+      }
+    ]
+  },
+  {
+    "id": 8,
+    "nombre": "Pantalon Wom",
+    "descripcion": "lorem ipsum aksdjask das dhas djasd asd agsd gas das dhas djasd gas dgaksd asg dgasd kagsd agks daskd askgd askgd agsdas dasld asd asdgas dglas dasd alsd ahñ",
+    "category": "Mujer",
+    "tipo": "Pantalon",
+    "talles": "talles",
+    "precio": 11500,
+    "imagen": "Pantalon-2-F.jpg",
+    "imagenes": [
+      {
+        "fielname": "Camisa-2-F.jpg"
+      }
+    ]
+  },
+  {
+    "id": 9,
+    "nombre": "Pantalon Kid",
+    "descripcion": "lorem ipsum aksdjask das dhas djasd asd agsd gas das dhas djasd gas dgaksd asg dgasd kagsd agks daskd askgd askgd agsdas dasld asd asdgas dglas dasd alsd ahñ",
+    "category": "Niños",
+    "tipo": "Pantalon",
+    "talles": "talles",
+    "precio": 9000,
+    "imagen": "Pantalon-3-N.jpg",
+    "imagenes": [
+      {
+        "fielname": "Camisa-2-F.jpg"
+      }
+    ]
+  },
+  {
+    "id": 10,
+    "nombre": "Remera Men",
+    "descripcion": "lorem ipsum aksdjask das dhas djasd asd agsd gas das dhas djasd gas dgaksd asg dgasd kagsd agks daskd askgd askgd agsdas dasld asd asdgas dglas dasd alsd ahñ",
+    "category": "Hombre",
+    "tipo": "Remera",
+    "talle": "talles",
+    "precio": 4000,
+    "imagen": "Remera-1-H.jpg",
+    "imagenes": [
+      {
+        "fielname": "Camisa-2-F.jpg"
+      }
+    ]
+  },
+  {
+    "id": 11,
+    "nombre": "Remera wom",
+    "descripcion": "lorem ipsum aksdjask das dhas djasd asd agsd gas das dhas djasd gas dgaksd asg dgasd kagsd agks daskd askgd askgd agsdas dasld asd asdgas dglas dasd alsd ahñ",
+    "category": "Mujer",
+    "tipo": "Remera",
+    "talles": "talles",
+    "precio": 4000,
+    "imagen": "Remera-1-F.jpg",
+    "imagenes": [
+      {
+        "fielname": "Camisa-2-F.jpg"
+      }
+    ]
+  },
+  {
+    "id": 12,
+    "nombre": "Remera Kid",
+    "descripcion": "lorem ipsum aksdjask das dhas djasd asd agsd gas das dhas djasd gas dgaksd asg dgasd kagsd agks daskd askgd askgd agsdas dasld asd asdgas dglas dasd alsd ahñ",
+    "category": "Niños",
+    "tipo": "Remera",
+    "talles": "talles",
+    "precio": 3500,
+    "imagen": "Remera-3-N.jpg",
+    "imagenes": [
+      {
+        "fielname": "Camisa-2-F.jpg"
+      }
+    ]
+  },
+  {
+    "id": 15,
+    "nombre": "NUEVO PRODUCTO NUEVO",
+    "descripcion": "DSFSDF ",
+    "category": "",
+    "tipo": "on",
+    "talle": "on",
+    "precio": "9876",
+    "imagen": "img-1675027853541.png",
+    "imagenes": [
+      {
+        "fieldname": "files_img",
+        "originalname": "camperas mountain.png",
+        "encoding": "7bit",
+        "mimetype": "image/png",
+        "destination": "C:\\Users\\Usuario\\Desktop\\CURSO FULLSTACK Practicas\\Proyecto_Integrador_DH\\grupo_3_Culmen\\public\\image\\products",
+        "filename": "img-1675027853549.png",
+        "path": "C:\\Users\\Usuario\\Desktop\\CURSO FULLSTACK Practicas\\Proyecto_Integrador_DH\\grupo_3_Culmen\\public\\image\\products\\img-1675027853549.png",
+        "size": 1328098
+      },
+      {
+        "fieldname": "files_img",
+        "originalname": "ecommerce ropa motain.png",
+        "encoding": "7bit",
+        "mimetype": "image/png",
+        "destination": "C:\\Users\\Usuario\\Desktop\\CURSO FULLSTACK Practicas\\Proyecto_Integrador_DH\\grupo_3_Culmen\\public\\image\\products",
+        "filename": "img-1675027853600.png",
+        "path": "C:\\Users\\Usuario\\Desktop\\CURSO FULLSTACK Practicas\\Proyecto_Integrador_DH\\grupo_3_Culmen\\public\\image\\products\\img-1675027853600.png",
+        "size": 1483044
+      },
+      {
+        "fieldname": "files_img",
+        "originalname": "pagina web ropa.png",
+        "encoding": "7bit",
+        "mimetype": "image/png",
+        "destination": "C:\\Users\\Usuario\\Desktop\\CURSO FULLSTACK Practicas\\Proyecto_Integrador_DH\\grupo_3_Culmen\\public\\image\\products",
+        "filename": "img-1675027853671.png",
+        "path": "C:\\Users\\Usuario\\Desktop\\CURSO FULLSTACK Practicas\\Proyecto_Integrador_DH\\grupo_3_Culmen\\public\\image\\products\\img-1675027853671.png",
+        "size": 1533680
+      }
+    ]
+  }
 ]

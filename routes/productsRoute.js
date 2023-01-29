@@ -7,7 +7,7 @@ const productsController = require('../controllers/productsController');
 /****** CONFIGURANDO MULTER *******/
 
 const fileFilter = (req, file, cb) => {
-    if (file.mimetype === 'image/jpeg' || file.mimetype === 'image/png') {
+    if (file.mimetype === 'image/jpeg' || file.mimetype === 'image/png' || file.mimetype === 'image/jpg') {
       cb(null, true);
     } else {
       cb(null, false);
@@ -25,10 +25,7 @@ const storage = multer.diskStorage({
     }
 }); 
 
-const upload = multer({storage , fileFilter}); 
-
-
-
+const upload = multer({ storage , fileFilter }); 
 
 router.get( "/", productsController.index );
 router.get( "/crear", productsController.crearProducto );
@@ -39,12 +36,12 @@ router.post('/',
         { name: 'file_img', maxCount: 1 },
         { name: 'files_img', maxCount: 4 }]),
      productsController.store);
-
-     
+ 
 /* router.post('/', upload.array('files_img', 4)  , productsController.store); */
 /* router.post('/',  upload.single('file_img')  , productsController.store); */
 
 router.get('/:id/editar' , productsController.edit);
+
 router.put('/:id' , upload.fields([
                 { name: 'file_img', maxCount: 1 },
                 { name: 'files_img', maxCount: 4 }]),
