@@ -23,9 +23,15 @@
         <img src="/products/<%= elegido.imagen %>"  alt="">
     </section>
 
-
     <section class="detailProduct_other_images">
+   <% elegido.imagenes.forEach((i)=>{  %>
+      
         <div class="small_img">
+            <img src="<%= i.filename %>" alt="">
+        </div>
+    <% }) %> 
+    
+<!--       <div class="small_img">
             <img src="https://http2.mlstatic.com/D_NQ_NP_2X_959371-MLA51172121200_082022-F.webp" alt="">
         </div>
         <div class="small_img">
@@ -33,10 +39,7 @@
         </div>
         <div class="small_img">
             <img src="https://http2.mlstatic.com/D_NQ_NP_2X_959371-MLA51172121200_082022-F.webp" alt="">
-        </div>
-        <div class="small_img">
-            <img src="https://http2.mlstatic.com/D_NQ_NP_2X_959371-MLA51172121200_082022-F.webp" alt="">
-        </div>
+        </div>  -->
     </section>
 
 </div>

@@ -5,6 +5,15 @@ const multer = require('multer');
 const productsController = require('../controllers/productsController');
 
 /****** CONFIGURANDO MULTER *******/
+
+const fileFilter = (req, file, cb) => {
+    if (file.mimetype === 'image/jpeg' || file.mimetype === 'image/png') {
+      cb(null, true);
+    } else {
+      cb(null, false);
+    }
+  };
+
 const storage = multer.diskStorage({
     destination: (req, file, cb)=>{
         const ruta = path.join(__dirname , "../public/products");
@@ -16,7 +25,7 @@ const storage = multer.diskStorage({
     }
 }); 
 
-const upload = multer({storage}); 
+const upload = multer({storage , fileFilter}); 
 
 
 
@@ -24,9 +33,23 @@ const upload = multer({storage});
 router.get( "/", productsController.index );
 router.get( "/crear", productsController.crearProducto );
 router.get('/:id' , productsController.detail); 
-router.post('/', upload.single('file_img') ,productsController.store);
+
+router.post('/', 
+     upload.fields([
+        { name: 'file_img', maxCount: 1 },
+        { name: 'files_img', maxCount: 4 }]),
+     productsController.store);
+
+     
+/* router.post('/', upload.array('files_img', 4)  , productsController.store); */
+/* router.post('/',  upload.single('file_img')  , productsController.store); */
+
 router.get('/:id/editar' , productsController.edit);
-router.put('/:id' , upload.single('file_img') ,productsController.update);
+router.put('/:id' , upload.fields([
+                { name: 'file_img', maxCount: 1 },
+                { name: 'files_img', maxCount: 4 }]),
+                productsController.update);
+
 router.delete('/:id' , productsController.delete); 
 
 
