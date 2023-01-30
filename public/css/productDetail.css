@@ -405,8 +405,8 @@
 
 
     .img_detailProduct img {
-        width: 99%;
-        height: 99%;
+        height: auto;
+        width: 100%;
     }
     .small_img {
         display: flex;
@@ -477,5 +477,6 @@
     }
     .img_detailProduct{
         width: 68%;
+        height: 100%;
     }
 }
