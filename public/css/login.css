@@ -99,12 +99,16 @@ body {
     font-size: 16px;
     color: #515151;
     text-align: center;
+    padding-top: 3%;
+    padding-bottom: 3%;
 }
 
 .subtitulo-register {
     font-size: 16px;
     color:black;
     text-align: center;
+    padding-top: 3%;
+    padding-bottom: 3%;
 }
 
 
@@ -157,6 +161,25 @@ body {
     padding: 18px 20px;
     padding-top: 27px;
     padding-bottom: 27px;
+    
+    box-sizing: border-box;
+    
+    border: solid #8cbc84 1px;
+    border-radius: 8px;
+}
+
+.register_form_container input.input_image {
+    font-family: 'Overpass', sans-serif;
+    font-size: 110%;
+    color: #1b262c;
+    background-color: #b2eba5;
+    
+    width: 100%;
+    height: 40px;
+    
+    margin-top: 10px;
+    margin-bottom: 6px;
+    padding: 18px 18px 42px;
     
     box-sizing: border-box;
     
@@ -218,6 +241,12 @@ body {
     background-color: black;
 }
 
+.registerform p {
+    padding-top: 10px;
+    padding-bottom: 5px;
+    padding-left: 21px;
+}
+
 .pie-form {
     font-size: 16px;
     text-align: center;    
@@ -253,14 +282,18 @@ body {
     color: #4daa57;
 }
 
+.promo_checkbox {
+    display: flex;
+    flex-direction: row;
+}
 
 .input_radio{
     width: 6%!important;
 }
 
 .promo_radio{
-    display: flex;
-    align-items: center;
+    margin-block: auto;
+    padding-left: 10px;
     font-size: 16px;
 }
 

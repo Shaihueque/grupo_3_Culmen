@@ -47,20 +47,22 @@
                     </p>
 
                     <form action="" class="registerform">
-                        <input type="text" id="name" name="name"  placeholder="Ingresa tu Nombre">
-                        <input type="text" id="lastname" name="lastname" placeholder="Ingresa tu Apellido">
-                        <input type="email" id="email" name="email" placeholder="Ingresa tu Email">
-                        <input type="password" id="pass" name="pass" placeholder="Ingresa tu Contraseña">
-                        <input type="password" id="passConfirm" name="passConfirm" placeholder="Confirma tu Contraseña">
-                        <p> Selecciona una Imagen de Perfil:</p>
-                        <input type="file" id="" name="imagenUsuario"> 
-                        <p>Fecha de Nacimiento: </p>
+                        <input type="text" id="name" name="name"  placeholder="Ingresa tu nombre">
+                        <input type="text" id="lastname" name="lastname" placeholder="Ingresa tu apellido">
+                        <input type="email" id="email" name="email" placeholder="Ingresa tu email">
+                        <input type="password" id="pass" name="pass" placeholder="Ingresa tu contraseña">
+                        <input type="password" id="passConfirm" name="passConfirm" placeholder="Confirma tu contraseña">
+                        <p> Selecciona una imagen de perfil:</p>
+                        <input type="file" id="" name="imagenUsuario" class="input_image"> 
+                        <p>Fecha de nacimiento: </p>
                         <input type="date" id="fechaNac" name="fechaNac">
                         
+                        <div class="promo_checkbox">
+                        <input type="checkbox" name="promo" id="promo" class="input_radio">
                         <label for="promo" class="promo_radio">
-                            <input type="checkbox" name="promo" id="promo" class="input_radio">
                             Acepta recibir noticias y promociones
                         </label> 
+                        </div>
                         <button type="submit"> Crear cuenta </button>
                     </form>
                     
