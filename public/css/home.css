@@ -331,11 +331,20 @@
     display: none;
   }
 
+  .container-productos{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+  }
+
   .section-productos{
     align-items: center;
   }
   .producto{
-    width: 100%;
+    width: 45%;
   }
 
   .main-somos p{
