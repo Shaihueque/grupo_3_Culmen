@@ -74,10 +74,11 @@ const productsController = {
 
         const productsFiltrados = products.filter( p => p.id != req.params.id ); 
         const elegido = products.find( p => p.id == req.params.id );
-
-        if (elegido.imagen =! 'image.png' ) {
-            fs.unlinkSync(path.join(__dirname , `../public/products/${elegido.imagen}`));
-        }
+        
+         if ( elegido.imagen != 'image.png' ) {
+             console.log(elegido.imagen)
+            fs.unlinkSync(path.join(__dirname , `../public/products/${elegido.imagen}`))
+        } 
 
         if ( elegido.imagenes.length > 0 ) {
             for (let i = 0; i < elegido.imagenes.length; i++) {
