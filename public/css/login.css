@@ -149,7 +149,7 @@ body {
 
 .register_form_container input {
     font-family: 'Overpass', sans-serif;
-    font-size: 110%;
+    font-size: 13px;
     color: #1b262c;
     background-color: #b2eba5;
     
@@ -170,7 +170,7 @@ body {
 
 .register_form_container input.input_image {
     font-family: 'Overpass', sans-serif;
-    font-size: 110%;
+    font-size: 13px;
     color: #1b262c;
     background-color: #b2eba5;
     
@@ -194,11 +194,13 @@ body {
 .login_form_container input::placeholder {
     font-family: 'Overpass', sans-serif;
     color: #515151;
+    font-size: 13px;
 }
 
 .register_form_container input::placeholder {
     font-family: 'Overpass', sans-serif;
     color: #515151;
+    font-size: 13px;
 }
 
 .login_form_container button {

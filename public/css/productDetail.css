@@ -10,7 +10,7 @@
     --op1-color-gris-oscuro: #65655e;
     --op1-color-gris-claro: #e1e6e1; 
 
-/* PALETA DE COLORES: OPCION GREEN */
+/* PALETA DE COLORES: OPCION GREEN */ 
     --op2-color-primary-green: #4daa57; 
     --op2-color-secondary-ligthblue: #1e96fc; 
     --op2-color-bg-blue-oscuro: #0b0033; 
@@ -66,106 +66,173 @@
 
 /*  MAIN MOBILE FIRST  PRODUCT DETAIL */
 
+.provisorio {
+    background-color: var(--op2-color-primary-green);
+}
+
 .img_detailProduct{
     display: flex;
     justify-content: center;
+    background-color: var(--op2-color-primary-green);
 }
 .img_detailProduct img {
     width: 85%;
     height: 60vh;
     margin-top: 15px;
+    border-radius: 40px;
 }
 
 .detailProduct_other_images{
     display: flex;
-    justify-content: space-evenly;
+    gap: 20px;
+    justify-content: center;
     align-items: center;
-    padding: 10px;
+    padding-top: 20px;
+    background-color: var(--op2-color-primary-green);
 }
 
 .small_img img{
-    width: 50px;
-    height: 50px;
+    width: 75px;
+    height: 75px;
+    border-radius: 10px;
 }
 
 .content_price{
     display: flex;
     flex-direction: column;
-    align-items: center;
     justify-content: space-evenly;
-    margin: 10px;
     background-color: #4daa57;
-    padding: 10px;
+    color: white;
+    padding: 20px;
+    border-bottom-left-radius: 40px;
+    border-bottom-right-radius: 40px;
 }
-.content_price p {
+
+.product_name, .product_price {
+    font-size: 18px;
+    font-weight: bold;
     padding: 6px 0;
+    color: white;
+}
+
+div.reviews {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    align-items: center;
+    color: white;
+}
+
+.product_rating {
+    color: #fcb90c;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.product_description {
+    padding-top: 5%;
+    padding-bottom: 5%;
+    color: white;
 }
 
 .container_talles{
     text-align: center;
     margin: 10px;
 }
-.talles{
+
+div.talles{
     display: flex;
     justify-content: center;
-    gap: 5px;
+    gap: 10px;
+    padding-bottom: 2.5%;
 }
 
-.talles button{
-    padding: 10px;
-    border: none;
-    border-radius: 40%;
-    outline: none;
- /*    width: 30px;
-    height: 30px; */
-    background-color: var(--op2-color-primary-green);
-    transition: all 450ms;
-    border: solid 1px black;
-    width: 13%;
-    background-color: white;
-
+div.talles input{
+    display: none;
 }
 
-.talles button:hover{
+div.talles div.xs label, div.talles div.s label, div.talles div.m label, div.talles div.l label, div.talles div.xl label{
+    border-radius: 10px;
+    float: left;
+    min-width: 50px!important;
+    margin-top: 20%;
+    border: 2px solid white;
+    font-size: 13px;
+    text-align: center;
+    line-height: 35px;
+    white-space: nowrap;
+    text-transform: uppercase;
     cursor: pointer;
-    background-color: var(white);
 }
 
+div.talles div.xs input:checked + label, div.talles div.s input:checked + label, div.talles div.m input:checked + label, div.talles div.l input:checked + label, div.talles div.xl input:checked + label{
+    background-color: white;
+    border: 2px solid white;
+    color: black;
+}
 
 .container_comprar{
     text-align: center;
     margin: 10px;
 }
-.contador{
+
+.quantity{
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 10px;
 }
 
-.cesta{
-    padding: 10px;
-    border: none;
-    border-radius: 20px;
-    background-color: var(--op2-color-secondary-ligthblue);
-    color: var(--op2-color-gris-claro);
-    width: 13%;
-    font-size: 20px;
-    font-weight: bold;
+.add_button, .subtract_button {
+    color: white;
+    border-radius: 10px;
+    float: left;
+    min-width: 50px!important;
+    margin-top: 2.5%;
+    border: 2px solid white;
+    font-size: 13px;
+    text-align: center;
+    line-height: 35px;
+    white-space: nowrap;
+    text-transform: uppercase;
+    cursor: pointer;
+    background-color: #4daa57;
+    transition-property: background-color, color;
+    transition-duration: 0.5s;
 }
 
-.btn_comprar{
-    padding: 10px;
-    border: none;
-    border-radius: 20px;
-    background-color: var(--op2-color-secondary-ligthblue);
-    color: var(--op2-color-gris-claro);
-    font-size: 20px;
-    font-weight: bold;
-    text-align: center;
-    margin-top: 10px;
-    transition: all 0.3s ease-in-out;
+.add_button:hover, .subtract_button:hover{
+    background-color: white;
+    border: 2px solid white;
+    color: black;
+}
 
+.num_quantity {
+    border-radius: 10px;
+    float: left;
+    min-width: 50px!important;
+    margin-top: 2.5%;
+    border: 2px solid white;
+    font-size: 13px;
+    text-align: center;
+    line-height: 35px;
+    white-space: nowrap;
+    text-transform: uppercase;
+}
+
+.buy_button{
+    color:black;
+    background-color: white;
+    transition-property: background-color, color;
+    transition-duration: 0.5s;
+    margin-top: 30px;
+    font-weight: bold;
+    font-size: 20px;
+    width: 100%;
+    padding: 24px 25px;
+    border: solid white 1px;
+    border-radius: 20px;
+    cursor: pointer;
 }
 
 .description_productDetail{
@@ -176,27 +243,41 @@
 
 }
 
-.btn_editar{
-    text-decoration: none;
-    background-color: var(--op2-color-bg-blue-oscuro);
-    color: var(--op2-color-gris-claro);
-    border: solid .5px transparent;
-    border-radius: 20px;
-    padding: 12px;
-    transition: all 0.3s ease-in-out;
-
+.form_buttons {
+    display: flex;
+    flex-direction: row;
+    padding-top: 20px;
+    margin: 0px 20px;
+    gap: 10px;
 }
 
-.btn_eliminar{
-    background-color: var(--op1-color-primary-rojo);
-    color: var(--op2-color-gris-claro);
-    border: solid .5px transparent;
-    border-radius: 20px;
-    padding: 12px;
+.edit_button{
+    display: flex;
+    background-color: black;
+    color: white;
+    border: solid 0.5px transparent;
+    justify-content: center;
+    border-radius: 15px;
+    padding: 12px 30px;
     transition: all 0.3s ease-in-out;
     transform: scale(1);
+    font-size: 14px;
+    font-weight: bold;
+    width: 50%;
+}
 
-
+.delete_button{
+    background-color: black;
+    color: white;
+    align-items: center;
+    border: solid 0.5px transparent;
+    border-radius: 15px;
+    padding: 12px 30px;
+    transition: all 0.3s ease-in-out;
+    transform: scale(1);
+    font-size: 14px;
+    font-weight: bold;
+    width: 50%;
 }
 
 .btn_editar:hover , .btn_eliminar:hover, .btn_comprar:hover{
@@ -204,6 +285,254 @@
     transform: scale(0.95);
 }
 
+div.review_section {
+    background-color: whitesmoke;
+    border-radius: 40px;
+    padding-bottom: 20px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.title_reviews{
+    padding-top: 20px;
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.post_review_container{
+    background-color: #b2eba5;
+    border-radius: 40px;
+    margin: 20px;
+    padding: 20px;
+}
+
+.num_reviews{
+    padding-top: 10px;
+    padding-left: 20px;
+    padding-bottom: 10px;
+    font-weight: bold;
+}
+
+.post_filter{
+    padding-top: 10px;
+    padding-left: 20px;
+}
+
+div.review_section form{
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+div.review_section input{
+    padding-left: 10px;
+    color: rgb(175, 175, 175);
+    background-color: #b2eba5;
+    padding: 18px 20px;
+    border: solid black 1px;
+    border-radius: 8px;
+    margin-top: 10px;
+    margin-bottom: 6px;
+    width: 100%;
+}
+
+div.review_section input::placeholder {
+    font-family: 'Overpass', sans-serif;
+    color: black;
+    font-size: 13px;
+}
+
+div.review_section form textarea{
+    padding-left: 10px;
+    color: rgb(175, 175, 175);
+    background-color: #b2eba5;
+    padding: 18px 20px;
+    border: solid black 1px;
+    border-radius: 8px;
+    margin-top: 10px;
+    margin-bottom: 6px;
+    width: 100%;
+    height: 15vh;
+}
+
+div.review_section textarea::placeholder {
+    font-family: 'Overpass', sans-serif;
+    color: black;
+    font-size: 13px;
+}
+
+.flex_rating{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 20px;
+}
+  
+form div.rating {
+    font-size: 30px;
+    direction: rtl;
+    unicode-bidi: bidi-override;
+}
+  
+form div.rating input[type="radio"] {
+    display: none;
+}
+  
+form div.rating label {
+   color: black;
+}
+  
+form div.rating label:hover, form div.rating label:hover ~ label {
+    color: #fcb90c;
+}
+  
+form div.rating input[type="radio"]:checked ~ label {
+    color: #fcb90c;
+}
+
+.write_review{
+    color:black;
+    background-color: #8cbc84;
+    transition-property: background-color, color;
+    transition-duration: 0.5s;
+    margin: 20px;
+    font-weight: bold;
+    font-size: 18px;
+    padding: 12px 82px;
+    border: solid #8cbc84 1px;
+    border-radius: 15px;
+    cursor: pointer;
+}
+
+div.filter_reviews{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 10px;
+    padding-bottom: 2.5%;
+    align-items: baseline;
+}
+
+div.filter_reviews input{
+    display: none;
+}
+
+div.filter_reviews div.new_reviews label, div.filter_reviews div.highest_reviews label, div.filter_reviews div.lower_reviews label{
+    border-radius: 10px;
+    float: left;
+    min-width: 50px!important;
+    margin-top: 20%;
+    padding: 0px 25px;
+    border: 2px solid #000;
+    font-size: 10px;
+    text-align: center;
+    line-height: 35px;
+    white-space: nowrap;
+    text-transform: uppercase;
+    cursor: pointer;
+    color: black;
+}
+
+div.filter_reviews div.new_reviews input:checked + label, div.filter_reviews div.highest_reviews input:checked + label, div.filter_reviews div.lower_reviews input:checked + label{
+    background-color: black;
+    border: 2px solid black;
+    color: white;
+}
+
+div.review_section div.box-comment-review {
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 20px;
+}
+
+div.review_section div.box-comment-review div.profile-user div.user {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    padding-top: 10px;
+    padding-bottom: 5px;
+}
+
+div.review_section div.box-comment-review div.profile-user div.user div p.user-name {
+    font-size: 13px; 
+}
+
+div.review_section div.box-comment-review div.profile-user div.user div p.user-rating {
+    color: #fcb90c;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+div.review_section div.box-comment-review div.profile-user div.user img.profile-image {
+    width: 11%
+}
+
+div.review_section div.box-comment-review div.profile-user div.comment-review {
+    padding-bottom: 20px;
+    border-bottom: solid rgb(175, 175, 175) 1px;
+}
+
+div.review_section div.box-comment-review div.profile-user div.comment-review p {
+    font-size: 16px;
+}
+
+div.review_section div.box-comment-review div.profile-user div.comment-review p.title {
+    font-weight: bold;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+div.product-card {
+    background-color: whitesmoke;
+    border-radius: 40px;
+}
+
+div.product-card div article{
+    margin-bottom: 20px;
+    padding-bottom: 30px;
+}
+
+div.product-card p{
+    text-align: center;
+    padding-top: 20px;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+div.product-card div article a img.image-product{
+    width: 100%;
+    padding: 20px;
+    border-radius: 60px;
+}
+
+div.product-card div article a div.name-price {
+    text-align: center;
+}
+
+div.product-card div article a div.name-price p{
+    font-size: 16px;
+    padding: 0px;
+    padding-bottom: 10px;
+}
+
+div.box-button-reviews{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+div.review_section button.button-reviews{
+    color: black;
+    background-color: whitesmoke;
+    padding: 10px 20px;
+    border: solid rgb(175, 175, 175) 1px;
+    border-radius: 10px;
+    width: 20%;
+}
+
+div.box-button-reviews button{
+    font-weight: bold;
+}
 
 /*   FOOTER MOBILE FIRST HOME  */
 
@@ -306,22 +635,90 @@
 
 }
 
-
-
 @media (min-width: 481px) {
-    .img_detailProduct {
-        display: flex;
-        justify-content: center;
-    }
-    .img_detailProduct img {
-        width: 70%;
+
+    div.talles, div.quantity{
+        justify-content: flex-start;
     }
 
+    div.filter_reviews{
+        justify-content: flex-start;
+        margin-left: 20px;
+    }
+
+    div.product-card {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 20px;
+    }
+
+    .product-group {
+        display: flex;
+        flex-direction: row;
+        margin-left: 50px;
+        margin-right: 50px;
+    }
+    
+    div.review_section div.box-comment-review div.profile-user div.user img.profile-image {
+        width: 6%;
+    }
 
 }
 
-@media (min-width: 768px) {
+@media (min-width: 769px) {
    
+    .header-header{
+        height: 14vh;
+    }
+    .contenedor-hamburgesa{
+        display: none;
+    }
+
+    .logo{
+        width: 160px;
+    }
+    .buscador_home{
+        display: block;
+        border: none;
+        border: var(--op2-color-gris-oscuro);
+        outline: none;
+        padding: 10px;
+        border-radius: 15px;
+        color: var(--op2-color-gris-oscuro);
+        font-family: var(--op1-font-type);
+        margin-right: 20px;
+    }
+
+
+    .contenedor-buscador{
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        gap: 10px;
+    } 
+    
+    
+    .header_container_items{
+        display: block;
+        margin-top: 14vh;
+        background-color: var(--op2-color-primary-green);
+        color: var(--op2-color-gris-claro)
+    }
+
+    .header_container_items ul{
+        display: flex;
+        padding: 10px;
+        justify-content: space-evenly;
+        align-items: center;
+        border-top: solid .5px var(--op2-color-gris-claro);
+        margin-top: 5px;
+
+    }
+
+    .header_container_items ul li{
+        font-weight: bold;
+        list-style-type: none;
+    }
   
     .small_img {
         display: flex;
@@ -403,6 +800,14 @@
     
     }
 
+    main {
+        margin-top: 0vh;
+    }
+
+    main.main_detailProduct {
+        display: flex;
+        flex-direction: column;
+    }
 
     .img_detailProduct img {
         height: auto;
@@ -418,7 +823,6 @@
     .small_img img{
         width: 90%;
         height: 80%;
-        border-radius: 50%
     }
 
     .talles button {
@@ -430,17 +834,10 @@
         flex-direction: row-reverse;
         justify-content: space-evenly;
         align-items: center;
-        width: 60%;
         height: 100%;
-        
-    }
-
-    .main_detailProduct{
-        display: flex;
-        flex-direction: row;
-        justify-content: space-evenly;
-        align-items: center;
-        height: 91vh;
+        background-color: var(--op2-color-primary-green);
+        margin-left: 60px;
+        margin-right: 60px;
     }
 
     .detailProduct_other_images{
@@ -472,11 +869,90 @@
         justify-content: space-evenly;
         width: 100%;
     }
-    .provisorio2 {
-        width: 20%;
+
+    .box-product {
+        display: flex;
+        flex-direction: row;
+        background-color: var(--op2-color-primary-green);
+        border-bottom-left-radius: 40px;
+        border-bottom-right-radius: 40px;
+        padding-bottom: 70px;
+        padding-top: 35px;
     }
+
+    .content_price {
+        margin-right: 60px;
+    }
+
+    div.talles, div.quantity {
+        justify-content: flex-start;
+    }
+
+    .provisorio2 {
+
+    }
+
     .img_detailProduct{
         width: 68%;
         height: 100%;
     }
+
+    .form_buttons{
+        justify-content: center;
+    }
+
+    div.product-card {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 20px;
+    }
+
+    .product-group {
+        display: flex;
+        flex-direction: row;
+        margin-left: 50px;
+        margin-right: 50px;
+    }
+
+    .edit_button, .delete_button{
+        width: 20%;
+    }
+
+    .post_review_container {
+        margin-left: 70px;
+        margin-right: 70px;
+    }
+
+    .box-filter{
+        margin-left: 70px;
+        margin-right: 70px;
+        margin-bottom: 40px;
+    }
+
+    div.filter_reviews {
+        justify-content: flex-start;
+        margin-left: 20px;
+    }
+
+    div.review_section div.box-comment-review div.profile-user div.user img.profile-image {
+        width: 4%;
+    }
+
+    div.box-button-reviews button{
+        font-weight: bold;
+        width: 1%;
+    }
+
+    .title_reviews {
+        font-size: 22px;
+        padding-top: 40px;
+        padding-bottom: 20px;
+    }
+
+    div.product-card p {
+        font-size: 22px;
+        padding-top: 40px;
+        padding-bottom: 20px;
+    }
+
 }

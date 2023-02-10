@@ -31,6 +31,37 @@
     ]
   },
   {
+    "id": "2",
+    "nombre": "Camisa Cuadrille",
+    "descripcion": "lorem ipsum aksdjask das dhas djasd asd agsd gas das dhas djasd gas dgaksd asg dgasd kagsd agks daskd askgd askgd agsdas dasld asd asdgas dglas dasd alsd ahñ",
+    "category": "mujer",
+    "ropa": "on",
+    "precio": "4500",
+    "imagen": "img-1675034602715.jpg",
+    "imagenes": [
+      {
+        "fieldname": "files_img",
+        "originalname": "Camisa-2-F-lateral.jpg",
+        "encoding": "7bit",
+        "mimetype": "image/jpeg",
+        "destination": "C:\\Users\\admin}\\Desktop\\Poyecto-DH\\public\\products",
+        "filename": "img-1675034602717.jpg",
+        "path": "C:\\Users\\admin}\\Desktop\\Poyecto-DH\\public\\products\\img-1675034602717.jpg",
+        "size": 148230
+      },
+      {
+        "fieldname": "files_img",
+        "originalname": "Camisa-2-F-reverso.jpg",
+        "encoding": "7bit",
+        "mimetype": "image/jpeg",
+        "destination": "C:\\Users\\admin}\\Desktop\\Poyecto-DH\\public\\products",
+        "filename": "img-1675034602719.jpg",
+        "path": "C:\\Users\\admin}\\Desktop\\Poyecto-DH\\public\\products\\img-1675034602719.jpg",
+        "size": 221517
+      }
+    ]
+  },
+  {
     "id": "3",
     "nombre": "Campera Plums",
     "descripcion": "lorem ipsum aksdjask das dhas djasd asd agsd gas das dhas djasd gas dgaksd asg dgasd kagsd agks daskd askgd askgd agsdas dasld asd asdgas dglas dasd alsd ahñ",
