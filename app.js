@@ -22,7 +22,7 @@ app.use(methodOverride('_method'));
 
 /**********  ESCUCHANDO EL PUERTO   *********/
 app.listen(PORT , ()=>{
-    console.log('Servidor corriendo ...')
+    console.log('Servidor corriendo en el puerto ' + PORT)
 });
 
 /*********  SETEANDO LAS VISTAS PARA TRABAJAR CON EJS ***********/
