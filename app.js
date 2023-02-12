@@ -10,7 +10,12 @@ const publicPath = path.join(__dirname ,'/public');
 const mainRoute =  require('./routes/mainRoute.js');  
 const productsRoute = require('./routes/productsRoute');
 const carritoRoute =  require('./routes/carritoRoute.js'); 
-const loginRoute =  require('./routes/loginRoute'); 
+const usersRoute =  require('./routes/usersRoute'); 
+const userLoggedMiddleware = require('./middlewares/userLoggedMiddleware');
+
+/******* REQUIRE DE SESSION *******/
+const cookieParser = require('cookie-parser');
+const session = require('express-session'); 
 
 /********** CAPTURAR INFO DE POST *************/
 app.use(express.urlencoded( { extended:false } ));
@@ -19,6 +24,17 @@ app.use(express.json());
 /********* CONFIGURANDO EL METODO OVERRIDE  ************/
 const methodOverride = require('method-override'); 
 app.use(methodOverride('_method')); 
+
+/******** MIDDLEWARES DE APLICACION **********/
+app.use(session({
+    secret: 'secretito', 
+    resave: false,
+    saveUninitialized: false
+}));
+
+app.use(cookieParser());
+
+app.use(userLoggedMiddleware); 
 
 /**********  ESCUCHANDO EL PUERTO   *********/
 app.listen(PORT , ()=>{
@@ -37,7 +53,7 @@ app.use(express.static(publicPath));
 app.use('/' , mainRoute );
 app.use('/products' , productsRoute)
 app.use('/carrito' , carritoRoute);
-app.use('/login' , loginRoute);
+app.use('/user' , usersRoute);
 
 
 

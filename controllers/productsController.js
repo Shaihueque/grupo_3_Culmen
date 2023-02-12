@@ -56,8 +56,6 @@ const productsController = {
             const image = req.files.file_img[0].filename ? req.files.file_img[0].filename : products[i].imagen;
             const secondaryImages = req.files.files_img;
 
-                console.log(req.body)
-
                 products[i] = {
                     id: req.params.id, 
                     ...req.body, 
