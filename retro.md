@@ -37,4 +37,14 @@ Ideas de cosas por hacer:
 
 Retro para el sprint 4 del sprint 5
 
+Cosas que hicimos bien:
+- Terminamos a tiempo con los objetivos.
+- Nos juntamos en reuniones frecuentemente.
+- Mayor comunicacion de equipo.
 
+Ideas de cosas por hacer:
+- Nos relajarnos por haber terminado antes de fecha.
+- Planificar mejor para optimizar el uso del tiempo.
+- No dejar tanto tiempo de comunicacion entre el grupo.
+
+Prueba rama vicky probando rpobando
