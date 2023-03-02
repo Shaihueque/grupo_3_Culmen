@@ -35,8 +35,6 @@ Ideas de cosas por hacer:
 -Usar trello de manera colectiva donde cada participante pueda modificar.
 
 
+Retro para el sprint 4 del sprint 5
 
-
-
-Retro para el sprint 4. 
 
