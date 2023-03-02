@@ -45,8 +45,6 @@ const userController = {
 
         return res.send(userCreated)
         //res.redirect('user/profile/' + user.id ) 
-
-        
     },
 
     processLogin: (req, res)=>{
@@ -75,7 +73,7 @@ const userController = {
         
         let isOkPassword = bcryptjs.compareSync(req.body.passwordLogin , userInDB.password); 
 
-        if ( isOkPassword ) {
+        if ( isOkPassword ) { //si la contraseña ingresada coincide con la contraseña hasheada registrada del usuario
             delete userInDB.password;
             delete userInDB.passConfirm;
             req.session.userLogged = userInDB;

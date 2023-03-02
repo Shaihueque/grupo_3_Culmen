@@ -19,7 +19,7 @@ const productsController = {
     store: (req, res)=>{
 
         //const mainImage = req.files.file_img[0];
-        const nuevoId = products ? products[products.length - 1].id + 1 : 0 ;
+        const nuevoId = products ? products[products.length - 1].id + 1 : 1 ;
         //const image = req.files.file_img > 0 ? mainImage.filename : 'image.png';
 
         const image = req.files.file_img[0].filename ? req.files.file_img[0].filename : 'image.png';

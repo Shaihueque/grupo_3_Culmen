@@ -32,17 +32,17 @@ const validateRegister = [
     body('userImage')
     .custom((value, { req }) => {
 
-        let file = req.file;
-		let acceptedExtensions = ['.jpg', '.png', '.gif', '.jepg'];
+      let file = req.file;
+		  let acceptedExtensions = ['.jpg', '.png', '.gif', '.jepg'];
 
-		if (!file) {
-			throw new Error('Tienes que subir una imagen');
-		} else {
-			let fileExtension = path.extname(file.originalname);
-			if (!acceptedExtensions.includes(fileExtension)) {
-				throw new Error(`Las extensiones de archivo permitidas son ${acceptedExtensions.join(', ')}`);
-			}
-		}
+      if (!file) {
+        throw new Error('Tienes que subir una imagen');
+      } else {
+        let fileExtension = path.extname(file.originalname);
+        if (!acceptedExtensions.includes(fileExtension)) {
+          throw new Error(`Las extensiones de archivo permitidas son ${acceptedExtensions.join(', ')}`);
+        }
+      }
 
 		return true;
 	})
