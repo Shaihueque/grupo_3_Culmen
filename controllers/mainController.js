@@ -13,7 +13,7 @@ const mainController = {
         res.render('carrito')
     },
     
-    login: (req, res) => {
+    login: (req, res)=>{
         res.render('users/login')
     }
 }
