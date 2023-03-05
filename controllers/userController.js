@@ -1,3 +1,6 @@
+const path = require('path'); 
+const fs = require('fs'); 
+
 const userDataJSON = fs.readFileSync(path.join(__dirname , '../data/userData.json') , 'utf-8');
 let userData = JSON.parse(userDataJSON); 
 

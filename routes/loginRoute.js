@@ -20,7 +20,7 @@ const multerStorage = multer.diskStorage({
 
 
 router.get( "/",  mainController.login);
-router.post("/", upload.single(imagenUsuario), userController.create )
+router.post("/", upload.single('imagenUsuario'), userController.create )
 
 
 
