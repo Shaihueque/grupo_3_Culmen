@@ -2,7 +2,7 @@ const express = require("express");
 const router = express.Router();
 const path = require('path'); 
 const multer = require('multer');
-const mainController = require('../controllers/mainController')
+//const mainController = require('../controllers/mainController')
 const userController = require('../controllers/userController')
 
 const multerStorage = multer.diskStorage({
