@@ -2,10 +2,10 @@ const fs = require('fs');
 const path = require('path'); 
 
 const UserModels = {
-    fileName: './database/users.json',
+    fileName: './data/userData.json',
 
     getData:function() {
-        return JSON.parse(fs.readFileSync(this.fileName, 'utf.8'));
+        return JSON.parse(fs.readFileSync(this.fileName, 'utf-8'));
     },
 
     generateId: function() {
