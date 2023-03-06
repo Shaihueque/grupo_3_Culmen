@@ -21,10 +21,16 @@
                             Iniciá sesión en tu cuenta para comprar, ver el estado de tus pedidos y más.
                         </p>
 
-                        <form class="loginform">
-                            <input type="email" name="email" placeholder="Email" required>
+                        <form class="loginform" action="/user/login" method="post">
+                            <input type="email" name="emailLogin" placeholder="Email" required>
+                            <% if( locals.errors && errors.emailLogin){ %>
+                                <small class="errors"> *<%= errors.emailLogin.msg %> </small> 
+                             <% } %>
                             
-                            <input type="password" placeholder="Contraseña" name="password" required>
+                            <input type="password" placeholder="Contraseña" name="passwordLogin" required>
+                            <% if( locals.errors && errors.passwordLogin){ %>
+                                <small class="errors"> *<%= errors.passwordLogin.msg %> </small> 
+                             <% } %>
                             
                             <button type="submit" title="Ingresar" name="Ingresar">Login</button>
                         </form>
@@ -46,7 +52,7 @@
                         Registrándote no te perderás de descuentos exclusivos, ofertas y anuncios.
                     </p>
 
-                    <form action="/login" class="registerform" method="POST" enctype="multipart/form-data">
+                    <form action="/user" class="registerform" method="POST" enctype="multipart/form-data">
                         <input type="text" id="name" name="name"  placeholder="Ingresa tu nombre">
                         <input type="text" id="lastname" name="lastname" placeholder="Ingresa tu apellido">
                         <input type="email" id="email" name="email" placeholder="Ingresa tu email">
