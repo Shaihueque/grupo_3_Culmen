@@ -11,10 +11,6 @@ const mainController = {
     },
     carrito: (req, res)=>{ 
         res.render('carrito')
-    },
-    
-    login: (req, res)=>{
-        res.render('users/login')
     }
 }
 

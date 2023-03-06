@@ -1,10 +1,15 @@
 const path = require('path'); 
 const fs = require('fs'); 
+const UserModels = require('../models/UserModels');
 
 const userDataJSON = fs.readFileSync(path.join(__dirname , '../data/userData.json') , 'utf-8');
 let userData = JSON.parse(userDataJSON); 
 
 const userController = {
+    login: (req, res)=>{
+        res.render('users/login')
+    },
+    
     create: function(req, res) {
        let usuario= {
         name: req.body.name,
