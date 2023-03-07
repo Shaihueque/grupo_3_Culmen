@@ -1,12 +1,12 @@
-const path = require('path'); 
-const fs = require('fs'); 
+/*const path = require('path'); 
+const fs = require('fs'); */
 const UserModels = require('../models/UserModels');
 const bcryptjs = require('bcryptjs');
 const { validationResult } = require('express-validator');
 
 
-const userDataJSON = fs.readFileSync(path.join(__dirname , '../data/userData.json') , 'utf-8');
-let userData = JSON.parse(userDataJSON); 
+/*const userDataJSON = fs.readFileSync(path.join(__dirname , '../data/userData.json') , 'utf-8');
+let userData = JSON.parse(userDataJSON); */
 
 const userController = {
     login: (req, res)=>{
@@ -14,17 +14,18 @@ const userController = {
     },
     
     processRegister: (req, res) => {
-        const resultValidation = validationResult(req);
+        /*const resultValidation = validationResult(req);
 
         if(resultValidation.errors.length > 0) {
             return res.render('users/login', {
                 errors: resultValidation.mapped(),
                 oldData: req.body
             });
-        }
+        }*/
         //Verificamos si el usuario existe en la base de datos, si existe es porque el mail ya esta registrado
-        let userInDB = user.findByField('email', req.body.email);
-
+        let userInDB = UserModels.findByField('email', req.body.email);
+        /*console.log(userInDB);
+        return res.send(userInDB);*/
         if(userInDB) {
             return res.render('users/login', {
                 errors: {
@@ -46,9 +47,9 @@ const userController = {
         let userCreated = UserModels.create(userToCreate);
 
         console.log(userToCreate);
-        //return res.redirect('user/profile' + user.id);
-        //return res.redirect('user/login');
-        return res.send(userCreated);
+        //return res.redirect('user/profile/' + user.id);
+        return res.redirect('user/login');
+        //return res.send(userCreated); 
     },
     /*create: function(req,res) {
         const nuevoUsuario = {

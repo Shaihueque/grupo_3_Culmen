@@ -48,3 +48,4 @@ Ideas de cosas por hacer:
 - No dejar tanto tiempo de comunicacion entre el grupo.
 
 Prueba rama vicky probando 
+

@@ -88,5 +88,26 @@
   "password": "oSG40yChb19",
   "category": "admin",
   "imagen": "ImagenUsuario.png"
+ },
+ {
+  "id": 11,
+  "name": "Julian",
+  "lastname": "Jara Aguirre",
+  "email": "jaraaguirrejulian@gmail.com",
+  "password": "$2a$10$0A1i7WIHNB.qoQvOy4mbiuPfVhxMzxz/3dVww4PnDavK3b1F3KFqy",
+  "passConfirm": "$2a$10$QMvZpuCmVCjHqRCgWRPjU.5ZbKCwFn4rHPJfXRLxTZta9z.JorF1i",
+  "fechaNac": "2023-03-29",
+  "promo": "on",
+  "imagen": "ImagenUsuario.png"
+ },
+ {
+  "id": 12,
+  "name": "shai",
+  "lastname": "jara",
+  "email": "Shai@gmail.com",
+  "password": "$2a$10$ATlEmjjD7ml/bz0LCf2yjerIXu9DfDfiSQbNUKUR6vZ5MUuxfIZsu",
+  "passConfirm": "$2a$10$EkJWP7SMUQIWMmThjnuYou2C9RT59wnNnwHZI1UDjyAF7eMHcQEay",
+  "fechaNac": "2023-01-26",
+  "imagen": "ImagenUsuario.png"
  }
 ]
