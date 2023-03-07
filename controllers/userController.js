@@ -38,14 +38,16 @@ const userController = {
 //Si no llega a estar registrado, se prepara la info siguiente para enviar
         let userToCreate = {
             ...req.body , 
-            password: bcryptjs.hashSync(req.body.pass, 10),
+            password: bcryptjs.hashSync(req.body.password, 10),
             passConfirm: bcryptjs.hashSync(req.body.passConfirm , 10),
             imagen: req.file ? req.file.filename : 'ImagenUsuario.png'
         };
         
-        let userCreated = User.create(userToCreate);
+        let userCreated = UserModels.create(userToCreate);
 
+        console.log(userCreated);
         //return res.redirect('user/profile' + user.id);
+        //return res.redirect('user/login');
         return res.send(userCreated);
     },
     /*create: function(req,res) {
@@ -104,6 +106,11 @@ profile: (req, res) => {
 
     let user = req.session.userLogged;
     res.render('users/profile', { user });
+},
+logout: (req, res) => {
+    req.session.destroy();
+
+    return res.redirect('/');
 }
 
 }
