@@ -45,7 +45,7 @@ const userController = {
         
         let userCreated = UserModels.create(userToCreate);
 
-        console.log(userCreated);
+        console.log(userToCreate);
         //return res.redirect('user/profile' + user.id);
         //return res.redirect('user/login');
         return res.send(userCreated);
