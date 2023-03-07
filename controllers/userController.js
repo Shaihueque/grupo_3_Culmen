@@ -14,14 +14,14 @@ const userController = {
     },
     
     processRegister: (req, res) => {
-        /*const resultValidation = validationResult(req);
+        const resultValidation = validationResult(req);
 
         if(resultValidation.errors.length > 0) {
             return res.render('users/login', {
                 errors: resultValidation.mapped(),
                 oldData: req.body
             });
-        }*/
+        }
         //Verificamos si el usuario existe en la base de datos, si existe es porque el mail ya esta registrado
         let userInDB = UserModels.findByField('email', req.body.email);
         /*console.log(userInDB);
@@ -75,7 +75,7 @@ processLogin: (req, res) => {
     }
 
     // SI no llega haber errorres, verificamos si el mail y password, coinciden con el de algun usuario ya registrado en la base de datos
-    let userToLogin = User.findByField('email', req.body.email);
+    let userToLogin = UserModels.findByField('email', req.body.email);
     
     if(userToLogin){
         let isOkPassword = bcryptjs.compareSync(req.body.passwordLogin, userToLogin.password);

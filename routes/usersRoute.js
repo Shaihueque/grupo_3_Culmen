@@ -29,7 +29,7 @@ const validateRegister = require('../middlewares/validationUserRegister');
 
 router.get( "/login", guestMiddleware, userController.login);
 //Proceso de login de ingreso de usuarios registrados
-router.post('/login', validateLogin, userController.processLogin);
+router.post('/login', userController.processLogin);
 //Proceso de registro de los nuevos usuarios
 router.post("/", uploadFileUser.single('imagenUsuario'), userController.processRegister );
 //ACCEDER AL PERFIL DEL USUARIO

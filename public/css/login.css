@@ -147,6 +147,10 @@ body {
     border-radius: 8px;
 }
 
+.isInvalid{
+    border: solid .5 red !important;
+}
+
 .register_form_container input {
     font-family: 'Overpass', sans-serif;
     font-size: 13px;
@@ -168,7 +172,7 @@ body {
     border-radius: 8px;
 }
 
-.register_form_container input.input_image {
+.register_form_container .input_image {
     font-family: 'Overpass', sans-serif;
     font-size: 13px;
     color: #1b262c;
@@ -191,13 +195,13 @@ body {
     color: rgb(175, 175, 175)
 }
 
-.login_form_container input::placeholder {
+.login_form_container .input::placeholder {
     font-family: 'Overpass', sans-serif;
     color: #515151;
     font-size: 13px;
 }
 
-.register_form_container input::placeholder {
+.register_form_container .input::placeholder {
     font-family: 'Overpass', sans-serif;
     color: #515151;
     font-size: 13px;
