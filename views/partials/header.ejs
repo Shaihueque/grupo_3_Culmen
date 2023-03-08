@@ -19,14 +19,27 @@
                 </a>
                 
             </div>
-
-            <div class="contenedor-user">
-                <i class="fas fa-user icon_header" alt="Iniciar Sesion"></i>
-            </div>
-
+            
             <div class="contenedor-carrito">
                 <i class="fas fa-shopping-cart icon_header" alt="Carrito de Compra"></i>
             </div>   
+            
+            <% if( locals.isLogged ) { %>
+                <div class="contenedor-user">
+                    <img src="/users/<%= userLogged.imagen %>" alt="" class="header_image_user">
+                    <p> Hi <%= userLogged.name %> </p>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="/user/profile">My profile</a>
+                        <li><hr class="dropdown-divider"></li>
+                        <a class="dropdown-item" href="/user/logout">Logout</a>
+                    </ul>
+                </div>
+            <% } else {  %>
+                <div class="contenedor-user">
+                   <!--  <i class="fas fa-user icon_header" alt="Iniciar Sesion"> </i> -->
+                    <p class="header_is_register"> Iniciar Sesión o Registrarse </p>
+                </div>
+             <% } %>
         </nav>
     </section>
 

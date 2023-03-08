@@ -1,5 +1,36 @@
 [
   {
+    "id": "1",
+    "nombre": "Camisa Azul",
+    "descripcion": "lorem ipsum aksdjask das dhas djasd asd agsd gas das dhas djasd gas dgaksd asg dgasd kagsd agks daskd askgd askgd agsdas dasld asd asdgas dglas dasd alsd ahñ",
+    "category": "hombre",
+    "ropa": "on",
+    "precio": "5500",
+    "imagen": "img-1675034578151.jpg",
+    "imagenes": [
+      {
+        "fieldname": "files_img",
+        "originalname": "Camisa-1-H-lateral.jpg",
+        "encoding": "7bit",
+        "mimetype": "image/jpeg",
+        "destination": "C:\\Users\\admin}\\Desktop\\Poyecto-DH\\public\\products",
+        "filename": "img-1675034578153.jpg",
+        "path": "C:\\Users\\admin}\\Desktop\\Poyecto-DH\\public\\products\\img-1675034578153.jpg",
+        "size": 56695
+      },
+      {
+        "fieldname": "files_img",
+        "originalname": "Camisa-1-H-reverso.jpg",
+        "encoding": "7bit",
+        "mimetype": "image/jpeg",
+        "destination": "C:\\Users\\admin}\\Desktop\\Poyecto-DH\\public\\products",
+        "filename": "img-1675034578155.jpg",
+        "path": "C:\\Users\\admin}\\Desktop\\Poyecto-DH\\public\\products\\img-1675034578155.jpg",
+        "size": 80734
+      }
+    ]
+  },
+  {
     "id": "2",
     "nombre": "Camisa Cuadrille",
     "descripcion": "lorem ipsum aksdjask das dhas djasd asd agsd gas das dhas djasd gas dgaksd asg dgasd kagsd agks daskd askgd askgd agsdas dasld asd asdgas dglas dasd alsd ahñ",
@@ -27,6 +58,37 @@
         "filename": "img-1675034602719.jpg",
         "path": "C:\\Users\\admin}\\Desktop\\Poyecto-DH\\public\\products\\img-1675034602719.jpg",
         "size": 221517
+      }
+    ]
+  },
+  {
+    "id": "3",
+    "nombre": "Campera Plums",
+    "descripcion": "lorem ipsum aksdjask das dhas djasd asd agsd gas das dhas djasd gas dgaksd asg dgasd kagsd agks daskd askgd askgd agsdas dasld asd asdgas dglas dasd alsd ahñ",
+    "category": "hombre",
+    "ropa": "on",
+    "precio": "18200",
+    "imagen": "img-1675034633669.jpg",
+    "imagenes": [
+      {
+        "fieldname": "files_img",
+        "originalname": "Campera-Abrigo-lateral-H.jpg",
+        "encoding": "7bit",
+        "mimetype": "image/jpeg",
+        "destination": "C:\\Users\\admin}\\Desktop\\Poyecto-DH\\public\\products",
+        "filename": "img-1675034633670.jpg",
+        "path": "C:\\Users\\admin}\\Desktop\\Poyecto-DH\\public\\products\\img-1675034633670.jpg",
+        "size": 51341
+      },
+      {
+        "fieldname": "files_img",
+        "originalname": "Campera-Abrigo-reverso-H.jpg",
+        "encoding": "7bit",
+        "mimetype": "image/jpeg",
+        "destination": "C:\\Users\\admin}\\Desktop\\Poyecto-DH\\public\\products",
+        "filename": "img-1675034633671.jpg",
+        "path": "C:\\Users\\admin}\\Desktop\\Poyecto-DH\\public\\products\\img-1675034633671.jpg",
+        "size": 71706
       }
     ]
   },
@@ -385,6 +447,26 @@
         "filename": "img-1675035194487.jpg",
         "path": "C:\\Users\\admin}\\Desktop\\Poyecto-DH\\public\\products\\img-1675035194487.jpg",
         "size": 68792
+      }
+    ]
+  },
+  {
+    "id": 20,
+    "nombre": "NUEVO PRODUCTTSSS",
+    "descripcion": "asd asd a",
+    "category": "",
+    "tipo": "on",
+    "precio": "32332",
+    "imagen": "img-1677766950331.png",
+    "imagenes": [
+      {
+        "filename": "img-1677766950339.png"
+      },
+      {
+        "filename": "img-1677766950377.png"
+      },
+      {
+        "filename": "img-1677766950418.png"
       }
     ]
   }
