@@ -75,16 +75,16 @@ processLogin: (req, res) => {
     }
 
     // SI no llega haber errorres, verificamos si el mail y password, coinciden con el de algun usuario ya registrado en la base de datos
-    let userToLogin = UserModels.findByField('email', req.body.email);
+    let userToLogin = UserModels.findByField('email', req.body.emailLogind);
     
     if(userToLogin){
         let isOkPassword = bcryptjs.compareSync(req.body.passwordLogin, userToLogin.password);
         if(isOkPassword) {
             delete userToLogin.password;
             req.session.userLogged = userToLogin;
-            res.redirect('/user/profile');
+            res.redirect('user/profile');
         }
-        return res.render('user/login', {
+        return res.render('users/login', {
             errors: {
                 emailLogin: {
                     msg: 'La credencial es invalida'
@@ -92,7 +92,7 @@ processLogin: (req, res) => {
             }
         });
     }
-    return res.render('user/login', {
+    return res.render('users/login', {
         errors: {
             email: {
                 msg: 'No se encuentra este email en nuestra base de datos'
