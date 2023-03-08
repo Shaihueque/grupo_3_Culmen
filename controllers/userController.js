@@ -43,10 +43,10 @@ const userController = {
             imagen: req.file ? req.file.filename : 'ImagenUsuario.png'
         };
         
-        let userCreated = User.create(userToCreate);
+        let userCreated = UserModels.create(userToCreate);
 
         //return res.redirect('user/profile' + user.id);
-        return res.send(userCreated);
+        return res.redirect("/");
     },
     /*create: function(req,res) {
         const nuevoUsuario = {
