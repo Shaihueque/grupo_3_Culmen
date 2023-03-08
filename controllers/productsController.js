@@ -19,19 +19,24 @@ const productsController = {
     store: (req, res)=>{
 
         //const mainImage = req.files.file_img[0];
-        const nuevoId = products ? products[products.length - 1].id + 1 : 0 ;
+        const nuevoId = products ? products[products.length - 1].id + 1 : 1 ;
         //const image = req.files.file_img > 0 ? mainImage.filename : 'image.png';
 
         const image = req.files.file_img[0].filename ? req.files.file_img[0].filename : 'image.png';
-        const secondaryImages = req.files.files_img;
 
-        console.log(req.body)
+        const secondaryImages = req.files.files_img;
+        const onlyFilenames = secondaryImages.map( img => {
+            const filename = img.filename || 'image.png';
+            return { filename };
+        })
+
+        console.log(onlyFilenames)
 
         const newProduct = {
             id: nuevoId , 
             ...req.body , 
             imagen: image,  
-            imagenes: secondaryImages ? secondaryImages : [{filename: 'image.png' }]
+            imagenes: onlyFilenames
         }
 
         products.push(newProduct);
@@ -55,8 +60,6 @@ const productsController = {
                 //const image = req.files.file_img > 0 ? req.files.file_img[0].filename : 'image.png';
             const image = req.files.file_img[0].filename ? req.files.file_img[0].filename : products[i].imagen;
             const secondaryImages = req.files.files_img;
-
-                console.log(req.body)
 
                 products[i] = {
                     id: req.params.id, 

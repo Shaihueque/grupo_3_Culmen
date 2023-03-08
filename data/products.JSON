@@ -449,5 +449,25 @@
         "size": 68792
       }
     ]
+  },
+  {
+    "id": 20,
+    "nombre": "NUEVO PRODUCTTSSS",
+    "descripcion": "asd asd a",
+    "category": "",
+    "tipo": "on",
+    "precio": "32332",
+    "imagen": "img-1677766950331.png",
+    "imagenes": [
+      {
+        "filename": "img-1677766950339.png"
+      },
+      {
+        "filename": "img-1677766950377.png"
+      },
+      {
+        "filename": "img-1677766950418.png"
+      }
+    ]
   }
 ]
