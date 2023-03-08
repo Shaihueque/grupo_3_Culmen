@@ -29,7 +29,7 @@ const validateRegister = [
       })
     //.equals('password').withMessage('Las contraseñas no coinciden')
     ,
-    body('userImage')
+    body('imagenUsuario')
     .custom((value, { req }) => {
 
       let file = req.file;

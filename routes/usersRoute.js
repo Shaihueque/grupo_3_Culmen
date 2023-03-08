@@ -35,6 +35,6 @@ router.post("/", uploadFileUser.single('imagenUsuario'), validateRegister, userC
 //ACCEDER AL PERFIL DEL USUARIO
 router.get("/profile", authMiddleware, userController.profile);
 
-//router.get("/logout", userController.logout);
+router.get("/logout", userController.logout);
 
 module.exports = router; 

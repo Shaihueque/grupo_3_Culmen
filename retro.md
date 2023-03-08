@@ -47,4 +47,5 @@ Ideas de cosas por hacer:
 - Planificar mejor para optimizar el uso del tiempo.
 - No dejar tanto tiempo de comunicacion entre el grupo.
 
-Prueba rama vicky probando rpobando
+Prueba rama vicky probando 
+
