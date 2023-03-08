@@ -46,10 +46,15 @@ const userController = {
         
         let userCreated = UserModels.create(userToCreate);
 
+<<<<<<< HEAD
+        //return res.redirect('user/profile' + user.id);
+        return res.redirect("/");
+=======
         console.log(userToCreate);
         //return res.redirect('user/profile/' + user.id);
         return res.redirect('user/login');
         //return res.send(userCreated); 
+>>>>>>> e79a64c36fc830d3c8d778db7e27ac99fb37eda6
     },
     /*create: function(req,res) {
         const nuevoUsuario = {
