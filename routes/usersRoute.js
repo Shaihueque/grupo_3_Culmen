@@ -31,7 +31,7 @@ router.get( "/login", guestMiddleware, userController.login);
 //Proceso de login de ingreso de usuarios registrados
 router.post('/login', validateLogin, userController.processLogin);
 //Proceso de registro de los nuevos usuarios
-router.post("/", uploadFileUser.single('imagenUsuario'), userController.processRegister );
+router.post("/", uploadFileUser.single('imagenUsuario'),validateRegister, userController.processRegister );
 //ACCEDER AL PERFIL DEL USUARIO
 router.get("/profile", authMiddleware, userController.profile);
 
