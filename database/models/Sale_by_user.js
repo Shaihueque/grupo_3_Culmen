@@ -1,6 +1,6 @@
 module.exports = ( sequelize, DataTypes )=>{
 
-    const alias = 'User_has_detalle_venta'; 
+    const alias = 'Sale_by_user'; 
 
     const col = {
 
@@ -35,12 +35,27 @@ module.exports = ( sequelize, DataTypes )=>{
     };
     
     const config ={
-        tableName : 'user_has_detalle_venta', 
+        tableName : 'sale_by_user', 
         timestamps: false
     } ;
 
-    const User_has_detalle_venta = sequelize.define(alias, col, config);
+    const Sale_by_user = sequelize.define(alias, col, config);
 
-    return User_has_detalle_venta;
+    Sale_by_user.associate = (models)=>{
+
+        Sale_by_user.belongsTo(models.User , {
+            as: 'user', 
+            foreignKey: 'user_id'
+        }); 
+        // un detalle de venta estará asociado a 1 usuario
+
+        Sale_by_user.hasMany(models.Sale_by_product, {
+            as: 'sale_by_product', 
+            foreignKey: 'sale_by_user_id'
+        }); // un detalle venta por usuario puede estar en muchos registro venta por productos (xq un usuario puede comprar varios productos distintos)
+
+    }
+
+    return Sale_by_user;
 
 }

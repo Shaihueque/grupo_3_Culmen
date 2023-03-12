@@ -29,5 +29,16 @@ module.exports = ( sequelize, DataTypes )=>{
 
     const Ubication_user = sequelize.define(alias, col, config);
 
+    Ubication_user.associate = (models)=>{
+
+        Ubication_user.hasMany(models.User , {
+            as: 'user' , 
+            foreignKey: 'ubication_user' 
+        });                          // una ubicacion puede tener varios usuarios
+
+
+    }
+
+
     return Ubication_user
 }

@@ -22,6 +22,14 @@ module.exports = ( sequelize, DataTypes )=>{
 
     const Image_product = sequelize.define(alias, col, config);
 
+    Image_product.associate = (models)=>{
+        Image_product.hasOne(models.Product , {
+            as: 'product', 
+            foreignKey: 'image_product_id'
+        }); // 1 imagen corresponde a un producto. Esta en otra tabla al pedo creo jaja
+    }
+
+
     return Image_product;
 
 }

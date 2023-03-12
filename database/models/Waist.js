@@ -22,6 +22,14 @@ module.exports = ( sequelize, DataTypes )=>{
 
     const Waist = sequelize.define(alias, col, config);
 
+    Waist.associate = (models)=>{
+        Waist.hasMany(models.Product, {
+            as: 'product', 
+            foreignKey: 'waist_id'
+        }); 
+    }
+
+
     return Waist;
 
 }

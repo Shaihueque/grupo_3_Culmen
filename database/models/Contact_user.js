@@ -1,6 +1,6 @@
 module.exports = ( sequelize, DataTypes )=>{
 
-    const alias = 'Ubication_user'; 
+    const alias = 'Contact_user'; 
 
     const col = {
 
@@ -24,6 +24,16 @@ module.exports = ( sequelize, DataTypes )=>{
     } ;
 
     const Contact_user = sequelize.define(alias, col, config);
+
+    Contact_user.associate = (models)=>{
+
+        Contact_user.hasMany(models.User , {
+            as: 'user', 
+            foreignKey: 'contact_user'
+        }); // vamos a hacer que un contacto de direccion puede estar en varios usuarios que vivan juntos por ej. 
+
+    }
+
 
     return Contact_user;
 

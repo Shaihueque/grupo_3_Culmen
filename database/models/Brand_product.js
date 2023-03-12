@@ -22,6 +22,13 @@ module.exports = ( sequelize, DataTypes )=>{
 
     const Brand_product = sequelize.define(alias, col, config);
 
+    Brand_product.associate = (models)=>{
+        Brand_product.hasMany(models.Product , {
+            as: 'product', 
+            foreignKey: 'brand_id'
+        }); // 1 marca puede tener muchos productos
+    }
+
     return Brand_product;
 
 }

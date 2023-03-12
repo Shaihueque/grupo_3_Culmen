@@ -20,8 +20,18 @@ module.exports = ( sequelize, DataTypes )=>{
         timestamps: false
     } ;
 
-    const clothes_type = sequelize.define(alias, col, config);
+    const Clothes_type = sequelize.define(alias, col, config);
 
-    return clothes_type;
+    Clothes_type.associate = (models)=>{
+
+        Clothes_type.hasMany(models.Product , {
+            as: 'product', 
+            foreignKey: 'clothes_type_id'
+        }); 
+
+    }
+
+
+    return Clothes_type;
 
 }

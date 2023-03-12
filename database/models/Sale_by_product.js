@@ -1,6 +1,6 @@
 module.exports = ( sequelize, DataTypes )=>{
 
-    const alias = 'User_has_detalle_venta_has_Product'; 
+    const alias = 'Sale_by_product'; 
 
     const col = {
 
@@ -13,7 +13,7 @@ module.exports = ( sequelize, DataTypes )=>{
             type: DataTypes.INTEGER, 
             allowNull: false,
             references: {
-                model: 'user_has_detalle_venta',
+                model: 'sale_by_user',
                 key: 'id'
             }
         },
@@ -37,12 +37,27 @@ module.exports = ( sequelize, DataTypes )=>{
     };
     
     const config ={
-        tableName : 'user_has_detalle_venta_has_Product', 
+        tableName : 'sale_by_product', 
         timestamps: false
     } ;
 
-    const User_has_detalle_venta_has_Product = sequelize.define(alias, col, config);
+    const Sale_by_product = sequelize.define(alias, col, config);
 
-    return User_has_detalle_venta_has_Product;
+    Sale_by_product.associate = (models)=>{
+
+        Sale_by_product.belongsTo(models.Product,{
+            as: 'product', 
+            foreignKey: 'Product_idProduct'
+        }); // 1 venta por producto va a tener solo 1 producto asignado
+
+        Sale_by_product.belongsTo(models.Sale_by_user,{
+            as: 'sale_by_user', 
+            foreignKey: 'sale_by_user_id'
+        }); // 1 venta por producto solo va a tener 1 factura de venta por usuario (y yo luego veo todas las que tiene un usuario)
+
+    }
+
+
+    return Sale_by_product;
 
 }

@@ -85,5 +85,54 @@ module.exports = ( sequelize, DataTypes )=>{
 
     const Product = sequelize.define(alias, col, config);
 
+    Product.associate = (models)=> {
+
+        Product.belongsTo(models.Category_product , {
+            as: 'category_product', 
+            foreignKey: 'category_id'
+        }); 
+
+        Product.belongsTo(models.Clothes_type , {
+            as: 'clothes_type', 
+            foreignKey: 'clothes_type_id'
+        }); 
+
+        Product.belongsTo(models.Image_product, {
+            as: 'image_product', 
+            foreignKey: 'image_product_id'
+        }); 
+
+        Product.hasMany(models.Other_images , {
+            as: 'other_images', 
+            foreignKey: 'id_product'
+        });    // 1 producto puede tener varias imagenes.
+
+        Product.belongsTo(models.Brand_product , {
+            as: 'brand_product', 
+            foreignKey: 'brand_id'
+        });
+
+        Product.belongsTo(models.Waist, {
+            as: 'waist', 
+            foreignKey: 'waist_id'
+        }); 
+
+        Product.belongsToMany(models.User , {
+            as: 'users', 
+            through: 'favorite_product', 
+            foreignKey: 'product_id',
+            otherKey: 'user_id',
+            timestamps: false
+        });// relacion muchos a muchos de user y product a traves de favorite_product. 
+
+        Product.hasMany(models.Sale_by_product , {
+            as: 'sales_by_product', 
+            foreignKey: 'Product_idProduct'
+        }); // un producto puede estar en varias ventas por producto 
+
+    }
+
+
+
     return Product;
 };

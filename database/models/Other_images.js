@@ -30,6 +30,13 @@ module.exports = ( sequelize, DataTypes )=>{
 
     const Other_images = sequelize.define(alias, col, config);
 
+    Other_images.associate = (models)=> {
+        Other_images.belongsTo(models.Product, {
+            as: 'product', 
+            foreignKey: 'id_product'
+        });                 // 1 imagen va a corresponder a 1 producto. 
+    }
+
     return Other_images;
 
 }
