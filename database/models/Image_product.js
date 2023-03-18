@@ -17,17 +17,19 @@ module.exports = ( sequelize, DataTypes )=>{
 
     const config ={
         tableName : 'image_product', 
-        timestamps: false
+        timestamps: false,
+        paranoid: true
     } ;
 
     const Image_product = sequelize.define(alias, col, config);
 
     Image_product.associate = (models)=>{
-        Image_product.hasOne(models.Product , {
+
+        Image_product.hasMany(models.Product , {
             as: 'product', 
             foreignKey: 'image_product_id'
         }); // 1 imagen corresponde a un producto. Esta en otra tabla al pedo creo jaja
-    }
+    } // como la imagen por default puede usarse en varios productos tuve que cambiar la relacion de 1 a n. 
 
 
     return Image_product;

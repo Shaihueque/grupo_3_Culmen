@@ -34,7 +34,7 @@ module.exports = ( sequelize, DataTypes )=>{
             allowNull: false
         },
         is_admin: {
-            type: DataTypes.TINYNIT(1), 
+            type: DataTypes.TINYINT(1), 
             allowNull: false
         }, 
         contact_user : {
@@ -67,12 +67,12 @@ module.exports = ( sequelize, DataTypes )=>{
     User.associate = (models)=>{
 
         User.belongsTo( models.Ubication_user , {
-            as: 'ubication_user' , 
+            as: 'ubicationUser' , 
             foreignKey: 'ubication_user'
         });                               // un Usuario va a tener un resgistro de ubicacion.
 
         User.belongsTo(models.Contact_user , {
-            as: 'contact_user', 
+            as: 'contactUser', 
             foreignKey: 'contact_user'
         });                              // un usuario va a tener un registro de contacto
 

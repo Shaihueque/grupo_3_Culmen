@@ -9,62 +9,123 @@
 
     <main>
 
-        <h2>Editar Producto: <%= elegido.nombre %></h2>
+        <h2>Editar Producto: <%= elegido.name %></h2>
 
-        <form action="/products/<%= elegido.id %>?_method=PUT" method="post" enctype="multipart/form-data" >
+        <form action="/products/<%= elegido.idProduct %>?_method=PUT" method="post" enctype="multipart/form-data" >
 
             <div class="contenedor">
                 
                 
                 <div class="contenedor-nombreProdu">
-                    <label>Nombre del Producto: <%= elegido.nombre %>  </label>
-                    <input type="text" name="nombre" id="" placeholder="" class="nombreProducto inputstyle" value="<%= elegido.nombre %>"> 
+                    <label>Nombre del Producto:   </label>
+                    <input type="text" name="nombre" id="" placeholder="" class="nombreProducto inputstyle" value="<%= elegido.name %>"> 
                 </div>
-               
+                <% if( locals.errors && errors.nombre){ %>
+                    <small class="errors"> *<%= errors.nombre.msg %> </small> 
+                 <% } %>
+                
                 <div class="contenedor-descripcion">
-                    <textarea name="descripcion" id="" cols="30" rows="10" placeholder="Descripcion del producto" class="descripcion inputstyle"><%= elegido.descripcion %></textarea>
+                    <textarea name="descripcion" id="" cols="30" rows="10" placeholder="Descripcion del producto" class="descripcion inputstyle"><%= elegido.description %></textarea>
                 </div>
+                <% if( locals.errors && errors.descripcion){ %>
+                    <small class="errors"> *<%= errors.descripcion.msg %> </small> 
+                 <% } %>
                 
                 <div class="contenedor-img">
                     <label>Imagen Principal del Producto:</label>
                     <input type="file" name="file_img" id="" placeholder="Sube la imagen" class="img">
                 </div>
+                <% if( locals.errors && errors.file_img){ %>
+                    <small class="errors"> *<%= errors.file_img.msg %> </small> 
+                 <% } %>
 
                 <div class="contenedor-img">
                     <label>Imagenes Secundarias del Producto:</label>
-                    <input type="file" name="files_img" id="" placeholder="Sube las imagenes" class="img" multiple > 
+                    <input type="file" name="files_img" id="" placeholder="Sube las imagenes" class="img" multiple max="4"> 
                 </div>
+                <% if( locals.errors && errors.files_img){ %>
+                    <small class="errors"> *<%= errors.files_img.msg %> </small> 
+                 <% } %>
+
+
 
                 <div class="contenedor-categorias">
                     <label class=" sub-contenedor">Categorias:</label>
                     <select name="category" id="" class="categorias"> Categorias
-                        <option value= "hombre">HOMBRE</option>
-                        <option value="mujer" >MUJER</option>
-                        <option value="ninos">NIÑOS</option>
-                        <option value="accesorios">ACCESORIOS</option>
+                        <option value="" selected disabled>Elige una categoria </option>
+                        <% Categories.forEach((category)=>{  %>
+                            <option value="<%= category.idcategory_product %>"
+                                <% if(elegido.category_product.idcategory_product ==  category.idcategory_product){ %>
+                                    selected
+                                <% } %>
+                                >
+                                <%= category.category.toUpperCase() %></option>
+                        <% }) %>
                     </select>
                 </div>
+                <% if( locals.errors && errors.category){ %>
+                    <small class="errors"> *<%= errors.category.msg %> </small> 
+                 <% } %>
+
 
                 <div class="contenedor-prendas">
                     <label class="categoria-prenda">Tipos de prendas:</label>
-                    <input type="radio" name="ropa" id="" placeholder="" class="prendas"> Camisa
-                    <input type="radio" name="ropa" id="" placeholder="" class="prendas"> Camperas
-                    <input type="radio" name="ropa" id="" placeholder="" class="prendas"> Pantalones
-                    <input type="radio" name="ropa" id="" placeholder="" class="prendas"> Remeras
-                </div>
 
-                <div class="contenedor-talles">
-                    <label class="categoria-talles">Talles:</label>
-                    <input type="radio" name="talle" id="" placeholder="" class="talles"> S
-                    <input type="radio" name="talle" id="" placeholder="" class="talles"> M
-                    <input type="radio" name="talle" id="" placeholder="" class="talles"> L
-                    <input type="radio" name="talle" id="" placeholder="" class="talles"> XL
-                </div>
+                    <% Clothes.forEach((clothe)=>{ %>
+
+                        <input type="radio" name="tipo" id="" placeholder="" class="prendas" value="<%= clothe.id %>"
+                        <% if(elegido.clothes_type.id ==  clothe.id){ %>
+                            checked
+                        <% } %>
+                        > <%= clothe.type.toUpperCase() %>
+
+                    <%  }) %>
+                    <% if( locals.errors && errors.tipo){ %>
+                        <small class="errors"> *<%= errors.tipo.msg %> </small> 
+                     <% } %>
+
+
+
+                    <div class="contenedor-categorias">
+                        <label class=" sub-contenedor">Marcas:</label>
+                        <select name="marca" id="" class="categorias"> Categorias
+                            <option value="" selected disabled> Elige una marca </option>
+                            <% Brands.forEach((brand)=>{  %>
+                                <option value="<%= brand.brand_id %>"
+                                    <% if(elegido.brand_product.brand_id ==  brand.brand_id){ %>
+                                        selected
+                                    <% } %>
+                                    >
+                                    <%= brand.brand_name.toUpperCase() %></option>
+                            <% }) %>
+                        </select>
+                    </div>
+                    <% if( locals.errors && errors.marca){ %>
+                        <small class="errors"> *<%= errors.marca.msg %> </small> 
+                     <% } %>
+
+                    <div class="contenedor-talles">
+                        <label class="categoria-talles">Talles:</label>
+                        <% Waists.forEach((waist)=>{  %>
+                        <input type="radio" name="talle" id="" placeholder="" class="talles" value="<%=waist.id%>"
+                        <% if(elegido.waist.id ==  waist.id){ %>
+                            checked
+                        <% } %>
+                        > 
+                        <%= waist.waist.toUpperCase() %>
+                        <%}) %>
+                    </div>
+                    <% if( locals.errors && errors.talle){ %>
+                        <small class="errors"> *<%= errors.talle.msg %> </small> 
+                     <% } %>
 
                 <div class="contenedor-precio">
                     <label>Precio:</label>
-                    <input type="text" name="precio" id="" placeholder="$" class="inputstyle" value="<%= elegido.precio %>"> 
+                    <input type="text" name="precio" id="" placeholder="$" class="inputstyle" value="<%= elegido.price %>"> 
                 </div>
+                <% if( locals.errors && errors.precio){ %>
+                    <small class="errors"> *<%= errors.precio.msg %> </small> 
+                 <% } %>
 
                 <div  class="contenedor-btn" >
                     <button class="btn-crear" type="submit">GUARDAR CAMBIOS</button>

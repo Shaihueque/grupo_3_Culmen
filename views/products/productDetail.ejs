@@ -18,25 +18,45 @@
         <div class="box-product">
           <div class="provisorio">
             <section class="img_detailProduct">
-                <img src="/products/<%= elegido.imagen %>"  alt="">
+
+                <% if ( elegido && elegido.imageProduct && elegido.imageProduct.image_route) { %>
+                    <img src="/products/<%= elegido.imageProduct.image_route %>" alt="">
+                  <% } else { %>
+                    <img src="/products/imagen.png" alt="">
+                  <% } %>
+
             </section>
             <section class="detailProduct_other_images">
-                <% elegido.imagenes.forEach((i)=>{  %>
-                <div class="small_img">
-                    <img src="/products/<%= i.filename %>" alt="">
-                </div>
-            <% }) %>
+
+
+                <% if (elegido && elegido.other_images && elegido.other_images.length > 0) { %>
+                    <% elegido.other_images.forEach((i)=>{ %>
+                        <div class="small_img">
+                            <img src="/products/<%= i.image %>" alt="">
+                        </div>
+                    <% }); %>
+                <% } %>
+
             </section>
+
+
+
+
         </div>
         <section class="container_price">
             <div class="content_price">
-                <p class="product_name"><%= elegido.nombre %></p>
-                <p class="product_price">$<%= elegido.precio %></p>
+                <% if(elegido && elegido.name){ %>
+                    <p class="product_name"><%= elegido.name %></p>
+                    <p class="product_price">$<%= elegido.price %></p>
+                <% } %>
                 <div class="reviews">
                     <p class="product_rating">★ ★ ★ ★ ☆</p>
                     <p>Num Reviews</p>
                 </div>
-                <p class="product_description"> <%= elegido.descripcion %> </p>
+                <% if(elegido && elegido.description){ %>
+
+                <p class="product_description"> <%= elegido.description %> </p>
+                <% } %>
                 <p>Talle:</p>
                     <div class="talles">
                         <div class="xs">
@@ -72,15 +92,17 @@
         </div>
         
     <div>
+        <% if(elegido){ %>
 
+        
 <div>
-    <form action="/products/<%= elegido.id %>?_method=DELETE" method="post" class="form_buttons">
-        <a href="/products/<%= elegido.id %>/editar" class="edit_button">Editar</a>
+    <form action="/products/<%= elegido.idProduct %>?_method=DELETE" method="post" class="form_buttons">
+        <a href="/products/<%= elegido.idProduct %>/editar" class="edit_button">Editar</a>
         <button type="submit" class="delete_button"> Eliminar </button>
     </form>
 </div>
 
-
+<% } %>
 <div class="review_section">
     <p class="title_reviews">Reviews</p>
     <div class="post_review_container">

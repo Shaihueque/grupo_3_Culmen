@@ -14,7 +14,6 @@ module.exports = ( sequelize, DataTypes )=>{
         },
 
         discount: DataTypes.INTEGER , 
-
         stars: DataTypes.INTEGER, 
 
         description:{
@@ -98,13 +97,14 @@ module.exports = ( sequelize, DataTypes )=>{
         }); 
 
         Product.belongsTo(models.Image_product, {
-            as: 'image_product', 
+            as: 'imageProduct', 
             foreignKey: 'image_product_id'
         }); 
 
         Product.hasMany(models.Other_images , {
             as: 'other_images', 
-            foreignKey: 'id_product'
+            foreignKey: 'id_product',
+            onDelete: 'CASCADE'
         });    // 1 producto puede tener varias imagenes.
 
         Product.belongsTo(models.Brand_product , {
