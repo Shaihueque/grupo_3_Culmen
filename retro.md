@@ -48,4 +48,13 @@ Nos relajarnos por haber terminado antes de fecha.
 Planificar mejor para optimizar el uso del tiempo.
 No dejar tanto tiempo de comunicacion entre el grupo.
 
+Retro para el sprint 4 del sprint 5
+Cosas que hicimos bien:
+Entregar el proyecto a tiempo. 
+Trabajar con ramas.
 
+Ideas de cosas por hacer: 
+Cumplir con los objetivos y reuniones que nos planteamos. 
+Mas comunicacion.
+
+n
