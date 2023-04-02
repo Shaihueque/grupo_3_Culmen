@@ -1,5 +1,8 @@
 const path = require('path'); 
 const fs = require('fs'); 
+const { Association } = require("sequelize");
+const db = require("../database/models");
+//const db = require("../database/models");
 
 const productsJSON = fs.readFileSync(path.join(__dirname , '../data/products.json') , 'utf-8');
 let products = JSON.parse(productsJSON); 
@@ -9,9 +12,13 @@ const productsController = {
     index: (req, res)=>{
         res.render('products/products' , { products })
     }, 
-    crearProducto: (req, res)=>{
-        res.render('products/crearProductos')
-    }, 
+    crearProducto: async(req, res)=>{
+        let category =  await db.Category.findAll();
+        let type = await db.Type.findAll();
+        let waist = await db.Waist.findAll();
+            return res.render('products/crearProductos', {category , type, waist}) 
+        }
+      , 
     detail: (req , res )=>{
         const elegido = products.find( p => p.id == req.params.id );
         res.render('products/productDetail' , { elegido } )

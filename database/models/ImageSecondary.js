@@ -24,7 +24,7 @@ module.exports = function (sequelize, dataTypes) {
     let ImageSecondary = sequelize.define(alias, cols, config);
 
     ImageSecondary.associate = function(models){
-        ImageSecondary.belongsTo(models.Product, {
+        ImageSecondary.belongsTo(models.Productos, {
             as: "Product",
             foreignKey: "productos_id"
         })

@@ -21,7 +21,7 @@ module.exports = function (sequelize, dataTypes) {
     let Waist = sequelize.define(alias, cols, config);
 
     Waist.associate = function(models){
-        Waist.hasMany(models.Product, {
+        Waist.hasMany(models.Productos, {
             as: "Product",
             foreignKey: "waist_id"
         })

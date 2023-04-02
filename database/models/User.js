@@ -24,7 +24,9 @@ module.exports = function (sequelize, dataTypes) {
             type: dataTypes.INTEGER
         },
         admin:{
-            type: dataTypes.TINYINIT
+            //type: dataTypes.TINYINIT,
+            type: dataTypes.BOOLEAN,
+            allowNull: false
         }
         
     }
@@ -36,7 +38,7 @@ module.exports = function (sequelize, dataTypes) {
     let User = sequelize.define(alias, cols, config);
 
     User.associate = function(models){
-        User.belongsToMany(models.Product, {
+        User.belongsToMany(models.Productos, {
             as: "Product",
             through: "product_favorite",
             foreignKey: "users_id",
