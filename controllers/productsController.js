@@ -17,8 +17,22 @@ const productsController = {
         let type = await db.Type.findAll();
         let waist = await db.Waist.findAll();
             return res.render('products/crearProductos', {category , type, waist}) 
-        }
-      , 
+        },
+        
+    guardarProducto: (req, res) => {
+        db.Productos.create({
+            name: req.body.nombre,
+            desctiption: req.body.descripcion,
+            price: req.body.precio,
+            image: req.body.file_img,
+            category_id: req.body.categorias,
+            type_id: req.body.Type,
+            waist_id: req.body.Waist
+        })
+
+         res.redirect("/products");
+    },
+
     detail: (req , res )=>{
         const elegido = products.find( p => p.id == req.params.id );
         res.render('products/productDetail' , { elegido } )

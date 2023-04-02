@@ -11,6 +11,7 @@ const uploadFile = require('../middlewares/productsMulterMiddleware');
 /******* CRUD  *******/
 router.get( "/", productsController.index );
 router.get( "/crear", productsController.crearProducto );
+router.post( "/crear", productsController.guardarProducto);
 router.get('/:id' , productsController.detail); 
 
 router.post('/', 

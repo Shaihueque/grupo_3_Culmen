@@ -39,27 +39,40 @@
                 <div class="contenedor-categorias">
                     <label class=" sub-contenedor">Categorias:</label>
                     <select name="category" id="" class="categorias"> Categorias
-                        <option value="">HOMBRE</option>
+                        <% for (i = 0; i < category.length; i++) { %>
+                            <option value="<%= category[i].id %>"> <%= category[i].name %></option>
+                        <!--<option value="">HOMBRE</option>
                         <option value="">MUJER</option>
                         <option value="">NIÑOS</option>
-                        <option value="">ACCESORIOS</option>
+                        <option value="">ACCESORIOS</option>-->
+                         <% } %>
                     </select>
                 </div>
 
                 <div class="contenedor-prendas">
                     <label class="categoria-prenda">Tipos de prendas:</label>
-                    <input type="radio" name="tipo" id="" placeholder="" class="prendas"> Camisa
+                    <select name="Type" id="Type" class="Type">
+                        <% for (i = 0; i < type.length; i++) { %>
+                        <option value="<%= type[i].id %>"><%= type[i].name %></option>
+                        <% } %>
+                    </select>
+                    <!--<input type="radio" name="tipo" id="" placeholder="" class="prendas"> Camisa
                     <input type="radio" name="tipo" id="" placeholder="" class="prendas"> Camperas
                     <input type="radio" name="tipo" id="" placeholder="" class="prendas"> Pantalones
-                    <input type="radio" name="tipo" id="" placeholder="" class="prendas"> Remeras
+                    <input type="radio" name="tipo" id="" placeholder="" class="prendas"> Remeras -->
                 </div>
 
                 <div class="contenedor-talles">
                     <label class="categoria-talles">Talles:</label>
-                    <input type="radio" name="talle" id="" placeholder="" class="talles"> S
+                    <select name="Waist" id="Waist" class="Waist"> 
+                        <% for (i = 0; i < waist.length; i++) { %>
+                        <option value="<%= waist[i].id %>"><%= waist[i].name %></option>
+                        <% } %>
+                    </select>
+                    <!--<input type="radio" name="talle" id="" placeholder="" class="talles"> S
                     <input type="radio" name="talle" id="" placeholder="" class="talles"> M
                     <input type="radio" name="talle" id="" placeholder="" class="talles"> L
-                    <input type="radio" name="talle" id="" placeholder="" class="talles"> XL
+                    <input type="radio" name="talle" id="" placeholder="" class="talles"> XL-->
                 </div>
 
                 <div class="contenedor-precio">
