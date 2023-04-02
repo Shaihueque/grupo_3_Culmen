@@ -25,10 +25,8 @@ module.exports = function (sequelize, dataTypes) {
         },
         admin:{
             type: dataTypes.TINYINIT
-        },
-        favorite:{
-            type: dataTypes.INTEGER
         }
+        
     }
     let config = {
         tableName: "users",
