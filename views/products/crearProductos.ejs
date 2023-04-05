@@ -10,7 +10,7 @@
     <main>
 
         <h2>Crear Producto</h2>
-        <form action="/products" method="POST" enctype="multipart/form-data">
+        <form action="/products/crear" method="POST" enctype="multipart/form-data">
 
             <div class="contenedor">
                 
@@ -32,9 +32,6 @@
                     <label>Imagenes Secundarias del Producto:</label>
                     <input type="file" name="files_img" id="" placeholder="Sube las imagenes" class="img" multiple > 
                 </div>
-
-
-                
 
                 <div class="contenedor-categorias">
                     <label class=" sub-contenedor">Categorias:</label>
@@ -79,8 +76,6 @@
                     <label>Precio:</label>
                     <input type="text" name="precio" id="" placeholder="$" class="inputstyle" > 
                 </div>
-
-
 
                 <div class="contenedor-btn">
                     <button class="btn-crear" type="submit">CREAR PRODUCTO</button>

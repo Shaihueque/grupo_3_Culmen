@@ -9,20 +9,20 @@
 
     <main>
 
-        <h2>Editar Producto: <%= elegido.nombre %></h2>
+        <h2>Editar Producto: <%= ProductoElegido.name %></h2>
 
-        <form action="/products/<%= elegido.id %>?_method=PUT" method="post" enctype="multipart/form-data" >
+        <form action="/products/<%= ProductoElegido.id %>?_method=PUT" method="post" enctype="multipart/form-data" >
 
             <div class="contenedor">
                 
                 
                 <div class="contenedor-nombreProdu">
-                    <label>Nombre del Producto: <%= elegido.nombre %>  </label>
-                    <input type="text" name="nombre" id="" placeholder="" class="nombreProducto inputstyle" value="<%= elegido.nombre %>"> 
+                    <label>Nombre del Producto: <%= ProductoElegido.name %>  </label>
+                    <input type="text" name="nombre" id="" placeholder="" class="nombreProducto inputstyle" value="<%= ProductoElegido.name %>"> 
                 </div>
                
                 <div class="contenedor-descripcion">
-                    <textarea name="descripcion" id="" cols="30" rows="10" placeholder="Descripcion del producto" class="descripcion inputstyle"><%= elegido.descripcion %></textarea>
+                    <textarea name="descripcion" id="" cols="30" rows="10" placeholder="Descripcion del producto" class="descripcion inputstyle"><%= ProductoElegido.description %></textarea>
                 </div>
                 
                 <div class="contenedor-img">
@@ -38,32 +38,55 @@
                 <div class="contenedor-categorias">
                     <label class=" sub-contenedor">Categorias:</label>
                     <select name="category" id="" class="categorias"> Categorias
-                        <option value= "hombre">HOMBRE</option>
-                        <option value="mujer" >MUJER</option>
-                        <option value="ninos">NIÑOS</option>
-                        <option value="accesorios">ACCESORIOS</option>
+                       <% for(let i = 0; i < Productos.category.length; i++) { %>
+                        <% if(Productos.category[i].id == ProductoElegido.category_id) { %>
+                            <option value="<%= Productos.category[i].id %>" selected>
+                                <%= Productos.category[i].name  %>
+                        </option>
+                            <% }else { %>
+                                <option value="<%= Productos.category[i].id %>">
+                                <%= Productos.category[i].name %>
+                            </option>
+                            <% } %>
+                            <% } %>
                     </select>
                 </div>
 
                 <div class="contenedor-prendas">
                     <label class="categoria-prenda">Tipos de prendas:</label>
-                    <input type="radio" name="ropa" id="" placeholder="" class="prendas"> Camisa
-                    <input type="radio" name="ropa" id="" placeholder="" class="prendas"> Camperas
-                    <input type="radio" name="ropa" id="" placeholder="" class="prendas"> Pantalones
-                    <input type="radio" name="ropa" id="" placeholder="" class="prendas"> Remeras
+                    <select name="type" id="" class="type prenda"> type
+                        <% for(let i = 0; i < Productos.type.length; i++) { %>
+                         <% if(Productos.type[i].id == ProductoElegido.type_id) { %>
+                             <option value="<%= Productos.type[i].id %>" selected>
+                                 <%= Productos.type[i].name  %>
+                         </option>
+                             <% }else { %>
+                                 <option value="<%= Productos.type[i].id %>">
+                                 <%= Productos.type[i].name %>
+                             </option>
+                             <% } %>
+                             <% } %>
                 </div>
 
                 <div class="contenedor-talles">
                     <label class="categoria-talles">Talles:</label>
-                    <input type="radio" name="talle" id="" placeholder="" class="talles"> S
-                    <input type="radio" name="talle" id="" placeholder="" class="talles"> M
-                    <input type="radio" name="talle" id="" placeholder="" class="talles"> L
-                    <input type="radio" name="talle" id="" placeholder="" class="talles"> XL
+                    <select name="waist" id="" class="waist talles"> waist
+                        <% for(let i = 0; i < Productos.waist.length; i++) { %>
+                         <% if(Productos.waist[i].id == ProductoElegido.waist_id) { %>
+                             <option value="<%= Productos.waist[i].id %>" selected>
+                                 <%= Productos.waist[i].name  %>
+                         </option>
+                             <% }else { %>
+                                 <option value="<%= Productos.waist[i].id %>">
+                                 <%= Productos.waist[i].name %>
+                             </option>
+                             <% } %>
+                             <% } %>
                 </div>
 
                 <div class="contenedor-precio">
                     <label>Precio:</label>
-                    <input type="text" name="precio" id="" placeholder="$" class="inputstyle" value="<%= elegido.precio %>"> 
+                    <input type="text" name="precio" id="" placeholder="$" class="inputstyle" value="<%= ProductoElegido.price %>"> 
                 </div>
 
                 <div  class="contenedor-btn" >

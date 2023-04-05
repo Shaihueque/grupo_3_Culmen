@@ -18,25 +18,25 @@
         <div class="box-product">
           <div class="provisorio">
             <section class="img_detailProduct">
-                <img src="/products/<%= elegido.imagen %>"  alt="">
+                <img src="/products/<%= Productos.image %>"  alt="">
             </section>
             <section class="detailProduct_other_images">
-                <% elegido.imagenes.forEach((i)=>{  %>
+                <% Productos.image_secondary.forEach((i)=>{  %>
                 <div class="small_img">
-                    <img src="/products/<%= i.filename %>" alt="">
+                    <img src="/products/<%= i.image_secondary %>" alt="">
                 </div>
             <% }) %>
             </section>
         </div>
         <section class="container_price">
             <div class="content_price">
-                <p class="product_name"><%= elegido.nombre %></p>
-                <p class="product_price">$<%= elegido.precio %></p>
+                <p class="product_name"><%= Productos.name %></p>
+                <p class="product_price">$<%= Productos.price %></p>
                 <div class="reviews">
                     <p class="product_rating">★ ★ ★ ★ ☆</p>
                     <p>Num Reviews</p>
                 </div>
-                <p class="product_description"> <%= elegido.descripcion %> </p>
+                <p class="product_description"> <%= Productos.description %> </p>
                 <p>Talle:</p>
                     <div class="talles">
                         <div class="xs">
@@ -74,9 +74,11 @@
     <div>
 
 <div>
-    <form action="/products/<%= elegido.id %>?_method=DELETE" method="post" class="form_buttons">
-        <a href="/products/<%= elegido.id %>/editar" class="edit_button">Editar</a>
+    <a href="/products/<%= Productos.id %>/editar" class="edit_button">Editar</a>
+    <form action="/products/<%= Productos.id %>" method="post" class="form_buttons">
+        
         <button type="submit" class="delete_button"> Eliminar </button>
+
     </form>
 </div>
 

@@ -17,15 +17,15 @@
             <h3>Basado en tu ultima visita</h3>
             <div class="container-productos flex-col "> 
 
-                <%  products.forEach((p)=>{ %>
+                <%  Productos.forEach((p)=>{ %>
 
                 <article class="producto card">
                     <a href="/products/<%= p.id %>" class="enlace">
                         <div class="card2">
-                            <img src="/products/<%= p.imagen %>" alt="" class="img-product">
+                            <img src="/products/<%= p.image %>" alt="" class="img-product">
                             <div class="main-art-prducto">
-                                <p><strong class="producto-precio">$<%= p.precio %></strong></p>
-                                <p class="producto-nombre"><strong><%= p.nombre %></strong></p>
+                                <p><strong class="producto-precio">$<%= p.price %></strong></p>
+                                <p class="producto-nombre"><strong><%= p.name %></strong></p>
                             </div>
                         </div>
                     </a>

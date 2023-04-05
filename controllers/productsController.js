@@ -2,6 +2,7 @@ const path = require('path');
 const fs = require('fs'); 
 const { Association } = require("sequelize");
 const db = require("../database/models");
+const { body } = require('express-validator');
 //const db = require("../database/models");
 
 const productsJSON = fs.readFileSync(path.join(__dirname , '../data/products.json') , 'utf-8');
@@ -20,12 +21,15 @@ const productsController = {
         },
         
     guardarProducto: (req, res) => {
+        console.log(req.body.nombre);
+        //res.send(req.body);
+
         db.Productos.create({
             name: req.body.nombre,
-            desctiption: req.body.descripcion,
+            description: req.body.descripcion,
             price: req.body.precio,
             image: req.body.file_img,
-            category_id: req.body.categorias,
+            category_id: req.body.category,
             type_id: req.body.Type,
             waist_id: req.body.Waist
         })
@@ -37,7 +41,21 @@ const productsController = {
         const elegido = products.find( p => p.id == req.params.id );
         res.render('products/productDetail' , { elegido } )
     }, 
-    store: (req, res)=>{
+
+    detalleProducto: (req, res) =>{
+        db.Productos.findByPk(req.params.id, {include: [{association: "category"}, {association: "type"}, {association: "waist"}, {association: "image_secondary"}]})
+        .then(function(Productos){
+            res.render("products/productDetail", {Productos: Productos})
+        })
+    },
+
+    listadoPoductos: (req, res) =>{
+        db.Productos.findAll()
+        .then(function(Productos){
+            res.render('products/products', {Productos:Productos})
+        })
+    },
+    /*store: (req, res)=>{
 
         //const mainImage = req.files.file_img[0];
         const nuevoId = products ? products[products.length - 1].id + 1 : 1 ;
@@ -63,15 +81,49 @@ const productsController = {
         products.push(newProduct);
         fs.writeFileSync( path.join(__dirname , '../data/products.JSON') , JSON.stringify(products, null, 2) )
         res.redirect('/products')
-    }, 
+    }, */
 
-    edit: (req , res)=>{
-
+    edit: (req, res)=>{
+/*
         const elegido = products.find( p => p.id == req.params.id )
-        res.render('products/editarProductos' , { elegido })
+        res.render('products/editarProductos' , { elegido })*/
+
+        let ProductoElegido = db.Productos.findByPk(req.params.id);
+        let Productos = db.Productos.findAll();
+
+        Promise.all([ProductoElegido, Productos])
+        .then(function([ProductoElegido, Productos]){
+            res.render("products/editarProductos", {ProductoElegido: ProductoElegido, Productos: Productos});
+        })
     }, 
 
-    update: (req , res)=>{
+    actualizar: (req, res) => {
+        db.Productos.update({
+            name: req.body.nombre,
+            description: req.body.descripcion,
+            price: req.body.precio,
+            image: req.body.file_img,
+            category_id: req.body.category,
+            type_id: req.body.Type,
+            waist_id: req.body.Waist
+        },{
+            where: {
+                id: req.params.id
+            }
+        });
+        res.redirect("products/productDetail" + req.params.id);
+    
+    },
+    borrarProducto: (req, res) => {
+        db.Productos.destroy({ 
+            where: {
+                id: req.params.id
+            }
+        })
+        res.redirect("/products");
+    }
+
+    /*update: (req , res)=>{
        
         for (let i = 0; i < products.length; i++) {
             if (products[i].id == req.params.id) {
@@ -92,9 +144,10 @@ const productsController = {
         };
         fs.writeFileSync(  path.join(__dirname , '../data/products.JSON') , JSON.stringify(products, null, 2)); 
         res.redirect('/products'); 
-    }, 
+    }, */
 
-    delete: (req, res)=>{
+   
+    /*delete: (req, res)=>{
 
         const productsFiltrados = products.filter( p => p.id != req.params.id ); 
         const elegido = products.find( p => p.id == req.params.id );
@@ -113,6 +166,6 @@ const productsController = {
         products = productsFiltrados; 
         fs.writeFileSync(  path.join(__dirname , '../data/products.JSON') , JSON.stringify(products , null, 2)); 
         res.redirect('/products'); 
-    } 
+    } */
 }
 module.exports = productsController; 
