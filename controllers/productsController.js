@@ -14,7 +14,7 @@ const productsController = {
         res.render('products/products' , { products })
     }, 
     crearProducto: async(req, res)=>{
-        let category =  await db.Category.findAll();
+        let category =  await db.category.findAll();
         let type = await db.Type.findAll();
         let waist = await db.Waist.findAll();
             return res.render('products/crearProductos', {category , type, waist}) 
@@ -89,11 +89,13 @@ const productsController = {
         res.render('products/editarProductos' , { elegido })*/
 
         let ProductoElegido = db.Productos.findByPk(req.params.id);
-        let Productos = db.Productos.findAll();
+        let category = db.category.findAll();
+        let Waist = db.Waist.findAll()
+        let Type = db.Type.find()
 
-        Promise.all([ProductoElegido, Productos])
-        .then(function([ProductoElegido, Productos]){
-            res.render("products/editarProductos", {ProductoElegido: ProductoElegido, Productos: Productos});
+        Promise.all([ProductoElegido, category, Waist, Type])
+        .then(function([ProductoElegido, category, Waist, Type]){
+            res.render("products/editarProductos", {ProductoElegido: ProductoElegido, category: category, Waist: Waist, Type:Type});
         })
     }, 
 
