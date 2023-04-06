@@ -17,15 +17,7 @@ module.exports = ( sequelize, DataTypes )=>{
                 key: 'iduser'
             }
         },
-        Product_idProduct:  {
-            type: DataTypes.INTEGER, 
-            allowNull: false,
-            references: {
-                model: 'Product',
-                key: 'idProduct'
-            }
-        }, 
-
+        
         numero_factura : {
             type: DataTypes.STRING, 
             allowNull: false

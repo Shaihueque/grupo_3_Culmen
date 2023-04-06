@@ -5,7 +5,7 @@ const validateNewProduct = [
 
     body('nombre')
         .notEmpty().withMessage('El campo "nombre" es obligatorio').bail()
-        .isLength({ min: 3 , max: 45}).withMessage('El nombre debe tener entre 3 y 45 caracteres'),
+        .isLength({ min: 5 , max: 45}).withMessage('El nombre debe tener entre 5 y 45 caracteres'),
     body('descripcion')
         .isLength({ max: 500, optional:true }).withMessage('La descripción debe tener máximo 500 caracteres'),
     body('precio')

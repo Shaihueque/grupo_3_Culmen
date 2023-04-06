@@ -34,6 +34,28 @@ const productsController = {
        }
     },
 
+    index2: async(req, res)=>{
+        try{
+            const limit = 10; // número de productos por página
+            const page = req.query.page || 1; // número de página actual
+            const offset = (page - 1) * limit; // número de productos a saltar
+
+            const products = await Product.findAndCountAll({
+                include: [{ association: "imageProduct" }],
+                limit,
+                offset,
+                distinct: true,
+              });
+
+              const totalPages = Math.ceil(products.count / limit); // número total de páginas
+              const pages = Array.from({ length: totalPages }, (_, i) => i + 1); // array de números de página
+
+              res.render("products/products2", { products, pages, page, totalPages });
+            } catch (err) {
+              console.log(err);
+            }
+    },
+
     crearProducto: async(req, res)=>{
 
         try{
@@ -42,7 +64,7 @@ const productsController = {
             const Clothes = await Clothes_type.findAll();
             const Waists = await Waist.findAll({
                 order: [['id', 'ASC']]
-              });
+            });
 
             res.render('products/crearProductos', {
                 Categories , Brands ,Clothes , Waists
@@ -73,6 +95,7 @@ const productsController = {
         console.log(err)
        }
     },
+
     store: (req, res)=>{
 
         //const mainImage = req.files.file_img[0];
@@ -111,15 +134,17 @@ const productsController = {
         const Clothes = await Clothes_type.findAll();
         const Waists = await Waist.findAll({
                 order: [['id', 'ASC']]
-              });
+            });
 
         if ( !resultValidation.isEmpty() ) {  // primero verificamos si hay errores
+            console.log(req.body)
+            console.log(Brands[0].brand_id)
             return res.render('products/crearProductos' , {
                 errors: resultValidation.mapped() , 
                 old: req.body, 
                 Brands, Categories, Clothes, Waists
             });
-        }
+        }  // esto se puede hacer en el middleware directamente antes del next();
 
 
             let idImage ;
@@ -151,6 +176,7 @@ const productsController = {
               idImage = defaultImage.id;
         }
 
+        console.log(req.body)
         const product = await Product.create({
             name: req.body.nombre, 
             description: req.body.descripcion, 
@@ -200,6 +226,7 @@ const productsController = {
               });
             //res.json(elegido);
             return res.render('products/editarProductos' , { elegido , Brands, Categories, Clothes, Waists })
+
 
         }
         catch(err){
@@ -311,8 +338,6 @@ const productsController = {
             await Other_images.destroy({ where: { id_product: productId } });
             // deberia saltar un cartelito de aviso al usuario de que si quiere conservar las imagenes anteiories debe guardarlas y subirlas nuevamente por ej.
 
-
-
             //return res.json(updatedProduct)    
             //return res.json(count) 
             if (req.files.files_img && req.files.files_img.length > 0) {
@@ -400,6 +425,128 @@ const productsController = {
         catch(err){
             console.log(err)
         }
+    }, 
+
+    sale_by_product_list: async(req,res)=>{
+
+        const ventaPorProducto = await db.Sale_by_product.findAll({
+            //include: ['product',  { model: db.Sale_by_user, include: ['user'] }]
+            include : [{
+                 model: db.Product, 
+                 as: 'product' 
+                },
+            { 
+                model: db.Sale_by_user,
+                as: 'sale_by_user',
+                include: [{ model: db.User, as: 'user' }]
+            }]
+        }); 
+        return res.json(ventaPorProducto)
+    },
+    sale_by_user_list: async(req, res)=>{
+
+        const factura_por_user = await db.Sale_by_user.findAll({
+            /* where: {
+                id: req.session.userLogged.iduser
+            }, */ // agregar el where para traerme un solo usuario. 
+            include: [{ 
+            model: db.User, 
+            as: 'user'
+        },{
+            model: db.Sale_by_product, 
+            as: 'sale_by_product',
+                include: [{model: db.Product ,
+                    as: 'product',
+                    attributes: ['name'] 
+                     // attribute
+                    //exclude para traer solo lo que me quiero traer
+                    //traerme de la BD solamente ciertos campos de la tabla
+                }]
+            }]
+        } );
+        const facturas = [];
+
+        factura_por_user.forEach((factura) => {
+            const facturaInfo = {
+                factura: factura.numero_factura,
+                usuario: factura.user.name + ' ' + factura.user.last_name,
+                productos: factura.sale_by_product
+            };
+            facturas.push(facturaInfo);
+        });
+
+        return res.json(facturas)
+    },
+
+    crearFactura: async(req, res)=>{
+
+
+        //buscar el usuario que hace la compra
+        // validar primero si esta loggeado acà y usar un middleware de autentificacion
+        const userSale = await db.User.findByPk(req.session.userLogged.idUser);
+
+        //buscar cual va a ser el producto que vamos a comprar y guardar en la factura
+        const elegido = await db.Product.findByPk(req.params.id);
+
+        const newDetalleUser = await db.Sale_by_user.create({
+            user_id: userSale.iduser ,
+            detalle: 'mandar un mensaje por defecto',
+            numero_factura: 'generar automaticamente'
+        })
+
+        const newFactura = await db.Sale_by_product.create({
+            unit_price:  req.body.unit_price, 
+            cuantity: req.body.cuantity ,
+            Product_idProduct: elegido.idProduct,
+            sale_by_user_id: newDetalleUser.id
+        })
+
+
+    },
+    listPaginado: async (req, res) => {
+       /*  try {
+          const limit = 10; // Número de productos por página
+          const page = req.query.page || 1; // Número de página actual (por defecto 1)
+          const offset = (page - 1) * limit; // Índice del primer producto de la página actual
+      
+          const products = await Product.findAll({
+            include: [{ association: 'imageProduct' }],
+            limit: limit,
+            offset: offset
+          });
+      
+          const totalProducts = await Product.count(); // Total de productos
+      
+          const totalPages = Math.ceil(totalProducts / limit); // Total de páginas
+      
+          return res.render('products/products2', { products, totalPages, currentPage: page });
+        } catch (err) {
+          console.log(err);
+        } */
+        try{ 
+        const { page = 0 , size = 4 } = req.query; 
+
+        let options = {
+            limit: +size, // cantidad de prod que me trae
+            offset: (+page) * (+size), // desde donde empieza a saltear prod
+            include: ['imageProduct']
+        }
+
+        const { count , rows } = await Product.findAndCountAll(options);
+
+        return res.render('products/products2' , { products: rows, count, page, size })
+        /* res.json({
+            status: 'success', 
+            total: count,
+            products: rows
+        }) */
     }
+    catch(err){
+        console.log(err)
+    }
+      }
+
+
+      
 }
 module.exports = productsController; 

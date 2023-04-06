@@ -1,14 +1,14 @@
 const path = require('path');
 const { body } = require('express-validator'); 
 
-const validateRegister = [
+const validateEdit = [
     body('name')
     .notEmpty().withMessage('Campo requerido').bail()
-    .isLength({ min: 2}).withMessage('Minimo 2 letras')
+    .isLength({ min: 3}).withMessage('Minimo 3 letras')
     ,
     body('lastName')
     .notEmpty().withMessage('Campo requerido').bail()
-    .isLength({ min: 2}).withMessage('Minimo 2 letas')
+    .isLength({ min: 3}).withMessage('Minimo 3 letas')
     ,
     body('email')
     .notEmpty().withMessage('Campo requerido').bail()
@@ -49,4 +49,4 @@ const validateRegister = [
     //.isMimeType(['image/jpeg', 'image/jpg', 'image/png', 'image/gif']).withMessage('Sólo se admiten imágenes en formato JPEG, JPG, PNG Y GIF')
 ]
 
-module.exports = validateRegister; 
+module.exports = validateEdit; 

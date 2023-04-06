@@ -129,7 +129,7 @@ module.exports = ( sequelize, DataTypes )=>{
             as: 'sales_by_product', 
             foreignKey: 'Product_idProduct'
         }); // un producto puede estar en varias ventas por producto 
-
+        
     }
 
 

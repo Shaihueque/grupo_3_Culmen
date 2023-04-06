@@ -24,7 +24,7 @@ module.exports = ( sequelize, DataTypes )=>{
             type: DataTypes.STRING(45), 
             allowNull: false, 
             unique: true
-        },
+        }, 
         password: {
             type: DataTypes.STRING(100),
             allowNull: false
@@ -39,6 +39,7 @@ module.exports = ( sequelize, DataTypes )=>{
         }, 
         contact_user : {
             type: DataTypes.INTEGER, 
+            allowNull: true,
             references: {
                 model: 'contact_user', 
                 key: 'idcontact_user'
@@ -46,6 +47,7 @@ module.exports = ( sequelize, DataTypes )=>{
         },
         ubication_user : {
             type: DataTypes.INTEGER, 
+            allowNull: true,
             references: {
                 model: 'ubication_user', 
                 key: 'idubication_user'

@@ -55,14 +55,25 @@
                 <div class="contenedor-categorias">
                     <label class=" sub-contenedor">Categorias:</label>
                     <select name="category" id="" class="categorias 
-                    <%= locals.errors && errors.category? 'isInvalid' : null %>" 
+                        <%= locals.errors && errors.category? 'isInvalid' : null %>" 
                     > 
-                    Categorias
+                        Categorias
+                        <% if(locals.old && old.category){ %> 
+                            <% Categories.forEach((category)=>{  %>
+                                <option value="<%= category.idcategory_product %>"
+                                    <% if( category.idcategory_product == old.category ){ %>
+                                        selected
+                                    <% } %>
+                                    >
+                                    <%= category.category.toUpperCase() %></option>
+                            <% }) %>
+
+                        <% }else{ %>
                         <option value="" selected disabled>Elige una categoria </option>
                         <% Categories.forEach((category)=>{  %>
                             <option value="<%= category.idcategory_product %>">
                                 <%= category.category.toUpperCase() %></option>
-                        <% }) %>
+                        <% }) } %>
                     </select>
                 </div>
                         <% if( locals.errors && errors.category){ %>
@@ -75,26 +86,50 @@
                     <select name="marca" id="" class="categorias
                     <%= locals.errors && errors.marca ? 'isInvalid' : null %>
                     "> Categorias
+                    <% if(locals.old && old.marca){ %> 
+                        <% Brands.forEach((brand)=>{  %>
+                            <option value="<%= brand.brand_id %>"
+                                <% if( brand.brand_id == old.marca ){ %>
+                                    selected
+                                <% } %>
+                                >
+                                <%= brand.brand_name.toUpperCase() %></option>
+                        <% }) %>
+
+                    <% }else{ %>
                         <option value="" selected disabled> Elige una marca </option>
                         <% Brands.forEach((brand)=>{  %>
                             <option value="<%= brand.brand_id %>"><%= brand.brand_name.toUpperCase() %></option>
-                        <% }) %>
+                        <% })} %>
                     </select>
                 </div>
                     <% if( locals.errors && errors.marca){ %>
                         <small class="errors"> *<%= errors.marca.msg %> </small> 
                      <% } %>
 
+
+
                 <div class="contenedor-prendas">
                     <label class="categoria-prenda">Tipos de prendas:</label>
+                    <% if(locals.old && old.tipo){ %> 
+                        <% Clothes.forEach((clothe)=>{  %>
+                            <input type="radio" name="tipo" id="" placeholder="" class="prendas
+                            <%= locals.errors && errors.tipo ? 'isInvalid' : null %>"
+                             value="<%= clothe.id %>"
+                                <% if( clothe.id == old.tipo ){ %>
+                                    checked
+                                <% } %>
+                                >
+                                <%= clothe.type.toUpperCase() %></option>
+                        <% }) %>
+
+                    <% }else{  %>
 
                     <% Clothes.forEach((clothe)=>{ %>
-
                         <input type="radio" name="tipo" id="" placeholder="" class="prendas
                         <%= locals.errors && errors.tipo ? 'isInvalid' : null %>"
                          value="<%= clothe.id %>"> <%= clothe.type.toUpperCase() %>
-
-                    <%  }) %>
+                    <%  })} %>
                 </div>
                     <% if( locals.errors && errors.tipo){ %>
                         <small class="errors"> *<%= errors.tipo.msg %> </small> 
@@ -103,11 +138,25 @@
 
                 <div class="contenedor-talles">
                     <label class="categoria-talles">Talles:</label>
+                    <% if(locals.old && old.talle){ %> 
+                        <% Waists.forEach((waist)=>{  %>
+                            <input type="radio" name="talle" id="" placeholder="" class="talles
+                            <%= locals.errors && errors.talle ? 'isInvalid' : null %>"
+                             value="<%= waist.id %>"
+                                <% if( waist.id == old.talle ){ %>
+                                    checked
+                                <% } %>
+                                >
+                                <%= waist.waist.toUpperCase() %></option>
+                        <% }) %>
+
+                    <% }else{  %>
+
                     <% Waists.forEach((waist)=>{  %>
                     <input type="radio" name="talle" id="" placeholder="" class="talles
                     <%= locals.errors && errors.talle ? 'isInvalid' : null %>" 
                     value="<%=waist.id%>"> <%= waist.waist.toUpperCase() %>
-                    <%}) %>
+                    <%})} %>
                 </div>
                     <% if( locals.errors && errors.talle){ %>
                         <small class="errors"> *<%= errors.talle.msg %> </small> 
