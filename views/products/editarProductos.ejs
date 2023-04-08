@@ -38,14 +38,14 @@
                 <div class="contenedor-categorias">
                     <label class=" sub-contenedor">Categorias:</label>
                     <select name="category" id="" class="categorias"> Categorias
-                       <% for(let i = 0; i < Productos.category.length; i++) { %>
-                        <% if(Productos.category[i].id == ProductoElegido.category_id) { %>
-                            <option value="<%= Productos.category[i].id %>" selected>
-                                <%= Productos.category[i].name  %>
+                       <% for(let i = 0; i < category.length; i++) { %>
+                        <% if(category[i].id == ProductoElegido.category_id) { %>
+                            <option value="<%= category[i].id %>" selected>
+                                <%= category[i].name  %>
                         </option>
                             <% }else { %>
-                                <option value="<%= Productos.category[i].id %>">
-                                <%= Productos.category[i].name %>
+                                <option value="<%= category[i].id %>">
+                                <%= category[i].name %>
                             </option>
                             <% } %>
                             <% } %>
@@ -55,14 +55,14 @@
                 <div class="contenedor-prendas">
                     <label class="categoria-prenda">Tipos de prendas:</label>
                     <select name="type" id="" class="type prenda"> type
-                        <% for(let i = 0; i < Productos.type.length; i++) { %>
-                         <% if(Productos.type[i].id == ProductoElegido.type_id) { %>
-                             <option value="<%= Productos.type[i].id %>" selected>
-                                 <%= Productos.type[i].name  %>
+                        <% for(let i = 0; i < Type.length; i++) { %>
+                         <% if(Type[i].id == ProductoElegido.type_id) { %>
+                             <option value="<%= Type[i].id %>" selected>
+                                 <%= Type[i].name  %>
                          </option>
                              <% }else { %>
-                                 <option value="<%= Productos.type[i].id %>">
-                                 <%= Productos.type[i].name %>
+                                 <option value="<%= Type[i].id %>">
+                                 <%= Type[i].name %>
                              </option>
                              <% } %>
                              <% } %>
@@ -71,14 +71,14 @@
                 <div class="contenedor-talles">
                     <label class="categoria-talles">Talles:</label>
                     <select name="waist" id="" class="waist talles"> waist
-                        <% for(let i = 0; i < Productos.waist.length; i++) { %>
-                         <% if(Productos.waist[i].id == ProductoElegido.waist_id) { %>
-                             <option value="<%= Productos.waist[i].id %>" selected>
-                                 <%= Productos.waist[i].name  %>
+                        <% for(let i = 0; i < Waist.length; i++) { %>
+                         <% if(Waist[i].id == ProductoElegido.waist_id) { %>
+                             <option value="<%= Waist[i].id %>" selected>
+                                 <%= Waist[i].name  %>
                          </option>
                              <% }else { %>
-                                 <option value="<%= Productos.waist[i].id %>">
-                                 <%= Productos.waist[i].name %>
+                                 <option value="<%= Waist[i].id %>">
+                                 <%= Waist[i].name %>
                              </option>
                              <% } %>
                              <% } %>

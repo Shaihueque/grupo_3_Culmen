@@ -100,6 +100,7 @@ const productsController = {
         res.render('products/editarProductos' , { elegido })*/
 
         let ProductoElegido = db.Productos.findByPk(req.params.id);
+<<<<<<< HEAD
         let Productos = db.Productos.findAll();
         
         Promise.all([ProductoElegido, Productos])
@@ -107,6 +108,15 @@ const productsController = {
             //return res.json(Productos);
             res.render("products/editarProductos", {ProductoElegido: ProductoElegido, Productos: Productos});
 
+=======
+        let category = db.category.findAll();
+        let Waist = db.Waist.findAll()
+        let Type = db.Type.find()
+
+        Promise.all([ProductoElegido, category, Waist, Type])
+        .then(function([ProductoElegido, category, Waist, Type]){
+            res.render("products/editarProductos", {ProductoElegido: ProductoElegido, category: category, Waist: Waist, Type:Type});
+>>>>>>> 9485da73a5e89bbdec852773dadff24d3ee56ed5
         })
     }, 
 
