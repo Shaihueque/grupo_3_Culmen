@@ -14,7 +14,7 @@ const productsController = {
         res.render('products/products' , { products })
     }, 
     crearProducto: async(req, res)=>{
-        let category =  await db.Category.findAll();
+        let category =  await db.category.findAll();
         let type = await db.Type.findAll();
         let waist = await db.Waist.findAll();
             return res.render('products/crearProductos', {category , type, waist}) 
@@ -22,7 +22,18 @@ const productsController = {
         
     guardarProducto: (req, res) => {
         console.log(req.body.nombre);
+        //return res.json(req.body);
         //res.send(req.body);
+
+        /*db.Productos.create({
+            name: req.body.nombre,
+            description: req.body.descripcion,
+            price: req.body.precio,
+            image: req.body.file_img,
+            category_id: req.body.category,
+            type_id: req.body.Type,
+            waist_id: req.body.Waist
+        })*/
 
         db.Productos.create({
             name: req.body.nombre,
@@ -84,16 +95,18 @@ const productsController = {
     }, */
 
     edit: (req, res)=>{
-/*
+/*  
         const elegido = products.find( p => p.id == req.params.id )
         res.render('products/editarProductos' , { elegido })*/
 
         let ProductoElegido = db.Productos.findByPk(req.params.id);
         let Productos = db.Productos.findAll();
-
+        
         Promise.all([ProductoElegido, Productos])
         .then(function([ProductoElegido, Productos]){
+            //return res.json(Productos);
             res.render("products/editarProductos", {ProductoElegido: ProductoElegido, Productos: Productos});
+
         })
     }, 
 
