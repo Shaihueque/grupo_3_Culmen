@@ -14,10 +14,35 @@
         <div class="profileUser">
             <h1> Bienvenidx <%= user.name %> </h1>
             <h3> Su mail es: <%= user.email %> </h3>
-            <img src="/users/<%= user.imagen %>" alt="" class="img_profile">
+            <img src="/users/<%= user.avatar %>" alt="" class="img_profile">
             
         </div>
+
+        
     </section>
+    <div>
+        <a href="/user/edit">
+            <button>
+                EDITAR USUARIO 
+            </button type="button">
+        </a>
+    </div>
+    
+    <div>
+        <form action="/user/delete?_method=delete" method="post">
+            <button>
+                ELIMINAR USUARIO 
+            </button type="submit">
+        </form>
+    </div>
+
+    <div>
+        <a href="/user/favorites/<%=user.iduser%>">
+            <button>
+                VER FAVORITOS
+            </button>
+        </a>
+    </div>
    </main>
 
     <%-  include('../partials/footer.ejs')   %>

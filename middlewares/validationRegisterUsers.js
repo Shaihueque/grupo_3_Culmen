@@ -4,11 +4,11 @@ const { body } = require('express-validator');
 const validateRegister = [
     body('name')
     .notEmpty().withMessage('Campo requerido').bail()
-    .isLength({ min: 3}).withMessage('Minimo 3 letras')
+    .isLength({ min: 2}).withMessage('Minimo 2 letras')
     ,
     body('lastName')
     .notEmpty().withMessage('Campo requerido').bail()
-    .isLength({ min: 3}).withMessage('Minimo 3 letas')
+    .isLength({ min: 2}).withMessage('Minimo 2 letas')
     ,
     body('email')
     .notEmpty().withMessage('Campo requerido').bail()
