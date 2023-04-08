@@ -1,6 +1,9 @@
 const path = require('path');
 const { body, check } = require('express-validator'); 
 
+
+
+
 const validateNewProduct = [
 
     body('nombre')

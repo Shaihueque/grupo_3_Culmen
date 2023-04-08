@@ -47,7 +47,9 @@
                     <small class="errors"> *<%= errors.files_img.msg %> </small> 
                  <% } %>
 
-
+                 <% if(elegido.imageProduct){  %>
+                    <input type="hidden" name="image_url" value="<%= elegido.imageProduct.id %>">
+                <% } %>
 
                 <div class="contenedor-categorias">
                     <label class=" sub-contenedor">Categorias:</label>

@@ -215,7 +215,7 @@ const productsController = {
 
         try{
             const elegido = await Product.findByPk(req.params.id, {
-                include: ['category_product', 'brand_product', 'clothes_type', 'waist']
+                include: ['category_product', 'brand_product', 'clothes_type', 'waist', 'imageProduct']
             });
 
             const Brands = await Brand_product.findAll();
