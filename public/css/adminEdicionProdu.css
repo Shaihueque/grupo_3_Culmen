@@ -258,6 +258,9 @@ main h2 {
 
 }
 
+.errors{
+    color: red;
+}
 
 /* TABLET */ /* podria ir de 600 a 900px  */
 @media (min-width: 481px ) {

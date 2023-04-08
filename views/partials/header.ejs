@@ -6,27 +6,33 @@
         </div>
 
         <div class="contenedor-logo">
-            <img src="/image/logo-culmen.png" alt="Logo Culmen" class="logo">
+            <a href="/products">
+                <img src="/image/logo-culmen.png" alt="Logo Culmen" class="logo">
+            </a>
         </div>
 
         <nav class="nav-bar flex-row">
             <div class="contenedor-buscador">
-                <form action="" method="">
+
+                <form action="/products/listarProducts" method="get">
                     <input type="text" name="buscador_home" id="buscador_home" class="buscador_home" placeholder="Busque su producto...">
+                    <button type="submit">
+                           <i class="fas fa-search icon_header"></i>
+                    </button>
                 </form>
-                <a href="#" class="buscador">
-                    <i class="fas fa-search icon_header"></i>
-                </a>
+
                 
             </div>
             
             <div class="contenedor-carrito">
-                <i class="fas fa-shopping-cart icon_header" alt="Carrito de Compra"></i>
+                <a href="/carrito">
+                    <i class="fas fa-shopping-cart icon_header" alt="Carrito de Compra"></i>
+                </a>
             </div>   
             
             <% if( locals.isLogged ) { %>
                 <div class="contenedor-user">
-                    <img src="/users/<%= userLogged.imagen %>" alt="" class="header_image_user">
+                    <img src="/users/<%= userLogged.avatar %>" alt="" class="header_image_user">
                     <p> Hi <%= userLogged.name %> </p>
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                         <a class="dropdown-item" href="/user/profile">My profile</a>
@@ -37,7 +43,11 @@
             <% } else {  %>
                 <div class="contenedor-user">
                    <!--  <i class="fas fa-user icon_header" alt="Iniciar Sesion"> </i> -->
-                    <p class="header_is_register"> Iniciar Sesión o Registrarse </p>
+                    <p class="header_is_register"> 
+                        <a href="/user/login">   
+                            Iniciar Sesión o Registrarse 
+                        </a>
+                    </p>
                 </div>
              <% } %>
         </nav>

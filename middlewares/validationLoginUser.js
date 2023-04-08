@@ -11,6 +11,7 @@ const validateLogin = [
     .notEmpty().withMessage('Debes ingresar la contraseña con la cual te registraste').bail()
     .isLength({ min: 8 }).withMessage('La contraseña debe tener al menos 8 caracteres').bail()
     .matches(/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}$/).withMessage('La contraseña debe incluir al menos una letra minúscula, una letra mayúscula y un número')
+    // podes dejar solo que sea obligatorio el campo en el login
 ]
 
 module.exports = validateLogin; 
