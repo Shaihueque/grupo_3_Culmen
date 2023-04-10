@@ -49,3 +49,15 @@ Planificar mejor para optimizar el uso del tiempo.
 No dejar tanto tiempo de comunicacion entre el grupo.
 
 
+Retro para el sprint 6 del sprint 7
+
+-Cosas que hicimos bien: Trabajar con ramas.
+
+Ideas de cosas por hacer:
+
+-Cumplir con los objetivos y reuniones que nos planteamos. 
+
+-Mas comunicacion.
+
+-No dejar cosas para lo ultimo.
+
