@@ -96,17 +96,14 @@
     <div>
         <% if(elegido){ %>
 
-        <% if(locals.isLogged){ %>
-
-
-        
-    <div>
-        <form action="/products/<%= elegido.idProduct %>?_method=DELETE" method="post" class="form_buttons">
-            <a href="/products/<%= elegido.idProduct %>/editar" class="edit_button">Editar</a>
-            <button type="submit" class="delete_button"> Eliminar </button>
-        </form>
-    </div>
-    <% } %>
+        <% if( locals.userLogged.is_admin == 0 ){ %>
+            <div>
+                <form action="/products/<%= elegido.idProduct %>?_method=DELETE" method="post" class="form_buttons">
+                    <a href="/products/<%= elegido.idProduct %>/editar" class="edit_button">Editar</a>
+                    <button type="submit" class="delete_button"> Eliminar </button>
+                </form>
+            </div>
+        <% } %>
 <% } %>
 <div class="review_section">
     <p class="title_reviews">Reviews</p>

@@ -97,9 +97,9 @@ const userController = {
             email: req.body.email, 
             password: passwordHasheada,
             avatar: req.file ? req.file.filename : 'imagenUsuario.png', 
-            is_admin: 0
+            is_admin: 0 //ver aca si va 0 o 1
         })
-
+        //********* Faltaria validar de si es admin poder editar o eliminar un producto/
         //return res.json(newUser)
         return res.redirect('user/login') // debe loguearse ahora 
     }
@@ -198,8 +198,15 @@ const userController = {
 
         if ( isOkPassword ) { //si la contraseña ingresada coincide con la contraseña hasheada registrada del usuario
             delete userInDB.password;
-            delete userInDB.passConfirm;
-            req.session.userLogged = userInDB;
+            //delete userInDB.passConfirm;
+            //req.session.userLogged = userInDB;
+            req.session.userLogged = {
+                iduser: userInDB.iduser,
+                is_admin: userInDB.is_admin,
+                name: userInDB.name,
+                email: userInDB.email,
+                avatar: userInDB.avatar
+            };
 
             if ( req.body.recordarme ) {
                 res.cookie('userEmail' , req.body.emailLogin , { maxAge: (1000*60)*60 } )
@@ -220,9 +227,11 @@ const userController = {
             console.log(err)
         }
     },
-    profile: ( req, res )=>{
-        let user = req.session.userLogged
+    profile: async( req, res )=>{
+        //return res.send(req.session.userLogged)
+        let user = await db.User.findByPk(req.session.userLogged.iduser);
         res.render('users/profile' , { user })
+        
     }, 
 
     logout: (req, res)=>{
@@ -284,7 +293,13 @@ const userController = {
                 iduser: user.iduser
             }
         })
-    
+        
+        req.session.userLogged = await db.User.findOne({
+            where: {
+                iduser: user.iduser
+            }
+        });
+
        return res.redirect('/user/profile')
         }
         catch(err){

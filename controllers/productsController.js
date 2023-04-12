@@ -72,7 +72,7 @@ const productsController = {
 
         }
         catch(err){
-            console.log(err)
+            console.error(err)
         }
     }, 
 
@@ -88,7 +88,7 @@ const productsController = {
             const elegido = await Product.findByPk( req.params.id , {
                 include: [{ association: 'imageProduct' }, { association: 'other_images'}]
             } );
-            //return res.json(elegido)
+            //console.log(req.session.isLogged)
             res.render('products/productDetail', { elegido })   
         }
        catch(err){
@@ -147,7 +147,7 @@ const productsController = {
         }  // esto se puede hacer en el middleware directamente antes del next();
 
 
-            let idImage ;
+        let idImage ;
         // 1ero verificar si me llega una imagen creada con multer o llega vacio
         if (req.files.file_img && req.files.file_img[0]){
             // si llega una imagen
@@ -164,7 +164,7 @@ const productsController = {
                 const newImage = await Image_product.create({
                 image_route: req.files.file_img[0].filename,
                 });
-                idImage = newImage.id;
+                newImage.id = idImage;
             }
         }else{
             // si no llega ninguna imagen usar la de default
@@ -177,14 +177,14 @@ const productsController = {
         }
 
         console.log(req.body)
-        const product = await Product.create({
+        const product = await Product.create({ 
             name: req.body.nombre, 
             description: req.body.descripcion, 
             price : parseInt(req.body.precio),
-            category_id: req.body.category,
-            clothes_type_id:  req.body.tipo,
-            waist_id: req.body.talle, 
-            brand_id: req.body.marca,
+            category_id: req.body.category, //5
+            clothes_type_id: req.body.tipo, //8
+            waist_id: req.body.talle,  //8
+            brand_id: req.body.marca, //5
             discount: 0 , 
             stars: 0, 
             image_product_id: idImage
@@ -192,13 +192,29 @@ const productsController = {
 
         // ahora obtener el id de este producto para asociarle las imagenes que llegan
         const productId = product.idProduct; // Obtener el ID del producto creado
-
+        //req.body
+        /* [{
+            filename: 'img-2625625623.png',
+            sadsa: sadasda
+        }, {
+            filename: 'img-2625625623.png',
+            sadsa: sadasda
+        }, 
+        {
+            filename: 'img-2625625623.png',
+            sadsa: sadasda
+        }] */
+        // req.files.files_img = []
         if (req.files.files_img && req.files.files_img.length > 0) {
+
             req.files.files_img.forEach(async (img) => {
+
               const otherImage = await Other_images.create({
                 image: img.filename, //en el modelo le agrego un valor por default si no llega nada
                 id_product: productId
               });
+
+
             });
           }
 
@@ -357,6 +373,7 @@ const productsController = {
         }
 
     },
+
     delete: (req, res)=>{
 
         const productsFiltrados = products.filter( p => p.id != req.params.id ); 
@@ -443,6 +460,7 @@ const productsController = {
         }); 
         return res.json(ventaPorProducto)
     },
+
     sale_by_user_list: async(req, res)=>{
 
         const factura_por_user = await db.Sale_by_user.findAll({
@@ -503,6 +521,8 @@ const productsController = {
 
 
     },
+
+
     listPaginado: async (req, res) => {
        /*  try {
           const limit = 10; // Número de productos por página
@@ -523,6 +543,7 @@ const productsController = {
         } catch (err) {
           console.log(err);
         } */
+        
         try{ 
         const { page = 0 , size = 4 } = req.query; 
 

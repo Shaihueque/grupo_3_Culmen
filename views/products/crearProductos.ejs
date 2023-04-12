@@ -113,7 +113,7 @@
                     <label class="categoria-prenda">Tipos de prendas:</label>
                     <% if(locals.old && old.tipo){ %> 
                         <% Clothes.forEach((clothe)=>{  %>
-                            <input type="radio" name="tipo" id="" placeholder="" class="prendas
+                            <input type="radio" name="tipo" id="tipo" placeholder="" class="prendas
                             <%= locals.errors && errors.tipo ? 'isInvalid' : null %>"
                              value="<%= clothe.id %>"
                                 <% if( clothe.id == old.tipo ){ %>

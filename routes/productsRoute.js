@@ -3,6 +3,7 @@ const router = express.Router();
 /* const path = require('path'); 
 const multer = require('multer'); */
 const productsController = require('../controllers/productsController');
+const authMiddleware = require('../middlewares/authMiddleware');
 
 /******* Middlewares ********/
 const uploadFile = require('../middlewares/productsMulterMiddleware');
@@ -26,7 +27,7 @@ router.post('/',
         validationProduct,
         productsController.store2);
 
-router.get('/:id/editar' , productsController.edit);
+router.get('/:id/editar' , authMiddleware , productsController.edit); //falta el middleware
 
 router.put('/:id' , uploadFile.fields([
                 { name: 'file_img', maxCount: 1 },
