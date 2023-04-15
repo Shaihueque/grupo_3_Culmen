@@ -23,14 +23,19 @@
                 </p>
 
                 <form class="loginform" action="/user/login" method="post">
+                    <div class="errorLogin">
+                    <ul>
+                        
+                    </ul>    
+                    </div>
 
-                    <input type="email" name="emailLogin" placeholder="Email" class="input
+                    <input type="email" id="emailLogin" name="emailLogin" placeholder="Email" class="input
                     <%= locals.errors && errors.emailLogin ? 'isInvalid' : null %>" value="<%= locals.old ? old.emailLogin : null %>">
                     <% if( locals.errors && errors.emailLogin){ %>
                         <small class="errors"> *<%= errors.emailLogin.msg %> </small> 
                      <% } %>
                             
-                    <input type="password" placeholder="Contraseña" name="passwordLogin" class="input
+                    <input type="password" id="passLogin" placeholder="Contraseña" name="passwordLogin" class="input
                     <%= locals.errors && errors.passwordLogin ? 'isInvalid' : null %>" value="<%= locals.old ? old.passwordLogin : null %>">
                     <% if( locals.errors && errors.passwordLogin){ %>
                         <small class="errors"> *<%= errors.passwordLogin.msg %> </small> 
@@ -64,6 +69,11 @@
                 </p>
 
                 <form action="/user" class="registerform" method="post" enctype="multipart/form-data">
+                    <div class="error"> 
+                        <ul>
+                        
+                        </ul>
+                    </div>
 
                     <input type="text" id="name" name="name"  placeholder="Ingresa tu nombre" 
                     class= " input <%= locals.errors && errors.name ? 'isInvalid' : null %>" value="<%= locals.old ? old.name : null %>">
@@ -97,10 +107,13 @@
                      <% } %>
 
                     <p> Selecciona una imagen de perfil:</p>
-                    <input type="file" id="" name="userImage" class= "input input_image <%= locals.errors && errors.userImage ? 'isInvalid' : null %>" > 
+                    <input type="file" id="userImage" name="userImage" class= "input input_image <%= locals.errors && errors.userImage ? 'isInvalid' : null %>" > 
                     <% if( locals.errors && errors.userImage) { %>
                         <small class="errors" > *<%= errors.userImage.msg %> </small> 
                      <% } %>
+
+                     
+                     
 <!-- 
                     <p>Fecha de nacimiento: </p>
                     <input type="date" id="fechaNac" name="fechaNac" class="input"> -->
@@ -123,6 +136,7 @@
 
     <%-  include('../partials/footer.ejs')   %>
 
-
+<script src = "/js/validacionRegistro.js"> </script>
+<script src = "/js/validacionLogin.js"> </script>
 </body>
 </html>

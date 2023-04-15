@@ -10,7 +10,12 @@
     <main>
 
         <h2>Crear Producto</h2>
-        <form action="/products" method="POST" enctype="multipart/form-data">
+        <form class="crearProducto" action="/products" method="POST" enctype="multipart/form-data">
+            <div class="errores">
+                <ul>
+
+                </ul>
+            </div>
 
             <div class="contenedor">
                 
@@ -33,7 +38,7 @@
                 
                 <div class="contenedor-img">
                     <label>Imagen Principal del Producto:</label>
-                    <input type="file" name="file_img" id="" placeholder="Sube la imagen" class="img
+                    <input type="file" id ="img" name="file_img" id="" placeholder="Sube la imagen" class="img
                    <%= locals.errors && errors.file_img ? 'isInvalid' : null %>"
                     >
                 </div>
@@ -164,7 +169,7 @@
 
                 <div class="contenedor-precio">
                     <label>Precio:</label>
-                    <input type="text" name="precio" id="" placeholder="$" class="inputstyle
+                    <input type="text" name="precio" id="precio" placeholder="$" class="inputstyle
                     <%= locals.errors && errors.precio ? 'isInvalid' : null %>" 
                     value="<%= locals.old ? old.precio : null %>"> 
                 </div>
@@ -184,6 +189,6 @@
 
 
       <%-  include('../partials/footer.ejs')   %>  
-
+<script src="/js/validacionCrearProducto.js"> </script>
 </body>
 </html>
