@@ -17,7 +17,7 @@ window.addEventListener("load", function(){
         if (name.value == "") {
             error.push("Debe elegir un nombre")
         }
-       if (name.value.length < 2){
+        if (name.value.length < 2){
             error.push("El nombre debe contener al menos 3 caracteres")
         }
         
