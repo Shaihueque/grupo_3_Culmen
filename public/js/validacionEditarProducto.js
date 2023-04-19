@@ -8,6 +8,8 @@ window.addEventListener("load", function(){
     let prendas = document.querySelector(".prendas")
     let talles = document.querySelector(".talles")
     let precio = document.querySelector("#precio")
+
+    let ulError = document.querySelector("div.erroresEdit ul");
     console.log(talles)
 
     /*ESTA ES LA VALIDACION DEL REGISTRO*/
@@ -43,13 +45,13 @@ window.addEventListener("load", function(){
      /*LOGICA PARA QUE NOS DEVUELVA LOS ERRORES */   
     if (erroresEdit.length>0) {
           b.preventDefault();
-          
-        }
-        let ulError = document.querySelector("div.erroresEdit ul");
+
+          ulError.innerHTML = "";
+
           for (let i = 0; i < erroresEdit.length; i ++){
             ulError.innerHTML += "<li>" + erroresEdit[i] + "</li>"
-          }
-
+          }}
+          
         })})
 
     

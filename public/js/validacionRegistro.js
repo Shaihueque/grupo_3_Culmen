@@ -8,6 +8,8 @@ window.addEventListener("load", function(){
     let passConfirm = document.querySelector("#passConfirm")
     let userImage = document.querySelector("#userImage")
 
+    let ulError = document.querySelector("div.error ul");
+
     /*ESTA ES LA VALIDACION DEL REGISTRO*/
     formulario.addEventListener("submit", function(e){
 
@@ -55,12 +57,12 @@ window.addEventListener("load", function(){
      /*LOGICA PARA QUE NOS DEVUELVA LOS ERRORES */   
     if (error.length>0) {
           e.preventDefault();
-          
-        }
-        let ulError = document.querySelector("div.error ul");
+
+          ulError.innerHTML = "";
+
           for (let i = 0; i < error.length; i ++){
             ulError.innerHTML += "<li>" + error[i] + "</li>"
-          }
+          }}
 
     })})
 
