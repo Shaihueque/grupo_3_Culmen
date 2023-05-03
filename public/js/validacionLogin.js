@@ -31,5 +31,7 @@ window.addEventListener("load", function () {
         ulErrorLogin.innerHTML += "<li>" + errorLogin[i] + "</li>"
       }}
 
+      formulario.submit(); 
 
-    })})
+  })
+})

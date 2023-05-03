@@ -8,6 +8,7 @@ window.addEventListener("load", function(){
     let prendas = document.querySelector(".prendas")
     let talles = document.querySelector(".talles")
     let precio = document.querySelector("#precio")
+    let marca = document.querySelector("#marca")
 
     let ulError = document.querySelector("div.errores ul");
     console.log(talles)
@@ -38,7 +39,10 @@ window.addEventListener("load", function(){
             errores.push("Debe elegir un precio")  
         }
         if (categorias.value == "") {
-            errores.push("Debe seleccionar categoria y una marca")  
+            errores.push("Debe seleccionar categoria ")  
+        }
+        if (marca.value == "") {
+            errores.push("Debe seleccionar marca ")  
         }
 
 

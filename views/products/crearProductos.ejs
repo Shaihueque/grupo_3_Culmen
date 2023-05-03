@@ -11,14 +11,14 @@
 
         <h2>Crear Producto</h2>
         <form class="crearProducto" action="/products" method="POST" enctype="multipart/form-data">
-            <div class="errores">
-                <ul>
-
-                </ul>
-            </div>
+            
 
             <div class="contenedor">
+                <div class="errores">
+                    <ul>
                 
+                    </ul>
+                </div>
                 <div class="contenedor-nombreProdu">
                     <label>Nombre del Producto:</label>
                     <input type="text" name="nombre" id="" placeholder="" class="nombreProducto inputstyle <%= locals.errors && errors.nombre ? 'isInvalid' : null %>"
@@ -88,7 +88,7 @@
 
                 <div class="contenedor-categorias">
                     <label class=" sub-contenedor">Marcas:</label>
-                    <select name="marca" id="" class="categorias
+                    <select name="marca" id="marca" class="categorias
                     <%= locals.errors && errors.marca ? 'isInvalid' : null %>
                     "> Categorias
                     <% if(locals.old && old.marca){ %> 
