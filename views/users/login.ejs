@@ -101,6 +101,9 @@
                     <% if( locals.errors && errors.userImage) { %>
                         <small class="errors" > *<%= errors.userImage.msg %> </small> 
                      <% } %>
+                     <% if (typeof error !== 'undefined') { %>
+                        <p class="errors"><%= error %></p>
+                    <% } %>
 <!-- 
                     <p>Fecha de nacimiento: </p>
                     <input type="date" id="fechaNac" name="fechaNac" class="input"> -->
