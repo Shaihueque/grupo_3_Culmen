@@ -220,9 +220,22 @@ const userController = {
             console.log(err)
         }
     },
-    profile: ( req, res )=>{
-        let user = req.session.userLogged
-        res.render('users/profile' , { user })
+    profile: async( req, res )=>{
+        try{
+
+        
+        let user = req.session.userLogged;
+        if (user) {
+            const userInDB = await db.User.findByPk(user.iduser); 
+            return res.render('users/profile', { user: userInDB })
+        }else{
+            return res.redirect('/user/login');
+        }
+        }
+        catch(err){
+            console.log(err)
+        }
+        //res.render('users/profile' , { user })
     }, 
 
     logout: (req, res)=>{
