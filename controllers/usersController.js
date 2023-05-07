@@ -227,10 +227,23 @@ const userController = {
             console.log(err)
         }
     },
-    profile: async( req, res )=>{
+    profile: asyncasync( req, res )=>{
+        try{
+
+        
         //return res.send(req.session.userLogged)
-        let user = await db.User.findByPk(req.session.userLogged.iduser);
-        res.render('users/profile' , { user })
+        let user = await db.User.findByPk(req.session.userLogged;.iduser);
+        if (user) {
+            const userInDB = await db.User.findByPk(user.iduser); 
+            return res.render('users/profile', { user: userInDB })
+        }else{
+            return res.redirect('/user/login');
+        }
+        }
+        catch(err){
+            console.log(err)
+        }
+        //res.render('users/profile' , { user })
         
     }, 
 

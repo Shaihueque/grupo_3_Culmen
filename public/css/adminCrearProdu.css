@@ -63,9 +63,9 @@ main h2 {
     margin: 10px;
 }
 
-.nombreProducto {
+/* .nombreProducto {
     width: 30%;
-}
+} */
 
 .contenedor-descripcion {
     width: 100%;
@@ -158,15 +158,11 @@ main h2 {
 
 .inputstyle{
     background-color: white;
-    border: solid #8cbc84 1px;
     border-radius: 8px;
     margin-top: 10px;
     margin-bottom: 6px;
     padding: 8px 10px;
-    
-    /*margin: 3px;
-    padding-left: 5px ;
-    */
+    width: 30%;
     
 }
 
@@ -250,10 +246,29 @@ main h2 {
 
 .errors{
     color: red;
+    font-style: italic;
 }
 
+input:focus, textarea:focus {
+    outline: none;
+    border: none; /* define el borde cuando el input tiene foco */
+  }
+  
+input {
+    border: 2px solid gray; /* define el borde por defecto */
+  }   
+  
+
 .isInvalid{
-    border: 1px solid red;
+    border: solid red 1px !important;
+}
+
+.isValid{
+    border: solid green 1px !important;
+}
+
+.msg-invalid{
+    color: red;
 }
 
 /* TABLET */ /* podria ir de 600 a 900px  */

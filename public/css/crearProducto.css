@@ -102,3 +102,31 @@
 
 }
 
+.errors{
+    color: red;
+    font-style: italic;
+}
+
+input:focus {
+    outline: none;
+    border: none; /* define el borde cuando el input tiene foco */
+  }
+  
+  input {
+    border: 2px solid gray; /* define el borde por defecto */
+  }
+  
+
+.isInvalid{
+    border: solid red 1px !important;
+}
+
+.isValid{
+    border: solid green 1px !important;
+}
+
+.msg-invalid{
+    color: red;
+}
+
+
