@@ -227,12 +227,10 @@ const userController = {
             console.log(err)
         }
     },
-    profile: asyncasync( req, res )=>{
+    profile: async( req, res ) => {
         try{
-
-        
         //return res.send(req.session.userLogged)
-        let user = await db.User.findByPk(req.session.userLogged;.iduser);
+        let user = await db.User.findByPk(req.session.userLogged.iduser);
         if (user) {
             const userInDB = await db.User.findByPk(user.iduser); 
             return res.render('users/profile', { user: userInDB })
