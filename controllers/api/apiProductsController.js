@@ -48,7 +48,7 @@ const apiProductsController = {
                 id: p.idProduct, 
                 name: p.name,
                 description: p.description, 
-                link: `http://localhost:3030/api/products/${p.idProduct}`
+                link: `${req.protocol}://${req.get('host')}/api/products/${p.idProduct}`
             }))
 
         })
@@ -69,7 +69,7 @@ const apiProductsController = {
                     name: product.name, 
                     description: product.description, 
                     price: product.price, 
-                    image: product.imageProduct.image_route, 
+                    image: `${req.protocol}://${req.get('host')}/products/${product.imageProduct.image_route}`,
                     category: product.category_product.category, 
                     type: product.clothes_type.type,
                     brand: product.brand_product.brand_name, 
