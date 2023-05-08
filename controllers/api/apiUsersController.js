@@ -14,7 +14,7 @@ const apiUsersController = {
                     id: user.iduser ,
                     name: user.name,
                     email: user.email,
-                    detail: `http://localhost:3030/api/users/${user.iduser}`    
+                    detail: `${req.protocol}://${req.get('host')}/api/users/${user.iduser}`
                 }) )
             } );
         }
@@ -29,7 +29,7 @@ const apiUsersController = {
                 { attributes: { exclude: ['password', 'is_admin'] } });
             return res.json({
                 user, 
-                path: path.resolve(`C:/Users/Usuario/Desktop/CURSO FULLSTACK Practicas/Proyecto_Integrador_DH/grupo_3_Culmen/public/users/${user.avatar}`)
+                image: `/users/${user.avatar}`
             })
         }catch(err){
             console.log(err)
