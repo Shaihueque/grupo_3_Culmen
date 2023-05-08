@@ -7,6 +7,9 @@ const Product = db.Product;
 const apiProductsController = {
     list : async(req, res)=>{
     try {
+        // endopoint: http://localhost:3030/api/products?page=0&size=10
+
+        const { page = 0, size = 10 } = req.query;
 
         const response = await db.Category_product.findAll({
             attributes: ['category', [db.sequelize.fn('COUNT', 'Product.idProduct'), 'count']],
@@ -18,14 +21,30 @@ const apiProductsController = {
             group: ['category']
         })
 
-        const products = await Product.findAll({
-            attributes: ['idProduct', 'name' , 'description']
-        });
+        const products = await Product.findAndCountAll({
+            limit: +size,
+            offset: (+page) * (+size),
+            attributes: ['idProduct', 'name', 'description'],
+          });
+
+        const count = products.count
+        const totalPages = Math.ceil(count / size);
+        const currentPage = +page;
+
+        const next = currentPage < totalPages - 1
+            ? `http://localhost:3030/api/products?page=${currentPage + 1}&size=${size}`
+            : null;
+
+        const previous = currentPage > 0
+            ? `http://localhost:3030/api/products?page=${currentPage - 1}&size=${size}`
+            : null;
 
         return res.json({
-            count: products.length, 
+            count: products.count, 
             countByCategory: response, 
-            products: products.map(p => ({
+            next,
+            previous,
+            products: products.rows.map(p => ({
                 id: p.idProduct, 
                 name: p.name,
                 description: p.description, 
