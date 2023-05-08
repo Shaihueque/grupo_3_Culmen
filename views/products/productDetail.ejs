@@ -96,7 +96,7 @@
     <div>
         <% if(elegido){ %>
 
-        <% if( locals.userLogged.is_admin == 0 ){ %>
+        <% if( locals.userLogged && (locals.userLogged.is_admin == 0) ){ %>
             <div>
                 <form action="/products/<%= elegido.idProduct %>?_method=DELETE" method="post" class="form_buttons">
                     <a href="/products/<%= elegido.idProduct %>/editar" class="edit_button">Editar</a>

@@ -20,7 +20,7 @@ emailLogin.focus(); // Autofocus
             errorElement.remove(); 
             field.nextElementSibling.insertAdjacentHTML('beforeend',`<small class="msg-invalid"><br />${text}</small>`);
         }
-        btn_login.setAttribute('disabled', 'disabled'); 
+        //btn_login.setAttribute('disabled', 'disabled'); 
     }
 
 // IS OK 
@@ -176,6 +176,7 @@ formRegister.addEventListener('submit', e => {
             isOk(field , errorElement)
         }
     })
+
     !isValid ? e.preventDefault() : formRegister.submit();
 })
 

@@ -14,6 +14,10 @@ const carritoRoute =  require('./routes/carritoRoute.js');
 const usersRoute =  require('./routes/usersRoute'); 
 const userLoggedMiddleware = require('./middlewares/userLoggedMiddleware');
 
+/************** REQUIRE DE RUTAS PARA API *******************/
+const apiUsersRoute = require('./routes/api/apiUsersRoute');
+const apiProductsRoute = require('./routes/api/apiProductsRoute')
+
 /******* REQUIRE DE SESSION *******/
 const cookieParser = require('cookie-parser');
 const session = require('express-session'); 
@@ -56,6 +60,9 @@ app.use('/products' , productsRoute)
 app.use('/carrito' , carritoRoute);
 app.use('/user' , usersRoute);
 
+/****************  API ROUTES ****************************/
+app.use('/api/users' , apiUsersRoute); 
+app.use('/api/products' , apiProductsRoute); 
 
 
 // probando pruebas de seguridad
