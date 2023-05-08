@@ -29,7 +29,7 @@ const apiProductsController = {
                 id: p.idProduct, 
                 name: p.name,
                 description: p.description, 
-                link: `http://localhost:3030/api/products/${p.idProduct}`
+                link: `${req.protocol}://${req.get('host')}/api/products/${p.idProduct}`
             }))
 
         })
