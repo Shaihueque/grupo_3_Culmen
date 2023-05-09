@@ -64,5 +64,11 @@ app.use('/user' , usersRoute);
 app.use('/api/users' , apiUsersRoute); 
 app.use('/api/products' , apiProductsRoute); 
 
+/******************  MANEJADOR DE ERRORES MIDDLEWARE   *********************/
+app.use((err, req, res, next) => {
+    console.error(err.stack);
+    res.status(500).json({ error:'Hubo un error en el servidor' });
+  });
+  
 
 // probando pruebas de seguridad

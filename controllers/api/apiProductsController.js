@@ -5,58 +5,74 @@ const Product = db.Product;
 
 
 const apiProductsController = {
-    list : async(req, res)=>{
-    try {
-        // endopoint: http://localhost:3030/api/products?page=0&size=10
+    list : async(req, res, next)=>{
+        try {
+            // endopoint: http://localhost:3030/api/products?page=0&size=10
 
-        const { page = 0, size = 10 } = req.query;
+            const { page = 1, size = 10 } = req.query;
 
-        const response = await db.Category_product.findAll({
-            attributes: ['category', [db.sequelize.fn('COUNT', 'Product.idProduct'), 'count']],
-            include: [{
-              model: db.Product,
-              as: 'product',
-              attributes: []
-            }],
-            group: ['category']
-        })
+            // Validar que page y size sean números enteros positivos
+            if (isNaN(page) || isNaN(size) || page <= 0 || size <= 0) {
+              return res
+                .status(400)
+                .json({
+                  error:
+                    "Los parámetros de página y tamaño deben ser números enteros positivos mayores a cero.",
+                    status: 400
+                });
+            }
 
-        const products = await Product.findAndCountAll({
-            limit: +size,
-            offset: (+page) * (+size),
-            attributes: ['idProduct', 'name', 'description'],
-          });
+            const response = await db.Category_product.findAll({
+                attributes: ['category', [db.sequelize.fn('COUNT', 'Product.idProduct'), 'count']],
+                include: [{
+                model: db.Product,
+                as: 'product',
+                attributes: []
+                }],
+                group: ['category']
+            })
 
-        const count = products.count
-        const totalPages = Math.ceil(count / size);
-        const currentPage = +page;
+            const { count , rows: products} = await Product.findAndCountAll({
+                limit: +size,
+                offset: (+page-1) * (+size),
+                attributes: ['idProduct', 'name', 'description'],
+            });
 
-        const next = currentPage < totalPages - 1
-            ? `http://localhost:3030/api/products?page=${currentPage + 1}&size=${size}`
-            : null;
+            const totalPages = Math.ceil(count / size);
+            const currentPage = +page;
 
-        const previous = currentPage > 0
-            ? `http://localhost:3030/api/products?page=${currentPage - 1}&size=${size}`
-            : null;
+            // VALIDAR CUANDO NO HAY PRODUCTOS PARA MOSTRAR SEGUN LOS PARAMETROS PASADOS
+            if ( !products.length || (currentPage === 0 || totalPages === 0)) {
+                return res.status(404).json({
+                    error: 'No hay productos para mostrar con estos parámetros',
+                    status: 404
+                });
+            }
 
-        return res.json({
-            count: products.count, 
-            countByCategory: response, 
-            next,
-            previous,
-            products: products.rows.map(p => ({
-                id: p.idProduct, 
-                name: p.name,
-                description: p.description, 
-                link: `${req.protocol}://${req.get('host')}/api/products/${p.idProduct}`
-            }))
+         
 
-        })
+            const buildPageUrl = (page) =>
+            `${req.protocol}://${req.get('host')}/api/products?page=${page}&size=${size}`;
+    
+            const nextUrl = currentPage < totalPages ? buildPageUrl(currentPage + 1) : null;
+            const previousUrl = currentPage > 1 ? buildPageUrl(currentPage - 1) : null;
 
-
-    } catch (error) {
-        console.log(error)
-    }
+            return res.status(200).json({
+                count, 
+                countByCategory: response, 
+                nextUrl,
+                previousUrl,
+                products: products.map(p => ({
+                    id: p.idProduct, 
+                    name: p.name,
+                    description: p.description, 
+                    link: `${req.protocol}://${req.get('host')}/api/products/${p.idProduct}`
+                })),
+                status: 200
+            })
+        }catch (error) {
+            next({status: 500, message: 'Error interno del servidor'})
+        }
     }, 
     detail: async(req, res) => {
         try{
