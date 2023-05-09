@@ -1,8 +1,22 @@
 <header class="flex-col">
+
     <section class="header-header flex-row">
-        <div class="contenedor-hamburgesa">
-            <a href="#" class="menu-hamburgesa-boton">
-                <i class="fas fa-bars hamburg"></i></a>
+
+        <div class="contenedor-hamburguesa">
+            <a href="#" class="menu-hamburguesa-boton" id="hamburguesa-boton">
+                <i class="fas fa-bars hamburg"></i>
+            </a>
+            <div class="menu-overlay"></div>
+            <div class="menu-options">
+                <ul>
+                    <li>Hombre</li>
+                    <li>Mujer</li>
+                    <li>Niño</li>
+                    <li>Accesorios</li>
+                    <li>Todos los productos</li>
+                    <li>Iniciar sesión o registrarse</li>
+                </ul>
+            </div>
         </div>
 
         <div class="contenedor-logo">
@@ -14,14 +28,12 @@
         <nav class="nav-bar flex-row">
             <div class="contenedor-buscador">
 
-                <form action="/products/listarProducts" method="get">
+                <form action="/products/listarProducts" method="get" class="form_buscador">
                     <input type="text" name="buscador_home" id="buscador_home" class="buscador_home" placeholder="Busque su producto...">
-                    <button type="submit">
+                    <button type="submit" class="btn_buscador">
                            <i class="fas fa-search icon_header"></i>
                     </button>
                 </form>
-
-                
             </div>
             
             <div class="contenedor-carrito">
@@ -42,12 +54,11 @@
                 </div>
             <% } else {  %>
                 <div class="contenedor-user">
-                   <!--  <i class="fas fa-user icon_header" alt="Iniciar Sesion"> </i> -->
-                    <p class="header_is_register"> 
+                    
                         <a href="/user/login">   
-                            Iniciar Sesión o Registrarse 
+                            <i class="fas fa-user icon_header" alt="Iniciar Sesion"> </i>
                         </a>
-                    </p>
+                    <p class="header_is_register"> </p>
                 </div>
              <% } %>
         </nav>
@@ -64,3 +75,18 @@
 
 
 </header>
+
+<script>
+ 
+    const menuBtn = document.querySelector('.contenedor-hamburguesa');
+    const menuOverlay = document.querySelector('.menu-overlay');
+    const menuOptions = document.querySelector('.menu-options');
+    
+    menuBtn.addEventListener('click', () => {
+        console.log('anda el js')
+        /* menuOptions.style.display = 'block'; */
+        menuOverlay.classList.toggle('active');
+        menuOptions.classList.toggle('active');
+    });
+
+</script>

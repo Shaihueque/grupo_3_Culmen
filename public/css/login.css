@@ -48,6 +48,10 @@
     width: 50px;
 }
 
+/* .menu-options{
+    display: none;
+} */
+
 .menu-hamburgesa-boton {
     color: var(--op2-color-gris-claro);
 }
@@ -399,6 +403,10 @@ input:focus {
 
 .msg-invalid{
     color: red;
+}
+
+.contenedor-hamburgesa{
+    display: block;
 }
 
 /*  TABLETS */
