@@ -18,20 +18,27 @@ const apiProductsController = {
                 .json({
                   error:
                     "Los parámetros de página y tamaño deben ser números enteros positivos mayores a cero.",
+                    example: "http://localhost:3030/api/products?page=1&size=10" , 
                     status: 400
                 });
             }
 
+            // Traerme agrupados la cantidad de productos por categoria
             const response = await db.Category_product.findAll({
-                attributes: ['category', [db.sequelize.fn('COUNT', 'Product.idProduct'), 'count']],
+                attributes: [
+                    'category', 
+                    [db.sequelize.fn('COUNT', 'Product.idProduct'), 
+                    'count']
+                ],
                 include: [{
-                model: db.Product,
-                as: 'product',
-                attributes: []
+                    model: db.Product,
+                    as: 'product',
+                    attributes: []
                 }],
                 group: ['category']
             })
 
+            // Armar la paginacion con el metodo findAndCountAll
             const { count , rows: products} = await Product.findAndCountAll({
                 limit: +size,
                 offset: (+page-1) * (+size),
@@ -41,7 +48,7 @@ const apiProductsController = {
             const totalPages = Math.ceil(count / size);
             const currentPage = +page;
 
-            // VALIDAR CUANDO NO HAY PRODUCTOS PARA MOSTRAR SEGUN LOS PARAMETROS PASADOS
+            // Validar CUANDO NO HAY PRODUCTOS PARA MOSTRAR SEGUN LOS PARAMETROS PASADOS
             if ( !products.length || (currentPage === 0 || totalPages === 0)) {
                 return res.status(404).json({
                     error: 'No hay productos para mostrar con estos parámetros',
@@ -49,14 +56,14 @@ const apiProductsController = {
                 });
             }
 
-         
-
+            // crear función para generar el link tanto para next como para previous
             const buildPageUrl = (page) =>
             `${req.protocol}://${req.get('host')}/api/products?page=${page}&size=${size}`;
     
             const nextUrl = currentPage < totalPages ? buildPageUrl(currentPage + 1) : null;
             const previousUrl = currentPage > 1 ? buildPageUrl(currentPage - 1) : null;
 
+            // RESPUESTA EXITOSA
             return res.status(200).json({
                 count, 
                 countByCategory: response, 
