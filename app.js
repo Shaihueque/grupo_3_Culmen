@@ -6,6 +6,8 @@ const app = express();
 const PORT = 3030; 
 // RUTAS PATH 
 const publicPath = path.join(__dirname ,'/public');
+const cors = require('cors');
+
 
 /************ REQUIRE DE RUTAS  **************/ 
 const mainRoute =  require('./routes/mainRoute.js');  
@@ -38,7 +40,7 @@ app.use(session({
 }));
 
 app.use(cookieParser());
-
+app.use(cors())
 app.use(userLoggedMiddleware); 
 
 /**********  ESCUCHANDO EL PUERTO   *********/
