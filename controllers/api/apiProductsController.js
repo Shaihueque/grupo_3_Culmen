@@ -84,6 +84,7 @@ const apiProductsController = {
                 })),
                 status: 200
             })
+            
         }catch (error) {
             next({status: 500, message: 'Error interno del servidor'})
         }
