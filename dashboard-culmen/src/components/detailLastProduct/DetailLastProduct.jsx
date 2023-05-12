@@ -1,5 +1,6 @@
 import React from "react";
 import { useState, useEffect } from "react";
+import {LastProductWrapper} from './DetailLastStyles'
 
 const DetailLastProduct = ({ products }) => {
 
@@ -31,26 +32,25 @@ const DetailLastProduct = ({ products }) => {
   //console.log(lastProductDetail.product);
 
   return (
-    <div>
-        {
-            lastProductDetail.product &&
-        (    <>
-            <h2>Último producto agregado !! </h2>
-            <h3>Nombre: {lastProductDetail.product.name}</h3>
-            <p>Descripcion {lastProductDetail.product.description}</p>
-            <p>Marca: {lastProductDetail.product.brand}</p>
-            <p>Categoria: {lastProductDetail.product.category}</p>
-            <p>Tipo: {lastProductDetail.product.type}</p>
-            <p>Precio: {lastProductDetail.product.price}</p>
-            <img src={lastProductDetail.product.image} alt="imagen del ultimo producto" style={{width:'200px'}} />
-            </>)
-        }
-
-    </div>
-    )
+    <LastProductWrapper>
+      {lastProductDetail.product && (
+        <>
+          <h2>Último producto agregado 👇🏼!! </h2>
+          <h3>Nombre: <span>{lastProductDetail.product.name.toUpperCase()}</span> </h3>
+          <p>Descripcion <span>{lastProductDetail.product.description.toUpperCase()}</span> </p>
+          <p>Marca: <span>{lastProductDetail.product.brand.toUpperCase()}</span> </p>
+          <p>Categoria:<span> {lastProductDetail.product.category.toUpperCase()}</span> </p>
+          <p>Tipo: <span>{lastProductDetail.product.type.toUpperCase()}</span> </p>
+          <p>Precio: <span>{lastProductDetail.product.price}</span> </p>
+          <img
+            src={lastProductDetail.product.image}
+            alt="imagen del ultimo producto"
+            style={{ width: "200px" }}
+          />
+        </>
+      )}
+    </LastProductWrapper>
+  );
 };
-
-
-
 
 export default DetailLastProduct;

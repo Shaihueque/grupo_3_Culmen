@@ -1,5 +1,6 @@
-import { useEffect, useState } from 'react'
 import { TotalCard, TotalWrapper } from './TotalStyles'
+//import PropTypes from 'prop-types';
+
 
 const TotalsPanels = ( {products , users} ) => {
   
@@ -28,5 +29,18 @@ const TotalsPanels = ( {products , users} ) => {
     </TotalWrapper>
   )
 }
+
+/* TotalsPanels.propTypes = {
+  products: PropTypes.shape({
+    count: PropTypes.number.isRequired,
+    countByCategory: PropTypes.arrayOf(PropTypes.shape({
+      category: PropTypes.string.isRequired,
+      count: PropTypes.number.isRequired,
+    })),
+  }).isRequired,
+  users: PropTypes.shape({
+    count: PropTypes.number.isRequired,
+  }).isRequired,
+}; */
 
 export default TotalsPanels

@@ -5,7 +5,6 @@ import PanelCategories from './components/panelCategories/PanelCategories';
 import ProductsList from './components/productsList/ProductsList';
 import TotalsPanels from './components/totalPanels/TotalsPanels';
 
-
 function App() {
 
   const [ products , setProducts ] = useState({}); 
@@ -28,7 +27,7 @@ function App() {
     <>
       <TotalsPanels products={products} users={users} />
       <DetailLastProduct products={products} />
-      <PanelCategories />
+      <PanelCategories products={products}/>
       <ProductsList />
     </>
   );
