@@ -9,10 +9,12 @@ const apiProductsController = {
         try {
             // endopoint: http://localhost:3030/api/products?page=0&size=10
 
-            const { page = 1, size = 10 } = req.query;
+            //const { page = 1, size = 10 } = req.query;
+            const { page, size } = req.query;
 
             // Validar que page y size sean números enteros positivos
-            if (isNaN(page) || isNaN(size) || page <= 0 || size <= 0) {
+            if (page && size) {
+                if (isNaN(page) || isNaN(size) || page <= 0 || size <= 0) {
               return res
                 .status(400)
                 .json({
@@ -22,6 +24,8 @@ const apiProductsController = {
                     status: 400
                 });
             }
+            }
+            
 
             // Traerme agrupados la cantidad de productos por categoria
             const response = await db.Category_product.findAll({
@@ -40,13 +44,16 @@ const apiProductsController = {
 
             // Armar la paginacion con el metodo findAndCountAll
             const { count , rows: products} = await Product.findAndCountAll({
-                limit: +size,
-                offset: (+page-1) * (+size),
+                //limit: +size,
+                limit: size ? +size : null,
+                //offset: (+page-1) * (+size),
+                offset: size ? (+page - 1) * (+size) : null,
                 attributes: ['idProduct', 'name', 'description'],
             });
 
-            const totalPages = Math.ceil(count / size);
-            const currentPage = +page;
+            const totalCount = await Product.count();
+            const totalPages =  size ? Math.ceil(totalCount / size) : 1;
+            const currentPage = page ? +page : 1;
 
             // Validar CUANDO NO HAY PRODUCTOS PARA MOSTRAR SEGUN LOS PARAMETROS PASADOS
             if ( !products.length || (currentPage === 0 || totalPages === 0)) {
