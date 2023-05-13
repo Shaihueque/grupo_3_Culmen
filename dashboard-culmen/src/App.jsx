@@ -25,10 +25,11 @@ function App() {
 
   return (
     <>
+      
       <TotalsPanels products={products} users={users} />
       <DetailLastProduct products={products} />
       <PanelCategories products={products}/>
-      <ProductsList />
+      <ProductsList products={products} />
     </>
   );
 }

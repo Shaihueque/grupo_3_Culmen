@@ -8,11 +8,12 @@
             </a>
             <div class="menu-overlay"></div>
             <div class="menu-options">
-                <ul>
-                    <li>Hombre</li>
-                    <li>Mujer</li>
-                    <li>Niño</li>
-                    <li>Accesorios</li>
+                <ul id="menu-ul">
+                    <li class="category-search">Hombre</li>
+                    <li class="category-search">Mujer</li>
+                    <li class="category-search">Niño</li>
+                    <li class="category-search">Lentes</li>
+                    <li class="category-search">Gorra</li>
                     <li>Todos los productos</li>
                     <li>Iniciar sesión o registrarse</li>
                 </ul>
@@ -83,10 +84,23 @@
     const menuOptions = document.querySelector('.menu-options');
     
     menuBtn.addEventListener('click', () => {
-        console.log('anda el js')
         /* menuOptions.style.display = 'block'; */
         menuOverlay.classList.toggle('active');
         menuOptions.classList.toggle('active');
     });
+
+    // BUSCADOR POR LI 
+    const categorySearchItems = document.querySelectorAll('.category-search');
+
+    categorySearchItems.forEach(item => {
+        item.addEventListener('click', (e) => {
+            console.log(e.target.textContent)
+            const searchText = e.target.textContent;
+            window.location.href = `/products/listarProducts?buscador_home=${searchText}`;
+
+        })
+    })
+
+
 
 </script>
