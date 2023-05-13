@@ -31,14 +31,14 @@
 
 /*  SECCION HEADER HOME */
 .nav-bar{
-    width: 30%;
-    justify-content: space-around;
+    
+    justify-content: space-evenly;
     gap: 30px;
 }
 
-.buscador_home{
+/* .buscador_home{
     display: none;
-}
+} */
 
 .header_container_items{
     display: none;
@@ -52,13 +52,13 @@
     display: none;
 } */
 
-.menu-hamburgesa-boton {
+/* .menu-hamburgesa-boton {
     color: var(--op2-color-gris-claro);
 }
 
 .buscador {
     color: var(--op2-color-gris-claro);
-}
+} */
 
 body {
     font-family: 'Overpass', sans-serif;

@@ -31,14 +31,14 @@
 
 /*  SECCION HEADER HOME */
 .nav-bar{
-    width: 30%;
-    justify-content: space-around;
+    /* width: 30%; */
+    justify-content: space-evenly;
     gap: 30px;
 }
 
-.buscador_home{
+/* .buscador_home{
     display: none;
-}
+} */
 
 .header_container_items{
     display: none;

@@ -9,13 +9,13 @@
             <div class="menu-overlay"></div>
             <div class="menu-options">
                 <ul id="menu-ul">
-                    <li class="category-search">Hombre</li>
-                    <li class="category-search">Mujer</li>
-                    <li class="category-search">Niño</li>
-                    <li class="category-search">Lentes</li>
-                    <li class="category-search">Gorra</li>
-                    <li>Todos los productos</li>
-                    <li>Iniciar sesión o registrarse</li>
+                    <li > <a href="/products/listarProducts?buscador_home=hombre">Hombre</a> </li>
+                    <li > <a href="/products/listarProducts?buscador_home=mujer">Mujer</a> </li>
+                    <li > <a href="/products/listarProducts?buscador_home=niño">Niño</a> </li>
+                    <li > <a href="/products/listarProducts?buscador_home=lentes">Lentes</a> </li>
+                    <li > <a href="/products/listarProducts?buscador_home=gorra">Gorra</a> </li>
+                    <li id="all_products"><a href="/products">Todos los productos</a></li>
+                    <li><a href="/user/login">Iniciar sesión o registrarse</a> </li>
                 </ul>
             </div>
         </div>
@@ -47,11 +47,16 @@
                 <div class="contenedor-user">
                     <img src="/users/<%= userLogged.avatar %>" alt="" class="header_image_user">
                     <p> Hi <%= userLogged.name %> </p>
-                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="/user/profile">My profile</a>
-                        <li><hr class="dropdown-divider"></li>
-                        <a class="dropdown-item" href="/user/logout">Logout</a>
-                    </ul>
+                    <div class="menu-user-logged">
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="/user/profile">My profile</a>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <a class="dropdown-item" href="/user/logout">Logout</a>
+                        </ul>
+                    </div>
+                   
                 </div>
             <% } else {  %>
                 <div class="contenedor-user">
@@ -89,18 +94,12 @@
         menuOptions.classList.toggle('active');
     });
 
-    // BUSCADOR POR LI 
-    const categorySearchItems = document.querySelectorAll('.category-search');
+    // para el usuario loggeado 
 
-    categorySearchItems.forEach(item => {
-        item.addEventListener('click', (e) => {
-            console.log(e.target.textContent)
-            const searchText = e.target.textContent;
-            window.location.href = `/products/listarProducts?buscador_home=${searchText}`;
-
-        })
+    const header_image_user = document.querySelector('.header_image_user'); 
+    const menu_user_logged =  document.querySelector('.menu-user-logged')
+    header_image_user.addEventListener('click', ()=>{
+        menu_user_logged.classList.toggle('active')
     })
-
-
 
 </script>
