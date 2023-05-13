@@ -104,7 +104,7 @@ main{
     font-size: 10px;
     padding: 7px 11px;
     outline: none;
-    border: .5px solid var(--op2-color-secondary-ligthblue);
+    border: .5px solid var(--op2-color-bg-blue-oscuro);
     border-radius: 20px;
     background-color: transparent;
     color: var(--op2-color-gris-claro);
@@ -137,6 +137,10 @@ main{
 .menu-hamburguesa-boton {
     color: var(--op2-color-gris-claro);
     font-size: 2rem;
+}
+
+.hamburg{
+    color: var(--op2-color-bg-blue-oscuro);
 }
 
 /* Estilos para el contenedor que ocupa toda la pantalla */
@@ -281,3 +285,81 @@ main{
         background-color: var(--op2-color-gris-oscuro);
       }
       
+      .icon_header{
+        color: #0b0033;
+        font-size: 16px;
+      }
+
+      .lupita{
+        text-shadow: 0 0 1px black;
+
+      }
+
+
+
+      /*  DESKTOP VIEWPORT  */
+    @media (min-width: 1024px){
+
+        .header-header{
+            justify-content: space-evenly;
+            gap: 0px;
+        }    
+
+        .contenedor-hamburguesa{
+            display: none;
+        }
+
+        .contenedor-logo {
+            display: block;
+            flex-grow: 0;
+            /* 1 o 0 para evitar que se estire demasiado */
+          }
+          
+          .nav-bar {
+            flex-grow: 2;
+            gap: 0px;
+            /* Valor mayor que 1 para que ocupe más espacio */
+          }
+
+          .contenedor-buscador{
+            flex-grow: 3; /*  no anda xq lo pisa el css de home ver eso*/
+          }
+
+          .form_buscador{
+            width: 75%;
+            border: 1px solid var(--op2-color-bg-blue-oscuro);
+            border-radius: 20px;
+            padding: 4px 25px;
+            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+
+          }
+
+          .buscador_home{
+            border: var(--op2-color-gris-oscuro);
+            padding: 10px;
+            color: var(--op2-color-gris-claro);
+            font-family: var(--op1-font-type);
+            font-size: 16px;
+            font-style: italic;
+        }
+
+          .contenedor-carrito{
+            flex-grow: 0.3;
+          }
+
+          .btn_buscador{
+            border-left: 1px solid var(--op2-color-bg-blue-oscuro);
+            padding-left: 15px;
+          }
+
+        .icon_user, .icon_cart {
+            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+            padding: 13px;
+            border-radius: 50%;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .icon_user:hover , .icon_cart:hover {
+            transform: scale(1.2);
+          }
+    }
