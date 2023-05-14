@@ -30,3 +30,12 @@ export const TotalWrapper = styled.div`
     grid-template-columns: repeat(3, 1fr);
     }
 `;
+
+export const TotalContainer = styled.div`
+
+    min-height: 60vh;
+    display: flex;
+    flex-direction: column;
+
+
+`;

@@ -1,13 +1,14 @@
-import { HeaderContainer , Li, Ul } from './Header'
+import { HeaderContainer , Li, LogoImage, Ul } from './Header'
 import {Link} from 'react-router-dom';
 import styles from './Header.module.css';
+import logo from '../../../../public/Logo_Transparente.png'
 
 
 
 const Header = () => {
   return (
     <HeaderContainer>
-      <h2>CULMEN</h2>
+      <picture><LogoImage src={logo} alt="" /></picture>
       <nav>
         <Ul>
           <Li><Link className={styles.link} to='/' >Total Panels</Link></Li>

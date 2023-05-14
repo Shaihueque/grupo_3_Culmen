@@ -4,7 +4,7 @@ export const HeaderContainer = styled.header`
     height: 15vh;
     display: flex;
     justify-content: center;
-    align-items: center;
+    
     background-color: #f1f1f1;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
     color: #333;
@@ -20,4 +20,9 @@ export const Ul = styled.ul`
     display:flex; 
     justify-content: space-evenly; 
     align-items: center;
+`;
+
+export const LogoImage = styled.img`
+height: 100%;
+max-width: 100%;
 `;
