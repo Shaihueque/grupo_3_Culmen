@@ -4,6 +4,9 @@ import DetailLastProduct from './components/detailLastProduct/DetailLastProduct'
 import PanelCategories from './components/panelCategories/PanelCategories';
 import ProductsList from './components/productsList/ProductsList';
 import TotalsPanels from './components/totalPanels/TotalsPanels';
+import { Route, Routes } from 'react-router-dom';
+import Layout from './components/common/layout/Layout';
+
 
 function App() {
 
@@ -25,11 +28,14 @@ function App() {
 
   return (
     <>
-      
-      <TotalsPanels products={products} users={users} />
-      <DetailLastProduct products={products} />
-      <PanelCategories products={products}/>
-      <ProductsList products={products} />
+      <Routes>
+        <Route path='/' element={ <Layout /> } > 
+          <Route path='/' index element={ <TotalsPanels products={products} users={users} /> } />
+          <Route path='/detailLastProduct' element={ <DetailLastProduct products={products} /> } />
+          <Route path='/panelCategories' element={ <PanelCategories products={products} /> } />
+          <Route path='/productList' element={ <ProductsList products={products} />} />
+        </Route> 
+      </Routes>
     </>
   );
 }
