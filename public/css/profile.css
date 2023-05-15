@@ -69,10 +69,11 @@ body {
 }
 
 .section_profile_user{
-    background-color: whitesmoke;
     border-radius: 30px;
-    margin: 30px;
-    height: auto;
+    margin: auto;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    width: 70%;
 }
 
 .profileUser{
@@ -104,6 +105,15 @@ body {
     font-size: 10px;
     font-weight: bold;
     width: 100%;
+}
+
+.buttons .edit_button a button:hover, .buttons .delete_button form button:hover, .buttons .favorites_button a button:hover{
+    cursor: pointer;
+    transform: scale(0.95);
+}
+
+.buttons .edit_button a, .buttons .favorites_button a {
+    text-decoration: none;
 }
 
 
@@ -142,7 +152,12 @@ body {
         display: flex;
         margin-top: 0vh;
         flex-direction: column;
+        height: 70vh;
     }
+
+    .profileUser p {
+        font-size: 20px;
+    }    
 
     .buttons {
         justify-content: center;
@@ -150,9 +165,8 @@ body {
     }
 
     .buttons .edit_button a button, .buttons .delete_button form button, .buttons .favorites_button a button {
-        padding: 5px;
+        padding: 10px;
     }
-
   
 
 }
