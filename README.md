@@ -37,3 +37,6 @@ Nombre: Culmen (originario del latin - singificado cumbre) </h1>
 <a>https://www.figma.com/proto/Nki2n79QbJrjFdlObJebSO/WireFrame-DH?node-id=215%3A2303&scaling=min-zoom&page-id=215%3A2302&starting-point-node-id=215%3A2303</a>
 
 El link, es las pantallas seleccionadas con una minima interaccion para ver todas las pantallas.
+
+color de buscador: #e1e6e1
+color de fondo: e1e6e1
