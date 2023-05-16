@@ -428,16 +428,17 @@ const productsController = {
     search: async(req, res)=>{
 
         try{ 
-        const products = await Product.findAll({
-            where: {
-                name: { [Op.like ] : `%${req.query.buscador_home}%`  }
-            },        
-            include: [{ association: 'imageProduct' }]
+            const resultadoBusqueda = req.query.buscador_home;
+            const products = await Product.findAll({
+                where: {
+                    name: { [Op.like ] : `%${resultadoBusqueda}%`  }
+                },        
+                include: [{ association: 'imageProduct' }]
 
-        });
+            });
 
-        //return res.json(products)
-        res.render('products/listarProducts', { products })
+            //return res.json(products)
+            res.render('products/listarProducts', { products , resultadoBusqueda })
         }
         catch(err){
             console.log(err)
