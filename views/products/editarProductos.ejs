@@ -9,14 +9,14 @@
 
     <main>
 
-        <h2>Editar Producto: <%= elegido.name %></h2>
+        <h2 class="title-edit">Editar Producto: <br><strong><%= elegido.name %></strong></h2>
 
-        <form action="/products/<%= elegido.idProduct %>?_method=PUT" method="post" enctype="multipart/form-data" >
+        <form action="/products/<%= elegido.idProduct %>?_method=PUT" method="post" enctype="multipart/form-data" class="formulario">
 
             <div class="contenedor">
                 
                 
-                <div class="contenedor-nombreProdu">
+                <div class="contenedor-nombreProdu flex-col container-input">
                     <label>Nombre del Producto:   </label>
                     <input type="text" name="nombre" id="" placeholder="" class="nombreProducto inputstyle" value="<%= elegido.name %>"> 
                 </div>
@@ -24,14 +24,15 @@
                     <small class="errors"> *<%= errors.nombre.msg %> </small> 
                  <% } %>
                 
-                <div class="contenedor-descripcion">
+                <div class="contenedor-descripcion flex-col container-input">
+                    <label for="">Descripcion del Producto: </label>
                     <textarea name="descripcion" id="" cols="30" rows="10" placeholder="Descripcion del producto" class="descripcion inputstyle"><%= elegido.description %></textarea>
                 </div>
                 <% if( locals.errors && errors.descripcion){ %>
                     <small class="errors"> *<%= errors.descripcion.msg %> </small> 
                  <% } %>
                 
-                <div class="contenedor-img">
+                <div class="contenedor-img flex-col container-input">
                     <label>Imagen Principal del Producto:</label>
                     <input type="file" name="file_img" id="" placeholder="Sube la imagen" class="img">
                 </div>
@@ -39,7 +40,7 @@
                     <small class="errors"> *<%= errors.file_img.msg %> </small> 
                  <% } %>
 
-                <div class="contenedor-img">
+                <div class="contenedor-img flex-col container-input">
                     <label>Imagenes Secundarias del Producto:</label>
                     <input type="file" name="files_img" id="" placeholder="Sube las imagenes" class="img" multiple max="4"> 
                 </div>
@@ -51,9 +52,9 @@
                     <input type="hidden" name="image_url" value="<%= elegido.imageProduct.id %>">
                 <% } %>
 
-                <div class="contenedor-categorias">
+                <div class="contenedor-categorias flex-col container-input">
                     <label class=" sub-contenedor">Categorias:</label>
-                    <select name="category" id="" class="categorias"> Categorias
+                    <select name="category" id="category" class="categorias"> Categorias
                         <option value="" selected disabled>Elige una categoria </option>
                         <% Categories.forEach((category)=>{  %>
                             <option value="<%= category.idcategory_product %>"
@@ -70,16 +71,17 @@
                  <% } %>
 
 
-                <div class="contenedor-prendas">
-                    <label class="categoria-prenda">Tipos de prendas:</label>
+                 <label class="categoria-prenda">Tipos de prendas:</label><br>
+                <div class="contenedor-prendas flex-col container-input">
 
                     <% Clothes.forEach((clothe)=>{ %>
-
-                        <input type="radio" name="tipo" id="" placeholder="" class="prendas" value="<%= clothe.id %>"
+                        <div class="prendas">
+                        <input type="radio" name="tipo" id="" placeholder=""  value="<%= clothe.id %>"
                         <% if(elegido.clothes_type.id ==  clothe.id){ %>
                             checked
                         <% } %>
                         > <%= clothe.type.toUpperCase() %>
+                        </div>
 
                     <%  }) %>
                     <% if( locals.errors && errors.tipo){ %>
@@ -90,7 +92,7 @@
 
                     <div class="contenedor-categorias">
                         <label class=" sub-contenedor">Marcas:</label>
-                        <select name="marca" id="" class="categorias"> Categorias
+                        <select name="marca" id="marca" class="categorias"> Categorias
                             <option value="" selected disabled> Elige una marca </option>
                             <% Brands.forEach((brand)=>{  %>
                                 <option value="<%= brand.brand_id %>"
@@ -121,7 +123,7 @@
                         <small class="errors"> *<%= errors.talle.msg %> </small> 
                      <% } %>
 
-                <div class="contenedor-precio">
+                <div class="contenedor-precio flex-col container-input">
                     <label>Precio:</label>
                     <input type="text" name="precio" id="" placeholder="$" class="inputstyle" value="<%= elegido.price %>"> 
                 </div>
