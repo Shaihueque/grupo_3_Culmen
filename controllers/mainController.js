@@ -33,7 +33,9 @@ const mainController = {
         res.render('carrito')
     }, 
 
-    addProduct: async(req, res)=>{
+    addProductFavorite: async(req, res)=>{
+
+        //agregar a favoritos esta logica pero se puede modificar
 
         const product = await db.Product.findByPk(req.params.idProduct); 
         //const user = await db.User.findByPk(req.session.userLogged.iduser); 
@@ -46,8 +48,12 @@ const mainController = {
         const relacionCreada = await user.addProduct(product) //aca estoy usando la instancia del usuario
         //const relacionCreada2 = await product.addUser(req.session.userLogged.iduser) probar para
 
+        return res.redirect('/user/favorites/'+ user.iduser)
+        //return res.json(relacionCreada)
+    }, 
 
-        return res.json(relacionCreada)
+    compraFinalizada: (req, res) =>{
+        return res.render('compraFinalizada')
     }
     
 }

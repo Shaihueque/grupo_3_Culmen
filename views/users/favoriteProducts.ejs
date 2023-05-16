@@ -2,24 +2,25 @@
 <html lang="en">
     <%-  include('../partials/head.ejs', { css_files: ["profile" , "home"] })%>
 
-<!--     <link href="/css/login.css" rel ="stylesheet">
- --></head>
+
+</head>
 
 <body>
 
     <%- include('../partials/header.ejs') %>
 
    <main>
+
     <section class="section_profile_user">
         <div class="profileUser">
-            <h1> Bienvenidx <%= user.name %> </h1>
-            <h3> Su mail es: <%= user.email %> </h3>
+            <h1> Hola <%= user.name %> </h1>
             <img src="/users/<%= user.avatar %>" alt="" class="img_profile">
             
         </div>
 
         
     </section>
+    
     <div>
         <a href="/user/edit">
             <button>
@@ -53,10 +54,7 @@
              </div> 
         </section>
 
-
-
-   <% } %>
-
+    <% } %>
 
 
    </main>

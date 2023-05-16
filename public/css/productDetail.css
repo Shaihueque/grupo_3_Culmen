@@ -32,38 +32,6 @@
 }
 
 
-.nav-bar{
-    width: 30%;
-    justify-content: space-around;
-    gap: 30px;
-}
-
-.buscador_home{
-    display: none;
-}
-
-.header_container_items{
-    display: none;
-}
-
-.logo {
-    width: 50px;
-}
-
-.menu-hamburgesa-boton {
-    color: var(--op2-color-gris-claro);
-}
-
-.buscador {
-    color: var(--op2-color-gris-claro);
-}
-
-
-
-
-
-
-
 /*  MAIN MOBILE FIRST  PRODUCT DETAIL */
 
 .provisorio {
@@ -233,7 +201,16 @@ div.talles div.xs input:checked + label, div.talles div.s input:checked + label,
     border: solid white 1px;
     border-radius: 20px;
     cursor: pointer;
+    transition: all 0.3s ease-in;
 }
+
+.buy_button:hover{
+    transform: scale(1.1);
+    background-color: var(--op2-color-bg-blue-oscuro);
+    color: var(--op2-color-gris-claro);
+    border-color: var(--op2-color-bg-blue-oscuro);
+}
+
 
 .description_productDetail{
     background-color: var(--op2-color-gris-oscuro);

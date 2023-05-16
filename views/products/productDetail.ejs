@@ -39,9 +39,6 @@
 
             </section>
 
-
-
-
         </div>
         <section class="container_price">
             <div class="content_price">
@@ -86,9 +83,22 @@
                         <span class="num_quantity"> 1 </span>
                         <button class="subtract_button">+</button>
                     </div>
-                    <form action="/carrito/<%= elegido.idProduct %>" method="post">
-                        <button class="buy_button" type="submit">Añadir al carrito</button>
-                    </form>
+                    <% if(locals.userLogged){ %>
+                        <form action="/carrito/<%= elegido.idProduct %>" method="post">
+                            <button class="buy_button" type="submit"> Agregar a Favoritos ⭐ </button>
+                            <a href="/carrito/compraFinalizada"><button class="buy_button" type="button" >Comprar</button></a>
+                        </form>
+
+                    <% }else{ %>
+                        <br>
+                        <br>
+                        <h3>Para comprar el producto debe loggearse</h3>
+                        <a href="/user/login"> 
+                            <button class="buy_button" type="button">Ingresar </button>  
+                        </a>
+
+                    <% } %>
+                    
                 </div>
             </section>  
         </div>

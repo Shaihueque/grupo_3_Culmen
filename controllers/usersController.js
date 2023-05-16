@@ -368,8 +368,6 @@ const userController = {
                     ]
                 });
                 const products = user.products;
-                // products es un array vacio xq no tiene productos todavia este usuario
-                //return res.json(products)
                 return res.render('users/favoriteProducts', { user, products });
             }else{
                 return res.redirect('/user/login');
