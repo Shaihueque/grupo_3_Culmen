@@ -343,12 +343,8 @@
         object-fit: cover;
       }
 
-      .producto{
-
-      }
-
-      .img-product{
-        
+      .section-productos h3{
+        margin: 20px;
       }
 
 }

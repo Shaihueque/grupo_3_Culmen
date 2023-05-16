@@ -46,7 +46,7 @@
             <% if( locals.isLogged ) { %>
                 <div class="contenedor-user">
                     <img src="/users/<%= userLogged.avatar %>" alt="" class="header_image_user">
-                    <p> Hi <%= userLogged.name %> </p>
+                    <p class="hi"> Hi <%= userLogged.name %> </p>
                     <div class="menu-user-logged">
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                             <a class="dropdown-item" href="/user/profile">My profile</a>
@@ -72,10 +72,12 @@
 
     <nav class="header_container_items">
         <ul>
-                <li>Hombre</li>
-                <li>Mujer</li>
-                <li>Niño</li>
-                <li>Accesorios</li>
+                <li><a href="/products/listarProducts?buscador_home=hombre" class="nav-menu-desktop">Hombre</a> </li>
+                <li><a href="/products/listarProducts?buscador_home=mujer" class="nav-menu-desktop">Mujer</a> </li>
+                <li><a href="/products/listarProducts?buscador_home=niño" class="nav-menu-desktop">Niño</a> </li>
+                <li><a href="/products/listarProducts?buscador_home=lente" class="nav-menu-desktop">Lentes</a> </li>
+                <li><a href="/products/listarProducts?buscador_home=gorra" class="nav-menu-desktop">Gorras</a> </li>
+                <li><a href="/products/listarProducts?buscador_home=chaleco" class="nav-menu-desktop">Chaleco</a> </li>
         </ul>
         </nav>
 

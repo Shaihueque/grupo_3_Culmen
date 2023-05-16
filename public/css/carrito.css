@@ -29,48 +29,6 @@
     padding: 0;
 }
 
-/*HEADER*/
-/*.header-web{
-    display: none;
-}
-
-header{
-    justify-content: left;
-}
-
-.logo {
-    display: flex;
-    width: 100px;
-}*/
-
-/*  SECCION HEADER HOME */
-.nav-bar{
-    /* width: 30%; */
-    justify-content: space-evenly;
-    gap: 30px;
-}
-
-/* .buscador_home{
-    display: none;
-} */
-
-.header_container_items{
-    display: none;
-}
-
-.logo {
-    width: 50px;
-}
-
-.menu-hamburgesa-boton {
-    color: var(--op2-color-gris-claro);
-}
-
-.buscador {
-    color: var(--op2-color-gris-claro);
-}
-
-/*HEADER*/
 
 /* MAIN */
 
@@ -84,6 +42,7 @@ body{
     flex-direction: column;
     justify-content: center;
     margin-top: 0vh;
+    background-color: #b2eba5;
 }
 
 .directory{
@@ -114,7 +73,7 @@ section.checkout div div.directory a i{
     margin-right: 10px;
 }
 
-form{
+.form{
     display: flex;
     flex-direction: column;
 }
@@ -152,7 +111,7 @@ form{
     font-size: 18px;
 }
 
-input{
+.input{
     color: rgb(175, 175, 175);
     background-color: whitesmoke;
     padding: 18px 20px;
@@ -422,80 +381,8 @@ section.checkout div.product div.product-details p.product-price{
 /*MAIN*/
 
 
-/*   FOOTER MOBILE FIRST HOME  */
-
-.footer{
-    background-color: var(--op2-color-bg-blue-oscuro);
-    color: var(--op2-color-gris-claro);
-    height: 90vh;
-    justify-content: space-between;
-
-}
-
-.main-footer {
-    color: var(--op2-color-gris-claro);
-    width: 100%;
-    justify-content: space-around;
-    text-transform: uppercase;
-}
-
-.footer_item { 
-    border-bottom: 1px solid #ebebeb;
-    padding: 15px;
-    justify-content: space-between;
-}
-
-.lista-footer{
-    display: none;
-}
-
-/* FOOTER IMAGENES TARJETAS */
-
-.modos-pago {
-    display: flex;
-    flex-wrap: wrap;
-    width: 70%;
-    align-self: center;
-}
-
-.footer-icono-tarjetas {
-    margin: 5px;
-    width: 40px;
-    height: 25px;
-}
-
-/*  FOOTER REDES SOCIALES  */
-.redes-sociales {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-}
-
-.iconos-red-social {
-    margin: 5px;
-    font-size: 25px;
-    transition: all 0.3s ease 0s;;
-}
-
-.iconos-red-social:hover{
-    cursor: pointer;
-    color: var(--op2-color-primary-green);
-    transform: translateY(-7px);
-    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
-}
-
-/* FOOTER COPYRIGHT  */
-.copyright p{
-    text-align: center;
-    font-size: 12px;
-
-}
-/*FOOTER*/
-
-
 /* MQ TABLETS */
 @media (min-width: 481px){
-   /*HEADER*/
 
 * {
     box-sizing: border-box  ;
@@ -503,28 +390,6 @@ section.checkout div.product div.product-details p.product-price{
     padding: 0;
 }
 
-/*.header-web{
-    display: none;
-}
-
-header{
-    justify-content: left;
-}
-
-.logo {
-    display: flex;
-    width: 100px;
-}*/
-
-.logo{
-    width: 80px;
-}
-
-.icon_header, .hamburg{
-    font-size: 20px;
-}
-
-/*HEADER*/
 
 /* MAIN */
 
@@ -568,7 +433,7 @@ section.checkout div div.directory a i{
     margin-right: 10px;
 }
 
-form{
+.form{
     display: flex;
     flex-direction: column;
 }
@@ -611,7 +476,7 @@ form{
     font-size: 18px;
 }
 
-input{
+.input{
     color: rgb(175, 175, 175);
     background-color: whitesmoke;
     padding: 18px 20px;
@@ -878,108 +743,10 @@ section.checkout div.product div.product-details p.product-price{
     margin-left: auto;
 }
 
-    /*FOOTER*/
-
-    .lista-footer{
-        display: none;
-    }
-    
-    .modos-pago{
-        width: 45%;
-    }
-    
-    .footer-icono-tarjetas{
-        width: 50px;
-        height: 32px;
-    }
-    
-    .copyright{
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        align-items: center;
-        width: 100%;    
-    }
 }
 
 /* DESKTOP MQ  */
 @media (min-width:769px) {
-
-    /*HEADER*/
-
-    /*.header-web{
-        display: flex;
-    }
-
-    .header-mobile{
-        display: none;
-    }
-
-    header{
-        background-color: whitesmoke;
-        justify-content: left;
-        height: 18vh;
-    }
-    
-    .logo {
-        display: flex;
-        width: 130px;
-        margin-left: 30px;
-        margin-right: 30px;
-    }*/
-
-    .header-header{
-        height: 14vh;
-    }
-    .contenedor-hamburgesa{
-        display: none;
-    }
-
-    .logo{
-        width: 160px;
-    }
-    .buscador_home{
-        display: block;
-        border: none;
-        border: var(--op2-color-gris-oscuro);
-        outline: none;
-        padding: 10px;
-        border-radius: 15px;
-        color: var(--op2-color-gris-oscuro);
-        font-family: var(--op1-font-type);
-        margin-right: 20px;
-    }
-
-
-    .contenedor-buscador{
-        display: flex;
-        justify-content: space-evenly;
-        align-items: center;
-        gap: 10px;
-    } 
-    
-    
-    .header_container_items{
-        display: block;
-        margin-top: 14vh;
-        background-color: var(--op2-color-primary-green);
-        color: var(--op2-color-gris-claro)
-    }
-
-    .header_container_items ul{
-        display: flex;
-        padding: 10px;
-        justify-content: space-evenly;
-        align-items: center;
-        border-top: solid .5px var(--op2-color-gris-claro);
-        margin-top: 5px;
-
-    }
-
-    .header_container_items ul li{
-        font-weight: bold;
-        list-style-type: none;
-    }
 
     /*MAIN*/
 
@@ -1000,7 +767,7 @@ section.checkout div.product div.product-details p.product-price{
         box-sizing: border-box;
     }
 
-    form{
+    .form{
         margin-left: 30px;
         margin-right: 30px;
     }
@@ -1054,7 +821,7 @@ section.checkout div.product div.product-details p.product-price{
         width: 43%;
         background-color: #b2eba5;
         color: black;
-        border-left: solid #8cbc84 1px;
+        /*border-left: solid #8cbc84 1px;*/
         border-bottom: solid#8cbc84 0px;
         padding: 40px;
         padding-top: 70px;
@@ -1069,7 +836,7 @@ section.checkout div.product div.product-details p.product-price{
         width: 100%;
     }
       
-    input{
+    .input{
         display: block;
         width: 100%;
         background-color: whitesmoke;
@@ -1283,73 +1050,5 @@ section.checkout div.product div.product-details p.product-price{
     section.checkout div.product div.product-details p.product-price{
         margin-top: 20px;
         margin-left: auto;
-    }
-
-    /*FOOTER*/
-
-    footer .flex-col{
-        display: flex;
-        flex-wrap: wrap;
-        flex-direction: row;
-        /*justify-content: center;*/
-    }
-
-    .footer{
-        /*justify-content: space-around;*/
-        width: 100%;
-    }
-
-    .main-footer{
-        margin-top: 15px;
-        border-bottom: solid 1px #e1e6e1;
-    }
-
-    .lista-footer{
-        display: block;
-    }
-
-    footer ul li{
-        list-style: none;
-    }
-
-    .footer_item{
-        border: none;
-        display: flex;
-        flex-direction: column;
-        width: 33%;
-    }
-
-    .lista-footer{
-        font-size: 10px;
-    }
-
-    .lista-footer ul li{
-        margin: 10px 0;
-        text-transform: none;
-    }
-
-    .footer_item i{ 
-        display: none;
-    }
-    
-    .modos-pago {
-        /*display: flex;
-        flex-wrap: wrap;*/
-        width: 100%;
-        align-self: center;
-        justify-content: center;
-    }
-
-    .redes-sociales {
-        display: flex;
-        justify-content: center;
-        gap: 20px;
-        width: 100%;
-    }
-
-    .copyright p{
-        text-align: center;
-        font-size: 8px;
-    
     }
 }
