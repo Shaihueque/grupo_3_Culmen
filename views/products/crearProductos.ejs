@@ -83,7 +83,7 @@
                          <% } %>
 
 
-                <div class="contenedor-categorias">
+                <div class="contenedor-categorias flex-col container-input">
                     <label class=" sub-contenedor">Marcas:</label>
                     <select name="marca" id="marca" class="categorias
                     <%= locals.errors && errors.marca ? 'isInvalid' : null %>
@@ -111,8 +111,8 @@
 
 
 
-                     <label class="categoria-prenda">Tipos de prendas:</label>
-                <div class="contenedor-prendas flex-col container-input">
+                    <div class="contenedor-prendas flex-col container-input">
+                        <p class="categoria-prenda">Tipos de prendas:</p> <br>
                     <% if(locals.old && old.tipo){ %> 
                         <% Clothes.forEach((clothe)=>{  %>
                             <div class="prendas">
@@ -122,7 +122,7 @@
                                     checked
                                 <% } %>
                                 >
-                                <%= clothe.type.toUpperCase() %></option>
+                                <%= clothe.type.toUpperCase() %>
                             </div>
                         <% }) %>
 
@@ -131,13 +131,14 @@
                     <% Clothes.forEach((clothe)=>{ %>
                         <div class="prendas">
 
-                        <input type="radio" name="tipo" id="tipo" placeholder="" class="
-                        <%= locals.errors && errors.tipo ? 'isInvalid' : null %>"
+                        <input type="radio" name="tipo" id="tipo" placeholder="" class="<%= locals.errors && errors.tipo ? 'isInvalid' : null %>"
                          value="<%= clothe.id %>"> <%= clothe.type.toUpperCase() %>
                         </div>
 
                     <%  })} %>
                 </div>
+                <div id="tipoErrorContainer"></div>
+
                     <% if( locals.errors && errors.tipo){ %>
                         <small class="errors"> *<%= errors.tipo.msg %> </small> 
                      <% } %>
@@ -147,23 +148,29 @@
                     <label class="categoria-talles">Talles:</label>
                     <% if(locals.old && old.talle){ %> 
                         <% Waists.forEach((waist)=>{  %>
-                            <input type="radio" name="talle" id="talle" placeholder="" class="talles
-                            <%= locals.errors && errors.talle ? 'isInvalid' : null %>"
-                             value="<%= waist.id %>"
-                                <% if( waist.id == old.talle ){ %>
-                                    checked
-                                <% } %>
-                                >
-                                <%= waist.waist.toUpperCase() %></option>
+                            <div class="talles">
+                                <input type="radio" name="talle" id="talle" placeholder="" class="
+                                <%= locals.errors && errors.talle ? 'isInvalid' : null %>"
+                                value="<%= waist.id %>"
+                                    <% if( waist.id == old.talle ){ %>
+                                        checked
+                                    <% } %>
+                                    />
+                                    <%= waist.waist.toUpperCase() %>
+                            </div>
                         <% }) %>
 
                     <% }else{  %>
 
                     <% Waists.forEach((waist)=>{  %>
-                    <input type="radio" name="talle" id="talle" placeholder="" class="talles
-                    <%= locals.errors && errors.talle ? 'isInvalid' : null %>" 
-                    value="<%=waist.id%>"> <%= waist.waist.toUpperCase() %>
+                    <div class="talles">
+                        <input type="radio" name="talle" id="talle" placeholder="" class="
+                        <%= locals.errors && errors.talle ? 'isInvalid' : null %>" 
+                        value="<%=waist.id%>" /> <%= waist.waist.toUpperCase() %>
+                    </div>
                     <%})} %>
+                <div id="tallesErrorContainer"></div>
+
                 </div>
                     <% if( locals.errors && errors.talle){ %>
                         <small class="errors"> *<%= errors.talle.msg %> </small> 

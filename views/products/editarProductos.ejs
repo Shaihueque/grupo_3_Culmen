@@ -71,8 +71,9 @@
                  <% } %>
 
 
-                 <label class="categoria-prenda">Tipos de prendas:</label><br>
                 <div class="contenedor-prendas flex-col container-input">
+                    <p class="categoria-prenda">Tipos de prendas:</p>
+                    <br>
 
                     <% Clothes.forEach((clothe)=>{ %>
                         <div class="prendas">
@@ -87,10 +88,11 @@
                     <% if( locals.errors && errors.tipo){ %>
                         <small class="errors"> *<%= errors.tipo.msg %> </small> 
                      <% } %>
+                </div>
 
 
 
-                    <div class="contenedor-categorias">
+                    <div class="contenedor-categorias flex-col container-input">
                         <label class=" sub-contenedor">Marcas:</label>
                         <select name="marca" id="marca" class="categorias"> Categorias
                             <option value="" selected disabled> Elige una marca </option>
@@ -111,12 +113,15 @@
                     <div class="contenedor-talles">
                         <label class="categoria-talles">Talles:</label>
                         <% Waists.forEach((waist)=>{  %>
-                        <input type="radio" name="talle" id="" placeholder="" class="talles" value="<%=waist.id%>"
-                        <% if(elegido.waist.id ==  waist.id){ %>
-                            checked
-                        <% } %>
-                        > 
-                        <%= waist.waist.toUpperCase() %>
+                        <div class="talles">
+                            <input type="radio" name="talle" id="" placeholder=""  value="<%=waist.id%>"
+                            <% if(elegido.waist.id ==  waist.id){ %>
+                                checked
+                            <% } %>
+                            > 
+                            <%= waist.waist.toUpperCase() %>
+                        </div>
+
                         <%}) %>
                     </div>
                     <% if( locals.errors && errors.talle){ %>
