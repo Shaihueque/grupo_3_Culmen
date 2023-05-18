@@ -34,6 +34,10 @@
     padding: 0;
 }
 
+main{
+    background-color: var(--op2-color-gris-claro);
+}
+
 .formulario{
     margin-top: 15px;
 }
@@ -107,6 +111,11 @@
 .categorias {
     padding: 5px;
     margin: 5px;
+    background-color: transparent;
+    color: rgb(8, 92, 8);
+    width: 80%;
+    text-align: center;
+    border: 1px solid rgb(8, 92, 8);
 }
 
 .contenedor-prendas {
@@ -131,12 +140,13 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start;
+    padding-left: 100px;
 }
 
 .talles {
     text-align: center;
-    margin: 10px;
+    margin: 5px;
 }
 
 .contenedor-precio {
@@ -181,13 +191,15 @@
 }
 
 .inputstyle{
-    background-color: white;
+    background-color: transparent;
     border: solid #8cbc84 1px;
     border-radius: 8px;
     margin-top: 10px;
     margin-bottom: 6px;
     padding: 8px 10px;
     width: 90%;
+    font-weight: bold;
+    color: var(--op2-color-bg-blue-oscuro);
 }
 
 .img {
@@ -264,6 +276,10 @@
         font-style: oblique;
         margin: 5px;
         font-size: 16px;
+    }
+
+    .contenedor{
+        flex-direction: column;
     }
 
 }

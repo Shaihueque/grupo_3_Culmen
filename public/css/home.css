@@ -90,8 +90,7 @@
  /*  SECCION DE PRODUCTOS */
 .section-productos {
     text-align: center;
-    background-color: var(--op2-color-bg-blue-oscuro);
-    background-color: var(--op2-color-primary-green);
+   background-color: var(--op1-color-gris-claro);
     
 }
 
@@ -99,6 +98,10 @@
     margin-top: 10px;
     color: var(--op2-color-primary-green);
     color: var(--op2-color-bg-blue-oscuro)
+}
+
+.container-productos{
+    align-items: center;
 }
 
 .producto {
@@ -110,8 +113,10 @@
     
     border-radius: 20px;
     transition: all .3s;
+}
 
-
+.card{
+    width: 70%;
 }
 
 .enlace {
@@ -136,8 +141,8 @@
     text-align: center;
     padding: 10px;
     border-radius: 50%;
-    width: 200px;
-    height: 200px;
+    width: 150px;
+    height: 135px;
 }
 
 .main-art-prducto {
@@ -146,6 +151,7 @@
     justify-content: space-evenly;
     align-items: center;
     padding: 10px;
+    flex-direction: column;
 
     
 }
@@ -345,6 +351,10 @@
 
       .section-productos h3{
         margin: 20px;
+      }
+
+      .main-somos p{
+        width: 40%;
       }
 
 }
