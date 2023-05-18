@@ -253,8 +253,8 @@ main{
       .menu-user-logged {
         display: none;
         position: absolute;
-        top: 50px; /* distancia de la imagen */
-        right: 0;
+        top: 35px; /* distancia de la imagen */
+        right: 5px;
         z-index: 999;
         background-color: var(--op2-color-bg-blue-oscuro);
         border-radius: 5px;
@@ -440,9 +440,6 @@ main{
           transform: scale(1.2);
         }
 
-        .icon_header{
-          /* font-size: 10px; */
-        }
 
         .header_image_user{
           width: 32px;
@@ -761,16 +758,59 @@ main{
           }
 
         .icon_user, .icon_cart {
-/*             box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
- */         padding: 13px;
+            /*  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);*/
+            padding: 13px;
             border-radius: 50%;
             transition: transform 0.3s ease-in-out;
             font-size: 31px;
+            position: relative;
         }
 
-        .icon_user:hover , .icon_cart:hover {
-            transform: scale(1.2);
-          }
+        .contenedor-carrito , .contenedor-user{
+          position: relative;
+        }
+
+        .contenedor-carrito::before {
+          content: "Ir al carrito";
+          position: absolute;
+          top: 100%;
+          left: 50%;
+          transform: translateX(-50%);
+          padding: 4px;
+          background-color: #000;
+          color: #fff;
+          font-size: 12px;
+          opacity: 0;
+          visibility: hidden;
+          transition: opacity 0.2s ease, visibility 0.2s ease;
+          z-index: 2;
+        }
+
+        .contenedor-user::before{
+          content: "Iniciar sesión o registrarse";
+          position: absolute;
+          top: 100%;
+          left: 20%;
+          transform: translateX(-50%);
+          padding: 4px;
+          background-color: #000;
+          color: #fff;
+          font-size: 12px;
+          opacity: 0;
+          visibility: hidden;
+          transition: opacity 0.2s ease, visibility 0.2s ease;
+          z-index: 2;
+        }
+        
+        .contenedor-carrito:hover::before {
+          opacity: 1;
+          visibility: visible;
+        }
+        .contenedor-user:hover::before {
+          opacity: 1;
+          visibility: visible;
+        }
+    
 
           .header_image_user{
             width: 60px;
