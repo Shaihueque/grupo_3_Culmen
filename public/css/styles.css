@@ -640,10 +640,6 @@ main{
         display: block;
     }
 
-    footer ul li{
-/*         list-style: none;
- */    }
-
     .footer_item{
         border: none;
         display: flex;
@@ -706,7 +702,7 @@ main{
       color: var(--op2-color-primary-green);
       border-bottom: 0.5px solid var(--op2-color-primary-green);
       }
-
+  }
 
       /*  DESKTOP VIEWPORT  */
     @media (min-width: 1024px){
@@ -785,8 +781,9 @@ main{
           font-size: 21px;
         }
         .menu-user-logged{
-          top: 61px;
-          right: 60px
+          top: 75px;
+          /* right: 60px */
+          left: 20px;
         }
 
         /*  FOOTER */

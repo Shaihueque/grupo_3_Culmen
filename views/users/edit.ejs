@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-    <%-  include('../partials/head.ejs', { css_files: ["login"] })%>
+    <%-  include('../partials/head.ejs', { css_files: ["editUser"] })%>
 
 <!--     <link href="/css/login.css" rel ="stylesheet">
  --></head>
@@ -15,10 +15,10 @@
             <div class="register_form_container">
 
                 <p class="titulo-register">
-                    Editar cuenta de <%= user.name %> <%= user.last_name %>
+                    Editar cuenta de <strong class="title-user"><%= user.name %> <%= user.last_name %> </strong> 
                 </p>
 
-                <form action="/user/edit" class="registerform" method="post" enctype="multipart/form-data">
+                <form action="/user/edit" class="registerform flex-col" method="post" enctype="multipart/form-data">
 
                     <input type="text" id="name" name="name"  placeholder="Ingresa tu nombre" 
                     class= " input <%= locals.errors && errors.name ? 'isInvalid' : null %>" value="<%= locals.old ? old.name : user.name %>">
