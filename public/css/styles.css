@@ -766,7 +766,7 @@ main{
             position: relative;
         }
 
-        .contenedor-carrito , .contenedor-user{
+        .contenedor-carrito , .sin-loggear{
           position: relative;
         }
 
@@ -786,7 +786,7 @@ main{
           z-index: 2;
         }
 
-        .contenedor-user::before{
+        .sin-loggear::before{
           content: "Iniciar sesión o registrarse";
           position: absolute;
           top: 100%;
@@ -806,7 +806,7 @@ main{
           opacity: 1;
           visibility: visible;
         }
-        .contenedor-user:hover::before {
+        .sin-loggear:hover::before {
           opacity: 1;
           visibility: visible;
         }
