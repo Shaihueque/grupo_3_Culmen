@@ -38,6 +38,9 @@ main{
     background-color: var(--op2-color-gris-claro);
 }
 
+.msg-invalid{
+    color: red;
+}
 .formulario{
     margin-top: 15px;
 }
@@ -241,12 +244,20 @@ main{
 /* DESKTOP MQ  */ /* de 900 en adelante podria ir */
 @media (min-width:769px) {
 
+    .formulario{
+        width: 50%;
+        margin: 0 auto;
+    }
+
     .contenedor{
         flex-direction: column;
     }
 
+    .img{
+        width: 90%;
+    }
     .container-input{
-        width: 50%;
+        width: 90%;
         flex-direction: column;
        }
 
@@ -254,16 +265,20 @@ main{
         flex-direction: row;
         padding-left: 0px;
         align-items: center;
+        width: 85%;
     }
+    .categoria-prenda{
+        margin: 0px 30px;
+       }
 
     .contenedor-talles{
         flex-direction: row;
         align-items: center;
-        width: 40%;
+        width: 85%;
     }
 
     .inputstyle{
-        width: 70%;
+        width: 90%;
         padding: 15px 10px;
     }
 
@@ -277,6 +292,7 @@ main{
     .categorias{
         padding: 10px;
         margin: 10px;
+        width: 90%;
 
     }
 

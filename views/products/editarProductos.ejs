@@ -11,7 +11,7 @@
 
         <h2 class="title-edit">Editar Producto: <br><strong><%= elegido.name %></strong></h2>
 
-        <form action="/products/<%= elegido.idProduct %>?_method=PUT" method="post" enctype="multipart/form-data" class="formulario">
+        <form action="/products/<%= elegido.idProduct %>?_method=PUT" method="post" enctype="multipart/form-data" class="formulario" id="formEditProduct">
 
             <div class="contenedor">
                 
@@ -89,6 +89,7 @@
                         <small class="errors"> *<%= errors.tipo.msg %> </small> 
                      <% } %>
                 </div>
+                <div id="tipoErrorContainer"></div>
 
 
 
@@ -127,6 +128,7 @@
                     <% if( locals.errors && errors.talle){ %>
                         <small class="errors"> *<%= errors.talle.msg %> </small> 
                      <% } %>
+                    <div id="tallesErrorContainer"></div>
 
                 <div class="contenedor-precio flex-col container-input">
                     <label>Precio:</label>
@@ -147,5 +149,7 @@
 
       <%-  include('../partials/footer.ejs')   %>  
 
+<script src="https://unpkg.com/validator@latest/validator.min.js"></script>
+<script src="/js/editProductsValidation.js"></script>
 </body>
 </html>
