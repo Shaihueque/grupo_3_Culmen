@@ -42,7 +42,8 @@ body{
     flex-direction: column;
     justify-content: center;
     margin-top: 0vh;
-    background-color: #b2eba5;
+    /*background-color: #b2eba5;*/
+    background-color: var(--op2-color-gris-claro);
 }
 
 .directory{
@@ -91,7 +92,10 @@ section.checkout div div.directory a i{
     color: black;
     padding: 20px;
     box-sizing: border-box;
-    border-bottom: solid#8cbc84 1px;   
+    border-bottom: solid#8cbc84 1px;  
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border-radius: 10px; 
 }
 
 .customer-data{

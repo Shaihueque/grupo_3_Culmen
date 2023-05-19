@@ -208,6 +208,7 @@ main{
 
 .form_buscador{
     display: flex;
+    background-color: var(--op2-color-gris-claro);
     gap: 3px;
 }
 .form_buscador{
