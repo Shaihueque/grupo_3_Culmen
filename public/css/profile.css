@@ -198,6 +198,7 @@ body {
         border-radius: 30px;
         width: 300px;
         height: 250px;
+        object-fit: contain;
     }
 
     .title{

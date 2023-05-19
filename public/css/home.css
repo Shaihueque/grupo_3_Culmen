@@ -373,8 +373,10 @@
     }
     
     .card {
-        flex-basis: 22%; /* Ajusta este valor según el número de tarjetas que deseas mostrar en cada fila */
-        height: 300px; /* Ajusta la altura según tus necesidades */
+        /* flex-basis: 22%; */ /* Ajusta este valor según el número de tarjetas que deseas mostrar en cada fila */
+        /* height: 300px; */ /* Ajusta la altura según tus necesidades */
+        height: 300px;
+        width: 300px;
     }
     .img-product {
         width: 80%;

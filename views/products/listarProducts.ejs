@@ -1,14 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<%-  include('../partials/head.ejs', { css_files: ["home"] })%>
+<%-  include('../partials/head.ejs', { css_files: ["home", "listarProductos"] })%>
 
-
-<!-- <link rel="stylesheet" href="/css/home.css">
- -->
-
-<!-- </head>
- -->
 <body>
     <%- include('../partials/header.ejs') %>
 
@@ -21,22 +15,20 @@
             <% } %>
 
 
-            <div class="container-productos flex-col "> 
+            <div class="container-productos flex-col cards-container "> 
 
                 <% if(locals.products.length > 0){ %>
                 
                     <% products.forEach((p)=>{ %>
                         <article class="producto card">
                             <a href="/products/<%= p.idProduct %>" class="enlace">
-                                <div class="card2">
+                                <!-- <div class="card2"> -->
                                     <img src="/products/<%= p.imageProduct.image_route %>" alt="" class="img-product">
                                     <div class="main-art-prducto">
                                         <p><strong class="producto-precio">$<%= p.price %></strong></p>
-                                        <p class="producto-nombre"><strong>
-                                                <%= p.name %>
-                                            </strong></p>
+                                        <p class="producto-nombre"><strong><%= p.name %></strong></p>
                                     </div>
-                                </div>
+                                <!-- </div> -->
                             </a>
                         </article>
                     <% }) %>
