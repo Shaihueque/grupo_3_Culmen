@@ -17,7 +17,7 @@
                 
                 <div class="contenedor-nombreProdu flex-col container-input">
                     <label>Nombre del Producto:</label>
-                    <input type="text" name="nombre" id="nombre" placeholder="" class="nombreProducto inputstyle <%= locals.errors && errors.nombre ? 'isInvalid' : null %>"
+                    <input type="text" name="nombre" id="nombre" placeholder="Nombre del producto" class="nombreProducto inputstyle <%= locals.errors && errors.nombre ? 'isInvalid' : null %>"
                     value="<%= locals.old ? old.nombre : null %>">
                 </div>
                 <% if( locals.errors && errors.nombre){ %>
@@ -105,13 +105,13 @@
                         <% })} %>
                     </select>
                 </div>
-                    <% if( locals.errors && errors.marca){ %>
-                        <small class="errors"> *<%= errors.marca.msg %> </small> 
-                     <% } %>
+                <% if( locals.errors && errors.marca){ %>
+                    <small class="errors"> *<%= errors.marca.msg %> </small> 
+                <% } %>
 
 
 
-                    <div class="contenedor-prendas flex-col container-input">
+                <div class="contenedor-prendas flex-col container-input">
                         <p class="categoria-prenda">Tipos de prendas:</p> <br>
                     <% if(locals.old && old.tipo){ %> 
                         <% Clothes.forEach((clothe)=>{  %>
@@ -169,12 +169,12 @@
                         value="<%=waist.id%>" /> <%= waist.waist.toUpperCase() %>
                     </div>
                     <%})} %>
-                <div id="tallesErrorContainer"></div>
-
+                    
                 </div>
-                    <% if( locals.errors && errors.talle){ %>
-                        <small class="errors"> *<%= errors.talle.msg %> </small> 
-                     <% } %>
+                <% if( locals.errors && errors.talle){ %>
+                    <small class="errors"> *<%= errors.talle.msg %> </small> 
+                <% } %>
+                <div id="tallesErrorContainer"></div>
 
                 <div class="contenedor-precio flex-col container-input">
                     <label>Precio:</label>

@@ -124,8 +124,11 @@ main{
     margin: 10px;
     flex-direction: column;
     flex-wrap: wrap;
+    padding: 10px 0px;
     padding-left: 80px;
     align-items: flex-start;
+    border: 1px solid var(--op2-color-primary-green);
+    border-radius: 10px;
 }
 
 .prendas {
@@ -141,7 +144,10 @@ main{
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
+    padding: 10px 0px;
     padding-left: 100px;
+    border: 1px solid var(--op2-color-primary-green);
+    border-radius: 10px;
 }
 
 .talles {
@@ -235,8 +241,13 @@ main{
 /* DESKTOP MQ  */ /* de 900 en adelante podria ir */
 @media (min-width:769px) {
 
+    .contenedor{
+        flex-direction: column;
+    }
+
     .container-input{
         width: 50%;
+        flex-direction: column;
        }
 
        .contenedor-prendas {
@@ -247,6 +258,8 @@ main{
 
     .contenedor-talles{
         flex-direction: row;
+        align-items: center;
+        width: 40%;
     }
 
     .inputstyle{
