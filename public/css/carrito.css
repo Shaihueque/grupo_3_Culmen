@@ -32,7 +32,9 @@
 
 
 /* MAIN */
-
+.subtotal-price{
+    display: none;
+}
 
 body{
     font-family: 'Roboto', sans-serif;
@@ -91,7 +93,7 @@ section.checkout div div.directory a i{
 .checkout{
     background-color: #b2eba5;
     color: black;
-    padding: 20px;
+    padding: 4px;
     box-sizing: border-box;
     border-bottom: solid#8cbc84 1px;  
     margin-top: 20px;
@@ -361,12 +363,12 @@ section.checkout div.product img{
     border: solid #8cbc84 1px
 }
 
-section.checkout div.product div.product-details i{
+/* section.checkout div.product div.product-details i{
     color: grey;
     position: relative;
     right: 10px;
     bottom: 3px;
-}
+} */
 
 section.checkout div.product div.product-details{
     display: flex;
@@ -400,7 +402,7 @@ section.checkout div.product div.product-details p.product-price{
     margin-top: 0vh;
     background-color: #b2eba5;
     color: black;
-    padding: 20px;
+   /*  padding: 20px; */
     box-sizing: border-box;
     border-bottom: solid #8cbc84 1px;
     margin-top: 20px;
@@ -440,16 +442,19 @@ section.checkout div.product div.product-details p.product-price{
 
   .decrease-quantity,
 .increase-quantity {
-  background-color: #eee;
-  border: none;
-  padding: 5px 8px;
+  background-color: transparent;
+  padding: 5px 10px;
   font-size: 16px;
   cursor: pointer;
+  border-radius: 50%;
+  border: 1px solid #ffffff;
 }
 
 .quantity-container {
   display: flex;
+  flex-direction: column;
   align-items: center;
+  padding: 5px 20px;
 }
 
 .quantity {
@@ -457,7 +462,30 @@ section.checkout div.product div.product-details p.product-price{
 }
 
 
+.subtotal-price{
+    display: none;
+}
 
+.eliminar-producto{
+    background-color: transparent;
+    border: none;
+}
+
+.eliminar-producto i{
+    font-size: 25px;
+    color: red;
+    border-radius: 50%;
+    border: 1px solid red;
+    padding: 10px;
+    transition: all 0.5s ease;
+}
+
+.eliminar-producto i:hover{
+    cursor: pointer;
+    color: white;
+    transform: translateY(1);
+
+}
 
 /* MQ TABLETS */
 @media (min-width: 481px){
@@ -799,12 +827,6 @@ section.checkout div.product img{
     border: solid #8cbc84 1px
 }
 
-section.checkout div.product div.product-details i{
-    color: grey;
-    position: relative;
-    right: 10px;
-    bottom: 3px;
-}
 
 section.checkout div.product div.product-details{
     display: flex;
@@ -821,6 +843,10 @@ section.checkout div.product div.product-details p.product-price{
     margin-left: auto;
 }
 
+
+.subtotal-price{
+    display: none;
+}
 }
 
 /* DESKTOP MQ  */
@@ -908,7 +934,7 @@ section.checkout div.product div.product-details p.product-price{
 
     .product-details {
         display: flex;
-        gap: 200px;
+        gap: 20px;
         padding: 10px 0px 10px;
         border-bottom: solid#8cbc84 1px;
         width: 100%;
@@ -1109,26 +1135,14 @@ section.checkout div.product div.product-details p.product-price{
         border: solid #8cbc84 1px
     }
     
-    section.checkout div.product div.product-details i{
-        color: grey;
-        position: relative;
-        right: 10px;
-        bottom: 4px;
-    }
+    
     
     section.checkout div.product div.product-details{
-        display: contents;
+        display: flex;
     }
     
-    section.checkout div.product div.product-details p.product-title{
-        margin-top: 20px;
-        font-weight: bold;
-    }
-    
-    section.checkout div.product div.product-details p.product-price{
-        margin-top: 20px;
-        margin-left: auto;
-    }
+   
+
 /**************************************************************************/
   /*   .product {
         flex-basis: 50%;
@@ -1141,4 +1155,72 @@ section.checkout div.product div.product-details p.product-price{
         margin-right: 0;
         margin-bottom: 10px;
       } */
+
+      .subtotal-price{
+        display: none;
+    }
+
+    .eliminar-producto{
+        background-color: transparent;
+        border: none;
+    }
+    
+    .eliminar-producto i{
+        font-size: 25px;
+        color: red;
+        border-radius: 50%;
+        border: 1px solid red;
+        padding: 10px;
+        transition: all 0.5s ease;
+    }
+    
+    .eliminar-producto i:hover{
+        cursor: pointer;
+        color: rgb(250, 81, 81);
+        transform: scale(1.2);
+    
+    }
+
+    .decrease-quantity,
+.increase-quantity {
+  display: inline-block;
+  padding: 5px 10px;
+  border: none;
+  background-color:  #c09191;
+  color: #333;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.6s ease;
+}
+
+.decrease-quantity:hover,
+.increase-quantity:hover {
+  background-color: #e6e6fa;
+  transform: scale(1.1);
+}
+
+.decrease-quantity:active,
+.increase-quantity:active {
+  background-color: #ccc;
+}
+
+.decrease-quantity::selection,
+.increase-quantity::selection {
+  background-color: transparent;
+}
+
+.product-title , .product-price{
+    font-size: 20px;
+}
+
+section.checkout div.product div.product-details p.product-title , section.checkout div.product div.product-details p.product-price{
+    font-size: 20px;
+
+}
+
+.quantity{
+    font-size: 14px;
+    font-weight: bold;
+    padding: 3px;
+}
 }
