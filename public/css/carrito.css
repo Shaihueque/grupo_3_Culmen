@@ -371,19 +371,92 @@ section.checkout div.product div.product-details i{
 section.checkout div.product div.product-details{
     display: flex;
     flex-direction: row;
+    width: 100%;
+    justify-content: space-around;
 }
 
 section.checkout div.product div.product-details p.product-title{
     margin-top: 20px;
     font-weight: bold;
+    font-size: 12px;
 }
 
 section.checkout div.product div.product-details p.product-price{
     margin-top: 20px;
     margin-left: auto;
+    font-size: 12px;
 }
 
 /*MAIN*/
+
+
+/*******************************  NUEVOS ESTILOS  *******************************************/
+
+
+.contenedor-main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-top: 0vh;
+    background-color: #b2eba5;
+    color: black;
+    padding: 20px;
+    box-sizing: border-box;
+    border-bottom: solid #8cbc84 1px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+  }
+  
+  #productos-carrito {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .product {
+    flex-basis: 100%;
+    display: flex;
+    align-items: center;
+    border-bottom: solid #8cbc84 1px;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+  }
+  
+  .product img {
+    width: 75px;
+    margin-right: 10px;
+  }
+  
+  .product-details {
+    flex-grow: 1;
+  }
+  
+  .product-details p {
+    margin: 0;
+  }
+
+  .decrease-quantity,
+.increase-quantity {
+  background-color: #eee;
+  border: none;
+  padding: 5px 8px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.quantity-container {
+  display: flex;
+  align-items: center;
+}
+
+.quantity {
+  margin: 0 10px;
+}
+
+
 
 
 /* MQ TABLETS */
@@ -1056,4 +1129,16 @@ section.checkout div.product div.product-details p.product-price{
         margin-top: 20px;
         margin-left: auto;
     }
+/**************************************************************************/
+  /*   .product {
+        flex-basis: 50%;
+        padding-bottom: 20px;
+        margin-bottom: 20px;
+      }
+    
+      .product img {
+        width: 100%;
+        margin-right: 0;
+        margin-bottom: 10px;
+      } */
 }

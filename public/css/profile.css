@@ -130,6 +130,11 @@ body {
     color: #333333;
 }
 
+.btn_dashboard{
+    background-color: #246B59;
+    color: #ffffff;
+}
+
 
 /*  TABLETS */
 @media (min-width: 481px){
