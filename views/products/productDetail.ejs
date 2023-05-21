@@ -77,12 +77,7 @@
                             <label for="xs">XL</label>
                         </div>
                     </div>
-                    <p>Cantidad:</p>
-                    <div class="quantity">
-                        <button class="add_button">-</button>
-                        <span class="num_quantity"> 1 </span>
-                        <button class="subtract_button">+</button>
-                    </div>
+                    
                     <% if(locals.userLogged){ %>
                         <form action="/carrito/<%= elegido.idProduct %>" method="post">
                             <button class="buy_button" type="submit"> Agregar a Favoritos ⭐ </button>

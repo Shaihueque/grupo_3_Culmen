@@ -1,0 +1,8 @@
+
+.fondo{
+    background-image: url('../../../assets/fondo2.jpeg');
+    background-repeat: no-repeat;
+    overflow-x: auto;
+    margin-top: 20px;
+    background-size: 100% 100%;
+}

@@ -1,6 +1,8 @@
 import React from "react";
 import { useState, useEffect } from "react";
-import {LastProductWrapper} from './DetailLastStyles'
+import {ContainerImg, Font1, Font2, Font3, LastProductWrapper} from './DetailLastStyles';
+
+
 
 const DetailLastProduct = ({ products }) => {
 
@@ -29,24 +31,30 @@ const DetailLastProduct = ({ products }) => {
         })();
     }, [lastProduct]);
 
-  //console.log(lastProductDetail.product);
+  console.log(lastProductDetail.product);
 
   return (
     <LastProductWrapper>
       {lastProductDetail.product && (
         <>
-          <h2>Último producto agregado 👇🏼!! </h2>
-          <h3>Nombre: <span>{lastProductDetail.product.name.toUpperCase()}</span> </h3>
-          <p>Descripcion <span>{lastProductDetail.product.description.toUpperCase()}</span> </p>
-          <p>Marca: <span>{lastProductDetail.product.brand.toUpperCase()}</span> </p>
-          <p>Categoria:<span> {lastProductDetail.product.category.toUpperCase()}</span> </p>
-          <p>Tipo: <span>{lastProductDetail.product.type.toUpperCase()}</span> </p>
-          <p>Precio: <span>{lastProductDetail.product.price}</span> </p>
-          <img
-            src={lastProductDetail.product.image}
-            alt="imagen del ultimo producto"
-            style={{ width: "200px" }}
+          <div>
+            <Font3> Último producto agregado 👇🏼!! </Font3>
+            <Font2>Nombre: <Font1>{lastProductDetail.product.name.toUpperCase()}</Font1> </Font2>
+            <Font2>Descripcion <Font1>{lastProductDetail.product.description.toUpperCase()}</Font1> </Font2>
+            <Font2>Marca: <Font1>{lastProductDetail.product.brand.toUpperCase()}</Font1> </Font2>
+            <Font2>Categoria:<Font1> {lastProductDetail.product.category.toUpperCase()}</Font1> </Font2>
+            <Font2>Tipo: <Font1>{lastProductDetail.product.type.toUpperCase()}</Font1> </Font2>
+            <Font2>Precio: <Font1>{lastProductDetail.product.price}</Font1> </Font2>
+          </div>
+          <ContainerImg>
+            <img
+              src={lastProductDetail.product.image}
+              alt="imagen del ultimo producto"
+              style={{ width: "200px" }}
           />
+          <a href={`http:localhost:3030/products/${lastProductDetail.product.id}`}> VER DETALLE DEL PRODUCTO </a>
+          </ContainerImg>
+          
         </>
       )}
     </LastProductWrapper>
