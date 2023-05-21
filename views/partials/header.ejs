@@ -17,6 +17,10 @@
                     <li > <a href="/products/listarProducts?buscador_home=gorra">Gorra</a> </li>
                     <li id="all_products"><a href="/products">Todos los productos</a></li>
                     <li><a href="/user/login">Iniciar sesión o registrarse</a> </li>
+                    <% if( locals.userLogged && (locals.userLogged.is_admin == 0) ){ %>
+                        <li><a href="http://127.0.0.1:5173/">Dashboard</a></li>
+
+                    <% }%>
                 </ul>
             </div>
         </div>
