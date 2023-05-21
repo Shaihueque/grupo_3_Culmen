@@ -79,11 +79,11 @@
                     </div>
                     
                     <% if(locals.userLogged){ %>
-                        <form action="/carrito/<%= elegido.idProduct %>" method="post">
-                            <button class="buy_button" type="submit"> Agregar a Favoritos ⭐ </button>
-                            <a href="/carrito/compraFinalizada"><button class="buy_button" type="button" >Comprar</button></a>
+                        <form action="/carrito/<%= elegido.idProduct %>" method="post" class="form_varios">
+                            <button class="buy_button btn_fav" type="submit"> Agregar a Favoritos ⭐ </button>
+                            <a href="/carrito/compraFinalizada" class="buy_button "><button class=" button_a" type="button" >Comprar</button></a>
+                            <button class="agregar-carrito buy_button btn_cart" type="button" data-product-id="<%= elegido.idProduct %>">Agregar al carrito</button>
                         </form>
-                        <button class="agregar-carrito buy_button" type="button" data-product-id="<%= elegido.idProduct %>">Agregar al carrito</button>
 
 
                     <% }else{ %>
@@ -106,8 +106,9 @@
         <% if( locals.userLogged && (locals.userLogged.is_admin == 0) ){ %>
             <div>
                 <form action="/products/<%= elegido.idProduct %>?_method=DELETE" method="post" class="form_buttons" id="form_editar_eliminar">
-                    <a href="/products/<%= elegido.idProduct %>/editar" class="edit_button">Editar</a>
-                    <button type="submit" class="delete_button"> Eliminar </button>
+                    <p>Permisos de administrador:</p>
+                    <a href="/products/<%= elegido.idProduct %>/editar" class="edit_button">Editar Producto</a>
+                    <button type="submit" class="delete_button"> Eliminar Producto </button>
                 </form>
             </div>
         <% } %>
