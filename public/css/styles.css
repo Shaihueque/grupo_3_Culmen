@@ -329,10 +329,30 @@ main{
   border-bottom: 1px solid #ebebeb;
   padding: 15px;
   justify-content: space-between;
+  flex-direction: column;
 }
+
+/* .footer-contacto{
+  position: relative;
+} */
 
 .lista-footer{
   display: none;
+}
+
+.lista-footer ul {
+  list-style: none;
+  margin-top: 10px;
+}
+
+.mostrar {
+  display: block;
+}
+
+.item_icon{
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
 }
 
 /* FOOTER IMAGENES TARJETAS */
@@ -643,7 +663,7 @@ main{
         border: none;
         display: flex;
         flex-direction: column;
-        width: 33%;
+        
     }
 
     .lista-footer{

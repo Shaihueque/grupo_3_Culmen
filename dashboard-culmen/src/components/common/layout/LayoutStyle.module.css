@@ -6,3 +6,9 @@
     margin-top: 20px;
     background-size: 100% 100%;
 }
+
+.withTable {
+    background-color: white;
+    background-size: cover; /* O el tamaño deseado para adaptar la imagen */
+    background-position: center center;
+  }

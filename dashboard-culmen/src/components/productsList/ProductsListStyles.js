@@ -5,10 +5,14 @@ export const TableContainer = styled.div`
   overflow-x: auto;
   overflow-y: auto;
   margin-top: 20px;
+  @media(min-width: 1024px){
+    width: 85%;
+    margin: 0 auto;
+  }
 `;
 
 export const Table = styled.table`
-  width: 100%;
+ 
   border-collapse: collapse;
   @media(min-width: 1024px){
     width: 85%;
@@ -21,6 +25,10 @@ export const Th = styled.th`
   color: white;
   text-align: left;
   padding: 12px;
+  font-size: 12px;
+  @media(min-width:1024px){
+    font-size: 19px;
+  }
 `;
 
 export const Td = styled.td`
@@ -31,15 +39,14 @@ export const Td = styled.td`
   overflow: hidden;
   text-overflow: ellipsis;
   font-weight: bold;
+  font-size: 11px;
+  @media(min-width:1024px){
+    font-size: 17px;
+  }
  
 
 `;
 
-/* export const Tr = styled.tr`
-  &:nth-child(even) {
-    background-color: #f2f2f2;
-  }
-`; */
 export const Tr = styled.tr`
   background-color: ${({ index }) => (index % 2 === 0 ? "#ffffff" : "rgba(242, 242, 242, 0.8)")};
   
@@ -52,4 +59,5 @@ export const Tr = styled.tr`
 export const DetailLink = styled.a`
   color: #007bff;
   text-decoration: none;
+  text-align: center;
 `;

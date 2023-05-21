@@ -3,9 +3,12 @@
     <section class="main-footer flex-col">
 
         <div class="footer-contacto footer_item item_contact flex-row">
-            <p class="item_footer_option">Contactos</p>
-            <i class="fas fa-chevron-down" class="footer-icono-menu-flecha"></i>
-            <div class="lista-footer">
+            <div class="item_icon">
+                <p class="item_footer_option">Contactos</p>
+                <a href="#contactos" class="footer-icono-menu-flecha" onclick="toggleMenu('contactos')"><i class="fas fa-chevron-down" ></i></a>
+            </div>
+            <!-- <i class="fas fa-chevron-down" class="footer-icono-menu-flecha"></i> -->
+            <div class="lista-footer" id="contactos">
                 <ul>
                     <li><a>culmen@gmail.com</a> </li>
                 </ul>
@@ -13,8 +16,10 @@
         </div>
 
         <div class="footer-categorias footer_item flex-row">
-            <p class="item_footer_option">Categorias</p>
-            <i class="fas fa-chevron-down" class="footer-icono-menu-flecha"></i>
+            <div class="item_icon">
+                <p class="item_footer_option">Categorias</p>
+                <i class="fas fa-chevron-down" class="footer-icono-menu-flecha"></i>
+            </div>
             <div class="lista-footer">
                 <ul>
                     <li> <a href="/products/listarProducts?buscador_home=hombre">Hombres</a> </li>
@@ -27,8 +32,11 @@
         </div>
 
         <div class="footer-ayuda footer_item flex-row">
-            <p class="ayuda item_footer_option">Ayuda</p>
-            <i class="fas fa-chevron-down" class="footer-icono-flecha"></i>
+            <div class="item_icon">
+                <p class="ayuda item_footer_option">Ayuda</p>
+                <i class="fas fa-chevron-down" class="footer-icono-flecha"></i>
+                
+            </div>
             <div class="lista-footer">
                 <ul>
                     <li>FAQ</li>
@@ -69,4 +77,38 @@
     <div class="copyright">
         <p> © Todos los derechos reservados al grupo Culmen</p>
     </div>
+
+
+
+    <script>
+
+        // Obtener los elementos de los contenedores
+        const contactoItem = document.querySelector('.footer-contacto');
+        const categoriasItem = document.querySelector('.footer-categorias');
+        const ayudaItem = document.querySelector('.footer-ayuda');
+
+        // Obtener los elementos de las listas de cada contenedor
+        const listaContacto = contactoItem.querySelector('.lista-footer');
+        const listaCategorias = categoriasItem.querySelector('.lista-footer');
+        const listaAyuda = ayudaItem.querySelector('.lista-footer');
+
+        // Agregar controladores de eventos a los elementos
+        contactoItem.addEventListener('click', () => {
+        listaContacto.classList.toggle('mostrar');
+        });
+
+        categoriasItem.addEventListener('click', () => {
+        listaCategorias.classList.toggle('mostrar');
+        });
+
+        ayudaItem.addEventListener('click', () => {
+        listaAyuda.classList.toggle('mostrar');
+        });
+
+        /* function toggleMenu(id) {
+        const menu = document.getElementById(id);
+         menu.classList.toggle('mostrar');
+} */
+
+    </script>
 </footer>

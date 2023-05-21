@@ -11,7 +11,7 @@ const ProductsList = ( { products } ) => {
           <Th>Id</Th>
           <Th>Name</Th>
           <Th>Description</Th>
-          {/* <Th>Link</Th> */}
+          <Th>Detalle en web</Th>
         </tr>
       </thead>
       <tbody>
@@ -22,9 +22,7 @@ const ProductsList = ( { products } ) => {
               <Td>{product.id}</Td>
               <Td>{product.name}</Td>
               <Td>{product.description}</Td>
-             {/*  <Td>
-                <DetailLink href={product.link}>Ver detalle</DetailLink>
-              </Td> */}
+              <Td><DetailLink href={`http://localhost:3030/products/${product.id}`}> Ver detalle </DetailLink></Td>
             </Tr>
           ))
         }
