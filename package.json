@@ -33,6 +33,7 @@
     "sequelize": "^6.30.0",
     "sequelize-cli": "^6.6.0",
     "sequelize-pagination": "^1.1.0",
+    "sweetalert2": "^11.7.5",
     "vite": "^4.3.5"
   }
 }

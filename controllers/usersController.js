@@ -333,12 +333,21 @@ const userController = {
             }
           });
 
+        await db.Favorite_product.destroy({
+            where:{
+                user_id: user.iduser
+            }
+        });
+        
+
 
         const userDeleted = await db.User.destroy({
             where:{
                 iduser : user.iduser
             }
         })
+        res.clearCookie('userEmail'); 
+        req.session.destroy(); 
 
         return res.redirect('/')
         }

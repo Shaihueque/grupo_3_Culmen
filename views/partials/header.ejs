@@ -54,7 +54,7 @@
                             <li>
                                 <hr class="dropdown-divider">
                             </li>
-                            <a class="dropdown-item" href="/user/logout">Logout</a>
+                            <a class="dropdown-item" href="/user/logout" id="logout">Logout</a>
                         </ul>
                     </div>
                    
@@ -105,5 +105,39 @@
     header_image_user.addEventListener('click', ()=>{
         menu_user_logged.classList.toggle('active')
     })
+
+
+    /***   logout  ***/
+    const logout = document.getElementById('logout');
+    logout.addEventListener('click', (e)=>{
+        e.preventDefault();
+        let timerInterval
+        Swal.fire({
+        title: 'Gracias por su visita!',
+        html: 'Hasta la proxima ',
+        timer: 2000,
+        timerProgressBar: true,
+        didOpen: () => {
+            Swal.showLoading()
+            const b = Swal.getHtmlContainer().querySelector('b')
+            timerInterval = setInterval(() => {
+            b.textContent = Swal.getTimerLeft()
+            }, 100)
+        },
+        willClose: () => {
+            clearInterval(timerInterval)
+            window.location.href = '/user/logout';
+        }
+        }).then((result) => {
+        /* Read more about handling dismissals below */
+        if (result.dismiss === Swal.DismissReason.timer) {
+            console.log('I was closed by the timer')
+        }
+        })
+
+
+    })
+
+
 
 </script>

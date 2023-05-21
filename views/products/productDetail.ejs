@@ -3,8 +3,8 @@
 
 <%-  include('../partials/head.ejs', { css_files: ["productDetail"] })%>
     
-<!--     <link href="/css/productDetail.css" rel ="stylesheet">
- -->
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
 </head>
 
 <body>
@@ -105,7 +105,7 @@
 
         <% if( locals.userLogged && (locals.userLogged.is_admin == 0) ){ %>
             <div>
-                <form action="/products/<%= elegido.idProduct %>?_method=DELETE" method="post" class="form_buttons">
+                <form action="/products/<%= elegido.idProduct %>?_method=DELETE" method="post" class="form_buttons" id="form_editar_eliminar">
                     <a href="/products/<%= elegido.idProduct %>/editar" class="edit_button">Editar</a>
                     <button type="submit" class="delete_button"> Eliminar </button>
                 </form>

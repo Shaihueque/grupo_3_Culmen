@@ -482,10 +482,41 @@ section.checkout div.product div.product-details p.product-price{
 
 .eliminar-producto i:hover{
     cursor: pointer;
+    background-color: red;
     color: white;
     transform: translateY(1);
 
 }
+
+.anchor_img{
+    text-decoration: none;
+    position: relative;
+    transition: all 0.5s ease;
+}
+
+.anchor_img:hover::before {
+    content: "Ver detalle";
+    position: absolute;
+    top: -20px;
+    left: 0;
+    background: #000;
+    color: #fff;
+    padding: 5px;
+    border-radius: 3px;
+    font-size: 12px;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+  }
+  
+  .anchor_img:hover::before {
+    opacity: 1;
+  }
+
+  .anchor_img:hover{
+    transform: scale(1.1);
+  }
+
+
 
 /* MQ TABLETS */
 @media (min-width: 481px){

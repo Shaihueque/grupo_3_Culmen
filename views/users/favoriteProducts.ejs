@@ -2,6 +2,7 @@
 <html lang="en">
     <%-  include('../partials/head.ejs', { css_files: ["profile" , "home", "favoriteProduct"] })%>
 
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
 </head>
 
@@ -39,6 +40,9 @@
                 <article class="producto card">
                     <a href="/products/<%= p.idProduct %>" class="enlace">
                         <div class="card2">
+                            <form action="/carrito/favorites/<%= p.idProduct %>/remove" method="POST" class="form-delete" id="form-delete">
+                                <button type="submit" class="btn-remove" data-form="form-delete"><i class="fa-solid fa-trash-can"></i></button>
+                            </form>
                             <img src="/products/<%= p.imageProduct.image_route %>" alt="" class="img-product">
                             <button class="btn" type="button"> VER DETALLE </button>
                             <div class="main-art-prducto">
@@ -71,6 +75,7 @@
 
     <%-  include('../partials/footer.ejs')   %>
 
-
+    <!-- <script src="sweetalert2.all.min.js"></script> -->
+    <script src="/js/favoritesFront.js"></script>
 </body>
 </html>

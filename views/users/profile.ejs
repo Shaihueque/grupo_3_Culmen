@@ -3,7 +3,12 @@
     <%-  include('../partials/head.ejs', { css_files: ["profile"] })%>
 
 <!--     <link href="/css/login.css" rel ="stylesheet">
- --></head>
+ -->
+
+ <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+
+</head>
 
 <body>
 
@@ -29,8 +34,8 @@
         </div>
     
         <div class="delete_button btn-container">
-            <form action="/user/delete?_method=delete" method="post">
-                <button class="btn btn_delete">
+            <form action="/user/delete?_method=delete" method="post" id="form_eliminarCuenta">
+                <button class="btn btn_delete" id="btn_eliminarCuenta" type="submit">
                     ELIMINAR MI CUENTA
                 </button type="submit">
             </form>
@@ -72,6 +77,6 @@
 
     <%-  include('../partials/footer.ejs')   %>
 
-
+<script src="/js/profileUser.js"></script>
 </body>
 </html>

@@ -38,7 +38,6 @@ const mainController = {
         //agregar a favoritos esta logica pero se puede modificar
 
         const product = await db.Product.findByPk(req.params.idProduct); 
-        //const user = await db.User.findByPk(req.session.userLogged.iduser); 
         const user = req.session.userLogged ? await db.User.findByPk(req.session.userLogged.iduser) : null;
         // hacerlo con session, solo ir a la DB si necesito alguna info que no tengo en session
         if (!user) {
@@ -54,7 +53,26 @@ const mainController = {
 
     compraFinalizada: (req, res) =>{
         return res.render('compraFinalizada')
+    },
+    removeProductFavorite: async (req, res) => {
+        
+        const product = await db.Product.findByPk(req.params.idProduct);
+        const user = req.session.userLogged ? await db.User.findByPk(req.session.userLogged.iduser) : null;
+    
+        if (!user) {
+            return res.send('El usuario no está logueado');
+        }
+    
+        const relacionEliminada = await db.Favorite_product.destroy({
+            where: {
+                user_id: user.iduser,
+                product_id: product.idProduct
+            }
+        });
+    
+        return res.redirect('/user/favorites/' + user.iduser);
     }
+    
     
 }
 

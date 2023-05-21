@@ -24,8 +24,29 @@ document.addEventListener("DOMContentLoaded", () => {
         eliminarBotones.forEach((button) => {
           button.addEventListener("click", () => {
             const productId = button.dataset.productId;
-            eliminarProducto(productId);
-            eliminarProductoUI(productId);
+            Swal.fire({
+              title: 'Estas seguro?',
+              text: "Estas por eliminar este producto de tu carrito!",
+              icon: 'warning',
+              showCancelButton: true,
+              confirmButtonColor: '#3085d6',
+              cancelButtonColor: '#d33',
+              confirmButtonText: 'Borrar!'
+            }).then((result) => {
+              if (result.isConfirmed) {
+              Swal.fire(
+                  'Borrado!',
+                  'Has borrado este producto de tu carrito',
+                  'success'
+              )
+              eliminarProducto(productId);
+              eliminarProductoUI(productId);
+              form_delete.submit();
+              }else{
+                  e.preventDefault();
+              }
+            })
+
           });
         });
   
@@ -117,7 +138,9 @@ document.addEventListener("DOMContentLoaded", () => {
         (product) => `
        
       <div class="product-details">
-          <img src="${product.image}" alt="" width="75">
+          <a href="/products/${product.id}" class="anchor_img">
+            <img src="${product.image}" alt="" width="75">
+          </a>
           
           <p class="product-title">${product.name}</p>
           <p class="product-price">$${product.price}</p>

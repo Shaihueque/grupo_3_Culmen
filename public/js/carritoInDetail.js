@@ -37,8 +37,49 @@ window.onload = ()=>{
         localStorage.setItem('cart', JSON.stringify(cart));
 
         // Mostrar una notificación o mensaje de éxito
-        alert('Producto agregado al carrito');
+        Swal.fire({
+            position: 'top-end',
+            icon: 'success',
+            title: 'Agregado al carrito exitosamente!',
+            showConfirmButton: false,
+            timer: 1500
+          })
   });
+
+
+
+  /***************  Logica para eliminar el producto  *********************/
+  const form_editar_eliminar = document.getElementById('form_editar_eliminar'); 
+
+  form_editar_eliminar.addEventListener('submit', e => {
+
+    e.preventDefault(); 
+    Swal.fire({
+        title: 'Estas seguro?',
+        text: "Estas por eliminar este producto de la base de datos!",
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        confirmButtonText: 'Borrar!'
+    }).then((result) => {
+        if (result.isConfirmed) {
+        Swal.fire(
+            'Borrado!',
+            'Has borrado este producto',
+            'success'
+        )
+        form_editar_eliminar.submit();
+        }else{
+            e.preventDefault();
+        }
+    })
+
+  })
+
+
+
+
 
 }
 
