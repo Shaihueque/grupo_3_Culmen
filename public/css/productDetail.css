@@ -623,6 +623,9 @@ div.box-button-reviews button{
 .button_a{
     color: #ff793f;
 }
+.button_a_a{
+    display: none;
+}
 .btn_cart{
     color: #686de0;
 }
@@ -1047,4 +1050,7 @@ div.box-button-reviews button{
         justify-content: space-evenly;
     }
 
+    .provisorio{
+        width: 70%;
+    }
 }

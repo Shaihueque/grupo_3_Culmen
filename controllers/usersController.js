@@ -97,7 +97,7 @@ const userController = {
             email: req.body.email, 
             password: passwordHasheada,
             avatar: req.file ? req.file.filename : 'imagenUsuario.png', 
-            is_admin: 0 //ver aca si va 0 o 1
+            is_admin: 1 //ver aca si va 0 o 1
         })
         //********* Faltaria validar de si es admin poder editar o eliminar un producto/
         //return res.json(newUser)
@@ -298,7 +298,7 @@ const userController = {
             email: user.email, 
             password: passwordHasheada,
             avatar: req.file ? req.file.filename : 'imagenUsuario.png', 
-            is_admin: 0
+            is_admin: 1
         },{
             where: {
                 iduser: user.iduser

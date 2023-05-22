@@ -2,7 +2,6 @@ import React from 'react'
 import { TableContainer, Table, Th, Tr, Td, DetailLink } from './ProductsListStyles'
 
 const ProductsList = ( { products } ) => {
-  console.log(products)
   return (
     <TableContainer>
     <Table>

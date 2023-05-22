@@ -52,7 +52,8 @@ const DetailLastProduct = ({ products }) => {
               alt="imagen del ultimo producto"
               style={{ width: "200px" }}
           />
-          <a href={`http:localhost:3030/products/${lastProductDetail.product.id}`}> VER DETALLE DEL PRODUCTO </a>
+          <a href={`http://localhost:3030/products/${lastProductDetail.product.id}`}> VER DETALLE DEL PRODUCTO </a>
+         {/*  href={`http://localhost:3030/products/${product.id}`} */}
           </ContainerImg>
           
         </>
