@@ -9,21 +9,23 @@
 
     <main>
 
-        <h2>Crear Producto</h2>
-        <form action="/products" method="POST" enctype="multipart/form-data" id="formCreateProd">
+        <h2 class="title-edit"> Crear Producto </h2>
+
+        <form action="/products" method="POST" enctype="multipart/form-data" id="formCreateProd" class="formulario">
 
             <div class="contenedor">
                 
-                <div class="contenedor-nombreProdu">
+                <div class="contenedor-nombreProdu flex-col container-input">
                     <label>Nombre del Producto:</label>
-                    <input type="text" name="nombre" id="nombre" placeholder="" class="nombreProducto inputstyle <%= locals.errors && errors.nombre ? 'isInvalid' : null %>"
+                    <input type="text" name="nombre" id="nombre" placeholder="Nombre del producto" class="nombreProducto inputstyle <%= locals.errors && errors.nombre ? 'isInvalid' : null %>"
                     value="<%= locals.old ? old.nombre : null %>">
                 </div>
                 <% if( locals.errors && errors.nombre){ %>
                     <small class="errors"> *<%= errors.nombre.msg %> </small> 
                  <% } %>
                
-                <div class="contenedor-descripcion">
+                <div class="contenedor-descripcion flex-col container-input">
+                    <label for="">Descripcion del Producto</label>
                     <textarea name="descripcion" id="descripcion" cols="30" rows="10" placeholder="Descripcion del producto" class="descripcion inputstyle <%= locals.errors && errors.descripcion? 'isInvalid' : null %>"
                     ><%= locals.old ? old.descripcion : null %></textarea>
                 </div>
@@ -31,7 +33,7 @@
                     <small class="errors"> *<%= errors.descripcion.msg %> </small> 
                  <% } %>
                 
-                <div class="contenedor-img">
+                <div class="contenedor-img flex-col container-input">
                     <label>Imagen Principal del Producto:</label>
                     <input type="file" name="file_img" id="file_img" placeholder="Sube la imagen" class="img
                    <%= locals.errors && errors.file_img ? 'isInvalid' : null %>"
@@ -41,7 +43,7 @@
                     <small class="errors"> *<%= errors.file_img.msg %> </small> 
                  <% } %>
 
-                <div class="contenedor-img">
+                <div class="contenedor-img flex-col container-input">
                     <label>Imagenes Secundarias del Producto:</label>
                     <input type="file" name="files_img" id="files_img" placeholder="Sube las imagenes" class="img
                     <%= locals.errors && errors.files_img ? 'isInvalid' : null %>"
@@ -52,7 +54,7 @@
                  <% } %>
 
 
-                <div class="contenedor-categorias">
+                <div class="contenedor-categorias flex-col container-input">
                     <label class=" sub-contenedor">Categorias:</label>
                     <select name="category" id="category" class="categorias 
                         <%= locals.errors && errors.category? 'isInvalid' : null %>" 
@@ -81,7 +83,7 @@
                          <% } %>
 
 
-                <div class="contenedor-categorias">
+                <div class="contenedor-categorias flex-col container-input">
                     <label class=" sub-contenedor">Marcas:</label>
                     <select name="marca" id="marca" class="categorias
                     <%= locals.errors && errors.marca ? 'isInvalid' : null %>
@@ -103,34 +105,40 @@
                         <% })} %>
                     </select>
                 </div>
-                    <% if( locals.errors && errors.marca){ %>
-                        <small class="errors"> *<%= errors.marca.msg %> </small> 
-                     <% } %>
+                <% if( locals.errors && errors.marca){ %>
+                    <small class="errors"> *<%= errors.marca.msg %> </small> 
+                <% } %>
 
 
 
-                <div class="contenedor-prendas">
-                    <label class="categoria-prenda">Tipos de prendas:</label>
+                <div class="contenedor-prendas flex-col container-input">
+                        <p class="categoria-prenda">Tipos de prendas:</p> <br>
                     <% if(locals.old && old.tipo){ %> 
                         <% Clothes.forEach((clothe)=>{  %>
-                            <input type="radio" name="tipo" id="tipo" placeholder="" class="prendas
-                            <%= locals.errors && errors.tipo ? 'isInvalid' : null %>"
+                            <div class="prendas">
+                            <input type="radio" name="tipo" id="tipo" placeholder="" class="<%= locals.errors && errors.tipo ? 'isInvalid' : null %>"
                              value="<%= clothe.id %>"
                                 <% if( clothe.id == old.tipo ){ %>
                                     checked
                                 <% } %>
                                 >
-                                <%= clothe.type.toUpperCase() %></option>
+                                <%= clothe.type.toUpperCase() %>
+                            </div>
                         <% }) %>
 
                     <% }else{  %>
 
                     <% Clothes.forEach((clothe)=>{ %>
-                        <input type="radio" name="tipo" id="tipo" placeholder="" class="prendas
-                        <%= locals.errors && errors.tipo ? 'isInvalid' : null %>"
+                        <div class="prendas">
+
+                        <input type="radio" name="tipo" id="tipo" placeholder="" class="<%= locals.errors && errors.tipo ? 'isInvalid' : null %>"
                          value="<%= clothe.id %>"> <%= clothe.type.toUpperCase() %>
+                        </div>
+
                     <%  })} %>
                 </div>
+                <div id="tipoErrorContainer"></div>
+
                     <% if( locals.errors && errors.tipo){ %>
                         <small class="errors"> *<%= errors.tipo.msg %> </small> 
                      <% } %>
@@ -140,29 +148,35 @@
                     <label class="categoria-talles">Talles:</label>
                     <% if(locals.old && old.talle){ %> 
                         <% Waists.forEach((waist)=>{  %>
-                            <input type="radio" name="talle" id="talle" placeholder="" class="talles
-                            <%= locals.errors && errors.talle ? 'isInvalid' : null %>"
-                             value="<%= waist.id %>"
-                                <% if( waist.id == old.talle ){ %>
-                                    checked
-                                <% } %>
-                                >
-                                <%= waist.waist.toUpperCase() %></option>
+                            <div class="talles">
+                                <input type="radio" name="talle" id="talle" placeholder="" class="
+                                <%= locals.errors && errors.talle ? 'isInvalid' : null %>"
+                                value="<%= waist.id %>"
+                                    <% if( waist.id == old.talle ){ %>
+                                        checked
+                                    <% } %>
+                                    />
+                                    <%= waist.waist.toUpperCase() %>
+                            </div>
                         <% }) %>
 
                     <% }else{  %>
 
                     <% Waists.forEach((waist)=>{  %>
-                    <input type="radio" name="talle" id="talle" placeholder="" class="talles
-                    <%= locals.errors && errors.talle ? 'isInvalid' : null %>" 
-                    value="<%=waist.id%>"> <%= waist.waist.toUpperCase() %>
+                    <div class="talles">
+                        <input type="radio" name="talle" id="talle" placeholder="" class="
+                        <%= locals.errors && errors.talle ? 'isInvalid' : null %>" 
+                        value="<%=waist.id%>" /> <%= waist.waist.toUpperCase() %>
+                    </div>
                     <%})} %>
+                    
                 </div>
-                    <% if( locals.errors && errors.talle){ %>
-                        <small class="errors"> *<%= errors.talle.msg %> </small> 
-                     <% } %>
+                <% if( locals.errors && errors.talle){ %>
+                    <small class="errors"> *<%= errors.talle.msg %> </small> 
+                <% } %>
+                <div id="tallesErrorContainer"></div>
 
-                <div class="contenedor-precio">
+                <div class="contenedor-precio flex-col container-input">
                     <label>Precio:</label>
                     <input type="text" name="precio" id="precio" placeholder="$" class="inputstyle
                     <%= locals.errors && errors.precio ? 'isInvalid' : null %>" 

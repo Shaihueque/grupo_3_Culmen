@@ -164,7 +164,8 @@ const productsController = {
                 const newImage = await Image_product.create({
                 image_route: req.files.file_img[0].filename,
                 });
-                newImage.id = idImage;
+                //newImage.id = idImage;
+                idImage = newImage.id;
             }
         }else{
             // si no llega ninguna imagen usar la de default
@@ -193,18 +194,7 @@ const productsController = {
         // ahora obtener el id de este producto para asociarle las imagenes que llegan
         const productId = product.idProduct; // Obtener el ID del producto creado
         //req.body
-        /* [{
-            filename: 'img-2625625623.png',
-            sadsa: sadasda
-        }, {
-            filename: 'img-2625625623.png',
-            sadsa: sadasda
-        }, 
-        {
-            filename: 'img-2625625623.png',
-            sadsa: sadasda
-        }] */
-        // req.files.files_img = []
+        
         if (req.files.files_img && req.files.files_img.length > 0) {
 
             req.files.files_img.forEach(async (img) => {
@@ -428,16 +418,17 @@ const productsController = {
     search: async(req, res)=>{
 
         try{ 
-        const products = await Product.findAll({
-            where: {
-                name: { [Op.like ] : `%${req.query.buscador_home}%`  }
-            },        
-            include: [{ association: 'imageProduct' }]
+            const resultadoBusqueda = req.query.buscador_home;
+            const products = await Product.findAll({
+                where: {
+                    name: { [Op.like ] : `%${resultadoBusqueda}%`  }
+                },        
+                include: [{ association: 'imageProduct' }]
 
-        });
+            });
 
-        //return res.json(products)
-        res.render('products/listarProducts', { products })
+            //return res.json(products)
+            res.render('products/listarProducts', { products , resultadoBusqueda })
         }
         catch(err){
             console.log(err)

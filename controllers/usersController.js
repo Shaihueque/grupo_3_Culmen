@@ -97,7 +97,7 @@ const userController = {
             email: req.body.email, 
             password: passwordHasheada,
             avatar: req.file ? req.file.filename : 'imagenUsuario.png', 
-            is_admin: 0 //ver aca si va 0 o 1
+            is_admin: 1 //ver aca si va 0 o 1
         })
         //********* Faltaria validar de si es admin poder editar o eliminar un producto/
         //return res.json(newUser)
@@ -298,7 +298,7 @@ const userController = {
             email: user.email, 
             password: passwordHasheada,
             avatar: req.file ? req.file.filename : 'imagenUsuario.png', 
-            is_admin: 0
+            is_admin: 1
         },{
             where: {
                 iduser: user.iduser
@@ -333,12 +333,21 @@ const userController = {
             }
           });
 
+        await db.Favorite_product.destroy({
+            where:{
+                user_id: user.iduser
+            }
+        });
+        
+
 
         const userDeleted = await db.User.destroy({
             where:{
                 iduser : user.iduser
             }
         })
+        res.clearCookie('userEmail'); 
+        req.session.destroy(); 
 
         return res.redirect('/')
         }
@@ -368,8 +377,6 @@ const userController = {
                     ]
                 });
                 const products = user.products;
-                // products es un array vacio xq no tiene productos todavia este usuario
-                //return res.json(products)
                 return res.render('users/favoriteProducts', { user, products });
             }else{
                 return res.redirect('/user/login');

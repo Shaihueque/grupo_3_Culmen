@@ -1,5 +1,5 @@
 
-:root{
+:root{ 
 
     /*  PALETA DE COLORES: OPCION RED  */
         --op1-color-primary-rojo: #f93943; 
@@ -29,108 +29,11 @@
     margin: 0;
 }
 
-/*  SECCION HEADER HOME */
-.nav-bar{
-    width: 30%;
-    justify-content: space-around;
-    gap: 30px;
-}
-
-.buscador_home{
-    display: none;
-}
-
-.header_container_items{
-    display: none;
-}
-
-.logo {
-    width: 50px;
-}
-
-.menu-hamburgesa-boton {
-    color: var(--op2-color-gris-claro);
-}
-
-.buscador {
-    color: var(--op2-color-gris-claro);
-}
-
 body {
     font-family: 'Overpass', sans-serif;
     font-weight: normal;
     color: #1a1423;
     background-color: #4daa57;
-}
-/* END DEL HEADER */
-
-/*   FOOTER MOBILE FIRST HOME  */
-
-.footer{
-    background-color: var(--op2-color-bg-blue-oscuro);
-    color: var(--op2-color-gris-claro);
-    height: 90vh;
-    justify-content: space-between;
-
-}
-
-.main-footer {
-    color: var(--op2-color-gris-claro);
-    width: 100%;
-    justify-content: space-around;
-    text-transform: uppercase;
-}
-
-.footer_item { 
-    border-bottom: 1px solid #ebebeb;
-    padding: 15px;
-    justify-content: space-between;
-}
-
-.lista-footer{
-    display: none;
-}
-
-/* FOOTER IMAGENES TARJETAS */
-
-.modos-pago {
-    display: flex;
-    flex-wrap: wrap;
-    width: 70%;
-    align-self: center;
-}
-
-.footer-icono-tarjetas {
-    margin: 5px;
-    width: 40px;
-    height: 25px;
-}
-
-/*  FOOTER REDES SOCIALES  */
-.redes-sociales {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-}
-
-.iconos-red-social {
-    margin: 5px;
-    font-size: 25px;
-    transition: all 0.3s ease 0s;;
-}
-
-.iconos-red-social:hover{
-    cursor: pointer;
-    color: var(--op2-color-primary-green);
-    transform: translateY(-7px);
-    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
-}
-
-/* FOOTER COPYRIGHT  */
-.copyright p{
-    text-align: center;
-    font-size: 12px;
-
 }
 
 .errors{
@@ -141,20 +44,31 @@ body {
 .isInvalid{
     border: solid red 1px !important;
 }
-/* end FOOTER  */
 
+.title{
+    text-align: center;
+}
+
+.title span{
+    color: #85cf7e;
+    font-style: oblique;
+    font-weight: bold;
+    text-transform: uppercase;
+}
 
 .img_profile{
-    width: auto;
-    height: 200px;
     padding: 20px;
+    width: 180px;
+    height: 180px;
+    border-radius: 30px;
+    object-fit: cover;
 }
 
 .section_profile_user{
-    border: solid;
-    margin: 30px;
-    height: 65vh;
-    display: flex;
+    border-radius: 30px;
+    background-color: #e4e1e1;
+
+   
 }
 
 .profileUser{
@@ -162,56 +76,82 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: space-evenly;
+    padding: 10px;
+}
+
+.buttons-container {
+    margin-bottom: 30px;
+    gap: 10px;
+    align-items: center;
+}
+
+.btn {
+    border: solid 0.5px transparent;
+    border-radius: 15px;
+    transition: all 0.3s ease-in-out;
+    transform: scale(1);
+    font-size: 10px;
+    font-weight: bold;
+    width: 100%;
+}
+
+.buttons-container .edit_button a button:hover, .buttons-container .delete_button form button:hover, .buttons-container .favorites_button a button:hover{
+    cursor: pointer;
+    transform: scale(0.95);
+}
+
+.buttons-container .edit_button a, .buttons-container .favorites_button a {
+    text-decoration: none;
+}
+
+.btn-container{
+    width: 60%;
+}
+
+.btn{
+    padding: 15px;
 }
 
 
+.btn_edit{
+    background-color: #7ac0a3;
+    color: #333333;
+}
+.btn_delete{
+    background-color: #e75a5a;
+    color: #ffffff;
+}
+.btn_favorite{
+    background-color: #9e9acb;
+    color: #000000;
+}
+.btn_create{
+    background-color: #5faed1;
+    color: #333333;
+}
 
-
-
-
-
-
-
+.btn_dashboard{
+    background-color: #246B59;
+    color: #ffffff;
+}
 
 
 /*  TABLETS */
 @media (min-width: 481px){
 
-    .logo{
-        width: 80px;
+    .buttons {
+        justify-content: center;
+        gap: 50px;
     }
 
-    .icon_header, .hamburg{
-        font-size: 20px;
+    .buttons .edit_button a button, .buttons .delete_button form button, .buttons .favorites_button a button {
+        padding: 10px;
     }
-
+  
     .login_form_container, .register_form_container {
         padding-left: 80px;
         padding-right: 80px;
     }
-
-    .lista-footer{
-        display: none;
-    }
-    
-    
-        .modos-pago{
-            width: 45%;
-        }
-        .footer-icono-tarjetas{
-            width: 50px;
-            height: 32px;
-    
-        }
-    
-        .copyright{
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            align-items: center;
-            width: 100%;
-         
-         }
 
 }
 /* end tablets */
@@ -220,125 +160,65 @@ body {
 
 @media (min-width: 769px){
 
-    .header-header{
-        height: 14vh;
-    }
-    .contenedor-hamburgesa{
-        display: none;
-    }
-
-    .logo{
-        width: 160px;
-    }
-    .buscador_home{
-        display: block;
-        border: none;
-        border: var(--op2-color-gris-oscuro);
-        outline: none;
-        padding: 10px;
-        border-radius: 15px;
-        color: var(--op2-color-gris-oscuro);
-        font-family: var(--op1-font-type);
-        margin-right: 20px;
-    }
-
-
-    .contenedor-buscador{
-        display: flex;
-        justify-content: space-evenly;
-        align-items: center;
-        gap: 10px;
-    } 
-    
-    
-    .header_container_items{
-        display: block;
-        margin-top: 14vh;
-        background-color: var(--op2-color-primary-green);
-        color: var(--op2-color-gris-claro)
-    }
-
-    .header_container_items ul{
-        display: flex;
-        padding: 10px;
-        justify-content: space-evenly;
-        align-items: center;
-        border-top: solid .5px var(--op2-color-gris-claro);
-        margin-top: 5px;
-
-    }
-
-    .header_container_items ul li{
-        font-weight: bold;
-        list-style-type: none;
-    }
-
     main{
         display: flex;
         margin-top: 0vh;
-    }
-
-    footer .flex-col{
-        display: flex;
-        flex-wrap: wrap;
-        flex-direction: row;
-    }
-
-    .footer{
-        width: 100%;
-    }
-
-    .main-footer{
-        margin-top: 15px;
-        border-bottom: solid 1px #e1e6e1;
-    }
-
-    .lista-footer{
-        display: block;
-    }
-
-    footer ul li{
-        list-style: none;
-    }
-
-    .footer_item{
-        border: none;
-        display: flex;
         flex-direction: column;
-        width: 33%;
+        /* min-height: 70vh; */
     }
 
-    .lista-footer{
-        font-size: 10px;
-    }
+    .profileUser p {
+        font-size: 20px;
+    }    
 
-    .lista-footer ul li{
-        margin: 10px 0;
-        text-transform: none;
-    }
-
-    .footer_item i{ 
-        display: none;
-    }
-
-    .modos-pago {
-        width: 100%;
-        align-self: center;
-        justify-content: center;
-    }
-
-    .redes-sociales {
-        display: flex;
+    .buttons {
         justify-content: center;
         gap: 20px;
-        width: 100%;
     }
-
-    .copyright p{
-        text-align: center;
-        font-size: 8px;
-    
-    }
+  
 
 }
 /* end desktop */
+
+@media (min-width: 1024px){
+    
+    .section_profile_user{
+        flex-direction: row;
+        justify-content: center; 
+        gap: 10%;
+        align-items: center;
+        background-color: #e4e1e1;
+        padding: 50px 0px;
+        height: 80vh;
+
+    }
+
+    .profileUser{
+        background: #e4e1e1;
+        border: none;
+        border-radius: 20px;
+    }
+
+    .img_profile{
+        border-radius: 30px;
+        width: 300px;
+        height: 250px;
+        object-fit: contain;
+    }
+
+    .title{
+        font-size: 2em;
+    }
+
+    .btn-container{
+        width: 100%;
+    }
+
+    .buttons-container{
+        width: 30%;
+    }
+
+    .btn{
+        font-size: 15px;
+    }
+}

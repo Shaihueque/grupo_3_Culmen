@@ -3,8 +3,8 @@
 
 <%-  include('../partials/head.ejs', { css_files: ["productDetail"] })%>
     
-<!--     <link href="/css/productDetail.css" rel ="stylesheet">
- -->
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
 </head>
 
 <body>
@@ -38,9 +38,6 @@
                 <% } %>
 
             </section>
-
-
-
 
         </div>
         <section class="container_price">
@@ -80,15 +77,25 @@
                             <label for="xs">XL</label>
                         </div>
                     </div>
-                    <p>Cantidad:</p>
-                    <div class="quantity">
-                        <button class="add_button">-</button>
-                        <span class="num_quantity"> 1 </span>
-                        <button class="subtract_button">+</button>
-                    </div>
-                    <form action="/carrito/<%= elegido.idProduct %>" method="post">
-                        <button class="buy_button" type="submit">Añadir al carrito</button>
-                    </form>
+                    
+                    <% if(locals.userLogged){ %>
+                        <form action="/carrito/<%= elegido.idProduct %>" method="post" class="form_varios">
+                            <button class="buy_button btn_fav" type="submit"> Agregar a Favoritos ⭐ </button>
+                            <a href="/carrito/compraFinalizada" class="buy_button button_a_a "><button class=" button_a" type="button" >Comprar</button></a>
+                            <button class="agregar-carrito buy_button btn_cart" type="button" data-product-id="<%= elegido.idProduct %>">Agregar al carrito</button>
+                        </form>
+
+
+                    <% }else{ %>
+                        <br>
+                        <br>
+                        <h3>Para comprar el producto debe loggearse</h3>
+                        <a href="/user/login"> 
+                            <button class="buy_button" type="button">Ingresar </button>  
+                        </a>
+
+                    <% } %>
+                    
                 </div>
             </section>  
         </div>
@@ -98,9 +105,10 @@
 
         <% if( locals.userLogged && (locals.userLogged.is_admin == 0) ){ %>
             <div>
-                <form action="/products/<%= elegido.idProduct %>?_method=DELETE" method="post" class="form_buttons">
-                    <a href="/products/<%= elegido.idProduct %>/editar" class="edit_button">Editar</a>
-                    <button type="submit" class="delete_button"> Eliminar </button>
+                <form action="/products/<%= elegido.idProduct %>?_method=DELETE" method="post" class="form_buttons" id="form_editar_eliminar">
+                    <p>Permisos de administrador:</p>
+                    <a href="/products/<%= elegido.idProduct %>/editar" class="edit_button">Editar Producto</a>
+                    <button type="submit" class="delete_button"> Eliminar Producto </button>
                 </form>
             </div>
         <% } %>
@@ -237,6 +245,6 @@
 </main>
 
  <%-  include('../partials/footer.ejs')   %>
-
+<script src="/js/carritoInDetail.js"></script>
 </body>
 </html>

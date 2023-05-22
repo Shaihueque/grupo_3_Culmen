@@ -32,38 +32,6 @@
 }
 
 
-.nav-bar{
-    width: 30%;
-    justify-content: space-around;
-    gap: 30px;
-}
-
-.buscador_home{
-    display: none;
-}
-
-.header_container_items{
-    display: none;
-}
-
-.logo {
-    width: 50px;
-}
-
-.menu-hamburgesa-boton {
-    color: var(--op2-color-gris-claro);
-}
-
-.buscador {
-    color: var(--op2-color-gris-claro);
-}
-
-
-
-
-
-
-
 /*  MAIN MOBILE FIRST  PRODUCT DETAIL */
 
 .provisorio {
@@ -233,7 +201,16 @@ div.talles div.xs input:checked + label, div.talles div.s input:checked + label,
     border: solid white 1px;
     border-radius: 20px;
     cursor: pointer;
+    transition: all 0.3s ease-in;
 }
+
+.buy_button:hover{
+    transform: scale(1.1);
+    background-color: var(--op2-color-bg-blue-oscuro);
+    color: var(--op2-color-gris-claro);
+    border-color: var(--op2-color-bg-blue-oscuro);
+}
+
 
 .description_productDetail{
     background-color: var(--op2-color-gris-oscuro);
@@ -602,6 +579,56 @@ div.box-button-reviews button{
     font-size: 12px;
 
 }
+.form_varios{
+    display: flex;
+    flex-direction: column;
+}
+
+.buy_button button{
+    width: 82%;
+    padding-left: 20px;
+    background: transparent;
+    border: none;
+    font-size: 19px;
+    font-weight: bold;
+    padding-top: 0px;
+}
+
+.form_buttons{
+    align-items: center;
+    gap: 15px;
+    display: flex;
+    flex-direction: column;
+}
+
+.edit_button, .delete_button{
+    width: 100%;
+    padding: 25px;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: all 0.5s ease-in-out;
+
+}
+
+.edit_button{
+    background-color: #7D83D4;
+}
+.delete_button{
+    background-color: red;
+}
+
+.btn_fav{
+    color: #f9ca24;
+}
+.button_a{
+    color: #ff793f;
+}
+.button_a_a{
+    display: none;
+}
+.btn_cart{
+    color: #686de0;
+}
 
 
 @media (min-width: 481px) {
@@ -955,4 +982,75 @@ div.box-button-reviews button{
         padding-bottom: 20px;
     }
 
+}
+
+@media(min-width: 1024px){
+
+    .product_name, .product_price {
+        font-size: 30px;
+    }
+    .product_description{
+        font-size: 20px;
+        font-style: oblique;
+    }
+    .buy_button{
+        padding: 10px;
+        font-size: 18px;
+        margin: 5px 10px;
+    }
+
+    .buy_button button{
+        width: 100%;
+        padding-left: 5px;
+        background: transparent;
+        border: none;
+        font-size: 19px;
+        font-weight: bold;
+        padding-top: 10px;
+    }
+
+    .button_a{
+        padding-left: 50px;
+    }
+
+    .form_buttons{
+        flex-direction: row;
+        align-items: center;
+        gap: 15px;
+    }
+
+    .edit_button, .delete_button{
+        width: 30%;
+        padding: 25px;
+        font-weight: bold;
+        text-transform: uppercase;
+        transition: all 0.5s ease-in-out;
+
+    }
+
+    .edit_button{
+        background-color: #7D83D4;
+    }
+    .delete_button{
+        background-color: red;
+    }
+    
+    .edit_button:hover , .delete_button:hover{
+        cursor: pointer;
+        transform: scale(1.1);
+        opacity: 1.5;
+        box-shadow: 5px 5px 5px;
+        color: black;
+
+    }
+
+    .form_varios{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+    }
+
+    .provisorio{
+        width: 70%;
+    }
 }

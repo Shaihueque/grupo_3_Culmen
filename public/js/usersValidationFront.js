@@ -33,7 +33,6 @@ emailLogin.focus(); // Autofocus
         if (field.nextElementSibling.nextElementSibling.classList.contains('errors')) {
             field.nextElementSibling.nextElementSibling.style.display='none'
         }
-        btn_login.removeAttribute('disabled');
     }
 
 
@@ -147,8 +146,9 @@ formRegister.addEventListener('submit', e => {
 
         const fieldValue = field.value;
         const fieldName = field.name;
-        let errorElement = field.nextElementSibling.querySelector('.msg-invalid') 
-
+        let errorElement = field.nextElementSibling.querySelector('.msg-invalid');
+        const allowedExtensions = ['jpg', 'jpeg', 'png', 'gif'];
+        
         if (validator.isEmpty(fieldValue)) {
             isValid = false;
             isError(field, errorElement, `El campo ${fieldName} no puede estar vacío`);
