@@ -55,29 +55,7 @@ document.addEventListener("DOMContentLoaded", () => {
         const increaseButtons = document.querySelectorAll(".increase-quantity");
   
     
-      /*   decreaseButtons.forEach((button) => {
-            button.addEventListener("click", () => {
-              const productId = button.dataset.productId;
-              const quantityElement = document.querySelector(`#quantity-${productId}`);
-              const currentQuantity = parseInt(quantityElement.textContent);
-              if (currentQuantity > 1) {
-                const newQuantity = currentQuantity - 1;
-                updateQuantityInUI(productId, newQuantity, subtotalElement, products);
-                updateTotal(totalElement, products);
-              }
-            });
-          });
-          
-  
-        increaseButtons.forEach((button) => {
-          button.addEventListener("click", () => {
-            const productId = button.dataset.productId;
-            const quantityElement = document.querySelector(`#quantity-${productId}`);
-            const newQuantity = parseInt(quantityElement.textContent) + 1;
-            updateQuantityInUI(productId, newQuantity, subtotalElement, products);
-            updateTotal(totalElement, products);
-          });
-        }); */
+    
         decreaseButtons.forEach((button) => {
             button.addEventListener("click", () => {
               const productId = button.dataset.productId;

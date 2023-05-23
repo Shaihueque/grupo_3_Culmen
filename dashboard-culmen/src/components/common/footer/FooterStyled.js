@@ -10,4 +10,6 @@ export const FooterContainer = styled.footer`
     color: #333;
     font-size: 2rem;
     margin-top: 15px;
+    background-color: #85cf7e;
+    color: white;
 `;
